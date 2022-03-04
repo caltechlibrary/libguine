@@ -15,3 +15,7 @@ Footer content for the `dev` group in LibGuides CMS. Paste the contents of this 
 ## [template-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/template-dev.html)
 
 Template content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Customize Homepage Templates” section of the “Templates” sub-tab of the “Look & Feel and Layout” tab when editing the `dev` group.
+
+## [head-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/head-dev.html)
+
+HTML `<HEAD>` content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Public Pages Header/Footer Customization” section of the “Custom JS/CSS Code” tab when editing the `dev` group.
