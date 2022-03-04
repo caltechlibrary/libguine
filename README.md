@@ -7,3 +7,7 @@ While we cannot directly use the code from this repository with LibGuides, we st
 ## [header-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-dev.html)
 
 Header content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Group Header” section of the “Header / Footer / Tabs / Boxes” tab of the `dev` group edit page.
+
+## [footer-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-dev.html)
+
+Footer content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Group Footer” section of the “Header / Footer / Tabs / Boxes” tab of the `dev` group edit page.
