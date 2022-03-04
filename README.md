@@ -11,3 +11,7 @@ Header content for the `dev` group in LibGuides CMS. Paste the contents of this 
 ## [footer-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-dev.html)
 
 Footer content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Group Footer” section of the “Header / Footer / Tabs / Boxes” tab of the `dev` group edit page.
+
+## [template-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/template-dev.html)
+
+Template content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Customize Homepage Templates” section of the “Templates” sub-tab of the “Look & Feel and Layout” tab when editing the `dev` group.
