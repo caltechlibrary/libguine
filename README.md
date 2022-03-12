@@ -19,3 +19,19 @@ Template content for the `dev` group in LibGuides CMS. Paste the contents of thi
 ## [head-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/head-dev.html)
 
 HTML `<HEAD>` content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Public Pages Header/Footer Customization” section of the “Custom JS/CSS Code” tab when editing the `dev` group.
+
+## [header-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-archives.html)
+
+Header content for the `Caltech Archives` group in LibGuides CMS. Paste the contents of this file into the “Group Header” section of the “Header / Footer / Tabs / Boxes” tab of the `Caltech Archives` group edit page.
+
+## [footer-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-archives.html)
+
+Footer content for the `Caltech Archives` group in LibGuides CMS. Paste the contents of this file into the “Group Footer” section of the “Header / Footer / Tabs / Boxes” tab of the `Caltech Archives` group edit page.
+
+## [template-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/template-archives.html)
+
+Template content for the `Caltech Archives` group in LibGuides CMS. Paste the contents of this file into the “Customize Homepage Templates” section of the “Templates” sub-tab of the “Look & Feel and Layout” tab when editing the `Caltech Archives` group.
+
+## [head-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/head-archives.html)
+
+HTML `<HEAD>` content for the `Caltech Archives` group in LibGuides CMS. Paste the contents of this file into the “Public Pages Header/Footer Customization” section of the “Custom JS/CSS Code” tab when editing the `Caltech Archives` group.

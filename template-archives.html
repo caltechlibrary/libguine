@@ -1,0 +1,105 @@
+<!--
+  Last Modified: 2022-03-11 16:29:53
+
+  INSTRUCTIONS:
+  Copy and paste the contents of this file into the “Customize Homepage
+  Templates” section of the “Templates” sub-tab of the “Look & Feel and Layout”
+  tab when editing the `dev` group.
+-->
+
+<body class="s-lib-public-body">
+  {{skip_link}}
+  {{obsolete_browser_alert}}
+  <!-- BEGIN: Page Header -->
+  {{public_header}}
+  <!-- END: Page Header -->
+  <!-- BEGIN: Content Header -->
+  <div id="s-lib-public-header" class="s-lib-header container s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+      {{breadcrumbs}}
+    </nav>
+    <h1 id="s-lib-public-header-title">{{title}}
+    </h1>
+    <div id="s-lib-public-header-desc">{{system_intro}}
+    </div>
+  </div>
+  <!-- END: Content Header -->
+  <!-- BEGIN: Nav Bar -->
+  <div id="s-lib-public-nav" class="container s-lib-side-borders">
+    {{page_nav}}
+  </div>
+  <!-- END: Nav Bar -->
+  <!-- BEGIN: content -->
+  <div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders" tabindex="-1">
+    <div class="row">
+      <div class="col-md-8">
+        <!-- box_widget_includes_js.twig -->
+        <script>
+          var springStats = springStats || {};
+          springStats.saConfig = springStats.saConfig || {
+            site_id: 64,
+            tracking_parameters: {
+              "_st_site_id": 64
+            },
+            tracking_server_host: "libguides-proc.springyaws.com"
+          };
+        </script>
+        <script async src="//lgapi-us.libapps.com/web/js/sa.min.js?3116"></script>
+
+        <script>
+          springSpace.Common = springSpace.Common || {};
+          springSpace.Common.constant = {
+            PROCESSING: {
+              ACTION_DISPLAY_POLL: 159
+            }
+          };
+          springSpace.Common.baseURL = "//lgapi-us.libapps.com'/";
+          springSpace.Common.apiLoad = true;
+        </script>
+        <!-- !box_widget_includes_js.twig -->
+        <script>
+          springshare_widget_config_1647044543505 = {
+            path: 'blogs'
+          };
+        </script>
+        <div id="s-lg-widget-1647044543505"></div>
+        <script>
+          ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = p +
+                "://lgapi-us.libapps.com/widgets.php?site_id=64&widget_type=12&widget_embed_type=1&output_format=1&widget_title=Blog+Posts&widget_height=250&widget_width=100%25&widget_link_color=2954d1&window_target=1&display_teaser=0&display_post=1&display_images=1&num_results=5&enable_more_results=1&blog_id=1224964&display_post_date=1&include_jquery=0&config_id=1647044543505";
+              fjs.parentNode.insertBefore(js, fjs);
+            }
+          }(document, "script", "s-lg-widget-script-1647044543505");
+        </script>
+      </div>
+      <div class="col-md-4">{{search_guides}}</div>
+    </div>
+  </div>
+  <!-- END: content -->
+  <div id="s-lib-alert" title="">
+    <div id="s-lib-alert-content"></div>
+  </div> <!-- popover.twig -->
+  <div id="s-lib-popover-title" class="hide">
+    <span class="text-info">
+      <strong>title</strong>
+    </span>
+
+    <button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">
+      &times;
+    </button>
+  </div>
+
+  <div id="s-lib-popover-content" class="hide">
+    <i class="fa fa-refresh fa-spin"></i> Loading...
+    <button class="btn btn-default btn-sm popclose" type="button">Close</button>
+  </div>
+  <!-- !popover.twig -->
+  <!-- BEGIN: Custom Footer -->
+  {{public_footer}}
+  <!-- END: Custom Footer -->
+</body>
