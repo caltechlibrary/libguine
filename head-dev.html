@@ -1,5 +1,5 @@
 <!--
-  Last Modified: 2022-03-14 15:28:50
+  Last Modified: 2022-03-15 09:42:22
 
   INSTRUCTIONS:
   Copy and paste the contents of this file into the “Public Pages Header/Footer
@@ -8,34 +8,59 @@
 -->
 <script>
   $(function() {
-    $('[data-toggle="popover"]').popover()
+    $('[data-toggle="tooltip"]').tooltip()
   })
+</script>
+<script>
+  $(document).ready(function() {
+    $('.dropdown').on({
+      "click": function(e) { // handles click event
+        // if dropdown or any child of dropdown is clicked
+        if ($(e.target).is('.dropdown-menu') || $(e.target).parents().is('.dropdown-menu')) {
+          this.closable = false // do not close it
+          return;
+        } else {
+          this.closable = true; // else close it
+        }
+      },
+      "hide.bs.dropdown": function() {
+        return this.closable;
+      } // save state
+    });
+  }); // ready
 </script>
 <style>
   html,
   body,
   .dropdown-menu,
   .dropdown-header,
+  .tooltip,
   #s-lib-bc .breadcrumb {
     font-size: unset;
   }
 </style>
 <style>
-  a + .clg-popover-info {
-    /* move back into the padding of the menu link element */
-    margin-inline-start: -15px;
-  }
-  /* override the link padding with specificity */
-  .megamenu > li > ul > li > .clg-popover-info {
-    padding: 0;
-  }
-  .clg-popover-info {
+  .clg-tooltip {
+    background: none;
+    border: none;
     text-transform: lowercase;
   }
+
+  /* move back into the padding of the menu link element */
+  a + .clg-tooltip {
+    margin-inline-start: -15px;
+  }
+
+  /* override the link padding with specificity */
+  .megamenu > li > ul > li > .clg-tooltip {
+    padding: 0;
+  }
+
   /* some popover text needs to overflow the edge of the menu area */
   .dropdown-menu {
     overflow: visible;
   }
+
   /* on mobile, some popover text needs to overflow the edge of the menu area */
   .navbar-collapse.in {
     overflow-y: visible;
@@ -81,10 +106,6 @@
     color: #428bca;
   }
 
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
   @media (max-width: 768px) {
     .megamenu {
       margin-left: 0;
@@ -101,6 +122,12 @@
 
     .megamenu.dropdown-header {
       padding: 3px 15px !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
   }
 </style>
