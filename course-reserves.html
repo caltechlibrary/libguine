@@ -1,7 +1,5 @@
-<script type="module">
-  // https://github.com/vanillaes/csv
-  import { parse } from 'https://cdn.jsdelivr.net/npm/@vanillaes/csv@3.0.1/index.js'
-  // https://stackoverflow.com/a/67597500/4100024
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
   fetch('https://docs.google.com/spreadsheets/d/1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g/export?format=csv&id=1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g&gid=1559271636')
     .then(response => response.text())
     .then(csv => insertCsv(csv));
@@ -11,7 +9,7 @@
     var csvDiv = document.getElementById("csvHere");
     var textNode = document.createTextNode(csv);
     csvDiv.appendChild(textNode);
-    const parsed = parse(csv)
-    console.log(parsed);
+    var csvObjects = $.csv.toObjects(csv)
+    console.log(csvObjects);
   }
 </script>
