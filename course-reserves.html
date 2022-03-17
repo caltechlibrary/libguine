@@ -1,0 +1,17 @@
+<script type="module">
+  // https://github.com/vanillaes/csv
+  import { parse } from 'https://cdn.jsdelivr.net/npm/@vanillaes/csv@3.0.1/index.js'
+  // https://stackoverflow.com/a/67597500/4100024
+  fetch('https://docs.google.com/spreadsheets/d/1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g/export?format=csv&id=1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g&gid=1559271636')
+    .then(response => response.text())
+    .then(csv => insertCsv(csv));
+  // see last example of *named functions*
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#comparing_traditional_functions_to_arrow_functions
+  let insertCsv = csv => {
+    var csvDiv = document.getElementById("csvHere");
+    var textNode = document.createTextNode(csv);
+    csvDiv.appendChild(textNode);
+    const parsed = parse(csv)
+    console.log(parsed);
+  }
+</script>
