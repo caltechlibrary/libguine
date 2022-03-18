@@ -5,11 +5,84 @@
     .then(csv => insertCsv(csv));
   // see last example of *named functions*
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#comparing_traditional_functions_to_arrow_functions
+  // helpful: https://web.archive.org/web/20210506181642/https://wesbos.com/arrow-functions
   let insertCsv = csv => {
+
+    // edit the header rows to remove space characters
+    // 1) segregate the headers and remove spaces
+    const endOfHeaders = csv.indexOf("\r\n")
+    var headers = csv.slice(0, endOfHeaders).split(" ").join("");
+    console.log([headers])
+    // 2) capture the values after the headers
+    var values = csv.slice("\r\n".length + endOfHeaders);
+    console.log([values])
+    // 3) recombine headers and values
+    var data = [headers, values].join('\n');
+    console.log(data)
+
+    // convert csv string to array of objects
+    var csvObjects = $.csv.toObjects(data)
+    console.log(csvObjects);
+
+    // TODO groupby CourseNumber
+    let groupedCourses = groupBy(csvObjects, 'CourseNumber')
+    console.log(groupedCourses);
+    // const convert = (object) => Object.entries(groupedCourses).map(([key, value]) => ({ [key]: value }));
+    // console.log(Object.entries(groupedCourses))
+    // console.log(Object.entries(groupedCourses).map(([key, value]) => ({ [key]: value })))
+    // groupedCourses.forEach(element => {
+    //   let coursesRequirements = groupBy(groupedCourses, 'ItemInfo3')
+    // });
+    // DESIRED OUTPUT:
+    // [
+    //   { "course1":
+    //     { "Required":
+    //       [{},{},{}],
+    //       "Not Required":
+    //       [{},{},{}]
+    //     },
+    //   },
+    //   { "course2":
+    //     { "Required":
+    //       [{},{},{}],
+    //       "Not Required":
+    //       [{},{},{}]
+    //     }
+    //   }
+    // ]
+    coursesRequirements = []
+    for (const course in groupedCourses) {
+      currentCourse = {
+        [course]: {
+          "Required for Student Purchase": [],
+          "Not Required for Student Purchase": []
+        }
+      }
+      groupedCourses[course].forEach(element => {
+        if (element.ItemInfo3 == "Required for Student Purchase") {
+          currentCourse[course]["Required for Student Purchase"].push(element)
+        }
+        else if (element.ItemInfo3 == "Not Required for Student Purchase") {
+          currentCourse[course]["Not Required for Student Purchase"].push(element)
+        }
+      // TODO delete empty properties
+      coursesRequirements.push(currentCourse)
+      });
+    };
+    console.log(coursesRequirements);
+
     var csvDiv = document.getElementById("csvHere");
     var textNode = document.createTextNode(csv);
     csvDiv.appendChild(textNode);
-    var csvObjects = $.csv.toObjects(csv)
-    console.log(csvObjects);
+  }
+  function groupBy(objectArray, property) {
+    return objectArray.reduce(function (acc, obj) {
+      let key = obj[property]
+      if (!acc[key]) {
+        acc[key] = []
+      }
+      acc[key].push(obj)
+      return acc
+    }, {})
   }
 </script>
