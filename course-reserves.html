@@ -12,64 +12,64 @@
     // 1) segregate the headers and remove spaces
     const endOfHeaders = csv.indexOf("\r\n")
     var headers = csv.slice(0, endOfHeaders).split(" ").join("");
-    console.log([headers])
+    // console.log([headers])
     // 2) capture the values after the headers
     var values = csv.slice("\r\n".length + endOfHeaders);
-    console.log([values])
+    // console.log([values])
     // 3) recombine headers and values
     var data = [headers, values].join('\n');
-    console.log(data)
+    // console.log(data)
 
     // convert csv string to array of objects
     var csvObjects = $.csv.toObjects(data)
-    console.log(csvObjects);
+    // console.log(csvObjects);
 
-    // TODO groupby CourseNumber
+    // groupBy CourseNumber
     let groupedCourses = groupBy(csvObjects, 'CourseNumber')
-    console.log(groupedCourses);
-    // const convert = (object) => Object.entries(groupedCourses).map(([key, value]) => ({ [key]: value }));
-    // console.log(Object.entries(groupedCourses))
-    // console.log(Object.entries(groupedCourses).map(([key, value]) => ({ [key]: value })))
-    // groupedCourses.forEach(element => {
-    //   let coursesRequirements = groupBy(groupedCourses, 'ItemInfo3')
-    // });
+    console.log("groupedCourses", groupedCourses);
+
+    // group Required/Not
     // DESIRED OUTPUT:
-    // [
-    //   { "course1":
-    //     { "Required":
-    //       [{},{},{}],
-    //       "Not Required":
-    //       [{},{},{}]
-    //     },
+    // {
+    //   "course1": {
+    //     "Required": [
+    //       {},{},{}
+    //     ],
+    //     "Not Required": [
+    //       {},{},{}
+    //     ]
     //   },
-    //   { "course2":
-    //     { "Required":
-    //       [{},{},{}],
-    //       "Not Required":
-    //       [{},{},{}]
-    //     }
+    //   "course2": {
+    //     "Required": [
+    //       {},{},{}
+    //     ],
+    //     "Not Required": [
+    //       {},{},{}
+    //     ]
     //   }
-    // ]
-    coursesRequirements = []
+    // }
+    coursesRequirements = {}
     for (const course in groupedCourses) {
+      // console.log("course", course)
+      // console.log("groupedCourses[course]", groupedCourses[course])
       currentCourse = {
-        [course]: {
-          "Required for Student Purchase": [],
-          "Not Required for Student Purchase": []
-        }
+        "Required for Student Purchase": [],
+        "Not Required for Student Purchase": []
       }
       groupedCourses[course].forEach(element => {
         if (element.ItemInfo3 == "Required for Student Purchase") {
-          currentCourse[course]["Required for Student Purchase"].push(element)
+          currentCourse["Required for Student Purchase"].push(element)
         }
         else if (element.ItemInfo3 == "Not Required for Student Purchase") {
-          currentCourse[course]["Not Required for Student Purchase"].push(element)
+          currentCourse["Not Required for Student Purchase"].push(element)
         }
-      // TODO delete empty properties
-      coursesRequirements.push(currentCourse)
+      console.log("currentCourse", currentCourse)
+      coursesRequirements[course] = currentCourse
       });
     };
-    console.log(coursesRequirements);
+    console.log("coursesRequirements", coursesRequirements);
+
+
 
     var csvDiv = document.getElementById("csvHere");
     var textNode = document.createTextNode(csv);
