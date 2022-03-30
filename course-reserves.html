@@ -1,13 +1,29 @@
 <!--
-  Last Modified: 2022-03-18 16:57:10
+  Last Modified: 2022-03-29 18:03:12
 
   INSTRUCTIONS: Copy and paste the contents of this file into the “Embed Code”
   section of the appropriate “Media / Widget” container for Course Reserves.
   There must be a corresponding “Rich Text / HTML” container with a `<div
-  id="course-reserves"></div>` element in it.
+  id="cl-cr"></div>` element in it.
 -->
+<style>
+  #cl-cr h2 ~ div,
+  #cl-cr h3 ~ div,
+  #cl-cr h4 ~ div {
+    margin-left: 1rem;
+  }
+  #cl-cr h2,
+  #cl-cr h3,
+  #cl-cr h4 {
+    margin-top: 2rem;
+  }
+  #cl-cr h4 {
+    font-style: italic;
+  }
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+  // TODO read the URL from elsewhere
   fetch('https://docs.google.com/spreadsheets/d/1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g/export?format=csv&id=1TY5Mq8Yu2qHXjTKOJeAXGtKbsfMCv1F4P7kuOORqX-g&gid=1559271636')
     .then(response => response.text())
     .then(csv => transformCsv(csv));
@@ -16,122 +32,71 @@
   // helpful: https://web.archive.org/web/20210506181642/https://wesbos.com/arrow-functions
   let transformCsv = csv => {
 
-    // edit the header rows to remove space characters
     // 1) segregate the headers and remove spaces
     const endOfHeaders = csv.indexOf("\r\n")
     var headers = csv.slice(0, endOfHeaders).split(" ").join("");
-    // console.log([headers])
     // 2) capture the values after the headers
     var values = csv.slice("\r\n".length + endOfHeaders);
-    // console.log([values])
     // 3) recombine headers and values
     var data = [headers, values].join('\n');
-    // console.log(data)
 
     // convert csv string to array of objects
     var csvObjects = $.csv.toObjects(data)
-    // console.log(csvObjects);
 
     // groupBy CourseNumber
     var groupedCourses = groupBy2(csvObjects, 'CourseNumber', 'Name')
     // sort by the CourseNumber
     // https://stackoverflow.com/a/51725400
     var groupedCourses = Object.keys(groupedCourses).sort().reduce((a, c) => (a[c] = groupedCourses[c], a), {})
-    // console.log("groupedCourses", groupedCourses);
 
-    var courseReservesDiv = document.getElementById("course-reserves");
+    var courseReservesDiv = document.getElementById("cl-cr");
 
-    // group Required/Not
-    // DESIRED OUTPUT:
-    // {
-    //   "course1": {
-    //     "Required": [
-    //       {},{},{}
-    //     ],
-    //     "Not Required": [
-    //       {},{},{}
-    //     ]
-    //   },
-    //   "course2": {
-    //     "Required": [
-    //       {},{},{}
-    //     ],
-    //     "Not Required": [
-    //       {},{},{}
-    //     ]
-    //   }
-    // }
-    // coursesRequirements = {}
     for (const course in groupedCourses) {
-      // console.log("course", course)
-      // console.log("groupedCourses[course]", groupedCourses[course])
       const courseDiv = document.createElement("div")
-      courseDiv.className = "course"
       const courseH2 = document.createElement("h2")
       const name = document.createTextNode(course)
       courseH2.appendChild(name)
       courseDiv.appendChild(courseH2)
       const reqDiv = document.createElement("div")
-      reqDiv.className = "reserves-required"
       const reqH3 = document.createElement("h3")
       const reqText = document.createTextNode("Required for Student Purchase")
       reqH3.appendChild(reqText)
       reqDiv.appendChild(reqH3)
       const optDiv = document.createElement("div")
-      optDiv.className = "reserves-optional"
       const optH3 = document.createElement("h3")
       const optText = document.createTextNode("Not Required for Student Purchase")
       optH3.appendChild(optText)
       optDiv.appendChild(optH3)
-      // currentCourse = {
-      //   "Required for Student Purchase": [],
-      //   "Not Required for Student Purchase": []
-      // }
+      var titles = [];
       groupedCourses[course].forEach(element => {
+        if (titles.includes(element.Title)) {
+          // skip duplicates
+          return;
+        }
+        else {
+          titles.push(element.Title);
+        }
         if (element.ItemInfo3 == "Required for Student Purchase") {
-          // currentCourse["Required for Student Purchase"].push(element)
-          const itemDiv = document.createElement("div")
-          itemDiv.className = "reserves-required-item"
-          const itemH4 = document.createElement("h4")
-          const title = document.createTextNode(element["Title"])
-          itemH4.appendChild(title)
-          itemDiv.appendChild(itemH4)
+          itemDiv = createItemDiv(element)
+          itemDiv.className = "cl-cr-req"
           reqDiv.appendChild(itemDiv)
         }
         else if (element.ItemInfo3 == "Not Required for Student Purchase") {
-          // currentCourse["Not Required for Student Purchase"].push(element)
-          const itemDiv = document.createElement("div")
-          itemDiv.className = "reserves-optional-item"
-          const itemH4 = document.createElement("h4")
-          const title = document.createTextNode(element["Title"])
-          itemH4.appendChild(title)
-          itemDiv.appendChild(itemH4)
+          itemDiv = createItemDiv(element)
+          itemDiv.className = "cl-cr-opt"
           optDiv.appendChild(itemDiv)
         }
-      // console.log("currentCourse", currentCourse)
-      // coursesRequirements[course] = currentCourse
       });
       // if req or opt have items
-      if (reqDiv.querySelectorAll(".reserves-required-item").length > 0) {
+      if (reqDiv.querySelectorAll(".cl-cr-req").length > 0) {
         courseDiv.appendChild(reqDiv)
       }
-      if (optDiv.querySelectorAll(".reserves-optional-item").length > 0) {
+      if (optDiv.querySelectorAll(".cl-cr-opt").length > 0) {
         courseDiv.appendChild(optDiv)
       }
       courseReservesDiv.appendChild(courseDiv)
     };
-    // console.log("coursesRequirements", coursesRequirements);
   }
-  // function groupBy(objectArray, property) {
-  //   return objectArray.reduce(function (acc, obj) {
-  //     let key = obj[property]
-  //     if (!acc[key]) {
-  //       acc[key] = []
-  //     }
-  //     acc[key].push(obj)
-  //     return acc
-  //   }, {})
-  // }
   function groupBy2(objectArray, property1, property2) {
     return objectArray.reduce(function (acc, obj) {
       let key = obj[property1].trim() + ": " + obj[property2].trim()
@@ -141,5 +106,49 @@
       acc[key].push(obj)
       return acc
     }, {})
+  }
+  function createItemDiv(element) {
+    const itemDiv = document.createElement("div")
+    const itemH4 = document.createElement("h4")
+    const title = document.createTextNode(element["Title"])
+    itemH4.appendChild(title)
+    itemDiv.appendChild(itemH4)
+    if (element.ItemFormat == "BookChapter") {
+      const selectedChaptersDiv = document.createElement("div")
+      const selectedChapters = document.createTextNode("(Selected Chapters)")
+      selectedChaptersDiv.appendChild(selectedChapters)
+      itemDiv.appendChild(selectedChaptersDiv)
+    }
+    if (element.Author) {
+      const authorDiv = document.createElement("div")
+      const author = document.createTextNode(`Author: ${element.Author}`)
+      authorDiv.appendChild(author)
+      itemDiv.appendChild(authorDiv)
+    }
+    if (element.Publisher) {
+      const publisherDiv = document.createElement("div")
+      const publisher = document.createTextNode(`Publisher: ${element.Publisher}`)
+      publisherDiv.appendChild(publisher)
+      itemDiv.appendChild(publisherDiv)
+    }
+    if (element.Edition) {
+      const editionDiv = document.createElement("div")
+      const edition = document.createTextNode(`Edition: ${element.Edition}`)
+      editionDiv.appendChild(edition)
+      itemDiv.appendChild(editionDiv)
+    }
+    if (element.PubDate) {
+      const yearDiv = document.createElement("div")
+      const year = document.createTextNode(`Year: ${element.PubDate}`)
+      yearDiv.appendChild(year)
+      itemDiv.appendChild(yearDiv)
+    }
+    if (element.ISXN) {
+      const isxnDiv = document.createElement("div")
+      const isxn = document.createTextNode(`ISXN: ${element.ISXN}`)
+      isxnDiv.appendChild(isxn)
+      itemDiv.appendChild(isxnDiv)
+    }
+    return itemDiv
   }
 </script>
