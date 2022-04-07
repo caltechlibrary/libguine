@@ -38,6 +38,9 @@ while IFS= read -r line || [ -n "$line" ]; do
         *"<!--#include"*)
             printf '%s\n' "$include" >> "$asset"
         ;;
+        *"<!--end-->"*)
+            printf '%s\n' "<!--end ${1} ${2}-->" >> "$asset"
+        ;;
         *)
             printf '%s\n' "$line" >> "$asset"
         ;;
