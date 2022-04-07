@@ -1,22 +1,218 @@
 <!--
-  Last Modified: 2022-03-11 15:45:52
+  Last Modified: 2022-04-07 08:49:49
 
   INSTRUCTIONS: Copy and paste the contents of this file into the “Public Pages
   Header/Footer Customization” section of the “Custom JS/CSS Code” tab when
-  editing the `Caltech Archives` group.
+  editing the appropriate group.
 -->
-
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+<script>
+  $(document).ready(function() {
+    $('.dropdown').on({
+      "click": function(e) { // handles click event
+        // if dropdown or any child of dropdown is clicked
+        if ($(e.target).is('.dropdown-menu') || $(e.target).parents().is('.dropdown-menu')) {
+          this.closable = false // do not close it
+          return;
+        } else {
+          this.closable = true; // else close it
+        }
+      },
+      "hide.bs.dropdown": function() {
+        return this.closable;
+      } // save state
+    });
+  }); // ready
+</script>
 <style>
   html,
   body,
   .dropdown-menu,
   .dropdown-header,
+  .tooltip,
   #s-lib-bc .breadcrumb {
     font-size: unset;
   }
 </style>
 <style>
-  .dropdown:hover .dropdown-menu {
-    display: block;
+  .clg-tooltip {
+    background: none;
+    border: none;
+    text-transform: lowercase;
+  }
+
+  /* move back into the padding of the menu link element */
+  a + .clg-tooltip {
+    margin-inline-start: -15px;
+  }
+
+  /* override the link padding with specificity */
+  .megamenu > li > ul > li > .clg-tooltip {
+    padding: 0;
+  }
+
+  /* some popover text needs to overflow the edge of the menu area */
+  .dropdown-menu {
+    overflow: visible;
+  }
+
+  /* on mobile, some popover text needs to overflow the edge of the menu area */
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+</style>
+<style>
+  .menu-large {
+    position: static !important;
+  }
+
+  .megamenu {
+    padding: 20px 0px;
+    width: 100%;
+  }
+
+  .megamenu > li > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .megamenu > li > ul > li {
+    list-style: none;
+  }
+
+  .megamenu > li > ul > li > a {
+    display: inline-block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333333;
+    white-space: normal;
+  }
+
+  .megamenu > li ul > li > a:hover,
+  .megamenu > li ul > li > a:focus {
+    text-decoration: none;
+    color: #262626;
+    background-color: #f5f5f5;
+  }
+
+  .megamenu.dropdown-header {
+    color: #428bca;
+  }
+
+  @media (max-width: 768px) {
+    .megamenu {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .megamenu > li {
+      margin-bottom: 30px;
+    }
+
+    .megamenu > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .megamenu.dropdown-header {
+      padding: 3px 15px !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+</style>
+<style>
+  .s-lc-w-today {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .s-lc-w-today td,
+  .s-lc-w-today th {
+    padding: 8px 5px;
+  }
+
+  .s-lc-w-head {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .s-lc-w-head-pre {
+    display: none;
+  }
+
+  .s-lc-w-loading {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .s-lc-w-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .s-lc-w-btn {
+    line-height: 1.5;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 3px 6px;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #ccc;
+    color: #333;
+    background-color: #fff;
+  }
+
+  .s-lc-w-btn:active,
+  .s-lc-w-btn:hover {
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+  }
+
+  .s-lc-w-previous {
+    float: left;
+  }
+
+  .s-lc-w-next {
+    float: right;
+  }
+
+  .s-lc-w-department .s-lc-w-name {
+    padding-left: 20px;
+  }
+
+  .s-lc-w-times {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .s-lc-w-today-view-link {
+    text-decoration: none;
+  }
+
+  .s-lc-w-today-view-all {
+    padding: 8px 5px;
   }
 </style>
