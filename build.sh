@@ -29,6 +29,9 @@ fi
 
 while IFS= read -r line || [ -n "$line" ]; do
     case "$line" in
+        "<!--begin"*)
+            printf '%s\n' "<!--begin ${1} ${2}" >> "$asset"
+        ;;
         *"Last Modified:"*)
             printf '%s\n' "  Last Modified: $(date '+%Y-%m-%d %H:%M:%S')" >> "$asset"
         ;;
