@@ -15,13 +15,36 @@ if [ "$1" = "header" ]; then
         exit 1
     fi
     if [ -f "header-top-${2}.html" ]; then
-        include=$(cat "header-top-${2}.html")
-        asset="assets/header-${2}.html"
-        printf "" > "$asset"
+        include1=$(cat "header-top-${2}.html")
     else
         echo "snippet header-top-${2}.html does not exist"
         exit 1
     fi
+    asset="assets/header-${2}.html"
+    printf "" > "$asset"
+elif [ "$1" = "footer" ]; then
+    # shellcheck disable=SC1111
+    instructions=$(printf "  Copy and paste the contents of this file into the “Group Footer” section of\n  the “Header / Footer / Tabs / Boxes” tab when editing the appropriate group.")
+    if [ -f "footer-wrapper.html" ]; then
+        wrapper="footer-wrapper.html"
+    else
+        echo "file footer-wrapper.html does not exist"
+        exit 1
+    fi
+    if [ -f "footer-contact-${2}.html" ]; then
+        include1=$(cat "footer-contact-${2}.html")
+    else
+        echo "snippet footer-contact-${2}.html does not exist"
+        exit 1
+    fi
+    if [ -f "footer-org-${2}.html" ]; then
+        include2=$(cat "footer-org-${2}.html")
+    else
+        echo "snippet footer-org-${2}.html does not exist"
+        exit 1
+    fi
+    asset="assets/footer-${2}.html"
+    printf "" > "$asset"
 else
     echo "no support for TYPE ${1}"
     exit 1
@@ -38,8 +61,11 @@ while IFS= read -r line || [ -n "$line" ]; do
         *"Run '/bin/sh build.sh"*)
             printf "%s\n" "$instructions" >> "$asset"
         ;;
-        *"<!--#include"*)
-            printf '%s\n' "$include" >> "$asset"
+        *"<!--#include1"*)
+            printf '%s\n' "$include1" >> "$asset"
+        ;;
+        *"<!--#include2"*)
+            printf '%s\n' "$include2" >> "$asset"
         ;;
         *"<!--end-->"*)
             printf '%s\n' "<!--end ${1} ${2}-->" >> "$asset"

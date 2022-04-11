@@ -12,13 +12,33 @@ A POSIX-compliant shell script that will generate assets for the sections of the
 
 Header content containing the main navigation menu for LibGuides CMS. This file includes a placeholder for inserting additional code like a logo and top links using the `build.sh` script.
 
+## [header-top-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-top-archives.html)
+
+Snippet containing a Bootstrap `row` with a logo and links for the *Caltech Archives* group in LibGuides CMS. It can be combined with `header-wrapper.html` by running `/bin/sh build.sh header archives` and will result in a file called `assets/header-archives.html` that can be pasted into the “Group Header” section of the “Header / Footer / Tabs / Boxes” tab of the *Caltech Archives* group edit page.
+
 ## [header-top-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-top-dev.html)
 
 Snippet containing a Bootstrap `row` with a logo and links for the *dev* group in LibGuides CMS. It can be combined with `header-wrapper.html` by running `/bin/sh build.sh header dev` and will result in a file called `assets/header-dev.html` that can be pasted into into the “Group Header” section of the “Header / Footer / Tabs / Boxes” tab of the *dev* group edit page.
 
-## [footer-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-dev.html)
+## [footer-wrapper.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-wrapper.html)
 
-Footer content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Group Footer” section of the “Header / Footer / Tabs / Boxes” tab of the `dev` group edit page.
+Footer content for LibGuides CMS. Used with the `build.sh` script.
+
+## [footer-contact-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-contact-archives.html)
+
+Snippet containing variable information for the *Contact Us* section of the Archives footer.
+
+## [footer-org-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-org-archives.html)
+
+Snippet containing variable information for the *Our Organization* section of the Archives footer.
+
+## [footer-contact-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-contact-dev.html)
+
+Snippet containing variable information for the *Contact Us* section of the DEV footer.
+
+## [footer-org-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-org-dev.html)
+
+Snippet containing variable information for the *Our Organization* section of the DEV footer.
 
 ## [template-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/template-dev.html)
 
@@ -27,14 +47,6 @@ Template content for the `dev` group in LibGuides CMS. Paste the contents of thi
 ## [head-dev.html](https://github.com/caltechlibrary/libguides-cms/blob/main/head-dev.html)
 
 HTML `<HEAD>` content for the `dev` group in LibGuides CMS. Paste the contents of this file into the “Public Pages Header/Footer Customization” section of the “Custom JS/CSS Code” tab when editing the `dev` group.
-
-## [header-top-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-top-archives.html)
-
-Snippet containing a Bootstrap `row` with a logo and links for the *Caltech Archives* group in LibGuides CMS. It can be combined with `header-wrapper.html` by running `/bin/sh build.sh header archives` and will result in a file called `assets/header-archives.html` that can be pasted into the “Group Header” section of the “Header / Footer / Tabs / Boxes” tab of the *Caltech Archives* group edit page.
-
-## [footer-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/footer-archives.html)
-
-Footer content for the `Caltech Archives` group in LibGuides CMS. Paste the contents of this file into the “Group Footer” section of the “Header / Footer / Tabs / Boxes” tab of the `Caltech Archives` group edit page.
 
 ## [template-archives.html](https://github.com/caltechlibrary/libguides-cms/blob/main/template-archives.html)
 
