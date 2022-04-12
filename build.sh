@@ -5,7 +5,18 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-if [ "$1" = "header" ]; then
+if [ "$1" = "head" ]; then
+    # shellcheck disable=SC1111
+    instructions=$(printf "  Copy and paste the contents of this file into the “Public Pages Header/Footer\n  Customization” section of the “Custom JS/CSS Code” tab when editing the\n  appropriate group.")
+    if [ -f "head-wrapper.html" ]; then
+        wrapper="head-wrapper.html"
+    else
+        echo "file head-wrapper.html does not exist"
+        exit 1
+    fi
+    asset="assets/head-${2}.html"
+    printf "" > "$asset"
+elif [ "$1" = "header" ]; then
     # shellcheck disable=SC1111
     instructions=$(printf "  Copy and paste the contents of this file into the “Group Header” section of\n  the “Header / Footer / Tabs / Boxes” tab when editing the appropriate group.")
     if [ -f "header-wrapper.html" ]; then
