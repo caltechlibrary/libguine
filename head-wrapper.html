@@ -1,5 +1,5 @@
 <!--begin
-  Last Modified: 2022-04-13 10:36:51
+  Last Modified: 2022-04-14 16:09:55
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head GROUP' to create a complete asset.
@@ -105,20 +105,30 @@
   }
 </style>
 <style>/* megamenu customizations */
+  /* some tooltip text needs to overflow the edge of the menu area */
+  .megamenu {
+    overflow: visible;
+  }
+
   .clg-tooltip {
     background: none;
     border: none;
+    cursor: help;
     text-transform: lowercase;
   }
 
-  /* move back into the padding of the menu link element */
+  /* move left into the padding of the menu link element */
   a + .clg-tooltip {
     margin-inline-start: -15px;
   }
 
-  /* override the link padding with specificity */
+  /* override the tooltip with specificity */
   .megamenu > li > ul > li > .clg-tooltip {
     padding: 0;
+  }
+  .megamenu > li > ul > li > .clg-tooltip:focus,
+  .megamenu > li > ul > li > .clg-tooltip:hover {
+    background: none;
   }
 </style>
 <style>/* breadcrumbs */
