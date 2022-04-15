@@ -1,5 +1,5 @@
 <!--begin
-  Last Modified: 2022-04-14 16:09:55
+  Last Modified: 2022-04-15 09:38:02
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head GROUP' to create a complete asset.
@@ -79,10 +79,6 @@
     background-color: #f5f5f5;
   }
 
-  .megamenu.dropdown-header {
-    color: #428bca;
-  }
-
   @media (max-width: 768px) {
     .megamenu {
       margin-left: 0;
@@ -129,6 +125,11 @@
   .megamenu > li > ul > li > .clg-tooltip:focus,
   .megamenu > li > ul > li > .clg-tooltip:hover {
     background: none;
+  }
+
+  /* override .dropdown-header from lg-public.min.css with more specificity */
+  .megamenu .dropdown-header {
+    padding: 0;
   }
 </style>
 <style>/* breadcrumbs */
