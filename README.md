@@ -8,6 +8,27 @@ While we cannot directly use the code from this repository with LibGuides, we st
 
 A POSIX-compliant shell script that will generate assets for the sections of the site that differ slightly between groups. For example, the main navigation menu will be the same between the Library and Archives groups, but the logos will be different. This build script joins a file like `header-top-archives.html` which contains the Archives logo with the `header-wrapper.html` file that contains the `<header>` HTML element within which is a placeholder for the logo snippet and the full shared navigation menu.
 
+The script is run like
+
+```sh
+/bin/sh build.sh header archives
+```
+
+with the `archives` argument being optional. If the group argument is not specified the script will supply default arguments for building both the archives and the dev group assets.
+
+The optional arguments are useful with the [Run on Save extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave). A configuration example for building assets automatically upon save is like:
+
+```json
+"emeraldwalk.runonsave": {
+    "commands": [
+        {
+            "match": "/libguides-cms/(?<!(assets).*)[\\d\\w-]+\\.html",
+            "cmd": "/bin/sh ${workspaceFolder}/build.sh $(echo ${fileBasenameNoExt} | cut -d- -f1)"
+        }
+    ]
+}
+```
+
 ## [header-wrapper.html](https://github.com/caltechlibrary/libguides-cms/blob/main/header-wrapper.html)
 
 Header content containing the main navigation menu for LibGuides CMS. This file includes a placeholder for inserting additional code like a logo and top links using the `build.sh` script.
