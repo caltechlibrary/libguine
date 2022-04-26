@@ -17,6 +17,7 @@
       </div>
       <div class="col-md-8">
         <div class="pull-right">
+          <!--#include file='header-search.html' -->
           <ul class="list-inline">
             <li>My Library Accounts</li>
             <li>Chat With Us</li>

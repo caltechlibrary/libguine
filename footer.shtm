@@ -113,13 +113,13 @@
     <div class="col-md-3 col-md-offset-1">
       <section>
         <h2>Contact Us</h2>
-        <!--#include1 file='footer-contact-GROUP.html' -->
+        <!--#include file='footer-contact--GROUP.html' -->
       </section>
     </div>
     <div class="col-md-3">
       <section>
         <h2>Our Organization</h2>
-        <!--#include2 file='footer-org-GROUP.html' -->
+        <!--#include file='footer-org--GROUP.html' -->
       </section>
     </div>
   </div>

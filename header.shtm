@@ -5,7 +5,7 @@
   Run '/bin/sh build.sh header GROUP' to create a complete header asset.
 -->
 <header>
-  <!--#include1 file='header-type-GROUP.html' -->
+  <!--#include file='header-top--GROUP.shtm' -->
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
