@@ -275,16 +275,16 @@
                     <a href="/publish/open-access">Open Access Policy & Waiver</a>
                   </li>
                   <li>
-                    <a href="/publish/isbn-and-doi">ISBNs & DOIs</a>
+                    <a href="/publish/funder-compliance">Funder Compliance</a>
                   </li>
                   <li>
-                    <a href="/publish/funder-compliance">Funder Compliance</a>
+                    <a href="/publish/data">Research Data Management</a>
                   </li>
                   <li>
                     <a href="/publish/publishing-program">Publish With the Library</a>
                   </li>
                   <li>
-                    <a href="/publish/data">Research Data Management</a>
+                    <a href="/publish/isbn-and-doi">ISBNs & DOIs</a>
                   </li>
                   <li>
                     <a href="/publish/orcid">ORCID</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About ORCID" title="Register for a persistent digital identifier to distinguish yourself from other authors and researchers."><i class="glyphicon glyphicon-info-sign"></i></a>
