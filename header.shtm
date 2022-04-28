@@ -242,7 +242,7 @@
                     <a href="/borrow/privileges">What Can I Borrow?</a>
                   </li>
                   <li>
-                    <a href="/borrow/account">My Library Account</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About My Library Account" title="Log in to LibSearch to review your checkouts and renew items."><i class="glyphicon glyphicon-info-sign"></i></a>
+                    <a href="/borrow/accounts">My Library Accounts</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About My Library Account" title="Log in to LibSearch to review your checkouts and renew items."><i class="glyphicon glyphicon-info-sign"></i></a>
                   </li>
                   <li>
                     <a href="/borrow/delivery">Campus Delivery</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Campus Delivery" title="Graduate students and faculty can have library materials delivered to their Caltech workspaces."><i class="glyphicon glyphicon-info-sign"></i></a>

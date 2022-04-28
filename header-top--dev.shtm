@@ -19,7 +19,7 @@
         <div class="pull-right">
           <!--#include file='header-search.html' -->
           <ul class="list-inline">
-            <li>My Library Accounts</li>
+            <li><a href="/borrow/accounts">My Library Accounts</a></li>
             <li>Chat With Us</li>
           </ul>
         </div>
