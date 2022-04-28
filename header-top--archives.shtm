@@ -18,7 +18,14 @@
       </div>
       <div class="col-md-8">
         <div class="pull-right">
-          <!--#include file='header-search.html' -->
+          <ul class="list-inline">
+            <!-- TODO codify inline styling -->
+            <!-- NOTE 34px is the height of the search form -->
+            <li style="line-height:34px;vertical-align:top">
+              <!--#include file='header-search.html' -->
+            </li>
+            <li style="line-height:34px;vertical-align:top"><a href="/">Caltech Library</a></li>
+          </ul>
         </div>
       </div>
     </div>

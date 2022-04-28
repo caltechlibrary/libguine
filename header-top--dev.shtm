@@ -17,10 +17,14 @@
       </div>
       <div class="col-md-8">
         <div class="pull-right">
-          <!--#include file='header-search.html' -->
           <ul class="list-inline">
-            <li><a href="/borrow/accounts">My Library Accounts</a></li>
-            <li>Chat With Us</li>
+            <!-- TODO codify inline styling -->
+            <!-- NOTE 34px is the height of the search form -->
+            <li style="line-height:34px;vertical-align:top">
+              <!--#include file='header-search.html' -->
+            </li>
+            <li style="line-height:34px;vertical-align:top"><a href="/borrow/accounts">My Library Accounts</a></li>
+            <li style="line-height:34px;vertical-align:top">Chat With Us</li>
           </ul>
         </div>
       </div>
