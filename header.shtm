@@ -266,7 +266,7 @@
           </ul>
         </li>
         <li class="dropdown menu-large">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Publish, Write, & Learn</a>
+          <a href="#" class="dropdown-toggle publish-write-learn" data-toggle="dropdown" aria-haspopup="true">Publish, Write, & Learn</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-sm-4">
               <ul>
