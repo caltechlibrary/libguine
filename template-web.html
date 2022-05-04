@@ -1,5 +1,5 @@
 <!--template-web
-  Last Modified: 2022-05-04 11:54:44
+  Last Modified: 2022-05-04 12:00:02
 
   INSTRUCTIONS: Select this template within the Customize Guide Templates
   section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
@@ -20,20 +20,10 @@
     </div>
     <div id="s-lg-guide-header-info">
       <h1 id="s-lg-guide-name">{{page_title}}</h1>
-      <div id="s-lg-guide-desc-container">
-        <span id="s-lg-guide-description">{{guide_description}}</span>
-      </div>
     </div>
   </div>
   <!-- END: Guide Info Header -->
-  <div id="s-lg-tabs-container" class="container s-lib-side-borders pad-top-med">
-    <div id="s-lg-guide-tabs" class="tabs" role="navigation" aria-label="Guide Pages">
-      <ul class="nav nav-tabs split-button-nav">
-        {{guide_nav}}
-      </ul>
-    </div>
-  </div>
-  <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
   <!-- BEGIN: Guide Content -->
   <div id="s-lg-guide-main" class="container s-lib-main s-lib-side-borders" tabindex="-1">
     {{empty_page_sub_page_list}}
@@ -53,7 +43,9 @@
 
       <div id="s-lg-col-2" class="col-md-6">
         <div class="s-lg-col-boxes">
-          {{content_col_2}}
+          <div id="s-lg-guide-desc-container">
+            <span id="s-lg-guide-description">{{guide_description}}</span>
+          </div>
         </div>
       </div>
 
@@ -99,6 +91,8 @@
 
       <div id="s-lg-col-8" class="col-md-4">
         <div class="s-lg-col-boxes">
+          <div id="caltechsystem-guide-title">{{guide_title}}</div>
+          <ul id="caltechsystem-guide-nav">{{guide_nav}}</ul>
           {{content_col_8}}
         </div>
       </div>
