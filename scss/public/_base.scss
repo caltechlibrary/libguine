@@ -1,0 +1,49 @@
+#logo {
+  .identity {
+    fill: #ff6c0c;
+  }
+}
+
+// IN DEVELOPMENT
+.branding {
+  margin-block-end: 30px;
+}
+.branding .dropdown-toggle {
+  border: none;
+  height: 32px;
+}
+.branding .glyphicon-search {
+  height: 32px;
+  top: unset;
+  line-height: unset;
+}
+.branding .dropdown-menu {
+  border: none;
+  padding: 0;
+}
+.branding .form-control {
+  width: 16em;
+}
+@media (max-width: 768px) {
+  .branding > div:last-of-type {
+    white-space: nowrap;
+    padding-inline-end: 0;
+    margin-inline-start: auto;
+  }
+}
+@media (min-width: 400px) and (max-width: 529px) {
+  .branding > div:first-of-type {
+    width: 50vw;
+  }
+}
+@media (min-width: 530px) and (max-width: 768px) {
+  .branding {
+    display: flex;
+  }
+  .branding > div:first-of-type {
+    width: 40vw;
+  }
+}
+.navbar {
+  margin-bottom: 0;
+}

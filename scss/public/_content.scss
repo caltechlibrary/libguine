@@ -1,0 +1,22 @@
+#c3-content-nav {
+  background-color: #333;
+  a {
+    color: #fff;
+  }
+  .active {
+    background-color: #666;
+  }
+}
+.c3-pwl {
+  &.c3-content {
+    .c3-page-title {
+      color: #644b78;
+    }
+  }
+  #c3-content-nav {
+    background-color: #644b78;
+    .active {
+      background-color: #73a950;
+    }
+  }
+}

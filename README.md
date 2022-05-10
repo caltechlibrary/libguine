@@ -24,6 +24,10 @@ The optional arguments are useful with the [Run on Save extension for Visual Stu
         {
             "match": "/libguides-cms/(?<!(assets).*)[\\d\\w-]+\\.s?html?",
             "cmd": "/bin/sh ${workspaceFolder}/build.sh $(echo ${fileBasenameNoExt} | cut -d- -f1)"
+        },
+        {
+            "match": "/libguides-cms/.*.scss",
+            "cmd": "/bin/sh ${workspaceFolder}/build.sh scss"
         }
     ]
 }

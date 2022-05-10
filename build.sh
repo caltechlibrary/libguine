@@ -32,6 +32,19 @@ analyze_include() {
             # append the contents of the included file to the asset file
             printf '%s\n' "$(cat "${included_file}")" >> "$3"
         ;;
+        *".scss' -->"*)
+            if ! command -v sass; then
+                echo "sass command is required"
+                exit 1
+            fi
+            # get the filename from the include statement
+            included_file=$(echo "$1" | cut -d\' -f2)
+            # compile SCSS into CSS
+            css_file="assets/_$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
+            sass "$included_file" "$css_file"
+            # append the contents of the included file to the asset file
+            printf '%s\n' "$(cat "${css_file}")" >> "$3"
+        ;;
     esac
 }
 process_included_file_lines() {
@@ -86,8 +99,8 @@ for group; do
 
     while IFS= read -r line || [ -n "$line" ]; do
         case "$line" in
-            "<!--begin"*)
-                printf '%s\n' "<!--begin ${wrapper_type} ${group}" >> "$asset"
+            "<!--BEGIN"*)
+                printf '%s\n' "<!--BEGIN: ${asset}" >> "$asset"
             ;;
             *"Last Modified:"*)
                 printf '%s\n' "  Last Modified: $(date '+%Y-%m-%d %H:%M:%S')" >> "$asset"
@@ -98,8 +111,8 @@ for group; do
             *"<!--#include"*)
                 analyze_include "$line" "$group" "$asset"
             ;;
-            *"<!--end"*)
-                printf '%s\n' "<!--end ${wrapper_type} ${group}-->" >> "$asset"
+            *"<!--END"*)
+                printf '%s\n' "<!--END: ${asset}-->" >> "$asset"
             ;;
             *)
                 printf '%s\n' "$line" >> "$asset"
