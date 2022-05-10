@@ -1,4 +1,4 @@
-<!--begin
+<!--BEGIN: header.shtm
   Last Modified: 2022-04-22 11:07:08
 
   INSTRUCTIONS:
@@ -8,7 +8,7 @@
   <!--#include file='header-top--GROUP.shtm' -->
   <nav class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">Menu</button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">Menu <i class="glyphicon glyphicon-book"></i></button>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -47,53 +47,40 @@
                 </li>
               </ul>
             </li>
-            <li class="col-md-3">
+            <li class="col-md-6">
               <ul>
                 <li class="dropdown-header">
                   <a href="/about">Our Organization</a>
                 </li>
-                <li>
-                  <a href="/about/strategic-plan">Strategic Plan</a>
-                </li>
-                <li>
-                  <a href="/about/directory">Staff Directory</a>
-                </li>
-                <li>
-                  <a href="/about/policies">Policies & Guidelines</a>
-                </li>
-                <li>
-                  <a href="/about/accessibility">Accessibility</a>
-                </li>
-                <li>
-                  <a href="/about/donations">Giving & Donations</a>
-                </li>
-                <li>
-                  <a href="/about/jobs">Jobs & Opportunities</a>
-                </li>
-                <li>
-                  <a href="/about/contact-us">Contact Us</a>
-                </li>
-              </ul>
-            </li>
-            <li class="col-md-3">
-              <ul>
-                <li class="dropdown-header">
-                  <a href="/visitors">Visitor Information</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Visitor Information" title="Not a student or employee? Learn about what locations, services, and resources you can access."><i class="glyphicon glyphicon-info-sign"></i></a>
-                </li>
-                <li>
-                  <a href="/visitors/directions">Directions & Parking</a>
-                </li>
-                <li>
-                  <a href="/visitors#s-lg-content-66365754">Can I use online resources?</a>
-                </li>
-                <li>
-                  <a href="/visitors#s-lg-content-66365757">Can I borrow something?</a>
-                </li>
-                <li>
-                  <a href="/visitors#s-lg-content-66365760">Can I visit a library or archives location?</a>
-                </li>
-                <li>
-                  <a href="https://libanswers.caltech.edu/search/?t=0&adv=1&topics=User%20access%20%26amp%3B%20privileges">View All Visitor FAQs</a>
+                <li class="row">
+                  <ul class="col-md-6">
+                    <li>
+                      <a href="/about/directory">Staff Directory</a>
+                    </li>
+                    <li>
+                      <a href="/about/policies">Policies & Guidelines</a>
+                    </li>
+                    <li>
+                      <a href="/about/strategic-plan">Strategic Plan</a>
+                    </li>
+                    <li>
+                      <a href="/about/accessibility">Accessibility</a>
+                    </li>
+                  </ul>
+                  <ul class="col-md-6">
+                    <li>
+                      <a href="/about/visitors">Visitor Information</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Visitor Information" title="Not a student or employee? Learn about what locations, services, and resources you can access."><i class="glyphicon glyphicon-info-sign"></i></a>
+                    </li>
+                    <li>
+                      <a href="/about/donations">Giving & Donations</a>
+                    </li>
+                    <li>
+                      <a href="/about/jobs">Jobs & Opportunities</a>
+                    </li>
+                    <li>
+                      <a href="/about/contact-us">Contact Us</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
@@ -159,7 +146,7 @@
                   <a href="/search#s-lg-content-66366939">LibSearch</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About LibSearch" title="Search across most of the Library’s collections and discover items outside our collections."><i class="glyphicon glyphicon-info-sign"></i></a>
                 </li>
                 <li>
-                  <a href="/search#s-lg-content-66366954">PubFinder</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About PubFinder" title="Browse our journal and ebook collections and use filters such as peer reviewed, title, subject, and publication date."><i class="glyphicon glyphicon-info-sign"></i></a>
+                  <a href="/search#s-lg-content-66366954">Journals & Ebooks List</a>
                 </li>
                 <li>
                   <a href="/search#s-lg-content-66366988">Databases</a>
@@ -280,13 +267,13 @@
                   <a href="/publish/funder-compliance">Funder Compliance</a>
                 </li>
                 <li>
-                  <a href="/publish/data">Research Data Management</a>
+                  <a href="/publish/data">Research Data Support</a>
                 </li>
                 <li>
                   <a href="/publish/publishing-program">Publish With the Library</a>
                 </li>
                 <li>
-                  <a href="/publish/isbn-and-doi">ISBNs & DOIs</a>
+                  <a href="/publish/isbn-and-doi">Request ISBNs & DOIs</a>
                 </li>
                 <li>
                   <a href="/publish/orcid">ORCID</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About ORCID" title="Register for a persistent digital identifier to distinguish yourself from other authors and researchers."><i class="glyphicon glyphicon-info-sign"></i></a>
@@ -305,7 +292,7 @@
                   <a href="#">Zotero & Citation Guide</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="glyphicon glyphicon-info-sign"></i></a>
                 </li>
                 <li>
-                  <a href="/write/copyright">Copyright</a>
+                  <a href="/write/copyright-support">Copyright Support</a>
                 </li>
                 <li>
                   <a href="/write/patents">Patents & Trademarks</a>
@@ -324,7 +311,7 @@
                   <a href="/instruction2">Learn & Consult</a>
                 </li>
                 <li>
-                  <a href="/instruction2/contact">Contact Your Subject Librarian</a>
+                  <a href="/instruction2/contact">Contact Your Subject Specialist</a>
                 </li>
                 <li>
                   <a href="/instruction2/about">Library Instruction & Workshops</a>
@@ -522,4 +509,4 @@
     </div>
   </nav>
 </header>
-<!--end-->
+<!--END: header.shtm-->

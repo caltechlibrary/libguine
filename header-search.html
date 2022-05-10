@@ -1,12 +1,21 @@
               <!-- header-search -->
-              <form role="search" action="https://libguides.caltech.edu/srch.php" method="GET">
-                <div class="input-group">
-                  <input type="search" name="q" class="form-control" placeholder="Search Our Website" aria-label="Search Our Website">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit" aria-label="Search">
-                      <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                    </button>
-                  </span>
-                </div>
-              </form>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Toggle Search">
+                  <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <form role="search" action="https://libguides.caltech.edu/srch.php" method="GET">
+                      <div class="input-group">
+                        <input type="search" name="q" class="form-control" placeholder="Search Our Website" aria-label="Search Our Website">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="submit">
+                            Search
+                          </button>
+                        </span>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </div>
               <!-- /header-search -->

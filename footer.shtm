@@ -1,10 +1,15 @@
-<!--begin
+<!--BEGIN: footer.shtm
   Last Modified: 2022-04-15 09:40:52
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
 -->
 <footer class="container-fluid" style="background-color:#f5f5f5">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="c3-breadcrumbs"></div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-5">
       <section>
@@ -129,8 +134,9 @@
         <li><a href="/privacy">Privacy</a></li>
         <li><a href="/about/copyright">Copyright</a></li>
         <li><a href="/accessibility">Accessibility</a></li>
+        <li id="c3-footer-login"></li>
       </ul>
     </div>
   </div>
 </footer>
-<!--end-->
+<!--END: footer.shtm-->
