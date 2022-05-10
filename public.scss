@@ -74,39 +74,6 @@ body {
   }
 }
 
-/*** navbar/megamenu customizations ***/
-/** override lg-public.min.css **/
-.navbar-default {
-  background: none;
-  border: none;
-}
-.navbar-default .navbar-nav > li > a {
-  color: unset;
-}
-/* remove border/outline because background-color illustrates state change */
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
-  border: none;
-  outline: none;
-}
-/* set non-specific defaults */
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
-  background-color: #333;
-  color: #fff;
-}
-.navbar-default .navbar-nav > li > .publish-write-learn:focus,
-.navbar-default .navbar-nav > li > .publish-write-learn:hover,
-.navbar-default .navbar-nav > .open > .publish-write-learn,
-.navbar-default .navbar-nav > .open > .publish-write-learn:focus,
-.navbar-default .navbar-nav > .open > .publish-write-learn:hover {
-  background-color: #644b78;
-  color: #fff;
-}
-
 /* some tooltip text needs to overflow the edge of the menu area */
 .megamenu {
   overflow: visible;

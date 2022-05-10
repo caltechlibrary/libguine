@@ -1,0 +1,25 @@
+@mixin navbar-toggle-bg($bg-color) {
+  &:focus,
+  &:hover,
+  .open > &,
+  .open > &:focus,
+  .open > &:hover {
+    background-color: $bg-color;
+  }
+}
+
+#abt {
+  @include navbar-toggle-bg(#062e47);
+}
+#sbr {
+  @include navbar-toggle-bg(#005851);
+}
+#pwl {
+  @include navbar-toggle-bg(#644b78);
+}
+#ptt {
+  @include navbar-toggle-bg(#a02276);
+}
+#asc {
+  @include navbar-toggle-bg(#c75000);
+}
