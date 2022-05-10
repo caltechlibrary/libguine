@@ -92,6 +92,17 @@ for group; do
         fi
         asset="assets/footer--${group}.html"
         printf "" > "$asset"
+    elif [ "$wrapper_type" = "head" ] || [ "$wrapper_type" = "scss" ]; then
+        # shellcheck disable=SC1111
+        instructions=$(printf "  Copy and paste the contents of this file into the “Public Pages Header/Footer\n  Customization” section of the “Custom JS/CSS Code” tab when editing the\n  appropriate group.")
+        if [ -f "head.shtm" ]; then
+            wrapper_file="head.shtm"
+        else
+            echo "file head.shtm does not exist"
+            exit 1
+        fi
+        asset="assets/head--${group}.html"
+        printf "" > "$asset"
     else
         echo "no support for TYPE ${wrapper_type}"
         exit 1
