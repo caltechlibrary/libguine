@@ -7,6 +7,7 @@
 // IN DEVELOPMENT
 .branding {
   margin-block-end: 30px;
+  padding-block-start: 15px;
 }
 .branding .dropdown-toggle {
   border: none;
@@ -15,14 +16,13 @@
 .branding .glyphicon-search {
   height: 32px;
   top: unset;
-  line-height: unset;
 }
 .branding .dropdown-menu {
   border: none;
   padding: 0;
 }
 .branding .form-control {
-  width: 16em;
+  width: 14em;
 }
 @media (max-width: 768px) {
   .branding > div:last-of-type {
