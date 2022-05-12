@@ -21,14 +21,17 @@
   border: none;
   padding: 0;
 }
-.branding .form-control {
-  width: 14em;
+.branding .input-group {
+  width: calc(100vw - 30px); // TODO $grid-gutter-width
 }
 @media (max-width: 768px) {
   .branding > div:last-of-type {
-    white-space: nowrap;
-    padding-inline-end: 0;
+    // pull element right
     margin-inline-start: auto;
+  }
+  .branding .list-inline > li:last-of-type {
+    // flush with other right-side elements
+    padding-inline-end: 0;
   }
 }
 @media (min-width: 400px) and (max-width: 529px) {
@@ -36,11 +39,19 @@
     width: 50vw;
   }
 }
-@media (min-width: 530px) and (max-width: 768px) {
+@media (min-width: 530px) and (max-width: 767px) {
   .branding {
     display: flex;
   }
   .branding > div:first-of-type {
     width: 40vw;
+  }
+  .branding .input-group {
+    width: calc(50vw - 15px); // TODO $grid-gutter-width
+  }
+}
+@media (min-width: 768px) { // TODO $screen-sm-min
+  .branding .input-group {
+    width: calc(33vw);
   }
 }
