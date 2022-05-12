@@ -1,0 +1,147 @@
+.tlw #s-lg-guide-main {
+  padding: 0
+}
+
+.tlw #cl-bg {
+  background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover
+}
+
+.tlw #cl-bg a,
+.tlw #cl-bg header,
+.tlw #cl-bg .s-lib-box {
+  background: transparent;
+  color: #fff
+}
+
+.tlw #cl-bg #logo,
+.tlw #cl-bg #logo .identity {
+  fill: #fff
+}
+
+.tlw .s-lc-w-btn,
+.tlw .s-lc-w-lid-3301,
+.tlw .s-lc-w-lid-3109,
+.tlw .s-lc-w-lid-3110,
+.tlw .s-lc-w-lid-18158 {
+  display: none
+}
+
+.ebsco-single-search *,
+.ebsco-single-search *::before,
+.ebsco-single-search *::after {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0
+}
+
+.ebsco-single-search input,
+.ebsco-single-search button,
+.ebsco-single-search select {
+  margin: 0
+}
+
+.eb-search-container {
+  display: flex;
+  flex-flow: row wrap;
+  line-height: 1.5
+}
+
+.eb-search-container > * {
+  flex: 1 100%
+}
+
+.eb-search__box > * {
+  flex: 1 100%;
+  line-height: normal
+}
+
+.eb-search__box {
+  border-radius: .25em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eb-search__input-bquery {
+  background: #fff;
+  border: 1px solid #999;
+  border-bottom-color: transparent;
+  border-radius: .25em .25em 0 0;
+  padding: .75em
+}
+
+.eb-search__input-bquery:focus {
+  color: #333
+}
+
+.eb-search__submit-button {
+  -webkit-appearance: button;
+  background: #999;
+  border: 1px solid #999;
+  border-radius: 0 0 .25em .25em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .20);
+  color: #fff;
+  cursor: pointer;
+  overflow: visible;
+  padding: .5em 1.25em;
+  text-align: center;
+  white-space: nowrap
+}
+
+.eb-search__submit-text {
+  display: inline-flex;
+  overflow: hidden
+}
+
+.eb-filter-container {
+  padding-bottom: 0
+}
+
+.eb-search__label {
+  align-items: center;
+  display: inline-flex;
+  white-space: nowrap;
+  width: 100%
+}
+
+.eb-search__span {
+  padding: 0 .5em
+}
+
+.eb-sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px)
+}
+
+@media only screen and (min-width: 768px) {
+  .eb-search__box {
+    flex-wrap: nowrap;
+    height: 2.8em;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .20)
+  }
+
+  .eb-search__input-bquery {
+    border-bottom-color: #999;
+    border-radius: .25em 0 0 .25em;
+    border-right-color: transparent;
+    width: 100%
+  }
+
+  .eb-search__submit-button {
+    border-radius: 0 .25em .25em 0;
+    box-shadow: none;
+    flex: 0 0 auto
+  }
+
+  .eb-filter-container {
+    flex: 1;
+    padding-left: 1em;
+    padding-bottom: .75em
+  }
+
+  .eb-search__label {
+    width: auto
+  }
+}
