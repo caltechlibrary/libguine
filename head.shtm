@@ -54,4 +54,27 @@
     }
   });
 </script>
+<script>// enable bootstrap tooltips
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+<script>// megamenu click handling
+  $(document).ready(function() {
+    $('.dropdown').on({
+      "click": function(e) { // handles click event
+        // if dropdown or any child of dropdown is clicked
+        if ($(e.target).is('.dropdown-menu') || $(e.target).parents().is('.dropdown-menu')) {
+          this.closable = false // do not close it
+          return;
+        } else {
+          this.closable = true; // else close it
+        }
+      },
+      "hide.bs.dropdown": function() {
+        return this.closable;
+      } // save state
+    });
+  }); // ready
+</script>
 <!--END: head.shtm-->
