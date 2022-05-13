@@ -1,4 +1,30 @@
-@mixin navbar-toggle-bg($bg-color) {
+@use "sass:color";
+
+.navbar-toggle {
+  float: none;
+  margin: 0 15px; // TODO $grid-gutter-width
+  .glyphicon {
+    padding-inline-end: 0.5em;
+  }
+}
+
+// center navbar
+@media (min-width: 992px) { // TODO $screen-md-min
+  .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: table;
+  }
+}
+// center max-width megamenu
+.megamenu {
+  max-width: 1200px; // TODO $screen-lg-min
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+@mixin navbar-focus-bg($bg-color) {
   &:focus,
   &:hover,
   .open > &,
@@ -7,19 +33,78 @@
     background-color: $bg-color;
   }
 }
-
 #abt {
-  @include navbar-toggle-bg(#062e47);
+  @include navbar-focus-bg(#062e47);
+  // & + .dropdown-menu {
+  //   background-color: mix(white, #062e47, 90%);
+  // }
 }
 #sbr {
-  @include navbar-toggle-bg(#005851);
+  @include navbar-focus-bg(#005851);
+  // & + .dropdown-menu {
+  //   background-color: mix(white, #005851, 90%);
+  // }
 }
 #pwl {
-  @include navbar-toggle-bg(#644b78);
+  @include navbar-focus-bg(#644b78);
+  // & + .dropdown-menu {
+  //   background-color: mix(white, #644b78, 90%);
+  // }
 }
 #ptt {
-  @include navbar-toggle-bg(#a02276);
+  @include navbar-focus-bg(#a02276);
+  // & + .dropdown-menu {
+  //   background-color: mix(white, #a02276, 90%);
+  // }
 }
 #asc {
-  @include navbar-toggle-bg(#c75000);
+  @include navbar-focus-bg(#c75000);
+  // & + .dropdown-menu {
+  //   background-color: mix(white, #c75000, 90%);
+  // }
+}
+
+// item spacing
+.navbar-nav .open .dropdown-menu .dropdown-header {
+  padding: 0;
+}
+.megamenu {
+  padding-block: 0; // reset (set on > li)
+  & > li {
+    padding-block-start: 15px; // TODO $grid-gutter-width
+    @media (min-width: 992px) { // TODO $screen-md-min
+      padding-block-end: 15px; // TODO $grid-gutter-width
+    }
+  }
+  .dropdown-header {
+    padding: 0;
+    font-size: large;
+    text-transform: none;
+    a {
+      &::before {
+        content: '\25BE';
+        margin-left: -1em;
+        margin-right: .33em;
+      }
+    }
+  }
+  li {
+    list-style: none;
+    & > a {
+      display: inline-block; // NOTE: affects block spacing
+      padding: 0.25rem 1.25rem;
+    }
+    & > ul:not([class*="col-"]) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+/* move left into the padding of the menu link element */
+a + .clg-tooltip {
+  margin-inline-start: -15px;
+}
+/* override the tooltip with specificity */
+.megamenu > li > ul > li > .clg-tooltip {
+  padding: 0;
 }

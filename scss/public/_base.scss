@@ -20,6 +20,7 @@
 .branding .dropdown-menu {
   border: none;
   padding: 0;
+  z-index: 1001;
 }
 .branding .input-group {
   width: calc(100vw - 30px); // TODO $grid-gutter-width

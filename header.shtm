@@ -8,7 +8,7 @@
   <!--#include file='header-top--GROUP.shtm' -->
   <nav class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">Menu <i class="glyphicon glyphicon-book"></i></button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="glyphicon glyphicon-book"></i>Menu</button>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -52,7 +52,7 @@
                 <li class="dropdown-header">
                   <a href="/about">Our Organization</a>
                 </li>
-                <li class="row">
+                <li class="row row-no-gutters">
                   <ul class="col-md-6">
                     <li>
                       <a href="/about/directory">Staff Directory</a>
@@ -137,7 +137,7 @@
         <li class="dropdown menu-large">
           <a href="#" id="sbr" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Search, Borrow, & Request</a>
           <ul class="dropdown-menu megamenu row">
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/search">Search & Browse</a>
@@ -163,7 +163,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/guides">Library Guides</a>
@@ -171,26 +171,28 @@
                 <li>
                   <a href="/guides#s-lg-box-wrapper-33676758">Division Resources</a>
                 </li>
-                <li>
-                  <ul class="row list-unstyled">
-                    <li class="col-xs-3 col-xs-offset-2">
+                <li class="row row-no-gutters">
+                  <ul class="col-xs-3 col-xs-offset-1">
+                    <li>
                       <a href="/guides/bbe">BBE</a>
                     </li>
-                    <li class="col-xs-3">
-                      <a href="/guides/cce">CCE</a>
-                    </li>
-                    <li class="col-xs-3">
-                      <a href="/guides/eas">EAS</a>
-                    </li>
-                  </ul>
-                  <ul class="row list-unstyled">
-                    <li class="col-xs-3 col-xs-offset-2">
+                    <li>
                       <a href="/guides/gps">GPS</a>
                     </li>
-                    <li class="col-xs-3">
+                  </ul>
+                  <ul class="col-xs-3">
+                    <li>
+                      <a href="/guides/cce">CCE</a>
+                    </li>
+                    <li>
                       <a href="/guides/hss">HSS</a>
                     </li>
-                    <li class="col-xs-3">
+                  </ul>
+                  <ul class="col-xs-3">
+                    <li>
+                      <a href="/guides/eas">EAS</a>
+                    </li>
+                    <li>
                       <a href="/guides/pma">PMA</a>
                     </li>
                   </ul>
@@ -203,7 +205,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/search/repositories">Repositories</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Repositories" title="Find Caltech-authored materials in our centralized storage locations, also known as repositories."><i class="glyphicon glyphicon-info-sign"></i></a>
@@ -222,7 +224,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/borrow">Borrow & Request</a>
@@ -255,7 +257,7 @@
         <li class="dropdown menu-large">
           <a href="#" id="pwl" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Publish, Write, & Learn</a>
           <ul class="dropdown-menu megamenu row">
-            <li class="col-sm-4">
+            <li class="col-md-4">
               <ul>
                 <li class="dropdown-header">
                   <a href="/publish">Publish</a>
@@ -280,7 +282,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-4">
+            <li class="col-md-4">
               <ul>
                 <li class="dropdown-header">
                   <a href="/write">Write & Cite</a>
@@ -305,7 +307,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-4">
+            <li class="col-md-4">
               <ul>
                 <li class="dropdown-header">
                   <a href="/instruction2">Learn & Consult</a>
@@ -329,7 +331,7 @@
         <li class="dropdown menu-large">
           <a href="#" id="ptt" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Printing, Tools, & TechHub</a>
           <ul class="dropdown-menu megamenu row">
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/tech">Use Library Tech</a>
@@ -348,7 +350,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/tech/tools">Online Tools</a>
@@ -370,7 +372,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/techhub">TechHub</a>
@@ -389,7 +391,7 @@
                 </li>
               </ul>
             </li>
-            <li class="col-sm-3">
+            <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
                   <a href="/tech/borrow">Borrow Tech</a>
