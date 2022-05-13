@@ -4,7 +4,8 @@
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
 -->
-<footer class="container-fluid" style="background-color:#f5f5f5">
+<div class="c3-footer-wrapper" style="background-color:#f5f5f5">
+<footer class="container">
   <div class="row">
     <div class="col-md-12">
       <div id="c3-breadcrumbs"></div>
@@ -139,4 +140,5 @@
     </div>
   </div>
 </footer>
+</div>
 <!--END: footer.shtm-->
