@@ -1,5 +1,5 @@
 <!--BEGIN: template-web.html
-  Last Modified: 2022-05-06 17:57:10
+  Last Modified: 2022-05-18 17:11:39
 
   INSTRUCTIONS: Select this template within the Customize Guide Templates
   section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
@@ -45,8 +45,8 @@
 
     <div class="c3-wrapper c3-page-title">
       <div class="container">
-        <div id="s-lg-row-1" class="row s-lg-row">
-          <div id="s-lg-col-1" class="col-md-12">
+        <div id="c3-page-title-row" class="row s-lg-row">
+          <div id="s-lg-col-99" class="col-md-12">
             <div class="s-lg-col-boxes">
               <h1 id="s-lg-guide-name">{{page_title}}</h1>
             </div>
@@ -55,65 +55,107 @@
       </div>
     </div>
 
-    <div class="container c3-landing-highlight c3-content-hide">
-      <div id="s-lg-row-2" class="row s-lg-row">
-        <div id="s-lg-col-2" class="col-md-6">
+    <div class="container c3-landing-hide">
+      <div id="c3-content-row" class="row s-lg-row">
+        <div id="s-lg-col-1" class="col-md-8">
           <div class="s-lg-col-boxes">
-            {{guide_description}}
+            {{content_col_1}}
           </div>
         </div>
-        <div id="s-lg-col-3" class="col-md-6">
+        <div id="s-lg-col-2" class="col-md-4">
           <div class="s-lg-col-boxes">
-            {{content_col_3}}
+            <div id="c3-content-nav">
+              <ul>
+                {{guide_nav}}
+              </ul>
+            </div>
+            {{content_col_2}}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="c3-wrapper c3-landing-cards c3-content-hide">
+    <div class="container c3-highlight c3-content-hide">
+      <div id="c3-highlight-row" class="row s-lg-row">
+        <div id="s-lg-col-21" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            <div class="c3-description">{{guide_description}}</div>
+          </div>
+        </div>
+        <div id="s-lg-col-22" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            {{content_col_22}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="c3-wrapper c3-cards c3-content-hide">
       <div class="container">
-        <div id="s-lg-row-3" class="row s-lg-row">
-          <div id="s-lg-col-4" class="col-md-4">
+        <div id="c3-cards-row-1" class="row s-lg-row">
+          <div id="s-lg-col-31" class="col-md-4">
             <div class="s-lg-col-boxes">
-              {{content_col_4}}
+              {{content_col_31}}
             </div>
           </div>
-          <div id="s-lg-col-5" class="col-md-4">
+          <div id="s-lg-col-32" class="col-md-4">
             <div class="s-lg-col-boxes">
-              {{content_col_5}}
+              {{content_col_32}}
             </div>
           </div>
-          <div id="s-lg-col-6" class="col-md-4">
+          <div id="s-lg-col-33" class="col-md-4">
             <div class="s-lg-col-boxes">
-              {{content_col_6}}
+              {{content_col_33}}
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container c3-landing-feeds c3-content-hide">
-      <div id="s-lg-row-4" class="row s-lg-row">
-        <div id="s-lg-col-7" class="col-md-4">
-          <div class="s-lg-col-boxes">
-            {{content_col_7}}
+    <div class="c3-wrapper c3-cards c3-content-hide">
+      <div class="container">
+        <div id="c3-cards-row-2" class="row s-lg-row">
+          <div id="s-lg-col-34" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_34}}
+            </div>
+          </div>
+          <div id="s-lg-col-35" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_35}}
+            </div>
+          </div>
+          <div id="s-lg-col-36" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_36}}
+            </div>
           </div>
         </div>
-        <div id="s-lg-col-8" class="col-md-4">
+      </div>
+    </div>
+
+    <div class="container c3-feeds c3-content-hide">
+      <div id="c3-feeds-row" class="row s-lg-row">
+        <div id="s-lg-col-37" class="col-md-4">
           <div class="s-lg-col-boxes">
-            {{content_col_8}}
+            {{content_col_37}}
           </div>
         </div>
-        <div id="s-lg-col-9" class="col-md-4">
+        <div id="s-lg-col-38" class="col-md-4">
           <div class="s-lg-col-boxes">
-            {{content_col_9}}
+            {{content_col_38}}
+          </div>
+        </div>
+        <div id="s-lg-col-39" class="col-md-4">
+          <div class="s-lg-col-boxes">
+            {{content_col_39}}
           </div>
         </div>
       </div>
     </div>
 
     <div class="container c3-landing-hide">
-      <div id="s-lg-row-5" class="row s-lg-row">
+      <div id="c3-content-row-x" class="row s-lg-row">
         <div id="s-lg-col-10" class="col-md-8">
           <div class="s-lg-col-boxes">
             {{content_col_10}}
@@ -121,11 +163,6 @@
         </div>
         <div id="s-lg-col-11" class="col-md-4">
           <div class="s-lg-col-boxes">
-            <div id="c3-content-nav">
-              <ul>
-                {{guide_nav}}
-              </ul>
-            </div>
             {{content_col_11}}
           </div>
         </div>
