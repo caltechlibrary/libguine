@@ -1,0 +1,25 @@
+.c3-cards {
+  // TODO requires only one box per column
+  // equal height boxes
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .s-lg-col-boxes {
+    height: 100%;
+    & > div {
+      height: 100%;
+    }
+  }
+  .s-lib-box-container {
+    height: 100%;
+  }
+  .s-lib-box {
+    height: calc(100% - 30px); // TODO $grid-gutter-width
+  }
+}
+.c3-cards {
+  figcaption {
+    padding-inline: 15px; // TODO $grid-gutter-width
+  }
+}

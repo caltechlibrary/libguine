@@ -6,8 +6,8 @@
 
 // IN DEVELOPMENT
 .branding {
-  margin-block-end: 30px;
-  padding-block-start: 15px;
+  margin-block-end: 30px; // TODO $grid-gutter-width
+  padding-block-start: 15px; // TODO $grid-gutter-width
 }
 .branding .dropdown-toggle {
   border: none;

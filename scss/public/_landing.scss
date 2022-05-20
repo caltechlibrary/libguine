@@ -1,25 +1,40 @@
 .c3-landing {
+  h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 15px 30px; // TODO $grid-gutter-width
+  }
+  .s-lib-box {
+    margin-block: 15px; // TODO $grid-gutter-width
+  }
   .c3-page-title {
     background-color: #333;
+    background-size: contain;
     color: #fff;
+    text-align: center;
   }
 }
-.c3-landing-cards {
+.c3-cards {
   background-color: #333;
-  .container {
-    margin-block-start: 15px; // TODO
-  }
 }
-.c3-pwl {
-  &.c3-landing {
-    .c3-page-title {
-      background-color: #644b78;
+@mixin section-landing($name, $bg-color) {
+  .c3-#{$name} {
+    &.c3-landing {
+      .c3-page-title {
+        background-color: $bg-color;
+        background-image: url(https://libapps.s3.amazonaws.com/customers/64/images/#{$name}.png);
+      }
+      h1 {
+        background-color: $bg-color;
+      }
+    }
+    .c3-cards {
+      background-color: $bg-color;
     }
   }
-  .c3-landing-cards {
-    background-color: #644b78;
-  }
 }
-.s-lib-box {
-  margin-block: 15px;
-}
+@include section-landing("abt", #062e47);
+@include section-landing("sbr", #005851);
+@include section-landing("pwl", #644b78);
+@include section-landing("ptt", #a02276);
+@include section-landing("asc", #c75000);

@@ -24,45 +24,25 @@
   right: 0;
 }
 
-@mixin navbar-focus-bg($bg-color) {
-  &:focus,
-  &:hover,
-  .open > &,
-  .open > &:focus,
-  .open > &:hover {
-    background-color: $bg-color;
+@mixin navbar-section($name, $bg-color) {
+  ##{$name} {
+    &:focus,
+    &:hover,
+    .open > &,
+    .open > &:focus,
+    .open > &:hover {
+      background-color: $bg-color;
+    }
+  // & + .dropdown-menu {
+  //   background-color: mix(white, $bg-color, 90%);
+  // }
   }
 }
-#abt {
-  @include navbar-focus-bg(#062e47);
-  // & + .dropdown-menu {
-  //   background-color: mix(white, #062e47, 90%);
-  // }
-}
-#sbr {
-  @include navbar-focus-bg(#005851);
-  // & + .dropdown-menu {
-  //   background-color: mix(white, #005851, 90%);
-  // }
-}
-#pwl {
-  @include navbar-focus-bg(#644b78);
-  // & + .dropdown-menu {
-  //   background-color: mix(white, #644b78, 90%);
-  // }
-}
-#ptt {
-  @include navbar-focus-bg(#a02276);
-  // & + .dropdown-menu {
-  //   background-color: mix(white, #a02276, 90%);
-  // }
-}
-#asc {
-  @include navbar-focus-bg(#c75000);
-  // & + .dropdown-menu {
-  //   background-color: mix(white, #c75000, 90%);
-  // }
-}
+@include navbar-section("abt", #062e47);
+@include navbar-section("sbr", #005851);
+@include navbar-section("pwl", #644b78);
+@include navbar-section("ptt", #a02276);
+@include navbar-section("asc", #c75000);
 
 // item spacing
 .navbar-nav .open .dropdown-menu .dropdown-header {
