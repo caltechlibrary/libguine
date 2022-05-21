@@ -1,22 +1,52 @@
-#c3-content-nav {
+#c3-sidenav {
   background-color: #333;
+  padding: 15px; // TODO $grid-gutter-width
   a {
     color: #fff;
+    line-height: 1;
+    padding-block: 0.5em;
   }
-  .active {
+  // javascript is helping to get the active classes situated
+  li.active > a {
     background-color: #666;
+    display: block;
+    margin-inline: -30px;
+    padding-inline: 30px;
   }
-}
-.c3-pwl {
-  &.c3-content {
-    .c3-page-title {
-      color: #644b78;
+  ul {
+    line-height: 2;
+    list-style: none;
+    margin: 0;
+  }
+  li > ul {
+    padding-inline-start: 30px; // TODO $grid-gutter-width
+    li.active > a {
+      margin-inline-start: -60px; // TODO $grid-gutter-width
+      padding-inline-start: 60px; // TODO $grid-gutter-width
     }
   }
-  #c3-content-nav {
-    background-color: #644b78;
-    .active {
-      background-color: #73a950;
+  // override white text in case javascript fails to run
+  .dropdown-menu a {
+    color: #333;
+  }
+}
+@mixin section-content($name, $primary-color, $secondary-color) {
+  .c3-#{$name} {
+    &.c3-content {
+      .c3-page-title {
+        color: $primary-color;
+      }
+    }
+    #c3-sidenav {
+      background-color: $primary-color;
+      li.active > a {
+        background-color: $secondary-color;
+      }
     }
   }
 }
+@include section-content("abt", #062e47, #1e988a);
+@include section-content("sbr", #005851, #987776);
+@include section-content("pwl", #644b78, #73a950);
+@include section-content("ptt", #a02276, #76777b);
+@include section-content("asc", #c75000, #849895);

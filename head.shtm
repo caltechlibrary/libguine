@@ -45,6 +45,15 @@
     }
     else if (public && content) {
       document.body.classList.add("c3-content");
+      // remove the 'active' class from a dropdown parent if a child is active
+      if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].getElementsByClassName("active")[1]) {
+        document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].classList.remove("active");
+      }
+      // expand nested lists by removing dropdown classes [see spread operator]
+      [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown")].forEach(e => e.classList.remove("dropdown", "clearfix"));
+      [...document.getElementById("c3-sidenav").getElementsByClassName("pull-left")].forEach(e => e.classList.remove("pull-left"));
+      [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
+      [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     }
   });
 </script>
