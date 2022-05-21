@@ -31,11 +31,11 @@
     // guide_description template keyword must be set to show on homepage only
     if (document.getElementById("s-lg-guide-description").innerHTML) {
       var landing = true;
-      [...getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
+      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     }
     else {
       var content = true;
-      [...getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
+      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
     }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
