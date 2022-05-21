@@ -23,7 +23,7 @@
       var public = true;
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
       const login_link = document.createElement("a");
-      login_link.setAttribute("href", document.querySelector("#s-lib-footer-login-link a").getAttribute("href"));
+      login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
       login_link.setAttribute("aria-label", "Staff Login");
       login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
       document.getElementById("c3-footer-login").appendChild(login_link);
@@ -31,17 +31,11 @@
     // guide_description template keyword must be set to show on homepage only
     if (document.getElementById("s-lg-guide-description").innerHTML) {
       var landing = true;
-      const elements = document.querySelectorAll(".c3-landing-hide");
-      for (const element of elements) {
-        element.classList.add("hidden");
-      }
+      [...getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     }
     else {
       var content = true;
-      const elements = document.querySelectorAll(".c3-content-hide");
-      for (const element of elements) {
-        element.classList.add("hidden");
-      }
+      [...getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
     }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
