@@ -31,6 +31,7 @@
     // guide_description template keyword must be set to show on homepage only
     if (document.getElementById("s-lg-guide-description").innerHTML) {
       var landing = true;
+      // see https://stackoverflow.com/a/54819633
       [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     }
     else {
@@ -49,7 +50,7 @@
       if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].getElementsByClassName("active")[1]) {
         document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].classList.remove("active");
       }
-      // expand nested lists by removing dropdown classes [see spread operator]
+      // expand nested lists by removing dropdown classes
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown")].forEach(e => e.classList.remove("dropdown", "clearfix"));
       [...document.getElementById("c3-sidenav").getElementsByClassName("pull-left")].forEach(e => e.classList.remove("pull-left"));
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));

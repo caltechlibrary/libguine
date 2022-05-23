@@ -4,7 +4,7 @@
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
 -->
-<div class="c3-footer-wrapper" style="background-color:#f5f5f5">
+<div class="c3-footer-wrapper">
 <footer class="container">
   <div class="row">
     <div class="col-md-12">
@@ -117,13 +117,13 @@
       </section>
     </div>
     <div class="col-md-3 col-md-offset-1">
-      <section>
+      <section class="contact">
         <h2>Contact Us</h2>
         <!--#include file='footer-contact--GROUP.html' -->
       </section>
     </div>
     <div class="col-md-3">
-      <section>
+      <section class="org">
         <h2>Our Organization</h2>
         <!--#include file='footer-org--GROUP.html' -->
       </section>

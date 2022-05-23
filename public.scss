@@ -9,8 +9,7 @@ body,
 .dropdown-menu,
 .dropdown-header,
 .tooltip,
-#s-lg-guide-header-info h1,
-#s-lib-bc .breadcrumb {
+#s-lg-guide-header-info h1 {
   font-size: revert;
 }
 body {
@@ -66,14 +65,6 @@ body {
 .megamenu > li > ul > li > .clg-tooltip:focus,
 .megamenu > li > ul > li > .clg-tooltip:hover {
   background: none;
-}
-
-/**
-* LibGuides Breadcrumbs
-*/
-#s-lib-bc-list.breadcrumb {
-  font-weight: normal;
-  margin: 0;
 }
 
 /*** hours widget ***/
