@@ -28,8 +28,7 @@
       login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
       document.getElementById("c3-footer-login").appendChild(login_link);
     }
-    // guide_description template keyword must be set to show on homepage only
-    if (document.getElementById("s-lg-guide-description").innerHTML) {
+    if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
       var landing = true;
       // see https://stackoverflow.com/a/54819633
       [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
