@@ -65,6 +65,23 @@
   background: #987776;
   border-color: #987776;
 }
+@media (min-width: 992px) {
+  #s-lg-box-28757351 {
+    margin-block-start: 80px;
+  }
+}
+
+// Connect Links
+#s-lg-box-28754106 {
+  font-size: large;
+  line-height: 2;
+  padding: 32px 30px;
+  @media (min-width: 768px) {
+    & {
+      padding: 48px 45px;
+    }
+  }
+}
 
 // LibCal Hours
 #s-lg-box-28754029 {
