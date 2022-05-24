@@ -60,9 +60,33 @@
     line-height: 2;
   }
   // hours
+  .s-lc-w-today {
+    &, * {
+      display: block;
+    }
+    tbody {
+      padding-block: 16px; // TODO $font-size-base
+    }
+  }
+  .s-lc-w-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  .s-lc-w-head-pre {
+    display: none;
+  }
   .s-lc-w-head {
     display: flex;
+    font-size: large;
+    font-weight: normal;
     justify-content: space-between;
+    text-align: unset;
   }
   .s-lc-w-btn {
     background: transparent;
@@ -97,6 +121,9 @@
   }
   .s-lc-w-time {
     text-align: right; // for when hours wrap
+  }
+  .s-lc-w-today-view-all {
+    display: none;
   }
   .hours footer {
     display: flex;

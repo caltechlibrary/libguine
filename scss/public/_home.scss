@@ -73,25 +73,40 @@
 #s-lg-box-wrapper-33811847 {
   background-color: #062e47;
   text-align: center;
-  .s-lc-w-head {
-    font-size: larger;
+}
+.hours-today {
+  &, * {
+    display: block;
   }
-  .s-lc-w-btn,
-  .s-lc-w-lid-3301,
-  .s-lc-w-lid-3109,
-  .s-lc-w-lid-3110,
-  .s-lc-w-lid-19162 {
-    display: none
+  tbody {
+    padding-block: 16px; // TODO $font-size-base
   }
-  .s-lc-w-name {
-    font-weight: 600;
-    line-height: 2;
+  .hours-library {
+    padding-block-end: 8px; // TODO $font-size-base
   }
-  .s-lc-w-time {
+  .hours-col-loc,
+  .hours-col-time {
+    display: block;
+  }
+  .hours-col-loc {
+    text-align: center;
+  }
+  .loc3301,
+  .loc3109,
+  .loc3110,
+  .loc19162 {
+    display: none;
+  }
+  .s-lc-timetxt {
     font-weight: 300;
   }
 }
 // View All Hours Link
-#s-lg-content-67017935 a {
-  color: #1e988a;
+#s-lg-content-67017935 {
+  a {
+    color: #1e988a;
+  }
+  p {
+    margin-block-end: 16px; // TODO $font-size-base
+  }
 }
