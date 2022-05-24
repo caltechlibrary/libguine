@@ -66,11 +66,32 @@
   border-color: #987776;
 }
 
-// LibCal Locations
-.tlw .s-lc-w-btn,
-.tlw .s-lc-w-lid-3301,
-.tlw .s-lc-w-lid-3109,
-.tlw .s-lc-w-lid-3110,
-.tlw .s-lc-w-lid-18158 {
-  display: none
+// LibCal Hours
+#s-lg-box-28754029 {
+  margin: 0;
+}
+#s-lg-box-wrapper-33811847 {
+  background-color: #062e47;
+  text-align: center;
+  .s-lc-w-head {
+    font-size: larger;
+  }
+  .s-lc-w-btn,
+  .s-lc-w-lid-3301,
+  .s-lc-w-lid-3109,
+  .s-lc-w-lid-3110,
+  .s-lc-w-lid-19162 {
+    display: none
+  }
+  .s-lc-w-name {
+    font-weight: 600;
+    line-height: 2;
+  }
+  .s-lc-w-time {
+    font-weight: 300;
+  }
+}
+// View All Hours Link
+#s-lg-content-67017935 a {
+  color: #1e988a;
 }

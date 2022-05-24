@@ -1,26 +1,3 @@
-#s-lib-bc-list.breadcrumb {
-  font-size: revert;
-  font-weight: normal;
-  margin-block: 15px; // TODO $grid-gutter-width
-  max-width: 80%; // keep within border-radius
-  & > .active {
-    color: #1e988a;
-  }
-  .c3-asc & > .active {
-    color: #c75000;
-  }
-}
-@media (min-width: 1280px) {
-  #s-lib-bc-list.breadcrumb {
-    max-width: 90%; // keep within border-radius
-  }
-}
-@media (min-width: 1600px) {
-  #s-lib-bc-list.breadcrumb {
-    max-width: 100%; // keep within border-radius
-  }
-}
-
 .c3-footer-wrapper {
   background-color: #062e47;
   border-radius: 0 30% 0 0 / 5%;
@@ -36,8 +13,7 @@
   }
 }
 
-
-footer {
+.c3-footer {
   color: white;
   a {
     color: white;
@@ -82,5 +58,71 @@ footer {
   }
   .org {
     line-height: 2;
+  }
+  // hours
+  .s-lc-w-head {
+    display: flex;
+    justify-content: space-between;
+  }
+  .s-lc-w-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .s-lc-w-next {
+    font-size: 0;
+    order: 1;
+    &::before {
+      content: "\e092";
+      font-family: "Glyphicons Halflings";
+      font-size: 24px;
+      line-height: 0.5;
+    }
+  }
+  .s-lc-w-previous {
+    font-size: 0;
+    &::before {
+      content: "\e091";
+      font-family: "Glyphicons Halflings";
+      font-size: 24px;
+      line-height: 0.5;
+    }
+  }
+  .s-lc-w-location {
+    border-block-end: dotted thin;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    padding-block: 8px;
+  }
+  .s-lc-w-time {
+    text-align: right; // for when hours wrap
+  }
+  .hours footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#s-lib-bc-list.breadcrumb {
+  font-size: revert;
+  font-weight: normal;
+  margin-block: 15px; // TODO $grid-gutter-width
+  max-width: 80%; // keep within border-radius
+  & > .active {
+    color: #1e988a;
+  }
+  .c3-asc & > .active {
+    color: #c75000;
+  }
+}
+@media (min-width: 1280px) {
+  #s-lib-bc-list.breadcrumb {
+    max-width: 90%; // keep within border-radius
+  }
+}
+@media (min-width: 1600px) {
+  #s-lib-bc-list.breadcrumb {
+    max-width: 100%; // keep within border-radius
   }
 }
