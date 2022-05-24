@@ -47,8 +47,10 @@
     else if (public && content) {
       document.body.classList.add("c3-content");
       // remove the 'active' class from a dropdown parent if a child is active
-      if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].getElementsByClassName("active")[1]) {
-        document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].classList.remove("active");
+      if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0]) {
+        if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].getElementsByClassName("active")[1]) {
+          document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0].classList.remove("active");
+        }
       }
       // expand nested lists by removing dropdown classes
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown")].forEach(e => e.classList.remove("dropdown", "clearfix"));
