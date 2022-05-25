@@ -21,6 +21,8 @@
     }
     else {
       var public = true;
+      // see https://stackoverflow.com/a/54819633
+      [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
       const login_link = document.createElement("a");
       login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
@@ -30,7 +32,6 @@
     }
     if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
       var landing = true;
-      // see https://stackoverflow.com/a/54819633
       [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     }
     else {
