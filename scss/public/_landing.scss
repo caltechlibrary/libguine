@@ -10,28 +10,81 @@
     color: #fff;
     text-align: center;
   }
+  .c3-quicklinks {
+    h2 {
+      border-block-end: medium solid;
+      margin-top: 0;
+      text-align: center;
+    }
+    ul {
+      font-size: large;
+      line-height: 2;
+      list-style: none;
+      padding-left: 0;
+      text-align: right;
+    }
+    a {
+      color: #333;
+      &:active,
+      &:focus {
+        outline: solid medium;
+        text-decoration: none;
+      }
+      &::after {
+        content: "\e092";
+        display: inline-block;
+        font-family: "Glyphicons Halflings";
+        padding-inline-start: 0.5em;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}
+#c3-introduction-row {
+  align-items: center;
+  display: flex;
+  gap: 90px; // TODO $grid-gutter-width
+  padding-block: 60px; // TODO $grid-gutter-width
+}
+.c3-description {
+  font-size: larger;
 }
 .c3-cards {
   background-color: #333;
 }
-@mixin section-landing($name, $bg-color) {
+@mixin section-landing($name, $primary-color, $secondary-color) {
   .c3-#{$name} {
     &.c3-landing {
       .c3-page-title {
-        background-color: $bg-color;
+        background-color: $primary-color;
         background-image: url(https://libapps.s3.amazonaws.com/customers/64/images/#{$name}.png);
       }
       h1 {
-        background-color: $bg-color;
+        background-color: $primary-color;
+      }
+    }
+    .c3-quicklinks {
+      h2 {
+        color: $primary-color;
+        border-block-end-color: $secondary-color;
+      }
+      a {
+        &:active,
+        &:focus {
+          outline-color: $secondary-color;
+        }
+          &::after {
+          color: $secondary-color;
+        }
       }
     }
     .c3-cards {
-      background-color: $bg-color;
+      background-color: $primary-color;
     }
   }
 }
-@include section-landing("abt", #062e47);
-@include section-landing("sbr", #005851);
-@include section-landing("pwl", #644b78);
-@include section-landing("ptt", #a02276);
-@include section-landing("asc", #c75000);
+@include section-landing("abt", #062e47, #1e988a);
+@include section-landing("sbr", #005851, #987776);
+@include section-landing("pwl", #644b78, #73a950);
+@include section-landing("ptt", #a02276, #76777b);
+@include section-landing("asc", #c75000, #849895);
