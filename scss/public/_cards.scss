@@ -1,6 +1,13 @@
 .c3-cards {
-  // TODO requires only one box per column
-  // equal height boxes
+  figcaption {
+    padding-inline: 15px; // TODO $grid-gutter-width
+  }
+  h3 {
+    a {
+      color: #333;
+    }
+  }
+  // equal height boxes require only one box per column
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -16,10 +23,5 @@
   }
   .s-lib-box {
     height: calc(100% - 30px); // TODO $grid-gutter-width
-  }
-}
-.c3-cards {
-  figcaption {
-    padding-inline: 15px; // TODO $grid-gutter-width
   }
 }

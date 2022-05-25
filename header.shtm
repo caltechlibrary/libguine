@@ -5,7 +5,7 @@
   Run '/bin/sh build.sh header GROUP' to create a complete header asset.
 -->
 <header>
-  <!--#include file='header-top--GROUP.shtm' -->
+  <!--#include file='header-branding--GROUP.shtm' -->
   <nav class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="glyphicon glyphicon-book"></i>Menu</button>
