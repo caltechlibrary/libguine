@@ -134,6 +134,9 @@ $home-secondary-color: #1e988a;
 
 // .t-l-home class set in template
 .t-l-home {
+  .c3-featured {
+    border: 15px solid $home-primary-color;
+  }
   .c3-quicklinks {
     a {
       &:active,
