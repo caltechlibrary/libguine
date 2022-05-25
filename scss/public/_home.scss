@@ -60,15 +60,16 @@
   border-color: #fff;
 }
 
-// EBSCO Search Box
-.tlw #s-lg-box-28753963 .btn-default {
-  background: #987776;
-  border-color: #987776;
-}
+// Search Heading
 @media (min-width: 992px) {
   #s-lg-box-28757351 {
     margin-block-start: 80px;
   }
+}
+// EBSCO Search Box
+.tlw #s-lg-box-28753963 .btn-default {
+  background: #987776;
+  border-color: #987776;
 }
 
 // Connect Links
