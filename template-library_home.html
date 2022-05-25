@@ -1,5 +1,5 @@
 <!--BEGIN: template-library_home.html
-  Last Modified: 2022-05-24 16:56:50
+  Last Modified: 2022-05-25 15:37:29
 
   INSTRUCTIONS: Select this template within the Customize Guide Templates
   section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
@@ -11,6 +11,8 @@
     • c3-*: [prefix] Caltech Web
     • cl-*: [prefix] Caltech Library
     • cl-bg: content is over the large image background
+
+  NOTE: the home page also gets the c3-landing class and all the landing styles
 -->
 
 <body class="s-lg-guide-body tlw t-l-home">
@@ -68,14 +70,23 @@
     </div>
 
     <div class="container">
-      <div id="s-lg-row-2" class="row s-lg-row">
+      <div id="c3-introduction-row" class="row s-lg-row">
         <div id="s-lg-col-3" class="col-md-6">
           <div class="s-lg-col-boxes">
             {{content_col_3}}
           </div>
         </div>
-        <div id="s-lg-col-4" class="col-md-6">
+        <div id="s-lg-col-4" class="col-md-6 c3-quicklinks">
           <div class="s-lg-col-boxes">
+            <div class="panel panel-primary c3-public-hide">
+              <div class="panel-heading">
+                <h3 class="panel-title">Quick Links</h3>
+              </div>
+              <div class="panel-body">
+                Add a box here in Column 4 with Rich Text / HTML content containing a bulleted list of Quick Links.
+              </div>
+            </div>
+            <h2>Quick Links</h2>
             {{content_col_4}}
           </div>
         </div>

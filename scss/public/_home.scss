@@ -1,3 +1,6 @@
+$home-primary-color: #062e47;
+$home-secondary-color: #1e988a;
+
 .tlw #s-lg-guide-main {
   padding: 0
 }
@@ -126,5 +129,24 @@
   }
   p {
     margin-block-end: 16px; // TODO $font-size-base
+  }
+}
+
+// .t-l-home class set in template
+.t-l-home {
+  .c3-quicklinks {
+    a {
+      &:active,
+      &:focus {
+        outline-color: $home-secondary-color;
+      }
+        &::after {
+        color: $home-secondary-color;
+      }
+    }
+    h2 {
+      color: $home-primary-color;
+      border-block-end-color: $home-secondary-color;
+    }
   }
 }
