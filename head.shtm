@@ -98,4 +98,9 @@
     });
   }); // ready
 </script>
+<script>// footer hours
+  $(function(){
+    var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
+  });
+</script>
 <!--END: head.shtm-->

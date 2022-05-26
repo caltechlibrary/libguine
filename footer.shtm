@@ -1,5 +1,5 @@
 <!--BEGIN: footer.shtm
-  Last Modified: 2022-04-15 09:40:52
+  Last Modified: 2022-05-26 14:55:16
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
@@ -17,11 +17,6 @@
         <header><h2>Hours</h2></header>
         <script src="https://libcal.caltech.edu/js/hours_today.js"></script>
         <div id="s_lc_tdh_3271_0"></div>
-        <script>
-          $(function(){
-            var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
-          });
-        </script>
         <footer>
           <div><a href="/locations">View All Hours</a></div>
           <div>
