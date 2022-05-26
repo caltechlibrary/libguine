@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 16:43:19
+  Last Modified: 2022-05-26 16:57:55
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -45,6 +45,10 @@
       [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
       // move the breadcrumbs where we want them
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
+      // hours widget script cannot be included in footer code nor on admin pages
+      $(function(){
+        var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
+      });
       // grab tokenized login link and rebuild elsewhere
       const login_link = document.createElement("a");
       login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
@@ -119,10 +123,5 @@
       } // save state
     });
   }); // ready
-</script>
-<script>// footer hours
-  $(function(){
-    var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
-  });
 </script>
 <!--END: head.shtm-->
