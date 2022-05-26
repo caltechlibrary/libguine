@@ -1,0 +1,30 @@
+%quicklinks {
+  h2 {
+    border-block-end: medium solid;
+    margin-block-start: 0;
+    padding-block-end: 0.5em;
+    text-align: center;
+  }
+  ul {
+    font-size: large;
+    line-height: 2;
+    list-style: none;
+    padding-left: 0;
+    text-align: right;
+  }
+  a {
+    color: #333;
+    line-height: 1;
+    &:active,
+    &:focus {
+      outline: solid medium;
+      text-decoration: none;
+    }
+    &::after {
+      content: "\e092";
+      display: inline-block;
+      font-family: "Glyphicons Halflings";
+      padding-inline-start: 0.5em;
+    }
+  }
+}

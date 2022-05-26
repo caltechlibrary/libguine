@@ -1,3 +1,5 @@
+@use "quicklinks";
+
 $home-primary-color: #062e47;
 $home-secondary-color: #1e988a;
 
@@ -138,6 +140,7 @@ $home-secondary-color: #1e988a;
     border: 15px solid $home-primary-color;
   }
   .c3-quicklinks {
+    @extend %quicklinks;
     a {
       &:active,
       &:focus {
