@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 08:47:30
+  Last Modified: 2022-05-26 13:03:09
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -25,13 +25,17 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-admin-command-bar")) {
       var admin = true;
+      // remove styles that conflict with LibGuides admin styles
       document.getElementById("c3-public-styles").remove();
     }
     else {
       var public = true;
-      // see https://stackoverflow.com/a/54819633
+      // hide admin-only elements from public-facing pages
+      // see https://stackoverflow.com/a/54819633 regarding fancy syntax
       [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
+      // move the breadcrumbs where we want them
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
+      // grab tokenized login link and rebuild elsewhere
       const login_link = document.createElement("a");
       login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
       login_link.setAttribute("aria-label", "Staff Login");
@@ -40,16 +44,19 @@
     }
     if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
       var landing = true;
+      // hide content-only elements from landing pages
       [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     }
     else {
       var content = true;
+      // hide landing-only elements from content pages
       [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
     }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
     else if (admin && content) {}
     else if (public && landing) {
+      // identify public-facing landing pages to CSS
       document.body.classList.add("c3-landing");
     }
     else if (public && content) {
