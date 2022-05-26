@@ -1,10 +1,18 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-05 20:33:05
+  Last Modified: 2022-05-26 08:47:30
 
   INSTRUCTIONS:
-  Copy and paste the contents of this file into the “Public Pages Header/Footer
-  Customization” section of the “Custom JS/CSS Code” tab when editing the
-  appropriate group.
+  Run '/bin/sh build.sh head system' to create the system head asset.
+
+  NOTE: The code in this file must be included on both guide edit pages and
+  public pages. It relies on Bootstrap CSS and JS code. LibGuides includes
+  Bootstrap in its own edit page stylesheets, so our customized Bootstrap code
+  must only be included on public pages to avoid breaking the edit interface.
+
+  Additionally, the following <link> and <script> tags must be added into the
+  Custom JS/CSS Code boxes for each Group:
+  <link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.css">
+  <script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js"></script>
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

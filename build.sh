@@ -5,7 +5,11 @@ if [ "$#" -eq 0 ]; then
     exit 1
 elif [ "$#" -eq 1 ]; then
     # set default arguments as groups to use when no GROUP is specified
-    set "$1" archives dev
+    if [ "$1" = "head" ] || [ "$1" = "scss" ]; then
+        set "$1" system
+    else
+        set "$1" archives library
+    fi
 fi
 
 # FUNCTIONS
@@ -41,7 +45,7 @@ analyze_include() {
             included_file=$(echo "$1" | cut -d\' -f2)
             # compile SCSS into CSS
             css_file="assets/_$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
-            sass "$included_file" "$css_file"
+            sass --no-charset --no-source-map "$included_file" "$css_file"
             # append the contents of the included file to the asset file
             printf '%s\n' "$(cat "${css_file}")" >> "$3"
         ;;
@@ -94,7 +98,7 @@ for group; do
         printf "" > "$asset"
     elif [ "$wrapper_type" = "head" ] || [ "$wrapper_type" = "scss" ]; then
         # shellcheck disable=SC1111
-        instructions=$(printf "  Copy and paste the contents of this file into the “Public Pages Header/Footer\n  Customization” section of the “Custom JS/CSS Code” tab when editing the\n  appropriate group.")
+        instructions=$(printf "  Copy the contents of this file and paste into the “JS/CSS Code” field on the\n  “Custom JS/CSS” tab under Admin ➜ Look & Feel.")
         if [ -f "head.shtm" ]; then
             wrapper_file="head.shtm"
         else
