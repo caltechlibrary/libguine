@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 13:03:09
+  Last Modified: 2022-05-26 16:43:19
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -25,11 +25,21 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-admin-command-bar")) {
       var admin = true;
-      // remove styles that conflict with LibGuides admin styles
+      // remove elements that conflict with the LibGuides admin UI
       document.getElementById("c3-public-styles").remove();
     }
     else {
       var public = true;
+      // add customized Bootstrap source to public-facing pages
+      // const bootstrap_css = document.createElement("link");
+      // bootstrap_css.id = "c3-bootstrap-css";
+      // bootstrap_css.rel = "stylesheet";
+      // bootstrap_css.href = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.css";
+      // document.head.appendChild(bootstrap_css);
+      // const bootstrap_js = document.createElement("script");
+      // bootstrap_js.id = "c3-bootstrap-js";
+      // bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
+      // document.head.appendChild(bootstrap_js);
       // hide admin-only elements from public-facing pages
       // see https://stackoverflow.com/a/54819633 regarding fancy syntax
       [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
@@ -52,6 +62,18 @@
       // hide landing-only elements from content pages
       [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
     }
+    // if (document.getElementById("tpl-web")) {
+    //   if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
+    //     var landing = true;
+    //     // hide content-only elements from landing pages
+    //     [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
+    //   }
+    //   else {
+    //     var content = true;
+    //     // hide landing-only elements from content pages
+    //     [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
+    //   }
+    // }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
     else if (admin && content) {}
