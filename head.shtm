@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 16:57:55
+  Last Modified: 2022-05-26 17:40:18
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -26,12 +26,14 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-admin-command-bar")) {
       var admin = true;
+      console.log("‼️ ADMIN");
       // remove elements that conflict with the LibGuides admin UI
       document.getElementById("c3-public-styles").remove();
       document.getElementById("c3-bootstrap-css").remove();
     }
     else {
       var public = true;
+      console.log("‼️ PUBLIC");
       // add customized Bootstrap source to public-facing pages
       const bootstrap_js = document.createElement("script");
       bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
@@ -52,28 +54,30 @@
       login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
       document.getElementById("c3-footer-login").appendChild(login_link);
     }
-    if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
-      var landing = true;
-      // hide content-only elements from landing pages
-      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
-    }
-    else {
-      var content = true;
-      // hide landing-only elements from content pages
-      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
-    }
-    // if (document.getElementById("tpl-web")) {
-    //   if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
-    //     var landing = true;
-    //     // hide content-only elements from landing pages
-    //     [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
-    //   }
-    //   else {
-    //     var content = true;
-    //     // hide landing-only elements from content pages
-    //     [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
-    //   }
+    // if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
+    //   var landing = true;
+    //   // hide content-only elements from landing pages
+    //   [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
     // }
+    // else {
+    //   var content = true;
+    //   // hide landing-only elements from content pages
+    //   [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
+    // }
+    if (document.getElementById("tpl-web")) {
+      if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
+        var content = true;
+        console.log("‼️ CONTENT");
+        // hide landing-only elements from content pages
+        [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
+      }
+      else {
+        var landing = true;
+        console.log("‼️ LANDING");
+        // hide content-only elements from landing pages
+        [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
+      }
+    }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
     else if (admin && content) {}
