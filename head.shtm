@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 17:40:18
+  Last Modified: 2022-05-26 20:05:33
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -54,16 +54,6 @@
       login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
       document.getElementById("c3-footer-login").appendChild(login_link);
     }
-    // if (document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
-    //   var landing = true;
-    //   // hide content-only elements from landing pages
-    //   [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
-    // }
-    // else {
-    //   var content = true;
-    //   // hide landing-only elements from content pages
-    //   [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
-    // }
     if (document.getElementById("tpl-web")) {
       if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
         var content = true;
@@ -78,9 +68,14 @@
         [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
       }
     }
+    if (document.getElementById("s-lg-blog-content")) {
+      var blog = true;
+      console.log("‼️ BLOG");
+    }
     // COMPLEX CONDITIONS
     if (admin && landing) {}
     else if (admin && content) {}
+    // else if (admin && blog) {} // custom <HEAD> code not added on blog admin
     else if (public && landing) {
       // identify public-facing landing pages to CSS
       document.body.classList.add("c3-landing");
@@ -99,6 +94,7 @@
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     }
+    else if (public && blog) {}
   });
 </script>
 <script>// enable bootstrap tooltips
