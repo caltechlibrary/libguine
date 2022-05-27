@@ -1,0 +1,122 @@
+<!--BEGIN: template-archives_home.html
+  Last Modified: 2022-05-27 06:26:09
+
+  INSTRUCTIONS: Select this template within the Customize Guide Templates
+  section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
+  into the Template Code box.
+
+  GLOSSARY:
+    • tpl-a-home: Template Archives Home
+    • c3-*: [prefix] Caltech Web
+    • ca-*: [prefix] Caltech Archives
+    • ca-bg: content is over the large image background
+-->
+
+<body id="tpl-a-home" class="s-lg-guide-body tpl-a-home">
+  {{skip_link}}
+  {{obsolete_browser_alert}}
+  {{ADMIN_CMD_BAR}}
+  <!-- BEGIN: Guide Info Header -->
+  <div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+      {{breadcrumbs}}
+    </nav>
+    <div class="pull-right">
+      <div id="s-lg-guide-header-search">
+        {{guide_search}} </div>
+      {{ADMIN_MINI_CMD_BAR}}
+    </div>
+    <div id="s-lg-guide-header-info">
+      <h1 id="s-lg-guide-name">{{guide_title}}: {{page_title}}</h1>
+      <div id="s-lg-guide-desc-container">
+        <span id="s-lg-guide-description">{{guide_description}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- END: Guide Info Header -->
+  <div id="s-lg-tabs-container" class="container s-lib-side-borders pad-top-med">
+    <div id="s-lg-guide-tabs" class="tabs" role="navigation" aria-label="Guide Pages">
+      <ul class="nav nav-tabs split-button-nav">
+        {{guide_nav}}
+      </ul>
+    </div>
+  </div>
+  <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+  <!-- BEGIN: Guide Content -->
+  <div id="s-lg-guide-main" class="s-lib-main s-lib-side-borders" tabindex="-1">
+    {{empty_page_sub_page_list}}
+
+    <div id="ca-bg" class="c3-wrapper ca-bg">
+      <!-- BEGIN: Page Header -->
+      {{public_header}}
+      <!-- END: Page Header -->
+      <div class="container">
+        <div id="tpl-a-home-row--1" class="row s-lg-row">
+          <div id="s-lg-col-1" class="col-md-5 col-md-offset-1 ca-description">
+            <div class="s-lg-col-boxes">
+              {{guide_description}}
+            </div>
+          </div>
+          <div id="s-lg-col-2" class="col-md-5 col-md-offset-1">
+            <div class="s-lg-col-boxes">
+              {{content_col_2}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="tpl-a-home-row-2" class="row s-lg-row">
+        <div id="s-lg-col-3" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            {{content_col_3}}
+          </div>
+        </div>
+        <div id="s-lg-col-4" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            {{content_col_4}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{page_prev_next_links}}
+  </div>
+  <!-- END: Guide Content -->
+  <!-- BEGIN: Page Footer -->
+  <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+      <ul id="s-lg-guide-header-attributes" class="">
+        <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+          {{last_updated_display}} </li>
+        <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+          {{guide_url_display}}
+        </li>
+        <li id="s-lg-guide-print-url">
+          {{print_url_display}}
+        </li>
+      </ul>
+      <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+        {{login_url_display}} </div>
+    </div>
+    <div class="pad-bottom-sm clearfix">
+      <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+        {{support_url_display}} </div>
+      <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+        {{guide_subjects}}
+      </div>
+      <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+        {{guide_tags}}
+      </div>
+    </div>
+  </div>
+  <!-- END: Page Footer -->
+  <div id="s-lib-alert" title="">
+    <div id="s-lib-alert-content"></div>
+  </div>
+  <!-- BEGIN: Custom Footer -->
+  {{public_footer}}
+  <!-- END: Custom Footer -->
+</body>
+<!--END: template-archives_home.html-->

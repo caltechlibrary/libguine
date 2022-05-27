@@ -1,5 +1,5 @@
 <!--BEGIN: header.shtm
-  Last Modified: 2022-04-22 11:07:08
+  Last Modified: 2022-05-27 09:02:37
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh header GROUP' to create a complete header asset.
@@ -415,10 +415,10 @@
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/archives">Home</a>
+                  <a href="/archives">Archives Home</a>
                 </li>
                 <li>
-                  <a href="/archives/news">News</a>
+                  <a href="/blog?tag_id=213658">News</a>
                 </li>
                 <li>
                   <a href="/archives/events">Events</a>
