@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.css">
   <script type="text/javascript" src="//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js"></script>
 -->
+<link id="c3-bootstrap-css" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,19 +28,14 @@
       var admin = true;
       // remove elements that conflict with the LibGuides admin UI
       document.getElementById("c3-public-styles").remove();
+      document.getElementById("c3-bootstrap-css").remove();
     }
     else {
       var public = true;
       // add customized Bootstrap source to public-facing pages
-      // const bootstrap_css = document.createElement("link");
-      // bootstrap_css.id = "c3-bootstrap-css";
-      // bootstrap_css.rel = "stylesheet";
-      // bootstrap_css.href = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.css";
-      // document.head.appendChild(bootstrap_css);
-      // const bootstrap_js = document.createElement("script");
-      // bootstrap_js.id = "c3-bootstrap-js";
-      // bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
-      // document.head.appendChild(bootstrap_js);
+      const bootstrap_js = document.createElement("script");
+      bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
+      document.head.appendChild(bootstrap_js);
       // hide admin-only elements from public-facing pages
       // see https://stackoverflow.com/a/54819633 regarding fancy syntax
       [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
