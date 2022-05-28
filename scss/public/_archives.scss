@@ -1,0 +1,39 @@
+@use "home";
+
+$archives-primary-color: #c75000;
+$archives-secondary-color: #849895;
+
+#home-bg.ca-bg {
+  background: url(https://libapps.s3.amazonaws.com/customers/64/images/shelves.jpg) no-repeat bottom left/cover;
+}
+
+#home-bg .ca-description {
+  color: #fff;
+  font-size: larger;
+  margin-block: 64px 96px;
+}
+
+// Archives Home Search
+@media (min-width: 992px) {
+  #s-lg-box-28835168 {
+    margin-block-start: 96px;
+    h2 {
+      margin-block-start: 0;
+    }
+  }
+  #s-lg-box-28834088 {
+    margin-block-end: 96px;
+  }
+}
+
+// blog widget
+#s-lg-widget-1653629897969 {
+  & > ul {
+    list-style: none;
+    padding: 0;
+    & > li {
+      border: 15px solid $archives-secondary-color;
+      margin-block: 30px;
+    }
+  }
+}

@@ -1,161 +1,61 @@
 @use "quicklinks";
 
-$home-primary-color: #062e47;
-$home-secondary-color: #1e988a;
-
-.tlw #s-lg-guide-main {
-  padding: 0
-}
-
-.tlw #cl-bg {
-  background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover
-}
-
-.tlw .cl-bg a,
-.tlw .cl-bg header,
-.tlw .navbar-default .navbar-nav > li > a,
-.tlw #cl-bg .btn-default,
-.tlw #cl-bg .s-lib-box {
+#home-bg a,
+#home-bg header,
+.tpl-home .navbar-default .navbar-nav > li > a,
+#home-bg .btn-default,
+#home-bg .s-lib-box {
   color: #fff
 }
 @media (min-width: 992px) { // TODO $screen-md-min
-  .tlw .cl-bg .megamenu a {
+  #home-bg .megamenu a {
     color: #333;
   }
 }
 
-.tlw #cl-bg header,
-.tlw #cl-bg .btn-default,
-.tlw #cl-bg .s-lib-box {
+#home-bg header,
+#home-bg .btn-default,
+#home-bg .s-lib-box {
   background: transparent;
 }
 
-.tlw #cl-bg .form-control {
+#home-bg .form-control {
   border-color: #fff;
 }
 
-.tlw #cl-bg #logo,
+#home-bg #logo,
 .tlw #cl-bg #logo .identity {
   fill: #fff
 }
 
-.tlw #cl-bg .branding .dropdown-toggle:focus,
-.tlw #cl-bg .branding .dropdown-toggle:hover {
+#home-bg .branding .dropdown-toggle:focus,
+#home-bg .branding .dropdown-toggle:hover {
   outline: 1px solid #fff;
 }
-.tlw #cl-bg .branding .dropdown-toggle:active {
+#home-bg .branding .dropdown-toggle:active {
   outline-style: dotted;
 }
 
-.tlw #cl-bg .branding .input-group-btn > .btn-default {
+#home-bg .branding .input-group-btn > .btn-default {
   background: #1e988a;
   border-color: #1e988a;
   border-radius: 0;
 }
 
-.tlw #cl-bg {
+#home-bg {
   .navbar-header,
   .navbar-collapse {
     background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
-.tlw #cl-bg .navbar-default .navbar-toggle:focus,
-.tlw #cl-bg .navbar-default .navbar-toggle:hover {
+#home-bg .navbar-default .navbar-toggle:focus,
+#home-bg .navbar-default .navbar-toggle:hover {
   border-color: #fff;
 }
 
-// Search Heading
-@media (min-width: 992px) {
-  #s-lg-box-28757351 {
-    margin-block-start: 80px;
-  }
-}
-// EBSCO Search Box
-.tlw #s-lg-box-28753963 .btn-default {
-  background: #987776;
-  border-color: #987776;
-}
-
-// Connect Links
-#s-lg-box-28754106 {
-  font-size: large;
-  line-height: 2;
-  padding: 32px 30px;
-  @media (min-width: 768px) {
-    & {
-      padding: 48px 45px;
-    }
-  }
-  ul {
-    margin: 0;
-  }
-}
-
-// LibCal Hours
-#s-lg-box-28754029 {
-  margin: 0;
-}
-#s-lg-box-wrapper-33811847 {
-  background-color: #062e47;
-  text-align: center;
-}
-.hours-today {
-  &, * {
-    display: block;
-  }
-  tbody {
-    padding-block: 16px; // TODO $font-size-base
-  }
-  .hours-library {
-    padding-block-end: 8px; // TODO $font-size-base
-  }
-  .hours-col-loc,
-  .hours-col-time {
-    display: block;
-  }
-  .hours-col-loc {
-    text-align: center;
-  }
-  .loc3301,
-  .loc3109,
-  .loc3110,
-  .loc19162 {
-    display: none;
-  }
-  .s-lc-timetxt {
-    font-weight: 300;
-  }
-}
-// View All Hours Link
-#s-lg-content-67017935 {
-  a {
-    color: #1e988a;
-  }
-  p {
-    margin-block-end: 16px; // TODO $font-size-base
-  }
-}
-
-// .t-l-home class set in template
-.t-l-home {
-  .c3-featured {
-    border: 15px solid $home-primary-color;
-  }
-  .c3-quicklinks {
-    @extend %quicklinks;
-    a {
-      &:active,
-      &:focus {
-        outline-color: $home-secondary-color;
-      }
-        &::after {
-        color: $home-secondary-color;
-      }
-    }
-    h2 {
-      color: $home-primary-color;
-      border-block-end-color: $home-secondary-color;
-    }
+#home-bg .collections-search {
+  .glyphicon-search {
+    vertical-align: sub;
   }
 }

@@ -1,5 +1,5 @@
 <!--BEGIN: template-archives_home.html
-  Last Modified: 2022-05-27 06:26:09
+  Last Modified: 2022-05-27 17:54:04
 
   INSTRUCTIONS: Select this template within the Customize Guide Templates
   section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
@@ -7,12 +7,14 @@
 
   GLOSSARY:
     • tpl-a-home: Template Archives Home
+    • tpl-home: Template * Home
+    • home-bg: home hero background area
+    • ca-bg: content is over the large image background
     • c3-*: [prefix] Caltech Web
     • ca-*: [prefix] Caltech Archives
-    • ca-bg: content is over the large image background
 -->
 
-<body id="tpl-a-home" class="s-lg-guide-body tpl-a-home">
+<body id="tpl-a-home" class="s-lg-guide-body tpl-home">
   {{skip_link}}
   {{obsolete_browser_alert}}
   {{ADMIN_CMD_BAR}}
@@ -46,18 +48,26 @@
   <div id="s-lg-guide-main" class="s-lib-main s-lib-side-borders" tabindex="-1">
     {{empty_page_sub_page_list}}
 
-    <div id="ca-bg" class="c3-wrapper ca-bg">
+    <div id="home-bg" class="c3-wrapper ca-bg">
       <!-- BEGIN: Page Header -->
       {{public_header}}
       <!-- END: Page Header -->
       <div class="container">
-        <div id="tpl-a-home-row--1" class="row s-lg-row">
+        <div id="tpl-a-home-row-1" class="row s-lg-row">
           <div id="s-lg-col-1" class="col-md-5 col-md-offset-1 ca-description">
             <div class="s-lg-col-boxes">
-              {{guide_description}}
+              <div class="panel panel-primary c3-public-hide">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Description</h3>
+                </div>
+                <div class="panel-body">
+                  Add a box here in Column 1 with Rich Text / HTML content containing a short description for the home page.
+                </div>
+              </div>
+              {{content_col_1}}
             </div>
           </div>
-          <div id="s-lg-col-2" class="col-md-5 col-md-offset-1">
+          <div id="s-lg-col-2" class="col-md-5 col-md-offset-1 collections-search">
             <div class="s-lg-col-boxes">
               {{content_col_2}}
             </div>
@@ -68,7 +78,7 @@
 
     <div class="container">
       <div id="tpl-a-home-row-2" class="row s-lg-row">
-        <div id="s-lg-col-3" class="col-md-6">
+        <div id="s-lg-col-3" class="col-md-6 ca-news">
           <div class="s-lg-col-boxes">
             {{content_col_3}}
           </div>
