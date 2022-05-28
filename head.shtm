@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-26 20:11:23
+  Last Modified: 2022-05-27 18:18:42
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -73,7 +73,58 @@
       console.log("‼️ BLOG");
     }
     // COMPLEX CONDITIONS
-    if (admin && landing) {}
+    if (_public && document.getElementById("tpl-a-home")) {
+      console.log("‼️ ARCHIVES HOME");
+      const widget = document.getElementById("s-lg-widget-1653629897969");
+      const config = { childList: true, subtree: true };
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          observer.disconnect();
+          console.log(mutation.type);
+          var items = widget.getElementsByTagName("ul")[0].getElementsByTagName("li");
+          for (var i = 0; i < items.length; i++) {
+            console.log(items[i]);
+            let title_link = items[i].getElementsByTagName("a")[0];
+            console.log(title_link);
+            let post_date = items[i].getElementsByTagName("span")[0];
+            console.log(post_date);
+            let first_img = items[i].getElementsByTagName("img")[0];
+            console.log(first_img);
+            // TODO account for no p
+            // TODO account for br inside p
+            let first_p = items[i].getElementsByTagName("p")[0];
+            console.log(first_p);
+            // create element
+            items[i].innerHTML = "";
+            if (first_img) {
+              first_img.removeAttribute("width");
+              first_img.removeAttribute("height");
+              first_img.removeAttribute("border");
+              console.log(first_img.naturalWidth);
+              console.log(first_img.naturalHeight);
+              if (first_img.naturalWidth <= first_img.naturalHeight) {
+                if ((i % 2) == 0) {
+                  first_img.classList.add("pull-right");
+                }
+                else {
+                  first_img.classList.add("pull-left");
+                }
+              }
+              else {
+                first_img.classList.add("center-block");
+              }
+              items[i].innerHTML += first_img.outerHTML;
+            }
+            title_link.removeAttribute("target");
+            items[i].innerHTML += `<h3>${title_link.outerHTML}</h3>`;
+            items[i].innerHTML += `<div class="text-secondary">${post_date.textContent}</div>`;
+            items[i].innerHTML += `<p>${first_p.textContent}</p>`;
+          }
+        });
+      });
+      observer.observe(widget, config);
+    }
+    else if (admin && landing) {}
     else if (admin && content) {}
     // else if (admin && blog) {} // custom <HEAD> code not added on blog admin
     else if (_public && landing) {
@@ -94,7 +145,10 @@
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     }
-    else if (_public && blog) {}
+    else if (_public && blog) {
+      document.getElementById("s-lib-scroll-top").remove();
+      // TODO on blog list this row-to-delete loads after this script
+      document.querySelector("#s-lg-blog-content > .row:last-of-type").remove();    }
   });
 </script>
 <script>// enable bootstrap tooltips
@@ -103,6 +157,7 @@
   })
 </script>
 <script>// megamenu click handling
+  // TODO only run this on public pages
   $(document).ready(function() {
     $('.dropdown').on({
       "click": function(e) { // handles click event
