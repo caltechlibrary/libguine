@@ -4,4 +4,10 @@
 }
 .s-lib-box {
   margin: unset;
+  @media (max-width: 991px) { // TODO $screen-md-max
+    background: transparent;
+  }
+}
+.s-lib-box-content {
+  background-color: #fff;
 }

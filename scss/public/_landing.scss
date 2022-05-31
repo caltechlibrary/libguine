@@ -12,18 +12,24 @@
     color: #fff;
     text-align: center;
   }
+  .c3-description {
+    font-size: larger;
+    margin-block: 30px;
+  }
   .c3-quicklinks {
     @extend %quicklinks;
+    margin-block: 30px;
   }
 }
 #c3-introduction-row {
-  align-items: center;
-  display: flex;
-  gap: 90px; // TODO $grid-gutter-width
-  padding-block: 60px; // TODO $grid-gutter-width
-}
-.c3-description {
-  font-size: larger;
+  @media (min-width: 992px) { // TODO $screen-md-min
+    padding-block: 60px; // TODO $grid-gutter-width
+  }
+  .col-md-6 {
+    @media (min-width: 992px) { // TODO $screen-md-min
+      padding-inline: 60px; // TODO $grid-gutter-width
+    }
+  }
 }
 @mixin section-landing($name, $primary-color, $secondary-color) {
   .c3-#{$name} {

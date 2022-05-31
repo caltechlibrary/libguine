@@ -1,6 +1,13 @@
 .c3-cards-wrapper {
   background-color: #333;
   padding-block-end: 90px;
+  padding-block-start: 15px;
+  @media (min-width: 768px) { // TODO $screen-sm-min
+    padding-block-start: 30px;
+  }
+  @media (min-width: 992px) { // TODO $screen-sm-min
+    padding-block-start: 0;
+  }
   figcaption {
     padding-inline: 15px; // TODO $grid-gutter-width
   }
@@ -13,7 +20,9 @@
   .row {
     display: flex;
     flex-wrap: wrap;
-    margin-block: 30px;
+    @media (min-width: 992px) { // TODO $screen-md-min
+      margin-block-start: 30px;
+    }
   }
   .s-lg-col-boxes {
     height: 100%;
@@ -26,5 +35,12 @@
   }
   .s-lib-box {
     height: 100%;
+    margin-block-end: 15px;
+    @media (min-width: 768px) { // TODO $screen-sm-min
+      margin-block-end: 30px;
+    }
+    @media (min-width: 992px) { // TODO $screen-md-min
+      margin-block-end: 0;
+    }
   }
 }
