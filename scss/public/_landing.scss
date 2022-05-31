@@ -25,14 +25,11 @@
 .c3-description {
   font-size: larger;
 }
-.c3-cards {
-  background-color: #333;
-}
 @mixin section-landing($name, $primary-color, $secondary-color) {
   .c3-#{$name} {
     &.c3-landing {
       .c3-page-title {
-        background: linear-gradient(to right, $secondary-color, $primary-color 20% 80%, $secondary-color);
+        background: linear-gradient(to right, $primary-color 80%, $secondary-color);
       }
     }
     .c3-quicklinks {
@@ -50,8 +47,8 @@
         border-block-end-color: $secondary-color;
       }
     }
-    .c3-cards {
-      background-color: $primary-color;
+    .c3-cards-wrapper {
+      background: linear-gradient($primary-color 80%, #fff);
       h3 {
         a {
           color: $primary-color;

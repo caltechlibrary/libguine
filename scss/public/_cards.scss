@@ -1,4 +1,6 @@
-.c3-cards {
+.c3-cards-wrapper {
+  background-color: #333;
+  padding-block-end: 90px;
   figcaption {
     padding-inline: 15px; // TODO $grid-gutter-width
   }
@@ -11,6 +13,7 @@
   .row {
     display: flex;
     flex-wrap: wrap;
+    margin-block: 30px;
   }
   .s-lg-col-boxes {
     height: 100%;
@@ -22,6 +25,6 @@
     height: 100%;
   }
   .s-lib-box {
-    height: calc(100% - 30px); // TODO $grid-gutter-width
+    height: 100%;
   }
 }
