@@ -32,11 +32,7 @@
   .c3-#{$name} {
     &.c3-landing {
       .c3-page-title {
-        background-color: $primary-color;
-        background-image: url(https://libapps.s3.amazonaws.com/customers/64/images/#{$name}.png);
-      }
-      h1 {
-        background-color: $primary-color;
+        background: linear-gradient(to right, $secondary-color, $primary-color 20% 80%, $secondary-color);
       }
     }
     .c3-quicklinks {
@@ -56,6 +52,11 @@
     }
     .c3-cards {
       background-color: $primary-color;
+      h3 {
+        a {
+          color: $primary-color;
+        }
+      }
     }
   }
 }
