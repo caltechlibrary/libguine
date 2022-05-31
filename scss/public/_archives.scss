@@ -6,11 +6,18 @@ $archives-secondary-color: #849895;
 #home-bg.ca-bg {
   background: url(https://libapps.s3.amazonaws.com/customers/64/images/shelves.jpg) no-repeat bottom left/cover;
 }
+#tpl-a-home #home-bg-2 {
+  background: linear-gradient(transparent, 60%, #fff), url(https://libapps.s3.amazonaws.com/customers/64/images/shelvesfaded.jpg) no-repeat top left/cover;
+}
 
 #home-bg .ca-description {
   color: #fff;
   font-size: larger;
   margin-block: 64px 96px;
+}
+
+#home-bg-2 .s-lib-box {
+  background: transparent;
 }
 
 // Archives Home Search
@@ -32,8 +39,37 @@ $archives-secondary-color: #849895;
     list-style: none;
     padding: 0;
     & > li {
+      background-color: #fff;
       border: 15px solid $archives-secondary-color;
       margin-block: 30px;
+      h3 {
+        margin: 0.5rem;
+      }
+      img {
+        margin: auto;
+        margin-block-end: 0.5rem;
+        min-width: 100%;
+        @media (min-width: 768px) {
+          &.center-block {
+            min-width: unset;
+          }
+          &.pull-left {
+            margin-inline-end: 0.5rem;
+            min-width: unset;
+          }
+          &.pull-right {
+            margin-inline-start: 0.5rem;
+            min-width: unset;
+          }
+        }
+      }
+      p {
+        margin: 0.5rem;
+      }
+      .text-secondary {
+        font-size: small;
+        margin: 0.5rem;
+      }
     }
   }
 }
