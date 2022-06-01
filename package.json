@@ -1,0 +1,25 @@
+{
+  "name": "libguine",
+  "version": "1.0.0",
+  "description": "Within LibGuides CMS we can customize things like HTML headers and templates, CSS files, and jQuery/JavaScript code at the system, group, and guide level.",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^101.0.0",
+    "selenium-side-runner": "^3.17.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caltechlibrary/libguine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caltechlibrary/libguine/issues"
+  },
+  "homepage": "https://github.com/caltechlibrary/libguine#readme"
+}

@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-05-31 10:55:40
+  Last Modified: 2022-06-01 02:07:47
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -19,9 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- TODO identify critical styles for internal stylesheet -->
-<style id="c3-public-styles">
-/* <!--#include file='public.scss' --> */
-</style>
+<link id="c3-public-styles" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/custom.css">
 <script>// context hacks
   document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-admin-command-bar")) {

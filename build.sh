@@ -44,10 +44,10 @@ analyze_include() {
             # get the filename from the include statement
             included_file=$(echo "$1" | cut -d\' -f2)
             # compile SCSS into CSS
-            css_file="assets/_$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
+            css_file="assets/$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
             sass --no-charset --no-source-map "$included_file" "$css_file"
             # append the contents of the included file to the asset file
-            printf '%s\n' "$(cat "${css_file}")" >> "$3"
+            # printf '%s\n' "$(cat "${css_file}")" >> "$3"
         ;;
     esac
 }
