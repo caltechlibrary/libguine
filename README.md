@@ -87,3 +87,7 @@ Custom Bootstrap 3 configuration file that can be uploaded on their [Customize a
 Some of the overrides for our site are much more easily accomplished if we change the default settings at the Bootstrap level.
 
 The `bootstrap.min.css` and `bootstrap.min.js` that are downloaded from the custom build site should be uploaded on the “Custom JS/CSS” tab of the Admin ➜ Look & Feel section of LibGuides in the “Upload Customization Files” section.
+
+## Selenium IDE
+
+It would be nice to run everything from the command line, but uploading files via `selenium-side-runner` does not seem to be well-supported yet.
