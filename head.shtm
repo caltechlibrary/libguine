@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-06-01 02:07:47
+  Last Modified: 2022-06-01 16:11:45
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -19,14 +19,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- TODO identify critical styles for internal stylesheet -->
-<link id="c3-public-styles" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/custom.css">
+<!--#include file='custom.scss' -->
 <script>// context hacks
   document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-admin-command-bar")) {
       var admin = true;
       console.log("‼️ ADMIN");
       // remove elements that conflict with the LibGuides admin UI
-      document.getElementById("c3-public-styles").remove();
+      document.getElementById("c3-custom-styles").remove();
       document.getElementById("c3-bootstrap-css").remove();
     }
     else {

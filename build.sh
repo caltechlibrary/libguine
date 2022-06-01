@@ -36,7 +36,10 @@ analyze_include() {
             # append the contents of the included file to the asset file
             printf '%s\n' "$(cat "${included_file}")" >> "$3"
         ;;
-        *".scss' -->"*)
+        *"critical.scss' -->"*)
+            # TODO
+        ;;
+        *"custom.scss' -->"*)
             if ! command -v sass; then
                 echo "sass command is required"
                 exit 1
@@ -46,8 +49,8 @@ analyze_include() {
             # compile SCSS into CSS
             css_file="assets/$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
             sass --no-charset --no-source-map "$included_file" "$css_file"
-            # append the contents of the included file to the asset file
-            # printf '%s\n' "$(cat "${css_file}")" >> "$3"
+            # include link to stylesheet in the asset file
+            printf '%s\n' '<link id="c3-custom-styles" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/custom.css">' >> "$3"
         ;;
     esac
 }
