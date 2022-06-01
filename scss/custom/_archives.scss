@@ -1,4 +1,5 @@
 @use "home";
+@use "quicklinks";
 
 $archives-primary-color: #c75000;
 $archives-secondary-color: #849895;
@@ -40,7 +41,7 @@ $archives-secondary-color: #849895;
     padding: 0;
     & > li {
       background-color: #fff;
-      border: 15px solid $archives-secondary-color;
+      border: 0.5rem solid $archives-secondary-color;
       margin-block: 30px;
       h3 {
         margin: 0.5rem;
@@ -71,5 +72,93 @@ $archives-secondary-color: #849895;
         margin: 0.5rem;
       }
     }
+  }
+}
+
+// LibCal Hours
+#s-lg-box-28843122 {
+  color: #fff;
+  margin: 0;
+}
+#s-lg-box-wrapper-33915545 {
+  background-color: $archives-secondary-color;
+  text-align: center;
+}
+.hours-today {
+  &, * {
+    display: block;
+  }
+  tbody {
+    padding-block: 16px; // TODO $font-size-base
+  }
+  .hours-library {
+    display: none; // hide all; unhide specific locations
+    padding-block-end: 8px; // TODO $font-size-base
+  }
+  .hours-col-loc,
+  .hours-col-time {
+    display: block;
+  }
+  .hours-col-loc {
+    text-align: center;
+  }
+  .loc3297,
+  .loc19226 {
+    display: block;
+  }
+  .s-lc-timetxt {
+    font-weight: 300;
+  }
+}
+// View All Hours Link
+#s-lg-content-67091738 {
+  a {
+    color: #fff;
+  }
+  p {
+    margin-block-end: 16px; // TODO $font-size-base
+  }
+}
+
+// Quick Links
+#s-lg-box-wrapper-33915559 {
+  background-color: $archives-secondary-color;
+}
+#s-lg-box-28843130 {
+  @extend %quicklinks;
+  margin-block: 30px;
+  a {
+    &:active,
+    &:focus {
+      outline-color: $archives-secondary-color;
+    }
+      &::after {
+      color: $archives-secondary-color;
+    }
+  }
+  h2 {
+    color: $archives-primary-color;
+    border-block-end-color: $archives-secondary-color;
+  }
+}
+
+// Connect Links
+#s-lg-box-28843134 {
+  font-size: large;
+  line-height: 2;
+  padding: 32px 30px;
+  @media (min-width: 768px) {
+    & {
+      padding: 48px 45px;
+    }
+  }
+  a {
+    color: #fff;
+  }
+  ul {
+    margin: 0;
+  }
+  .fa {
+    padding-inline-end: 0.5em;
   }
 }

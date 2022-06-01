@@ -106,6 +106,7 @@ $home-secondary-color: #1e988a;
     padding-block: 16px; // TODO $font-size-base
   }
   .hours-library {
+    display: none; // hide all; unhide specific locations
     padding-block-end: 8px; // TODO $font-size-base
   }
   .hours-col-loc,
@@ -115,11 +116,10 @@ $home-secondary-color: #1e988a;
   .hours-col-loc {
     text-align: center;
   }
-  .loc3301,
-  .loc3109,
-  .loc3110,
-  .loc19162 {
-    display: none;
+  .loc3107,
+  .loc3108,
+  .loc3297 {
+    display: block;
   }
   .s-lc-timetxt {
     font-weight: 300;
