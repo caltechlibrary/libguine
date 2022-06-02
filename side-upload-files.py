@@ -1,6 +1,6 @@
 # Generate Selenium IDE project file for batch uploading to the Image Manager.
 
-# USAGE: python3 side-file-upload.py /path/to/files [folder-keywords]
+# USAGE: python3 side-upload-files.py /path/to/files [folder-keywords]
 #
 # The optional `folder-keywords` string will be used to create a folder in the
 # Image Manager as well as a suffix for existing filenames.
@@ -16,7 +16,7 @@ from pathlib import Path
 
 side_tests_wrapper = {
     "version": "2.0",
-    "name": "file-upload",
+    "name": "upload-files",
     "url": "https://caltech.libapps.com",
     "tests": [],
     "suites": [],
@@ -33,6 +33,7 @@ for p in Path(sys.argv[1]).glob("*"):
 
     if re.search(r"[^\w.-]", p.name):
         print(f"‼️ unsafe filename: {p.name}")
+        continue
 
     if sys.argv[2]:
         tmp = Path(f"{tempfile.gettempdir()}").joinpath(sys.argv[2])
@@ -151,5 +152,5 @@ for p in Path(sys.argv[1]).glob("*"):
 
     side_tests_wrapper["tests"].append(side_test)
 
-with open("assets/file-upload.side", "w") as fp:
+with open("assets/upload-files.side", "w") as fp:
     json.dump(side_tests_wrapper, fp, indent=4)
