@@ -2,13 +2,15 @@
 
 #home-bg a,
 #home-bg header,
-.tpl-home .navbar-default .navbar-nav > li > a,
+#home-bg .navbar-default .navbar-nav > li > a,
 #home-bg .btn-default,
 #home-bg .s-lib-box {
   color: #fff
 }
+// the mobile menu has a transparent background with white text
+// we need to reinstate dark text for the white background at md-min
 @media (min-width: 992px) { // TODO $screen-md-min
-  #home-bg .megamenu a {
+  #home-bg .navbar-nav .dropdown-menu a {
     color: #333;
   }
 }

@@ -3,64 +3,8 @@
 $home-primary-color: #062e47;
 $home-secondary-color: #1e988a;
 
-#cl-bg {
+#home-bg.cl-bg {
   background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover;
-}
-
-// TODO home
-.tlw .cl-bg a,
-.tlw .cl-bg header,
-.tlw .navbar-default .navbar-nav > li > a,
-.tlw #cl-bg .btn-default,
-.tlw #cl-bg .s-lib-box {
-  color: #fff
-}
-@media (min-width: 992px) { // TODO $screen-md-min
-  .tlw .cl-bg .megamenu a {
-    color: #333;
-  }
-}
-
-// TODO home
-.tlw #cl-bg header,
-.tlw #cl-bg .btn-default,
-.tlw #cl-bg .s-lib-box {
-  background: transparent;
-}
-
-.tlw #cl-bg .form-control {
-  border-color: #fff;
-}
-
-.tlw #cl-bg #logo,
-.tlw #cl-bg #logo .identity {
-  fill: #fff
-}
-
-.tlw #cl-bg .branding .dropdown-toggle:focus,
-.tlw #cl-bg .branding .dropdown-toggle:hover {
-  outline: 1px solid #fff;
-}
-.tlw #cl-bg .branding .dropdown-toggle:active {
-  outline-style: dotted;
-}
-
-.tlw #cl-bg .branding .input-group-btn > .btn-default {
-  background: #1e988a;
-  border-color: #1e988a;
-  border-radius: 0;
-}
-
-.tlw #cl-bg {
-  .navbar-header,
-  .navbar-collapse {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-.tlw #cl-bg .navbar-default .navbar-toggle:focus,
-.tlw #cl-bg .navbar-default .navbar-toggle:hover {
-  border-color: #fff;
 }
 
 // Search Heading
@@ -75,7 +19,7 @@ $home-secondary-color: #1e988a;
   border-color: #987776;
 }
 
-// Connect Links
+// Database Links
 #s-lg-box-28754106 {
   font-size: large;
   line-height: 2;
@@ -87,6 +31,9 @@ $home-secondary-color: #1e988a;
   }
   ul {
     margin: 0;
+  }
+  .fa {
+    padding-inline-end: 0.5em;
   }
 }
 
