@@ -45,16 +45,10 @@
 @include navbar-section("asc", #c75000);
 
 // item spacing
-.navbar-nav .open .dropdown-menu .dropdown-header {
-  padding: 0;
-}
-.megamenu {
-  padding-block: 0; // reset (set on > li)
-  & > li {
-    padding-block-start: 15px; // TODO $grid-gutter-width
-    @media (min-width: 992px) { // TODO $screen-md-min
-      padding-block-end: 15px; // TODO $grid-gutter-width
-    }
+.navbar-nav {
+  // archives navbar does not have a megamenu and needs a little padding
+  .c3-asc & .dropdown-menu {
+    padding-inline: 15px;
   }
   .dropdown-header {
     padding: 0;
@@ -66,6 +60,18 @@
         margin-left: -1em;
         margin-right: .33em;
       }
+    }
+  }
+  .open .dropdown-menu .dropdown-header {
+    padding: 0;
+  }
+}
+.megamenu {
+  padding-block: 0; // reset (set on > li)
+  & > li {
+    padding-block-start: 15px; // TODO $grid-gutter-width
+    @media (min-width: 992px) { // TODO $screen-md-min
+      padding-block-end: 15px; // TODO $grid-gutter-width
     }
   }
   li {
