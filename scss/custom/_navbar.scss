@@ -1,5 +1,12 @@
 @use "sass:color";
 
+@mixin caret-before {
+  &::before {
+    content: '\25BE';
+    margin-right: .33em;
+  }
+}
+
 .navbar-toggle {
   float: none;
   margin: 0 15px; // TODO $grid-gutter-width
@@ -44,7 +51,6 @@
 @include navbar-section("ptt", #a02276);
 @include navbar-section("asc", #c75000);
 
-// item spacing
 .navbar-nav {
   // archives navbar does not have a megamenu and needs a little padding
   .c3-asc & .dropdown-menu {
@@ -54,12 +60,16 @@
     padding: 0;
     font-size: large;
     text-transform: none;
-    a {
-      &::before {
-        content: '\25BE';
-        margin-left: -1em;
-        margin-right: .33em;
-      }
+    > a {
+      @include caret-before();
+      padding-inline-start: 0;
+    }
+  }
+  .follow-icons a {
+    display: inline;
+    padding-inline-end: 0;
+    svg {
+      margin-block-start: 0.5rem;
     }
   }
   .open .dropdown-menu .dropdown-header {
@@ -93,4 +103,13 @@ a + .clg-tooltip {
 /* override the tooltip with specificity */
 .megamenu > li > ul > li > .clg-tooltip {
   padding: 0;
+}
+
+// Follow Us
+.navbar-nav {
+  .divider + .dropdown-header {
+    @include caret-before();
+    color: #333;
+    font-weight: normal;
+  }
 }
