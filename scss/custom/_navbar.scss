@@ -65,11 +65,17 @@
       padding-inline-start: 0;
     }
   }
+  .divider + .dropdown-header {
+    @include caret-before();
+    color: #333;
+    font-weight: normal;
+  }
   .follow-icons a {
-    display: inline;
-    padding-inline-end: 0;
-    svg {
-      margin-block-start: 0.5rem;
+    display: inline-block;
+    padding-block-start: 0.5rem;
+    padding-inline: 0.5rem;
+    &:first-child {
+      margin-inline-start: 0.75rem;
     }
   }
   .open .dropdown-menu .dropdown-header {
@@ -103,13 +109,4 @@ a + .clg-tooltip {
 /* override the tooltip with specificity */
 .megamenu > li > ul > li > .clg-tooltip {
   padding: 0;
-}
-
-// Follow Us
-.navbar-nav {
-  .divider + .dropdown-header {
-    @include caret-before();
-    color: #333;
-    font-weight: normal;
-  }
 }
