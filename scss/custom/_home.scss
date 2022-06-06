@@ -25,9 +25,17 @@
   border-color: #fff;
 }
 
-#home-bg #logo,
-#home-bg #logo .identity {
-  fill: #fff
+#home-bg { // override _branding.scss
+  #logo {
+    a:focus {
+      rect {
+        stroke: #fff;
+      }
+    }
+    path {
+      fill: #fff;
+    }
+  }
 }
 
 #home-bg .branding .dropdown-toggle:focus,

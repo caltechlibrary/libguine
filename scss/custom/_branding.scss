@@ -2,7 +2,19 @@ $text-color: #333;
 $branding-link-color: $text-color;
 
 #logo {
-  .identity {
+  fill: transparent;
+  overflow: visible;
+  a:focus {
+    outline: unset;
+    rect {
+      stroke: highlight;
+      stroke-width: 4px;
+    }
+  }
+  path {
+    fill: #333;
+  }
+  .caltech-logotype {
     fill: #ff6c0c;
   }
 }
