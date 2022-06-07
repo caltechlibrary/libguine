@@ -53,9 +53,16 @@
 @include navbar-section("asc", #c75000);
 
 .navbar-nav {
-  // archives navbar does not have a megamenu and needs a little padding
+  // archives navbar does not have a megamenu and needs small adjustments
   .c3-asc & .dropdown-menu {
     padding-inline: 15px;
+    a {
+      margin: 0;
+      &:focus,
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
   .dropdown-header {
     padding: 0;
@@ -71,6 +78,25 @@
     @include caret-before();
     color: #333;
     font-weight: normal;
+  }
+  .dropdown-menu {
+    a {
+      color: #333;
+      display: inline-block; // NOTE: affects block spacing
+      margin-inline-start: 1rem;
+      padding: 0.25rem;
+      &:focus,
+      &:hover {
+        outline: 2px solid;
+        text-decoration: none;
+      }
+    }
+    .clg-tooltip {
+      cursor: help;
+      font-size: medium;
+      margin: 0;
+      padding: 0;
+    }
   }
   .follow-icons a {
     display: inline-block;
@@ -95,27 +121,9 @@
   }
   li {
     list-style: none;
-    & > a {
-      color: #333;
-      display: inline-block; // NOTE: affects block spacing
-      margin-inline-start: 1rem;
-      padding: 0.25rem;
-      &:focus,
-      &:hover {
-        outline: 2px solid;
-        text-decoration: none;
-      }
-    }
     & > ul:not([class*="col-"]) {
       padding: 0;
       margin: 0;
-    }
-    .clg-tooltip {
-      cursor: help;
-      font-size: medium;
-      margin: 0;
-      padding: 0;
-      text-transform: lowercase;
     }
   }
 }
