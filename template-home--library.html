@@ -1,5 +1,5 @@
 <!--BEGIN: template-home--library.html
-  Last Modified: 2022-06-02 08:50:51
+  Last Modified: 2022-06-07 15:42:24
 
   INSTRUCTIONS: Select this template within the Customize Guide Templates
   section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
@@ -14,7 +14,7 @@
     • cl-*: [prefix] Caltech Library
 -->
 
-<body class="s-lg-guide-body tlw t-l-home tpl-home">
+<body id="tpl-l-home" class="s-lg-guide-body tlw t-l-home tpl-home">
   {{skip_link}}
   {{obsolete_browser_alert}}
   {{ADMIN_CMD_BAR}}
@@ -77,29 +77,121 @@
       </div>
     </div>
 
-    <div class="container">
-      <div id="c3-introduction-row" class="row s-lg-row">
-        <div id="s-lg-col-3" class="col-md-6 c3-featured">
-          <div class="s-lg-col-boxes">
-            {{content_col_3}}
-          </div>
-        </div>
-        <div id="s-lg-col-4" class="col-md-6 c3-quicklinks">
-          <div class="s-lg-col-boxes">
-            <div class="panel panel-primary c3-public-hide">
-              <div class="panel-heading">
-                <h3 class="panel-title">Quick Links</h3>
-              </div>
-              <div class="panel-body">
-                Add a box here in Column 4 with Rich Text / HTML content containing a bulleted list of Quick Links.
-              </div>
+    <div id="home-bg-2" class="c3-wrapper">
+      <div class="container">
+
+        <div class="row s-lg-row">
+          <div id="s-lg-col-21" class="col-md-6">
+            <div class="s-lg-col-boxes">
+              {{content_col_21}}
             </div>
-            <h2>Quick Links</h2>
-            {{content_col_4}}
+          </div>
+          <div id="s-lg-col-22" class="col-md-5 col-md-offset-1 c3-quicklinks">
+            <div class="s-lg-col-boxes">
+              <h2>Quick Links</h2>
+              <div class="panel panel-primary c3-admin-show" style="display:none">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Quick Links Instructions</h3>
+                </div>
+                <div class="panel-body">
+                  Add a box here in Column 22 with Rich Text / HTML content containing a bulleted list of Quick Links.
+                </div>
+              </div>
+              {{content_col_22}}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div class="row s-lg-row">
+          <div id="s-lg-col-30" class="col-xs-12"><!-- Heading Box -->
+            <div class="s-lg-col-boxes">
+              {{content_col_30}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-lg-row equalheights">
+          <div id="s-lg-col-31" class="col-md-6">
+            <div class="s-lg-col-boxes">
+              {{content_col_31}}
+            </div>
+          </div>
+          <div id="s-lg-col-32" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_32}}
+            </div>
+          </div>
+          <div id="s-lg-col-33" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_33}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-lg-row">
+          <div id="s-lg-col-40" class="col-xs-12"><!-- Heading Box -->
+            <div class="s-lg-col-boxes">
+              {{content_col_40}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-lg-row equalheights">
+          <div id="s-lg-col-41" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_41}}
+            </div>
+          </div>
+          <div id="s-lg-col-42" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_42}}
+            </div>
+          </div>
+          <div id="s-lg-col-43" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_43}}
+            </div>
+          </div>
+          <div id="s-lg-col-44" class="col-md-3">
+            <div class="s-lg-col-boxes">
+              {{content_col_44}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-lg-row">
+          <div id="s-lg-col-23" class="col-md-6">
+            <div class="s-lg-col-boxes">
+              {{content_col_23}}
+            </div>
+          </div>
+          <div id="s-lg-col-24" class="col-md-6">
+            <div class="s-lg-col-boxes">
+              {{content_col_24}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row s-lg-row">
+          <div id="s-lg-col-34" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_34}}
+            </div>
+          </div>
+          <div id="s-lg-col-35" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_35}}
+            </div>
+          </div>
+          <div id="s-lg-col-36" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_36}}
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </div><!-- /home-bg-2 -->
 
     {{page_prev_next_links}}
   </div>

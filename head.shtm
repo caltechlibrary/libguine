@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-06-06 21:43:25
+  Last Modified: 2022-06-07 16:06:23
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -28,6 +28,9 @@
       // remove elements that conflict with the LibGuides admin UI
       document.getElementById("c3-custom-styles").remove();
       document.getElementById("c3-bootstrap-css").remove();
+      // display admin-only content (elements have style="display:none" set)
+      // see https://stackoverflow.com/a/54819633 regarding fancy syntax
+      [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
     }
     else {
       var _public = true;
@@ -36,9 +39,6 @@
       const bootstrap_js = document.createElement("script");
       bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
       document.head.appendChild(bootstrap_js);
-      // hide admin-only elements from public-facing pages
-      // see https://stackoverflow.com/a/54819633 regarding fancy syntax
-      [...document.getElementsByClassName("c3-public-hide")].forEach(e => e.classList.add("hidden"));
       // move the breadcrumbs where we want them
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
       // hours widget script cannot be included in footer code nor on admin pages
