@@ -6,6 +6,9 @@ $home-secondary-color: #1e988a;
 #home-bg.cl-bg {
   background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover;
 }
+#tpl-l-home #home-bg-2 {
+  background: linear-gradient(transparent, 60%, #fff), url(https://libapps.s3.amazonaws.com/customers/64/images/poolfaded.jpg) no-repeat top left/cover;
+}
 
 // Search Heading
 @media (min-width: 992px) {
@@ -81,9 +84,6 @@ $home-secondary-color: #1e988a;
 
 // .t-l-home class set in template
 .t-l-home {
-  .c3-featured {
-    border: 15px solid $home-primary-color;
-  }
   .c3-quicklinks {
     @extend %quicklinks;
     a {
@@ -99,5 +99,48 @@ $home-secondary-color: #1e988a;
       color: $home-primary-color;
       border-block-end-color: $home-secondary-color;
     }
+  }
+}
+
+#tpl-l-home {
+  .equalheights {
+    a {
+      color: $home-secondary-color;
+    }
+    figcaption {
+      padding-inline: 15px;
+    }
+    .s-lib-box {
+      background-color: #fff;
+    }
+  }
+}
+// image/caption overlay
+#s-lg-box-28870702 {
+  position: relative;
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #000, 80%, transparent);
+    padding: 0.5rem 1rem 0;
+    width: 100%;
+    text-align: right;
+  }
+}
+// headings
+#s-lg-box-28870942,
+#s-lg-box-28870935,
+#s-lg-box-28870775,
+#s-lg-box-28870812 {
+  h2 {
+    color: $home-primary-color;
+  }
+}
+
+// block-start
+#s-lg-box-28870608, // video
+#tpl-l-home #home-bg-2 {
+  h2 {
+    margin-block-start: 60px;
   }
 }
