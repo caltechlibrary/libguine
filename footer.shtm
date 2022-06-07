@@ -1,5 +1,5 @@
 <!--BEGIN: footer.shtm
-  Last Modified: 2022-05-26 14:55:16
+  Last Modified: 2022-06-07 11:29:21
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
@@ -22,7 +22,6 @@
           <div>
             <div>* Caltech ID Required</div>
             <div>† Browsing Only</div>
-            <div>‡ By Appointment Only</div>
           </div>
         </footer>
       </section>
