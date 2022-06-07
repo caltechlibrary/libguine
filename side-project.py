@@ -915,7 +915,6 @@ template_home__library = {
 }
 project_wrapper["tests"].append(template_home__library)
 
-
 # upload-css--custom
 slug = "upload-css--custom"
 filepath = str(Path("assets/custom.css").resolve())
@@ -1167,6 +1166,260 @@ upload_css__custom = {
     ],
 }
 project_wrapper["tests"].append(upload_css__custom)
+
+# head--system
+with open("assets/head--system.html") as f:
+    html_head__system = f.read()
+
+head__system = {
+    "id": "f5c37d54-e833-476a-9c02-d0c68cc217f2",
+    "name": "🈁 head--system",
+    "commands": [
+        {
+            "id": "ab83b91c-3c5a-4507-b9ce-7f9bf7220581",
+            "comment": "",
+            "command": "open",
+            "target": "/libapps/login.php",
+            "targets": [],
+            "value": "",
+        },
+        {
+            "id": "6bbd6194-6127-4471-80a5-a610540e8bf5",
+            "comment": "",
+            "command": "setWindowSize",
+            "target": "1280x800",
+            "targets": [],
+            "value": "",
+        },
+        {
+            "id": "8899bab2-0e9f-47b3-b025-f6d561f0de32",
+            "comment": "",
+            "command": "storeXpathCount",
+            "target": "xpath=//input[@id='s-libapps-email']",
+            "targets": [],
+            "value": "login",
+        },
+        {
+            "id": "93b7b616-3be7-440e-9de2-1790cf11c6e5",
+            "comment": "",
+            "command": "if",
+            "target": "${login}>0",
+            "targets": [],
+            "value": "",
+        },
+        {
+            "id": "c13d6afb-bf51-45bc-a3f9-58da948a9dd7",
+            "comment": "",
+            "command": "click",
+            "target": "id=s-libapps-email",
+            "targets": [
+                ["id=s-libapps-email", "id"],
+                ["name=s-libapps-email", "name"],
+                ["css=#s-libapps-email", "css:finder"],
+                ["xpath=//input[@id='s-libapps-email']", "xpath:attributes"],
+                [
+                    "xpath=//form[@id='s-libapps-login-form']/div[2]/input",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//div[2]/input", "xpath:position"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "39de5a57-95dd-45d2-b25c-d734aa3a8420",
+            "comment": "",
+            "command": "type",
+            "target": "id=s-libapps-email",
+            "targets": [
+                ["id=s-libapps-email", "id"],
+                ["name=s-libapps-email", "name"],
+                ["css=#s-libapps-email", "css:finder"],
+                ["xpath=//input[@id='s-libapps-email']", "xpath:attributes"],
+                [
+                    "xpath=//form[@id='s-libapps-login-form']/div[2]/input",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//div[2]/input", "xpath:position"],
+            ],
+            "value": config("LIBAPPS_USER"),
+        },
+        {
+            "id": "cbbc48ca-2d78-4903-8c61-a19d25bcacff",
+            "comment": "",
+            "command": "type",
+            "target": "id=s-libapps-password",
+            "targets": [
+                ["id=s-libapps-password", "id"],
+                ["name=s-libapps-password", "name"],
+                ["css=#s-libapps-password", "css:finder"],
+                ["xpath=//input[@id='s-libapps-password']", "xpath:attributes"],
+                [
+                    "xpath=//form[@id='s-libapps-login-form']/div[3]/input",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//div[3]/input", "xpath:position"],
+            ],
+            "value": config("LIBAPPS_PASS"),
+        },
+        {
+            "id": "96107dd7-bba9-49cf-a063-2ff07d771e83",
+            "comment": "",
+            "command": "click",
+            "target": "id=s-libapps-login-button",
+            "targets": [
+                ["id=s-libapps-login-button", "id"],
+                ["css=#s-libapps-login-button", "css:finder"],
+                ["xpath=//button[@id='s-libapps-login-button']", "xpath:attributes"],
+                [
+                    "xpath=//form[@id='s-libapps-login-form']/div[4]/button",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//button", "xpath:position"],
+                ["xpath=//button[contains(.,'Log Into LibApps')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "78af330f-f3f5-41e6-a944-1f4f4600e57c",
+            "comment": "",
+            "command": "end",
+            "target": "",
+            "targets": [],
+            "value": "",
+        },
+        {
+            "id": "14b681a0-90d5-4d37-90e3-36cf93ce14ab",
+            "comment": "",
+            "command": "click",
+            "target": "id=s-lib-app-anchor",
+            "targets": [
+                ["id=s-lib-app-anchor", "id"],
+                ["linkText=LibApps", "linkText"],
+                ["css=#s-lib-app-anchor", "css:finder"],
+                ["xpath=//a[contains(text(),'LibApps')]", "xpath:link"],
+                ["xpath=//a[@id='s-lib-app-anchor']", "xpath:attributes"],
+                [
+                    "xpath=//nav[@id='s-lg-admin-command-bar']/div/ul/li/a",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+                ["xpath=//a", "xpath:position"],
+                ["xpath=//a[contains(.,'LibApps ')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "fba2c087-8bc2-475d-bf13-eb3653737c57",
+            "comment": "",
+            "command": "click",
+            "target": "linkText=LibGuides",
+            "targets": [
+                ["linkText=LibGuides", "linkText"],
+                ["css=li:nth-child(3) > .dropdown-item", "css:finder"],
+                ["xpath=//a[contains(text(),'LibGuides')]", "xpath:link"],
+                ["xpath=//ul[@id='s-lib-app-menu']/li[3]/a", "xpath:idRelative"],
+                [
+                    "xpath=//a[contains(@href, 'https://caltech.libapps.com/libapps/login.php?site_id=64')]",
+                    "xpath:href",
+                ],
+                ["xpath=//li[3]/a", "xpath:position"],
+                ["xpath=//a[contains(.,'LibGuides')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "d357ba6e-70e0-4b22-a9ba-74c03082102c",
+            "comment": "",
+            "command": "click",
+            "target": "linkText=Admin",
+            "targets": [
+                ["linkText=Admin", "linkText"],
+                ["css=.dropdown:nth-child(11) > a", "css:finder"],
+                [
+                    "xpath=//nav[@id='s-lg-admin-command-bar']/ul/li[11]/a",
+                    "xpath:idRelative",
+                ],
+                ["xpath=(//a[contains(@href, '#')])[5]", "xpath:href"],
+                ["xpath=//nav/ul/li[11]/a", "xpath:position"],
+                ["xpath=//a[contains(.,'Admin')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "d683c595-6f96-41aa-bed3-0b67628b666f",
+            "comment": "",
+            "command": "click",
+            "target": "linkText=Look & Feel",
+            "targets": [
+                ["linkText=Look & Feel", "linkText"],
+                ["css=.open li:nth-child(2) > a", "css:finder"],
+                ["xpath=//a[contains(text(),'Look & Feel')]", "xpath:link"],
+                ["xpath=(//a[@onclick=''])[17]", "xpath:attributes"],
+                [
+                    "xpath=//nav[@id='s-lg-admin-command-bar']/ul/li[11]/ul/li[2]/a",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//a[contains(@href, 'lookfeel.php')]", "xpath:href"],
+                ["xpath=//li[11]/ul/li[2]/a", "xpath:position"],
+                ["xpath=//a[contains(.,'Look & Feel')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "60ccce1c-fba8-4e0e-bdff-c24e3b8ee5a4",
+            "comment": "",
+            "command": "click",
+            "target": "linkText=Custom JS/CSS",
+            "targets": [
+                ["linkText=Custom JS/CSS", "linkText"],
+                ["css=.nav > li:nth-child(2) > a", "css:finder"],
+                ["xpath=//a[contains(text(),'Custom JS/CSS')]", "xpath:link"],
+                ["xpath=//div[@id='col1']/ul/li[2]/a", "xpath:idRelative"],
+                ["xpath=//a[contains(@href, '?action=1')]", "xpath:href"],
+                ["xpath=//div/ul/li[2]/a", "xpath:position"],
+                ["xpath=//a[contains(.,'Custom JS/CSS')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+        {
+            "id": "585c6f80-c370-4414-8d9b-59372c11a73e",
+            "comment": "",
+            "command": "type",
+            "target": "id=jscss_code",
+            "targets": [
+                ["id=jscss_code", "id"],
+                ["name=jscss_code", "name"],
+                ["css=#jscss_code", "css:finder"],
+                ["xpath=//textarea[@id='jscss_code']", "xpath:attributes"],
+                [
+                    "xpath=//div[@id='form-group-jscss_code']/textarea",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//textarea", "xpath:position"],
+            ],
+            "value": html_head__system,
+        },
+        {
+            "id": "667ecf43-5ec5-4eec-8e3c-ae961453cb3f",
+            "comment": "",
+            "command": "click",
+            "target": "id=s-lg-btn-save-jscss",
+            "targets": [
+                ["id=s-lg-btn-save-jscss", "id"],
+                ["css=#s-lg-btn-save-jscss", "css:finder"],
+                ["xpath=//button[@id='s-lg-btn-save-jscss']", "xpath:attributes"],
+                [
+                    "xpath=//div[@id='s-lg-custom-head']/div/table/tbody/tr/th/button",
+                    "xpath:idRelative",
+                ],
+                ["xpath=//th/button", "xpath:position"],
+                ["xpath=//button[contains(.,'Save')]", "xpath:innerText"],
+            ],
+            "value": "",
+        },
+    ],
+}
+project_wrapper["tests"].append(head__system)
 
 # header--archives
 with open("assets/header--archives.html") as f:

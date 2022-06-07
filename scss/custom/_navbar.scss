@@ -31,18 +31,19 @@
   right: 0;
 }
 
-@mixin navbar-section($name, $bg-color) {
+@mixin navbar-section($name, $primary-color) {
   ##{$name} {
     &:focus,
     &:hover,
     .open > &,
     .open > &:focus,
     .open > &:hover {
-      background-color: $bg-color;
+      background-color: $primary-color;
     }
-  // & + .dropdown-menu {
-  //   background-color: mix(white, $bg-color, 90%);
-  // }
+    & + .dropdown-menu a:focus,
+    & + .dropdown-menu a:hover {
+      outline-color: $primary-color;
+    }
   }
 }
 @include navbar-section("abt", #062e47);
@@ -59,8 +60,9 @@
   .dropdown-header {
     padding: 0;
     font-size: large;
+    font-weight: normal;
     text-transform: none;
-    > a {
+    > a:not(.clg-tooltip) {
       @include caret-before();
       padding-inline-start: 0;
     }
@@ -83,6 +85,7 @@
   }
 }
 .megamenu {
+  overflow: visible; // some tooltip text extends past the edge of the menu area
   padding-block: 0; // reset (set on > li)
   & > li {
     padding-block-start: 15px; // TODO $grid-gutter-width
@@ -93,20 +96,35 @@
   li {
     list-style: none;
     & > a {
+      color: #333;
       display: inline-block; // NOTE: affects block spacing
-      padding: 0.25rem 1.25rem;
+      margin-inline-start: 1rem;
+      padding: 0.25rem;
+      &:focus,
+      &:hover {
+        outline: 2px solid;
+        text-decoration: none;
+      }
     }
     & > ul:not([class*="col-"]) {
       padding: 0;
       margin: 0;
     }
+    .clg-tooltip {
+      cursor: help;
+      font-size: medium;
+      margin: 0;
+      padding: 0;
+      text-transform: lowercase;
+    }
   }
 }
-/* move left into the padding of the menu link element */
-a + .clg-tooltip {
-  margin-inline-start: -15px;
+/*** megamenu ***/
+.menu-large {
+  position: static !important;
 }
-/* override the tooltip with specificity */
-.megamenu > li > ul > li > .clg-tooltip {
-  padding: 0;
+@media (min-width: 992px) {
+  .dropdown:hover .megamenu {
+    display: block;
+  }
 }

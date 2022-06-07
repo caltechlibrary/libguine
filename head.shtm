@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-06-01 16:11:45
+  Last Modified: 2022-06-06 21:43:25
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -181,11 +181,6 @@
       // TODO on blog list this row-to-delete loads after this script
       document.querySelector("#s-lg-blog-content > .row:last-of-type").remove();    }
   });
-</script>
-<script>// enable bootstrap tooltips
-  $(function() {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
 </script>
 <script>// megamenu click handling
   // TODO only run this on public pages

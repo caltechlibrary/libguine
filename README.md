@@ -88,6 +88,16 @@ Some of the overrides for our site are much more easily accomplished if we chang
 
 The `bootstrap.min.css` and `bootstrap.min.js` that are downloaded from the custom build site should be uploaded on the “Custom JS/CSS” tab of the Admin ➜ Look & Feel section of LibGuides in the “Upload Customization Files” section.
 
+**NOTE:** There is a namespace conflict between the Bootstrap `tooltip()` function and the jQuery UI `tooltip()` function. Paste the following code that renames the Bootstrap function (and enables tooltips) at the end of the `bootstrap.min.js` file before uploading to LibGuides.
+
+```javascript
+var bsTooltip = $.fn.tooltip.noConflict();
+$.fn.bs_tooltip = bsTooltip;
+$(function() {
+  $('[data-toggle="tooltip"]').bs_tooltip()
+});
+```
+
 ## Selenium IDE
 
 It would be nice to run everything from the command line, but uploading files via `selenium-side-runner` does not seem to be well-supported yet.

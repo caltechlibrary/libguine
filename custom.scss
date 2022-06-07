@@ -8,7 +8,6 @@ html,
 body,
 .dropdown-menu,
 .dropdown-header,
-.tooltip,
 #s-lg-guide-header-info h1 {
   font-size: revert;
 }
@@ -23,46 +22,4 @@ body {
 #s-lg-guide-tabs-title-bar,
 #s-lib-footer-public {
   display: none;
-}
-
-/*** megamenu ***/
-.menu-large {
-  position: static !important;
-}
-.megamenu > li > ul > li {
-  list-style: none;
-}
-.megamenu li > a {
-  clear: both;
-  font-weight: normal;
-  color: #333333;
-  white-space: normal;
-}
-.megamenu > li ul > li > a:hover,
-.megamenu > li ul > li > a:focus {
-  text-decoration: none;
-  color: #262626;
-  background-color: #f5f5f5;
-}
-@media (min-width: 992px) {
-  .dropdown:hover .megamenu {
-    display: block;
-  }
-}
-
-/* some tooltip text needs to overflow the edge of the menu area */
-.megamenu {
-  overflow: visible;
-}
-
-.clg-tooltip {
-  background: none;
-  border: none;
-  cursor: help;
-  text-transform: lowercase;
-}
-
-.megamenu > li > ul > li > .clg-tooltip:focus,
-.megamenu > li > ul > li > .clg-tooltip:hover {
-  background: none;
 }
