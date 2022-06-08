@@ -109,9 +109,30 @@ $home-secondary-color: #1e988a;
     }
     figcaption {
       padding-inline: 15px;
+      @media (min-width: 1200px) {
+        padding-inline: 30px;
+      }
+    }
+    h3 {
+      font-size: x-large;
+      margin-block-start: 1rem;
+    }
+    .s-lg-col-boxes {
+      @media (min-width: 1200px) {
+        padding-inline: 15px;
+      }
     }
     .s-lib-box {
       background-color: #fff;
+    }
+    .s-lib-box {
+      margin-block-end: 15px;
+      @media (min-width: 768px) {
+        margin-block-end: 30px;
+      }
+      @media (min-width: 992px) {
+        margin-block-end: 0;
+      }
     }
   }
 }
@@ -139,8 +160,9 @@ $home-secondary-color: #1e988a;
 
 // block-start
 #s-lg-box-28870608, // video
-#tpl-l-home #home-bg-2 {
-  h2 {
-    margin-block-start: 60px;
+#tpl-l-home #home-bg-2 h2 {
+  margin-block-start: 30px;
+  @media (min-width: 992px) {
+    margin-block-start: 90px;
   }
 }

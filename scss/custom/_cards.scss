@@ -16,30 +16,18 @@
       color: #333;
     }
   }
-  // equal height boxes require only one box per column
   .row {
-    display: flex;
-    flex-wrap: wrap;
-    @media (min-width: 992px) { // TODO $screen-md-min
-      margin-block-start: 30px;
-    }
-  }
-  .s-lg-col-boxes {
-    height: 100%;
-    & > div {
-      height: 100%;
-    }
-  }
-  .s-lib-box-container {
-    height: 100%;
+    margin-block-start: 30px;
   }
   .s-lib-box {
-    height: 100%;
+    background-color: #fff;
+  }
+  .s-lib-box {
     margin-block-end: 15px;
-    @media (min-width: 768px) { // TODO $screen-sm-min
+    @media (min-width: 768px) {
       margin-block-end: 30px;
     }
-    @media (min-width: 992px) { // TODO $screen-md-min
+    @media (min-width: 992px) {
       margin-block-end: 0;
     }
   }

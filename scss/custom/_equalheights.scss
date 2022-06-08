@@ -1,24 +1,19 @@
 // equal height boxes require only one box per column
 .equalheights {
-  display: flex;
-  flex-wrap: wrap;
-  .s-lg-col-boxes {
-    height: 100%;
-    & > div {
+  @media (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+    .s-lg-col-boxes {
+      height: 100%;
+      & > div {
+        height: 100%;
+      }
+    }
+    .s-lib-box-container {
       height: 100%;
     }
-  }
-  .s-lib-box-container {
-    height: 100%;
-  }
-  .s-lib-box {
-    height: 100%;
-    margin-block-end: 15px;
-    @media (min-width: 768px) { // TODO $screen-sm-min
-      margin-block-end: 30px;
-    }
-    @media (min-width: 992px) { // TODO $screen-md-min
-      margin-block-end: 0;
+    .s-lib-box {
+      height: 100%;
     }
   }
 }
