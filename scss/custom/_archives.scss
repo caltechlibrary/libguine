@@ -6,6 +6,7 @@ $archives-secondary-color: #849895;
 
 #home-bg.ca-bg {
   background: url(https://libapps.s3.amazonaws.com/customers/64/images/shelves.jpg) no-repeat bottom left/cover;
+  padding-block-end: 90px;
 }
 #tpl-a-home #home-bg-2 {
   background: linear-gradient(transparent, 60%, #fff), url(https://libapps.s3.amazonaws.com/customers/64/images/shelvesfaded.jpg) no-repeat top left/cover;
