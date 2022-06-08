@@ -1,5 +1,5 @@
 <!--BEGIN: footer.shtm
-  Last Modified: 2022-06-08 09:26:31
+  Last Modified: 2022-06-08 15:23:00
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
@@ -34,7 +34,6 @@
     </div>
     <div class="col-md-3">
       <section class="org">
-        <h2>Our Organization</h2>
         <!--#include file='footer-org--GROUP.html' -->
       </section>
     </div>
