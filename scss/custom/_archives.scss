@@ -74,6 +74,20 @@ $archives-secondary-color: #849895;
     }
   }
 }
+// link to Archives tag /blog?tag_id=213658
+#s-lg-content-67209512 {
+  @extend %quicklinks;
+  text-align: right;
+  a {
+    &:active,
+    &:focus {
+      outline-color: $archives-secondary-color;
+    }
+      &::after {
+      color: $archives-secondary-color;
+    }
+  }
+}
 
 // LibCal Hours
 #s-lg-box-28843122 {
