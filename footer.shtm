@@ -1,5 +1,5 @@
 <!--BEGIN: footer.shtm
-  Last Modified: 2022-06-07 11:29:21
+  Last Modified: 2022-06-08 09:26:31
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh footer GROUP' to create a complete footer asset.
@@ -43,7 +43,7 @@
     <div class="col-xs-12">
       <ul class="list-inline pull-right">
         <li><a href="/privacy">Privacy</a></li>
-        <li><a href="/about/copyright">Copyright</a></li>
+        <li><a href="https://www.caltech.edu/claimed-copyright-infringement">Copyright</a></li>
         <li><a href="/accessibility">Accessibility</a></li>
         <li id="c3-footer-login"></li>
       </ul>
