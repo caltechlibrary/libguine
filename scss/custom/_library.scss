@@ -60,6 +60,9 @@ $home-secondary-color: #1e988a;
   .hours-col-loc {
     text-align: center;
   }
+  .hours-col-time > * {
+    display: inline-block;
+  }
   .loc3107,
   .loc3108,
   .loc3297 {

@@ -78,6 +78,7 @@
     @include caret-before();
     color: #333;
     font-weight: normal;
+    margin-inline-start: 1rem;
   }
   .dropdown-menu {
     a {
