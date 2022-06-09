@@ -137,3 +137,13 @@
     display: block;
   }
 }
+
+#asc-home {
+  font-size: larger;
+  a {
+    margin-inline-start: 0.5em;
+  }
+  .fa {
+    padding-inline-end: 0.5em;
+  }
+}

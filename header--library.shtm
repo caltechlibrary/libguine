@@ -82,13 +82,13 @@
                 <li class="row row-no-gutters">
                   <ul class="col-md-6">
                     <li>
+                      <a href="/about/mission">Mission & Strategic Plan</a>
+                    </li>
+                    <li>
                       <a href="/about/directory">Staff Directory</a>
                     </li>
                     <li>
                       <a href="/about/policies">Policies & Guidelines</a>
-                    </li>
-                    <li>
-                      <a href="/about/strategic-plan">Strategic Plan</a>
                     </li>
                     <li>
                       <a href="/about/accessibility">Accessibility</a>
@@ -96,10 +96,10 @@
                   </ul>
                   <ul class="col-md-6">
                     <li>
-                      <a href="/about/visitors">Visitor Information</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Visitor Information" title="Not a student or employee? Learn about what locations, services, and resources you can access."><i class="fa fa-question-circle"></i></a>
+                      <a href="/about/support">Support the Caltech Library</a>
                     </li>
                     <li>
-                      <a href="/about/donations">Giving & Donations</a>
+                      <a href="/about/visitors">Visitor Information</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Visitor Information" title="Not a student or employee? Learn about what locations, services, and resources you can access."><i class="fa fa-question-circle"></i></a>
                     </li>
                     <li>
                       <a href="/about/jobs">Jobs & Opportunities</a>
@@ -114,19 +114,19 @@
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/news">What’s New</a>
+                  What’s New
                 </li>
                 <li>
-                  <a href="/news#s-lg-box-wrapper-33582033">COVID Updates</a>
+                  <a href="/blog/COVID-Updates">COVID Updates</a>
                 </li>
                 <li>
-                  <a href="/news#s-lg-box-wrapper-33582024">News</a>
+                  <a href="/blog">News</a>
                 </li>
                 <li>
-                  <a href="/events">Events</a>
+                  <a href="https://libcal.caltech.edu/">Events</a>
                 </li>
                 <li>
-                  <a href="/news#s-lg-box-wrapper-33700949">Subscribe to Our Newsletter</a>
+                  <a href="/#s-lg-content-67167005">Subscribe to Our Newsletter</a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Follow Us
@@ -187,39 +187,22 @@
                   <a href="/guides">Library Guides</a>
                 </li>
                 <li>
-                  <a href="/guides#s-lg-box-wrapper-33676758">Division Resources</a>
-                </li>
-                <li class="row row-no-gutters">
-                  <ul class="col-xs-3 col-xs-offset-1">
-                    <li>
-                      <a href="/guides/bbe">BBE</a>
-                    </li>
-                    <li>
-                      <a href="/guides/gps">GPS</a>
-                    </li>
-                  </ul>
-                  <ul class="col-xs-3">
-                    <li>
-                      <a href="/guides/cce">CCE</a>
-                    </li>
-                    <li>
-                      <a href="/guides/hss">HSS</a>
-                    </li>
-                  </ul>
-                  <ul class="col-xs-3">
-                    <li>
-                      <a href="/guides/eas">EAS</a>
-                    </li>
-                    <li>
-                      <a href="/guides/pma">PMA</a>
-                    </li>
-                  </ul>
+                  <a href="/guides/division">By Division</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Guides by Division" title="Find resources tailored to your division (BBE, CCE, EAS, GPS, HSS, PMA)."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="/guides#s-lg-box-wrapper-33676794">Guides to Resource Types</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Guides to Resource Types" title="Learn about standards, patents, conference papers, translation resources, and other types of resources."><i class="fa fa-question-circle"></i></a>
+                  <a href="/guides/resource-type">By Resource Type</a>
                 </li>
                 <li>
-                  <a href="/guides">View All Guides</a>
+                  <a href="/guides/writing">Writing Guides</a>
+                </li>
+                <li>
+                  <a href="/guides/repositories">Guides to Repositories</a>
+                </li>
+                <li>
+                  <a href="/guides/databases">Guides to Databases</a>
+                </li>
+                <li>
+                  <a href="/guides/online-tools">Guides to Online Tools</a>
                 </li>
               </ul>
             </li>
@@ -238,7 +221,10 @@
                   <a href="https://thesis.library.caltech.edu/">CaltechTHESIS</a>
                 </li>
                 <li>
-                  <a href="/guides#s-lg-box-wrapper-33676763">Guides to Repositories</a>
+                  <a href="https://campuspubs.library.caltech.edu/">CaltechCampusPubs</a>
+                </li>
+                <li>
+                  <a href="/guides/repositories">Guides to Repositories</a>
                 </li>
               </ul>
             </li>
@@ -254,19 +240,16 @@
                   <a href="/borrow/accounts">My Library Accounts</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About My Library Account" title="Log in to LibSearch to review your checkouts and renew items."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="/borrow/delivery">Campus Delivery</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Campus Delivery" title="Graduate students and faculty can have library materials delivered to their Caltech workspaces."><i class="fa fa-question-circle"></i></a>
-                </li>
-                <li>
                   <a href="/borrow/docuserve">DocuServe (InterLibrary Loan)</a>
                 </li>
                 <li>
-                  <a href="/borrow/partners">Partner Libraries</a>
+                  <a href="/borrow/delivery">Campus Delivery</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Campus Delivery" title="Graduate students and faculty can have library materials delivered to their Caltech workspaces."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="/borrow/suggest-a-purchase">Suggest a Purchase</a>
                 </li>
                 <li>
-                  <a href="/borrow/tech">Tech & Equipment</a>
+                  <a href="/tech/borrow">Tech & Equipment</a>
                 </li>
               </ul>
             </li>
@@ -328,19 +311,25 @@
             <li class="col-md-4">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/instruction2">Learn & Consult</a>
+                  <a href="/learn">Teach & Learn</a>
                 </li>
                 <li>
-                  <a href="/instruction2/contact">Contact Your Subject Specialist</a>
+                  <a href="/learn/about">Library Instruction & Research Basics</a>
                 </li>
                 <li>
-                  <a href="/instruction2/about">Library Instruction & Workshops</a>
+                  <a href="/learn/contact">Contact a Subject Specialist</a>
                 </li>
                 <li>
-                  <a href="/instruction2/guides">View Subject, Course, & Topic Guides</a>
+                  <a href="/learn/workshops">Software & Data Workshops</a>
                 </li>
                 <li>
-                  <a href="/instruction2/research-ownership">Library Study: Campus Research Ownership</a>
+                  <a href="/learn/classes">Upcoming Classes</a>
+                </li>
+                <li>
+                  <a href="/learn/research-ownership">Library Study: Campus Research Ownership</a>
+                </li>
+                <li>
+                  <a href="/learn/books">Purchase Books from Our Partners</a>
                 </li>
               </ul>
             </li>
@@ -371,22 +360,16 @@
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/tech/tools">Online Tools</a>
+                  <a href="/tech/borrow">Borrow Tech</a>
                 </li>
                 <li>
-                  <a href="https://www.ithenticate.com/">iThenticate</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About iThenticate" title="Screen your research manuscripts, grant applications, and scholarly documents for potential plagiarism."><i class="fa fa-question-circle"></i></a>
+                  <a href="#">iPads</a>
                 </li>
                 <li>
-                  <a href="https://www.labarchives.com/">LabArchives</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About LabArchives" title="Manage laboratory data and organize research workflows using an electronic lab notebook."><i class="fa fa-question-circle"></i></a>
+                  <a href="#">Laptops</a>
                 </li>
                 <li>
-                  <a href="https://www.overleaf.com/edu/caltech">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.zotero.org/">Zotero</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
-                </li>
-                <li>
-                  <a href="/guides#s-lg-box-wrapper-33676767">Guides to Online Tools</a>
+                  <a href="#">Kindles</a>
                 </li>
               </ul>
             </li>
@@ -412,16 +395,22 @@
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/tech/borrow">Borrow Tech</a>
+                  <a href="/tech/tools">Online Tools</a>
                 </li>
                 <li>
-                  <a href="#">iPads</a>
+                  <a href="https://www.ithenticate.com/">iThenticate</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About iThenticate" title="Screen your research manuscripts, grant applications, and scholarly documents for potential plagiarism."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="#">Laptops</a>
+                  <a href="https://www.labarchives.com/">LabArchives</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About LabArchives" title="Manage laboratory data and organize research workflows using an electronic lab notebook."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="#">Kindles</a>
+                  <a href="https://www.overleaf.com/edu/caltech">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.zotero.org/">Zotero</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
+                </li>
+                <li>
+                  <a href="/guides#s-lg-box-wrapper-33676767">Guides to Online Tools</a>
                 </li>
               </ul>
             </li>
@@ -434,9 +423,6 @@
               <ul>
                 <li class="dropdown-header">
                   <a href="/archives/about">About the Archives</a>
-                </li>
-                <li>
-                  <a href="/archives">Archives Home</a>
                 </li>
                 <li>
                   <a href="/blog?tag_id=213658">News</a>
@@ -530,6 +516,10 @@
                 </li>
                 <li>
                   <a href="/archives/access/reproductions">Reproductions</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li id="asc-home">
+                  <a href="/archives"><i class="fa fa-archive" aria-hidden="true"></i>Archives Home</a>
                 </li>
               </ul>
             </li>
