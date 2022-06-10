@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-06-07 16:06:23
+  Last Modified: 2022-06-10 16:01:51
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -183,12 +183,12 @@
   });
 </script>
 <script>// megamenu click handling
-  // TODO only run this on public pages
+  // keep menu open upon non-link click within
   $(document).ready(function() {
-    $('.dropdown').on({
+    $('.megatoggle').on({
       "click": function(e) { // handles click event
-        // if dropdown or any child of dropdown is clicked
-        if ($(e.target).is('.dropdown-menu') || $(e.target).parents().is('.dropdown-menu')) {
+        // if megamenu or any child of megamenu is clicked
+        if ($(e.target).is('.megamenu') || $(e.target).parents().is('.megamenu')) {
           this.closable = false // do not close it
           return;
         } else {

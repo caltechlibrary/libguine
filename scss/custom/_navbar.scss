@@ -128,14 +128,8 @@
     }
   }
 }
-/*** megamenu ***/
-.menu-large {
+.megatoggle {
   position: static !important;
-}
-@media (min-width: 992px) {
-  .dropdown:hover .megamenu {
-    display: block;
-  }
 }
 
 #asc-home {

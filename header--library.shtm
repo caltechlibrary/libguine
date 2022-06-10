@@ -39,7 +39,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="dropdown menu-large">
+        <li class="dropdown megatoggle">
           <a href="#" id="abt" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">About the Library</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-md-3">
@@ -152,7 +152,7 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown menu-large">
+        <li class="dropdown megatoggle">
           <a href="#" id="sbr" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Search, Borrow, & Request</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-md-3">
@@ -255,7 +255,7 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown menu-large">
+        <li class="dropdown megatoggle">
           <a href="#" id="pwl" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Publish, Write, & Learn</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-md-4">
@@ -335,7 +335,7 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown menu-large">
+        <li class="dropdown megatoggle">
           <a href="#" id="ptt" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Printing, Tools, & TechHub</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-md-3">
@@ -416,7 +416,7 @@
             </li>
           </ul>
         </li>
-        <li class="dropdown menu-large">
+        <li class="dropdown megatoggle">
           <a href="#" id="asc" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Archives & Special Collections</a>
           <ul class="dropdown-menu megamenu row">
             <li class="col-md-3">
