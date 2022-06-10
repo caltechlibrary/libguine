@@ -1,0 +1,30 @@
+%directory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-block-end: 60px;
+  @media (min-width: 768px) {
+    figure {
+      display: table;
+      width: 200px;
+      p { // TODO: remove superfluous markup
+        margin-block-end: 0;
+      }
+    }
+    figcaption {
+      caption-side: bottom;
+      display: table-caption;
+    }
+  }
+}
+
+// Department Staff
+#s-lg-box-wrapper-33965925, // ACS
+#s-lg-box-wrapper-33873194, // Archives
+#s-lg-box-wrapper-33975909, // RS
+#s-lg-box-wrapper-33975911, // CLOPS
+#s-lg-box-wrapper-33978418 { // DLD
+  .s-lib-box-content {
+    @extend %directory;
+  }
+}
