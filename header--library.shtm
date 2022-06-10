@@ -35,7 +35,7 @@
   </div>
   <nav class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="glyphicon glyphicon-book"></i>Menu</button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-book"></i>Menu</button>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -289,10 +289,10 @@
                   <a href="/write">Write & Cite</a>
                 </li>
                 <li>
-                  <a href="#">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
+                  <a href="#">Zotero & Citation Guide</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="#">Zotero & Citation Guide</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
+                  <a href="#">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="/write/copyright-support">Copyright Support</a>
@@ -363,13 +363,13 @@
                   <a href="/tech/borrow">Borrow Tech</a>
                 </li>
                 <li>
-                  <a href="#">iPads</a>
+                  <a href="/tech/borrow#ipads">iPads</a>
                 </li>
                 <li>
-                  <a href="#">Laptops</a>
+                  <a href="/tech/borrow#laptops">Laptops</a>
                 </li>
                 <li>
-                  <a href="#">Kindles</a>
+                  <a href="/tech/borrow#kindles">Kindles</a>
                 </li>
               </ul>
             </li>
@@ -431,7 +431,7 @@
                   <a href="/archives/about/caltech-history">Caltech History</a>
                 </li>
                 <li>
-                  <a href="#">Staff</a>
+                  <a href="/staff#archives">Staff</a>
                 </li>
                 <li>
                   <a href="/archives/jobs">Jobs & Volunteer Opportunities</a>
@@ -462,10 +462,10 @@
                   <a href="/archives/collections">Research Collections</a>
                 </li>
                 <li>
-                  <a href="https://collections.archives.caltech.edu/">Collection Guides</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Collection Guides" title="TEXT NEEDED"><i class="fa fa-question-circle"></i></a>
+                  <a href="https://collections.archives.caltech.edu/">Collection Guides</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Collection Guides" title="Inventories and finding aids describing our collections."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="https://digital.archives.caltech.edu/">Digital Collections</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Digital Collections" title="TEXT NEEDED"><i class="fa fa-question-circle"></i></a>
+                  <a href="https://digital.archives.caltech.edu/">Digital Collections</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Digital Collections" title="Photographs, manuscripts, and other collections directly accessible online."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="https://oralhistories.library.caltech.edu/">Oral Histories</a>
@@ -474,7 +474,7 @@
                   <a href="https://campuspubs.library.caltech.edu/">Campus Publications</a>
                 </li>
                 <li>
-                  <a href="https://archive-it.org/collections/9060">Web Archive</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Web Archive" title="TEXT NEEDED"><i class="fa fa-question-circle"></i></a>
+                  <a href="https://archive-it.org/collections/9060">Web Archive</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Web Archive" title="Caltech websites collected as they changed over time since 2017."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="/archives/collections/books">Books</a>

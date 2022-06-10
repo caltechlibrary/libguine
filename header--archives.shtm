@@ -33,7 +33,7 @@
   </div>
   <nav class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="glyphicon glyphicon-book"></i>Menu</button>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-book"></i>Menu</button>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
