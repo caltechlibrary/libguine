@@ -1,0 +1,266 @@
+<!--BEGIN: template-web--archives-with-intro.html
+  Last Modified: 2022-06-10 15:49:00
+
+  INSTRUCTIONS: Select this template within the Customize Guide Templates
+  section under Admin ➜ Page Layout ➜ Guide and paste the contents of this file
+  into the Template Code box.
+
+  GLOSSARY:
+    • tpl-web: Template Web; used for identifying context with javascript
+    • c3-asc: identifier for Archives & Special Collections; affects colors
+    • with-intro: includes two spaces for intro boxes rather than the hardcoded
+      description and quicklinks content on landing pages
+-->
+
+<body id="tpl-web" class="s-lg-guide-body c3-asc with-intro">
+  {{skip_link}}
+  {{obsolete_browser_alert}}
+  {{ADMIN_CMD_BAR}}
+  <!-- BEGIN: Page Header -->
+  {{public_header}}
+  <!-- END: Page Header -->
+  <!-- BEGIN: Guide Info Header -->
+  <div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+      {{breadcrumbs}}
+    </nav>
+    <div class="pull-right">
+      <div id="s-lg-guide-header-search">
+        {{guide_search}} </div>
+      {{ADMIN_MINI_CMD_BAR}}
+    </div>
+    <div id="s-lg-guide-header-info">
+      <h1 id="s-lg-guide-name">{{guide_title}}: {{page_title}}</h1>
+      <div id="s-lg-guide-desc-container">
+        <span id="s-lg-guide-description">{{guide_description}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- END: Guide Info Header -->
+  <div id="s-lg-tabs-container" class="container s-lib-side-borders pad-top-med">
+    <div id="s-lg-guide-tabs" class="tabs" role="navigation" aria-label="Guide Pages">
+      <ul class="nav nav-tabs split-button-nav">
+        {{guide_nav}}
+      </ul>
+    </div>
+  </div>
+  <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+  <!-- BEGIN: Guide Content -->
+  <div id="s-lg-guide-main" class="s-lib-main s-lib-side-borders" tabindex="-1">
+    {{empty_page_sub_page_list}}
+
+    <div class="c3-wrapper c3-page-title">
+      <div class="container">
+        <div id="c3-page-title-row" class="row s-lg-row">
+          <div id="s-lg-col-99" class="col-md-12">
+            <div class="s-lg-col-boxes">
+              <h1 id="s-lg-guide-name">{{page_title}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container c3-landing-hide">
+      <div id="c3-content-row" class="row s-lg-row">
+        <div id="s-lg-col-1" class="col-md-8">
+          <div class="s-lg-col-boxes">
+            {{content_col_1}}
+          </div>
+        </div>
+        <div id="s-lg-col-2" class="col-md-4">
+          <div class="s-lg-col-boxes">
+            <div id="c3-sidenav">
+              <ul class="list-unstyled">
+                {{guide_nav}}
+              </ul>
+            </div>
+            {{content_col_2}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container c3-introduction c3-content-hide">
+      <div id="c3-introduction-row" class="row s-lg-row">
+        <div id="s-lg-col-21" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            {{content_col_21}}
+          </div>
+        </div>
+        <div id="s-lg-col-22" class="col-md-6">
+          <div class="s-lg-col-boxes">
+            {{content_col_22}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="c3-cards-wrapper c3-content-hide">
+      <div class="container">
+
+        <div id="c3-cards-row-1" class="row s-lg-row equalheights">
+          <div id="s-lg-col-31" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_31}}
+            </div>
+          </div>
+          <div id="s-lg-col-32" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_32}}
+            </div>
+          </div>
+          <div id="s-lg-col-33" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_33}}
+            </div>
+          </div>
+        </div>
+
+        <div id="c3-cards-row-2" class="row s-lg-row equalheights">
+          <div id="s-lg-col-34" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_34}}
+            </div>
+          </div>
+          <div id="s-lg-col-35" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_35}}
+            </div>
+          </div>
+          <div id="s-lg-col-36" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_36}}
+            </div>
+          </div>
+        </div>
+
+        <div id="c3-cards-row-3" class="row s-lg-row equalheights">
+          <div id="s-lg-col-37" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_37}}
+            </div>
+          </div>
+          <div id="s-lg-col-38" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_38}}
+            </div>
+          </div>
+          <div id="s-lg-col-39" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_39}}
+            </div>
+          </div>
+        </div>
+
+        <div id="c3-cards-row-4" class="row s-lg-row equalheights">
+          <div id="s-lg-col-301" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_301}}
+            </div>
+          </div>
+          <div id="s-lg-col-302" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_302}}
+            </div>
+          </div>
+          <div id="s-lg-col-303" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_303}}
+            </div>
+          </div>
+        </div>
+
+        <div id="c3-cards-row-5" class="row s-lg-row equalheights">
+          <div id="s-lg-col-304" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_304}}
+            </div>
+          </div>
+          <div id="s-lg-col-305" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_305}}
+            </div>
+          </div>
+          <div id="s-lg-col-306" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_306}}
+            </div>
+          </div>
+        </div>
+
+        <div id="c3-cards-row-6" class="row s-lg-row equalheights">
+          <div id="s-lg-col-307" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_307}}
+            </div>
+          </div>
+          <div id="s-lg-col-308" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_308}}
+            </div>
+          </div>
+          <div id="s-lg-col-309" class="col-md-4">
+            <div class="s-lg-col-boxes">
+              {{content_col_309}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container c3-landing-hide">
+      <div id="c3-content-row-x" class="row s-lg-row">
+        <div id="s-lg-col-10" class="col-md-8">
+          <div class="s-lg-col-boxes">
+            {{content_col_10}}
+          </div>
+        </div>
+        <div id="s-lg-col-11" class="col-md-4">
+          <div class="s-lg-col-boxes">
+            {{content_col_11}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{page_prev_next_links}}
+  </div>
+  <!-- END: Guide Content -->
+  <!-- BEGIN: Page Footer -->
+  <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+      <ul id="s-lg-guide-header-attributes" class="">
+        <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+          {{last_updated_display}} </li>
+        <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+          {{guide_url_display}}
+        </li>
+        <li id="s-lg-guide-print-url">
+          {{print_url_display}}
+        </li>
+      </ul>
+      <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+        {{login_url_display}} </div>
+    </div>
+    <div class="pad-bottom-sm clearfix">
+      <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+        {{support_url_display}} </div>
+      <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+        {{guide_subjects}}
+      </div>
+      <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+        {{guide_tags}}
+      </div>
+    </div>
+  </div>
+  <!-- END: Page Footer -->
+  <div id="s-lib-alert" title="">
+    <div id="s-lib-alert-content"></div>
+  </div>
+  <!-- BEGIN: Custom Footer -->
+  {{public_footer}}
+  <!-- END: Custom Footer -->
+</body>
+<!--END: template-web--archives-with-intro.html-->
