@@ -170,3 +170,82 @@ $home-secondary-color: #1e988a;
     margin-block-start: 90px;
   }
 }
+
+// Popular Searches
+#s-lg-box-28870775 {
+  a {
+    color: $home-secondary-color;
+    &:active,
+    &:focus,
+    &:hover {
+      outline: $home-secondary-color solid medium;
+      text-decoration: none;
+    }
+  }
+}
+
+// Feeds Row
+.c3-feeds-row {
+  h2 {
+    color: $home-primary-color;
+  }
+  .s-lib-box { // need extra class for specificity
+    a {
+      color: $home-primary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Upcoming Events
+#api_upc_cid5075_3754_iid3271 {
+  h3 {
+    display: none;
+  }
+  li {
+    padding-block-end: 1em;
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+
+// CaltechAUTHORS
+.combined-result {
+  margin-block-end: 1em;
+}
+
+// Library FAQs
+#s-la-widget-16585 {
+  background-color: unset;
+  border: unset;
+  font-family: unset;
+  font-size: unset;
+  line-height: unset;
+  padding: unset;
+  .s-la-faq-listing {
+    border: none;
+  }
+  .s-la-faq-listing-q {
+    font-size: unset;
+  }
+  .s-la-faq-listing-meta {
+    text-align: right;
+    .label {
+      background-color: $home-secondary-color;
+      color: #fff;
+      font-size: small;
+      padding-block: 0;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .divider,
+  .metalabel,
+  .s-la-faq-listing-updated,
+  .s-la-faq-listing-views {
+    display: none;
+  }
+}
