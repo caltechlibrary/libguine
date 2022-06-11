@@ -1,5 +1,5 @@
 <!--BEGIN: head.shtm
-  Last Modified: 2022-06-10 16:01:51
+  Last Modified: 2022-06-11 11:24:31
 
   INSTRUCTIONS:
   Run '/bin/sh build.sh head system' to create the system head asset.
@@ -39,12 +39,12 @@
       const bootstrap_js = document.createElement("script");
       bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
       document.head.appendChild(bootstrap_js);
+      // remove scroll-to-top javascript
+      document.getElementById("s-lib-scroll-top").remove();
       // move the breadcrumbs where we want them
       document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
       // hours widget script cannot be included in footer code nor on admin pages
-      $(function(){
-        var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
-      });
+      var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
       // grab tokenized login link and rebuild elsewhere
       const login_link = document.createElement("a");
       login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
@@ -177,9 +177,95 @@
       [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     }
     else if (_public && blog) {
-      document.getElementById("s-lib-scroll-top").remove();
-      // TODO on blog list this row-to-delete loads after this script
-      document.querySelector("#s-lg-blog-content > .row:last-of-type").remove();    }
+      // NOTE unsure if this script will always run before main blog script;
+      // #s-lg-blog-content is initially empty on the /blog page, but on blog
+      // post pages it is populated with #s-lg-blog-posts and more
+      /**
+       * Removes a Comments link and its preceding text node.
+       *
+       * We want to remove the link to Comments and its preceding text node
+       * containing a horizontal bar character (` | `). The markup is different
+       * depending on whether the post contains subject tags or not.
+       *
+       * with subjects:
+       * ```html
+       * <h2 class="s-lg-blog-header">Post Title</h2>
+       * <span>
+       * by Post Author on 
+       * <span>[Post Date]</span>
+       *  | 
+       * <a href="/example#comments">Comments</a>
+       * </span>
+       * <br>
+       * ```
+       *
+       * without subjects:
+       * ```html
+       * <h2 class="s-lg-blog-header">Post Title</h2>
+       * <span>
+       * by Post Author on 
+       * <span>[Post Date]</span>
+       * in 
+       * <a>Subject 1</a>
+       * , 
+       * <a>Subject 2</a>
+       * , 
+       * <a>Subject 3</a>
+       * </span>
+       *  | 
+       * <a href="/example#comments">Comments</a>
+       * <br>
+       * ```
+       * 
+       * @param {node} node The `span` immediately following `.s-lg-blog-header`.
+       */
+      function removeCommentsLink(node) {
+        // console.log(node.nextSibling);
+        if (node.nextSibling.nodeName === "BR") {
+          if (node.lastChild.previousSibling.nodeName === "#text" && node.lastChild.previousSibling.nodeValue === " | ") {
+            // console.log(node.lastChild.previousSibling);
+            node.lastChild.previousSibling.remove();
+          }
+          else if (node.lastChild.nodeName === "A" && node.lastChild.href.endsWith("#comments")) {
+            // console.log(node.lastChild);
+            node.lastChild.remove();
+          }
+        }
+        else if (node.nextSibling.nodeName === "#text" && node.nextSibling.nodeValue === " | ") {
+          // console.log(node.nextSibling);
+          if (node.nextSibling.nextSibling.nodeName === "A" && node.nextSibling.nextSibling.href.endsWith("#comments")) {
+            // console.log(node.nextSibling.nextSibling);
+            node.nextSibling.nextSibling.remove();
+            // console.log(node.nextSibling);
+            node.nextSibling.remove();
+          }
+        }
+      }
+      if (document.getElementById("s-lg-blog-posts")) {
+        console.log("‼️ BLOG POST");
+        document.body.classList.add("blog-post");
+        // console.log(document.getElementById("s-lg-blog-posts").querySelector(".s-lg-blog-header + span"));
+        removeCommentsLink(document.getElementById("s-lg-blog-posts").querySelector(".s-lg-blog-header + span"));
+      }
+      else {
+        console.log("‼️ BLOG LANDING");
+        // /blog landing content is populated by another script
+        const blog_content = document.getElementById("s-lg-blog-content");
+        const config = { childList: true, subtree: true };
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            observer.disconnect();
+            // console.log(mutation.type);
+            const blog_posts = document.getElementById("s-lg-blog-posts").getElementsByClassName("row");
+            for (var i = 0; i < blog_posts.length; i++) {
+              // console.log(blog_posts[i]);
+              blog_posts[i].querySelectorAll(".s-lg-blog-header + span").forEach(node => removeCommentsLink(node));
+            }
+          });
+        });
+        observer.observe(blog_content, config);
+      }
+    }
   });
 </script>
 <script>// megamenu click handling
