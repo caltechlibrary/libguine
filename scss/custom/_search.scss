@@ -1,0 +1,22 @@
+.s-srch-resultlist {
+  & > strong {
+    font-weight: normal;
+    .pagination {
+      display: none;
+    }
+  }
+}
+#s-lg-srch-content { // specificity needed
+  .s-srch-result {
+    font-size: unset;
+  }
+  .s-srch-result-title {
+    font-size: large;
+  }
+  .s-lg-facet-div-title {
+    font-size: large;
+  }
+  .s-lg-facet-div-content {
+    line-height: 2;
+  }
+}
