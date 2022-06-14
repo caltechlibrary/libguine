@@ -1,0 +1,27 @@
+@use "colors" as *;
+
+@mixin alert-colors($base-color) {
+  background-color: mix(white, $base-color, 80%);
+  border: none;
+  color: $base-color;
+  .alert-link {
+    color: darken($base-color, 10%) !important;
+    text-decoration: underline;
+    &:focus,
+    &:hover {
+      text-decoration: underline 0.1em;
+    }
+  }
+}
+.alert-success {
+  @include alert-colors($sherpa);
+}
+.alert-info {
+  @include alert-colors($tarawera);
+}
+.alert-warning {
+  @include alert-colors($burnt);
+}
+.alert-danger {
+  @include alert-colors($monza);
+}
