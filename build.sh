@@ -50,7 +50,7 @@ analyze_include() {
             css_file="assets/$(echo "$1" | cut -d\' -f2 | cut -d. -f1).css"
             sass --no-charset --no-source-map "$included_file" "$css_file"
             # include link to stylesheet in the asset file
-            printf '%s\n' '<link id="c3-custom-styles" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/custom.css">' >> "$3"
+            printf '%s\n' '<link id="custom-css" rel="stylesheet" href="//libapps.s3.amazonaws.com/sites/64/include/custom.css">' >> "$3"
         ;;
     esac
 }
