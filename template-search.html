@@ -1,4 +1,4 @@
-<body class="s-lib-public-body">
+<body id="template-search" class="s-lib-public-body">
   {{skip_link}}
   {{obsolete_browser_alert}}
   <!-- BEGIN: Page Header -->
@@ -31,6 +31,10 @@
       </div>
     </section>
     <section>
+      <div class="alert alert-warning alert-dismissible" role="alert" style="background-color:#fff;border-color:#c75000;color:#333">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        Looking for a book, journal, database, or other resource? Try <a href="/libsearch">LibSearch</a> instead. You can also browse our <a href="/az.php">Databases List</a> or <a href="https://libanswers.caltech.edu/">FAQs</a>.
+      </div>
       <div id="s-lg-srch-cols" class="row">
         {{content}}
       </div>
