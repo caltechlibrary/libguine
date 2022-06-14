@@ -1,3 +1,21 @@
+@use "colors" as *;
+// TODO
+// add <input type="hidden" name="default_lg" value="1"> on search results form
+// color the bottom pager
+// style the search term highlight
+#template-search #s-lib-public-main .alert {
+  margin-block-end: 15px;
+}
+#s-lg-srch-form {
+  .btn-default {
+    background-color: $tarawera;
+    border-color: $tarawera;
+    color: #fff;
+    &:hover {
+      background-color: mix(black, $tarawera, 40%);
+    }
+  }
+}
 .s-srch-resultlist {
   & > strong {
     font-weight: normal;
@@ -7,16 +25,47 @@
   }
 }
 #s-lg-srch-content { // specificity needed
+  mark, .mark {
+    background-color: mix(white, $jungle, 80%);
+    padding-block: 0;
+  }
   .s-srch-result {
     font-size: unset;
   }
   .s-srch-result-title {
     font-size: large;
   }
+  .s-srch-result-meta {
+    & > div:first-of-type {
+      display: none;
+    }
+  }
   .s-lg-facet-div-title {
     font-size: large;
   }
   .s-lg-facet-div-content {
-    line-height: 2;
+    line-height: 1.25;
+    .check {
+      align-items: flex-start;
+      display: flex;
+      margin-block-end: 0.5em;
+      input {
+        margin: 0;
+        margin-inline-end: 0.25em;
+      }
+    }
   }
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: $tarawera;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: $tarawera;
+  border-color: $tarawera;
 }
