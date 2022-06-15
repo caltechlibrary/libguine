@@ -194,13 +194,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         observer.disconnect();
+        // NOTE custom guide classes added via admin ui
+        // TODO refactor as DRY code
         if (document.querySelector("#c3-sidenav.g1230812 > ul")) {
           // first link was unwrapped; rewrap with the link (jQuery)
           $("#c3-sidenav.g1230812 > ul > li:first-of-type span").wrap(link);
           // add the new custom element
-          const g1230812_sidebar_title = document.createElement("li");
-          g1230812_sidebar_title.textContent = "Research Collections";
-          document.querySelector("#c3-sidenav.g1230812 > ul").insertAdjacentElement('afterbegin', g1230812_sidebar_title);
+          const sidenav_title = document.createElement("li");
+          sidenav_title.textContent = "Research Collections";
+          document.querySelector("#c3-sidenav.g1230812 > ul").insertAdjacentElement('afterbegin', sidenav_title);
+        }
+        if (document.querySelector("#c3-sidenav.g1230813 > ul")) {
+          // first link was unwrapped; rewrap with the link (jQuery)
+          $("#c3-sidenav.g1230813 > ul > li:first-of-type span").wrap(link);
+          // add the new custom element
+          const sidenav_title = document.createElement("li");
+          sidenav_title.textContent = "Explore Exhibits";
+          document.querySelector("#c3-sidenav.g1230813 > ul").insertAdjacentElement('afterbegin', sidenav_title);
         }
       });
     });
