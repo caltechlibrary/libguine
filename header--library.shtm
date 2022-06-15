@@ -126,7 +126,7 @@
                   <a href="https://libcal.caltech.edu/">Events</a>
                 </li>
                 <li>
-                  <a href="/#s-lg-content-67167005">Subscribe to Our Newsletter</a>
+                  <a href="/#newsletter">Subscribe to Our Newsletter</a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Follow Us
@@ -161,19 +161,19 @@
                   <a href="/search">Search & Browse</a>
                 </li>
                 <li>
-                  <a href="/search#s-lg-content-66366939">LibSearch</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About LibSearch" title="Search across most of the Library’s collections and discover items outside our collections."><i class="fa fa-question-circle"></i></a>
+                  <a href="/libsearch">LibSearch</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About LibSearch" title="Search across most of the Library’s collections and discover items outside our collections."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="/search#s-lg-content-66366954">Journals & Ebooks List</a>
+                  <a href="/pubfinder">Journals & Ebooks List</a>
                 </li>
                 <li>
-                  <a href="/search#s-lg-content-66366988">Databases</a>
+                  <a href="/az.php">Databases</a>
                 </li>
                 <li>
                   <a href="/search/reserves">Course Reserves</a>
                 </li>
                 <li>
-                  <a href="/search#s-lg-content-66366957">Citation Linker</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Citation Linker" title="Search using parts of a citation such as title, author, DOI, or PubMed ID."><i class="fa fa-question-circle"></i></a>
+                  <a href="/citation-linker">Citation Linker</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Citation Linker" title="Search using parts of a citation such as title, author, DOI, or PubMed ID."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li role="separator" class="divider"></li>
                 <li>
@@ -267,7 +267,7 @@
                   <a href="/publish/open-access">Open Access Policy & Waiver</a>
                 </li>
                 <li>
-                  <a href="/publish/funder-compliance">Funder Compliance</a>
+                  <a href="/publish/grant-compliance">Grant Compliance Support</a>
                 </li>
                 <li>
                   <a href="/publish/data">Research Data Support</a>
@@ -301,10 +301,10 @@
                   <a href="/write/patents">Patents & Trademarks</a>
                 </li>
                 <li>
-                  <a href="/write/thesis">Thesis Guide</a>
+                  <a href="/theses">Thesis Guide</a>
                 </li>
                 <li>
-                  <a href="/write/guide">Writing Guide</a>
+                  <a href="/guides/writing">Writing Guides</a>
                 </li>
               </ul>
             </li>
@@ -379,16 +379,16 @@
                   <a href="/techhub">TechHub</a>
                 </li>
                 <li>
-                  <a href="#">3D Printing @ TechLab</a>
+                  <a href="/techhub/print">3-D Printing at TechLab</a>
                 </li>
                 <li>
-                  <a href="#">Equipment</a>
+                  <a href="/techhub/cura">Cura - Slice Your Model</a>
                 </li>
                 <li>
-                  <a href="#">News</a>
+                  <a href="/techhub/documentation">Documentation & Resources</a>
                 </li>
                 <li>
-                  <a href="#">View TechHub FAQs</a>
+                  <a href="/techhub/contact">FAQs & Contact Form</a>
                 </li>
               </ul>
             </li>
@@ -437,7 +437,7 @@
                   <a href="/staff#archives">Staff</a>
                 </li>
                 <li>
-                  <a href="/archives/jobs">Jobs & Volunteer Opportunities</a>
+                  <a href="/jobs#archives">Jobs & Volunteer Opportunities</a>
                 </li>
                 <li>
                   <a href="/archives/about/donate">Donate or Transfer</a>
