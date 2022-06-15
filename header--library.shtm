@@ -289,10 +289,10 @@
                   <a href="/write">Write & Cite</a>
                 </li>
                 <li>
-                  <a href="#">Zotero & Citation Guide</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
+                  <a href="/citation-management">Zotero & Citation Guide</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Zotero" title="Manage research materials, citations, and bibliographies using this free, open-source reference management software."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
-                  <a href="#">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
+                  <a href="/latex">Overleaf & LaTeX</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Overleaf & LaTeX" title="Write, edit, and publish scientific documents using this collaborative cloud-based LaTeX editor."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="/write/copyright-support">Copyright Support</a>
@@ -419,6 +419,9 @@
         <li class="dropdown megatoggle">
           <a href="#" id="asc" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">Archives & Special Collections</a>
           <ul class="dropdown-menu megamenu row">
+            <li id="asc-home" class="col-md-12">
+              <a href="/archives"><i class="fa fa-archive" aria-hidden="true"></i>Archives Home</a>
+            </li>
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
@@ -516,10 +519,6 @@
                 </li>
                 <li>
                   <a href="/archives/access/reproductions">Reproductions</a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li id="asc-home">
-                  <a href="/archives"><i class="fa fa-archive" aria-hidden="true"></i>Archives Home</a>
                 </li>
               </ul>
             </li>

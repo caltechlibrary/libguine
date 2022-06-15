@@ -134,8 +134,14 @@
 
 #asc-home {
   font-size: larger;
+  padding-block-end: 0;
   a {
-    margin-inline-start: 0.5em;
+    display: block;
+    margin-inline-start: 0;
+    &:focus,
+    &:hover {
+      background-color: transparent;
+    }
   }
   .fa {
     padding-inline-end: 0.5em;
