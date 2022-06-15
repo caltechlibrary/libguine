@@ -32,6 +32,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
     login_link.setAttribute("aria-label", "Staff Login");
     login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
     document.getElementById("c3-footer-login").appendChild(login_link);
+    // update page title
+    const page_name = document.getElementById("s-lib-bc-page").textContent;
+    const site_name = "Caltech Library";
+    if (document.getElementById("s-lib-bc-group")) {
+      const group_name = document.getElementById("s-lib-bc-group").textContent;
+      if (document.body.classList.contains("c3-asc")) {
+        document.title = `${page_name} - ${group_name} - ${site_name}`;
+      }
+      else {
+        document.title = `${page_name} - ${site_name}`;
+      }
+    }
+    else {
+      document.title = `${page_name} - ${site_name}`;
+    }
     // site search form does not show facets without hidden parameter
     // <input type="hidden" name="default_lg" value="1">
     if (document.getElementById("s-lg-srch-form")) {

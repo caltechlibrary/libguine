@@ -1,0 +1,12 @@
+body {
+  &:not(.c3-asc) {
+    #s-lib-bc-group {
+      display: none;
+    }
+  }
+  &.c3-landing {
+    #s-lib-bc-guide {
+      display: none;
+    }
+  }
+}
