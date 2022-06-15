@@ -177,3 +177,20 @@ $archives-secondary-color: #849895;
     padding-inline-end: 0.5em;
   }
 }
+
+.c3-asc {
+  #c3-sidenav {
+    & > ul {
+      & > li {
+        &:first-of-type {
+          border-block-end: #fff solid thin;
+          color: #fff;
+          margin-block-end: 0.5em;
+          &::before {
+            content: unset;
+          }
+        }
+      }
+    }
+  }
+}

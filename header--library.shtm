@@ -425,7 +425,7 @@
             <li class="col-md-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/archives/about">About the Archives</a>
+                  About the Archives
                 </li>
                 <li>
                   <a href="/blog?tag_id=213658">News</a>
@@ -462,7 +462,10 @@
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/archives/collections">Research Collections</a>
+                  Research Collections
+                </li>
+                <li>
+                  <a href="/archives/collections">About Research Collections</a>
                 </li>
                 <li>
                   <a href="https://collections.archives.caltech.edu/">Collection Guides</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Collection Guides" title="Inventories and finding aids describing our collections."><i class="fa fa-question-circle"></i></a>
@@ -487,7 +490,7 @@
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/archives/exhibits">Explore Exhibits</a>
+                  Explore Exhibits
                 </li>
                 <li>
                   <a href="/archives/exhibits/becoming">Becoming Caltech</a>
@@ -503,7 +506,7 @@
             <li class="col-sm-3">
               <ul>
                 <li class="dropdown-header">
-                  <a href="/archives/access">Access the Archives</a>
+                  Access the Archives
                 </li>
                 <li>
                   <a href="/archives/access/visit">Visitor Information</a>

@@ -169,6 +169,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
     [...document.getElementById("c3-sidenav").getElementsByClassName("pull-left")].forEach(e => e.classList.remove("pull-left"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
+    // save link for use if needed
+    const link = document.querySelector(".c3-asc #c3-sidenav > ul > li:first-of-type a");
+    // remove landing page links in Archives sidebar (jQuery)
+    $(".c3-asc #c3-sidenav > ul > li:first-of-type a").contents().unwrap();
+    // add custom sidebar menu title for Research Collections
+    const sidenav = document.getElementById("c3-sidenav");
+    const config = { attributes: true };
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        observer.disconnect();
+        if (document.querySelector("#c3-sidenav.g1230812 > ul")) {
+          // first link was unwrapped; rewrap with the link (jQuery)
+          $("#c3-sidenav.g1230812 > ul > li:first-of-type span").wrap(link);
+          // add the new custom element
+          const g1230812_sidebar_title = document.createElement("li");
+          g1230812_sidebar_title.textContent = "Research Collections";
+          document.querySelector("#c3-sidenav.g1230812 > ul").insertAdjacentElement('afterbegin', g1230812_sidebar_title);
+        }
+      });
+    });
+    observer.observe(sidenav, config);
   }
   else if (_public && blog) {
     // NOTE unsure if this script will always run before main blog script;
