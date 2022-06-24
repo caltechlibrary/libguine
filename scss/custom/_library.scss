@@ -4,7 +4,7 @@ $home-primary-color: #062e47;
 $home-secondary-color: #1e988a;
 
 #home-bg.cl-bg {
-  background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover;
+  background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover $home-primary-color;
 }
 #tpl-l-home #home-bg-2 {
   background: linear-gradient(transparent, 60%, #fff), url(https://libapps.s3.amazonaws.com/customers/64/images/poolfaded.jpg) no-repeat top left/cover;

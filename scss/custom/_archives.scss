@@ -5,7 +5,7 @@ $archives-primary-color: #c75000;
 $archives-secondary-color: #849895;
 
 #home-bg.ca-bg {
-  background: url(https://libapps.s3.amazonaws.com/customers/64/images/shelves.jpg) no-repeat bottom left/cover;
+  background: url(https://libapps.s3.amazonaws.com/customers/64/images/shelves.jpg) no-repeat bottom left/cover $archives-primary-color;
   padding-block-end: 90px;
 }
 #tpl-a-home #home-bg-2 {
