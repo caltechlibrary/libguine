@@ -11,5 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Diff
-        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+      - name: Loop
+        run: |
+          for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
+          do
+            /bin/sh TEST.sh "$f";
+          done
