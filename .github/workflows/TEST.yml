@@ -12,4 +12,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Diff
-        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}^ ${{ github.sha }}
+        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
