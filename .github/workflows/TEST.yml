@@ -1,0 +1,15 @@
+name: TEST
+on:
+  push:
+    # paths:
+    #   - '*.s?html?'
+    #   - '**.scss'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Diff
+      run: git diff --name-only ${{ github.event.before }} ${{ github.sha }}
