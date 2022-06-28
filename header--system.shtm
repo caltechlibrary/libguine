@@ -243,7 +243,7 @@
                   <a href="/borrow/docuserve">DocuServe (InterLibrary Loan)</a>
                 </li>
                 <li>
-                  <a href="/borrow/delivery">Campus Delivery</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Campus Delivery" title="Graduate students and faculty can have library materials delivered to their Caltech workspaces."><i class="fa fa-question-circle"></i></a>
+                  <a href="/borrow/delivery">Campus Delivery</a> <a href="#" class="clg-tooltip" data-toggle="tooltip" data-placement="auto bottom" aria-label="About Campus Delivery" title="Graduate students and faculty can have Library materials delivered to their Caltech workspaces."><i class="fa fa-question-circle"></i></a>
                 </li>
                 <li>
                   <a href="/borrow/suggest-a-purchase">Suggest a Purchase</a>

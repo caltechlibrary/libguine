@@ -8,7 +8,7 @@ elif [ "$#" -eq 1 ]; then
     if [ "$1" = "head" ] || [ "$1" = "scss" ]; then
         set "$1" system
     else
-        set "$1" archives library
+        set "$1" archives system
     fi
 fi
 
