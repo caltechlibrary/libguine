@@ -44,6 +44,7 @@ def main(
             p.fill("#s-libapps-password", admin_password)
             p.click("#s-libapps-login-button")
             p.goto("/libguides/lookfeel.php?action=1")
+            p.screenshot(full_page=True, path="artifacts/lookfeel_action_1.png")
             p.click("#s-lg-include-files_link")
             p.set_input_files("#include_file", compiled_css)
             b.close()
