@@ -1,9 +1,6 @@
 name: TEST
 on:
   push:
-    # paths:
-    #   - '*.s?html?'
-    #   - '**.scss'
   workflow_dispatch:
 jobs:
   build:
@@ -36,5 +33,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts
+          name: artifacts-${{ github.workflow }}-${{ github.run_number }}
           path: artifacts
