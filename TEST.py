@@ -5,7 +5,7 @@ import subprocess
 def main(
     file: "modified file from which to build artifacts",  # type: ignore
 ):
-    os.mkdir("artifacts")
+    os.makedirs("artifacts", exist_ok=True)
     # html and shtm files may need includes processed
     if file.endswith(".html") or file.endswith(".shtm"):
         pass
