@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 
 def main(
@@ -36,18 +36,22 @@ def main(
             ]
         )
         print(result)
-        with sync_playwright() as playwright:
-            b = playwright.firefox.launch()
-            p = b.new_page(base_url=admin_base_url)
-            p.goto("/libguides")
-            p.fill("#s-libapps-email", admin_username)
-            p.fill("#s-libapps-password", admin_password)
-            p.click("#s-libapps-login-button")
-            p.goto("/libguides/lookfeel.php?action=1")
-            p.screenshot(full_page=True, path="artifacts/lookfeel_action_1.png")
-            p.click("#s-lg-include-files_link")
-            p.set_input_files("#include_file", compiled_css)
-            b.close()
+        try:
+            with sync_playwright() as playwright:
+                b = playwright.firefox.launch()
+                p = b.new_page(base_url=admin_base_url)
+                p.goto("/libguides")
+                p.fill("#s-libapps-email", admin_username)
+                p.fill("#s-libapps-password", admin_password)
+                p.click("#s-libapps-login-button")
+                p.goto("/libguides/lookfeel.php?action=1")
+                p.screenshot(full_page=True, path="artifacts/lookfeel_action_1.png")
+                p.click("#s-lg-include-files_link")
+                p.set_input_files("#include_file", compiled_css)
+                b.close()
+        except PlaywrightTimeoutError as e:
+            print(str(e))
+            return
 
 
 if __name__ == "__main__":
