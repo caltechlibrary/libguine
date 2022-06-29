@@ -39,7 +39,7 @@ def main(
         try:
             with sync_playwright() as playwright:
                 b = playwright.firefox.launch()
-                p = b.new_page(base_url=admin_base_url)
+                p = b.new_page(base_url=admin_base_url,record_video_dir="artifacts")
                 p.goto("/libguides")
                 p.fill("#s-libapps-email", admin_username)
                 p.fill("#s-libapps-password", admin_password)
