@@ -1,1 +1,2 @@
 plac==1.3.5
+playwright==1.22.0

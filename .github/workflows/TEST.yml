@@ -21,12 +21,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          playwright install firefox
           curl --silent --location https://github.com/sass/dart-sass/releases/download/1.53.0/dart-sass-1.53.0-linux-x64.tar.gz | tar --extract --gzip
           mv dart-sass/sass /usr/local/bin
+      - run: ls -alF artifacts
       - name: Loop
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
-            python TEST.py "$f";
+            python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }};
           done
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
