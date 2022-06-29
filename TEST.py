@@ -45,7 +45,7 @@ def main(
                 p.fill("#s-libapps-password", admin_password)
                 p.screenshot(full_page=True, path="artifacts/1.png")
                 p.click("#s-libapps-login-button")
-                p.screenshot(full_page=True, path="artifacts/2.png")
+                # p.screenshot(full_page=True, path="artifacts/2.png")
                 # p.goto("/libguides/lookfeel.php?action=1")
                 # p.screenshot(full_page=True, path="artifacts/lookfeel_action_1.png")
                 p.click("#s-lg-admin-command-bar a:text('Admin')")
