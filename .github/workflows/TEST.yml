@@ -24,6 +24,9 @@ jobs:
           playwright install firefox
           curl --silent --location https://github.com/sass/dart-sass/releases/download/1.53.0/dart-sass-1.53.0-linux-x64.tar.gz | tar --extract --gzip
           mv dart-sass/sass /usr/local/bin
+      - run: echo ${{ github.run_id }}
+      - run: echo ${{ github.run_number }}
+      - run: echo ${{ github.run_attempt }}
       - run: if [ -d artifacts ]; then ls -alF artifacts; fi
       - name: Loop
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
