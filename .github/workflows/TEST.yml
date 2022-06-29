@@ -13,8 +13,23 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          curl --silent --location https://github.com/sass/dart-sass/releases/download/1.53.0/dart-sass-1.53.0-linux-x64.tar.gz | tar --extract --gzip
+          mv dart-sass/sass /usr/local/bin
       - name: Loop
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
-            /bin/sh TEST.sh "$f";
+            python TEST.py "$f";
           done
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: artifacts
