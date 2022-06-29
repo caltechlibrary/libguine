@@ -21,7 +21,13 @@ def main(
     # scss files may need compiling
     elif file.endswith(".scss"):
         result = subprocess.run(
-            "sass", "--no-charset", "--no-source-map", "TEST.scss", "artifacts/TEST.css"
+            [
+                "sass",
+                "--no-charset",
+                "--no-source-map",
+                "TEST.scss",
+                "artifacts/TEST.css",
+            ]
         )
         print(result)
     # TODO upload artifacts
