@@ -46,7 +46,7 @@ def main(
                         p.wait_for_load_state("networkidle")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
-                        p.wait_for_load_state("networkidle")
+                        p.screenshot(full_page=True, path="artifacts/1.png")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
