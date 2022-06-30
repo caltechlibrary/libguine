@@ -43,7 +43,7 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
                         p.press("#s2id_autogen2_search", "Enter")
-                        p.wait_for_selector("#template_code")
+                        p.wait_for_load_state("networkidle")
                         p.screenshot(full_page=True, path="artifacts/1.png")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
