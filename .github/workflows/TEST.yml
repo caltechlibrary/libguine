@@ -21,16 +21,14 @@ jobs:
           playwright install firefox
           curl --silent --location https://github.com/sass/dart-sass/releases/download/1.53.0/dart-sass-1.53.0-linux-x64.tar.gz | tar --extract --gzip
           mv dart-sass/sass /usr/local/bin
-      - run: echo ${{ github.run_id }}
-      - run: echo ${{ github.run_number }}
-      - run: echo ${{ github.run_attempt }}
-      - run: if [ -d artifacts ]; then ls -alF artifacts; fi
-      - name: Loop
+      - name: Loop over changed files
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
-            python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }};
+            if [ "${f##*.}" = "scss" ] || [ "${f##*.}" = "html" ] || [ "${f##*.}" = "shtm" ]; then
+              python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} --github ${{ github.sha }};
+            fi
           done
-      - name: Upload artifacts
+      - name: Save artifacts
         uses: actions/upload-artifact@v3
         with:
           name: artifacts-${{ github.workflow }}-${{ github.run_number }}
