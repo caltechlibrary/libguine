@@ -42,10 +42,9 @@ def main(
                         p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
                     else:
                         for group in json.loads(groups)["groups"]:
-                            print(group)
-                            if file.split(".")[0].split("-")[-1] == group.slug:
+                            if file.split(".")[0].split("-")[-1] == group["slug"]:
                                 p.goto(
-                                    f"/libguides/groups.php?action=3&group_id={group.id}"
+                                    f'/libguides/groups.php?action=3&group_id={group["id"]}'
                                 )
                                 p.fill("#jscss_code", head_html)
                                 p.click("#s-lg-btn-save-jscss")
