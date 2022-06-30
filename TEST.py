@@ -1,3 +1,4 @@
+import json
 import os
 import subprocess
 
@@ -9,6 +10,7 @@ def main(
     admin_base_url: "base url for admin access",  # type: ignore
     admin_username: "username for admin access",  # type: ignore
     admin_password: "password for admin access",  # type: ignore
+    groups: "json representation of group slugs and id numbers",  # type: ignore
     github_commit: ("optional github commit path", "option", "g"),  # type: ignore
 ):
     os.makedirs("artifacts", exist_ok=True)
@@ -25,13 +27,38 @@ def main(
             # html and shtm files may need includes processed
             if file.endswith(".html") or file.endswith(".shtm"):
                 if file.split("-")[0] == "head":
-                    pass
-                elif file.split("-")[0] == "template":
-                    template_code = "<!-- WARNING: GENERATED CODE *CHANGES WILL BE OVERWRITTEN* -->\n"
+                    head_html = (
+                        "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
+                    )
                     if github_commit:
-                        template_code += f"<!-- see github.com/{github_commit[:len(github_commit) - 33]} -->\n"
+                        head_html += f"<!-- see github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
                     with open(file, "r") as f:
-                        template_code += f.read()
+                        head_html += f.read()
+                    if file.split(".")[0].split("-")[-1] == "system":
+                        p.goto("/libguides/lookfeel.php?action=1")
+                        p.fill("#jscss_code", head_html)
+                        p.click("#s-lg-btn-save-jscss")
+                        # NOTE must wait for success before moving on
+                        p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
+                    else:
+                        for group in json.loads(groups)["groups"]:
+                            print(group)
+                            if file.split(".")[0].split("-")[-1] == group.slug:
+                                p.goto(
+                                    f"/libguides/groups.php?action=3&group_id={group.id}"
+                                )
+                                p.fill("#jscss_code", head_html)
+                                p.click("#s-lg-btn-save-jscss")
+                                # NOTE must wait for success before moving on
+                                p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
+                elif file.split("-")[0] == "template":
+                    template_html = (
+                        "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
+                    )
+                    if github_commit:
+                        template_html += f"<!-- see github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
+                    with open(file, "r") as f:
+                        template_html += f.read()
                     p.click("#s-lg-admin-command-bar a:text('Admin')")
                     p.click("#s-lg-admin-command-bar a:text('Look & Feel')")
                     p.click("#s-lib-admin-tabs a:text('Page Layout')")
@@ -43,9 +70,11 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
                         p.press("#s2id_autogen2_search", "Enter")
+                        # NOTE template takes time to load after select
                         p.wait_for_load_state("networkidle")
-                        p.fill("#template_code", template_code)
+                        p.fill("#template_code", template_html)
                         p.click("#btn-save-template")
+                        # NOTE must wait for success before moving on
                         p.wait_for_selector("#btn-save-template.btn-success")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
@@ -55,10 +84,12 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen3_search", file.split(".")[0])
                         p.press("#s2id_autogen3_search", "Enter")
-                        p.wait_for_selector("#template_code")
-                        p.fill("#template_code", template_code)
+                        # NOTE template takes time to load after select
+                        p.wait_for_load_state("networkidle")
+                        p.fill("#template_code", template_html)
                         p.click("#btn-save-template")
-                        p.wait_for_load_state()
+                        # NOTE must wait for success before moving on
+                        p.wait_for_selector("#btn-save-template.btn-success")
                 elif file.split("-")[0] == "footer":
                     pass
                 elif file.split("-")[0] == "header":
