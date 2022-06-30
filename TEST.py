@@ -29,10 +29,9 @@ def main(
                 elif file.split("-")[0] == "template":
                     template_code = "<!-- WARNING: GENERATED CODE *CHANGES WILL BE OVERWRITTEN* -->\n"
                     if github_commit:
-                        template_code += f"<!-- see github.com/{github_commit} -->"
+                        template_code += f"<!-- see github.com/{github_commit[:len(github_commit) - 33]} -->\n"
                     with open(file, "r") as f:
                         template_code += f.read()
-                    print(template_code)
                     p.click("#s-lg-admin-command-bar a:text('Admin')")
                     p.click("#s-lg-admin-command-bar a:text('Look & Feel')")
                     p.click("#s-lib-admin-tabs a:text('Page Layout')")
@@ -44,13 +43,10 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
                         p.press("#s2id_autogen2_search", "Enter")
-                        p.screenshot(full_page=True, path="artifacts/1.png")
                         p.fill("#template_code", "")
-                        p.screenshot(full_page=True, path="artifacts/2.png")
                         p.fill("#template_code", template_code)
-                        p.screenshot(full_page=True, path="artifacts/3.png")
                         p.click("#btn-save-template")
-                        p.screenshot(full_page=True, path="artifacts/4.png")
+                        p.wait_for_load_state()
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
@@ -59,13 +55,10 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen3_search", file.split(".")[0])
                         p.press("#s2id_autogen3_search", "Enter")
-                        p.screenshot(full_page=True, path="artifacts/5.png")
                         p.fill("#template_code", "")
-                        p.screenshot(full_page=True, path="artifacts/6.png")
                         p.fill("#template_code", template_code)
-                        p.screenshot(full_page=True, path="artifacts/7.png")
                         p.click("#btn-save-template")
-                        p.screenshot(full_page=True, path="artifacts/8.png")
+                        p.wait_for_load_state()
                 elif file.split("-")[0] == "footer":
                     pass
                 elif file.split("-")[0] == "header":
