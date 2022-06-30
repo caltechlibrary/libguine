@@ -43,11 +43,15 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
                         p.press("#s2id_autogen2_search", "Enter")
-                        p.wait_for_load_state("networkidle")
                         p.screenshot(full_page=True, path="artifacts/1.png")
+                        p.wait_for_load_state("networkidle")
+                        p.screenshot(full_page=True, path="artifacts/2.png")
                         p.fill("#template_code", template_code)
+                        p.screenshot(full_page=True, path="artifacts/3.png")
                         p.click("#btn-save-template")
+                        p.screenshot(full_page=True, path="artifacts/4.png")
                         p.wait_for_load_state()
+                        p.screenshot(full_page=True, path="artifacts/5.png")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
