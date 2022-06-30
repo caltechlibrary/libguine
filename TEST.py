@@ -51,7 +51,6 @@ def main(
                         p.click("#btn-save-template")
                         p.screenshot(full_page=True, path="artifacts/4.png")
                         p.wait_for_load_state()
-                        p.screenshot(full_page=True, path="artifacts/5.png")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
