@@ -9,7 +9,7 @@ def main(
     admin_base_url: "base url for admin access",  # type: ignore
     admin_username: "username for admin access",  # type: ignore
     admin_password: "password for admin access",  # type: ignore
-    github: ("optional github context object", "option", "g"),  # type: ignore
+    github_commit: ("optional github commit path", "option", "g"),  # type: ignore
 ):
     os.makedirs("artifacts", exist_ok=True)
     try:
@@ -28,8 +28,8 @@ def main(
                     pass
                 elif file.split("-")[0] == "template":
                     template_code = "<!-- WARNING: GENERATED CODE *CHANGES WILL BE OVERWRITTEN* -->\n"
-                    if github:
-                        template_code += f"<!-- see github.com/{github.repository_owner}/{github.repository}/commit/{github.sha} -->"
+                    if github_commit:
+                        template_code += f"<!-- see github.com/{github_commit} -->"
                     with open(file, "r") as f:
                         template_code += f.read()
                     p.click("#s-lg-admin-command-bar a:text('Admin')")
