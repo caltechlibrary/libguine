@@ -1,6 +1,7 @@
 import os
 import subprocess
 
+from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 
@@ -38,17 +39,21 @@ def main(
                     if file.split("-")[1] == "guide":
                         p.click("#s-lib-admin-tabs a:text('Guide')")
                         p.click("#s-lg-guide-templates_link")
+                        p.click("#select2-chosen-2")
                         # NOTE template must already exist
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
+                        p.click(f".select2-match:text('{Path(file).stem}')")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
+                        p.click("#select2-chosen-2")
                         # NOTE template must already exist
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen3", file.split(".")[0])
+                        p.click(f".select2-match:text('{Path(file).stem}')")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
                 elif file.split("-")[0] == "footer":
