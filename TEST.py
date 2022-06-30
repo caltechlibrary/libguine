@@ -43,16 +43,18 @@ def main(
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen2_search", file.split(".")[0])
                         p.press("#s2id_autogen2_search", "Enter")
+                        p.fill("#template_code", "")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
                     if file.split("-")[1] == "search":
                         p.click("#s-lib-admin-tabs a:text('Search')")
                         p.click("#s-lg-tpl_link")
-                        p.click("#select2-chosen-2")
+                        p.click("#select2-chosen-3")
                         # NOTE template must already exist
                         # TODO account for template not found condition
                         p.fill("#s2id_autogen3_search", file.split(".")[0])
                         p.press("#s2id_autogen3_search", "Enter")
+                        p.fill("#template_code", "")
                         p.fill("#template_code", template_code)
                         p.click("#btn-save-template")
                 elif file.split("-")[0] == "footer":
