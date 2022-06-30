@@ -25,7 +25,7 @@ jobs:
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
             if [ "${f##*.}" = "scss" ] || [ "${f##*.}" = "html" ] || [ "${f##*.}" = "shtm" ]; then
-              python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} ${{ secrets.GROUPS }} --github-commit ${{ github.repository }}/commit/${{ github.sha }};
+              python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }};
             fi
           done
       - name: Save artifacts
