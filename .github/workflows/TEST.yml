@@ -3,7 +3,7 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  build:
+  compile-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,11 +21,17 @@ jobs:
           playwright install firefox
           curl --silent --location https://github.com/sass/dart-sass/releases/download/1.53.0/dart-sass-1.53.0-linux-x64.tar.gz | tar --extract --gzip
           mv dart-sass/sass /usr/local/bin
-      - name: Loop over changed files
+      - name: Create artifacts directory
+        run: mkdir -p artifacts
+      - name: Compile artifacts from changed files
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
             if [ "${f##*.}" = "scss" ] || [ "${f##*.}" = "html" ] || [ "${f##*.}" = "shtm" ]; then
-              python TEST.py "$f" ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }};
+              # NOTE the GROUPS secret must be single-quoted because it contains JSON
+              python TEST-compile.py \
+                "$f" \
+                '${{ secrets.GROUPS }}' \
+                --github-commit ${{ github.repository }}/commit/${{ github.sha }};
             fi
           done
       - name: Save artifacts
@@ -33,3 +39,10 @@ jobs:
         with:
           name: artifacts-${{ github.workflow }}-${{ github.run_number }}
           path: artifacts
+      - name: Deploy artifacts
+        run: # NOTE the GROUPS secret must be single-quoted because it contains JSON
+          python TEST-deploy.py \
+          ${{ secrets.ADMIN_BASE_URL }} \
+          ${{ secrets.ADMIN_USERNAME }} \
+          ${{ secrets.ADMIN_PASSWORD }} \
+          '${{ secrets.GROUPS }}' \
