@@ -31,12 +31,12 @@ def main(
                     p.click("#s-lg-include-files_link")
                     p.set_input_files("#include_file", css)
                 elif item.name.endswith(".html"):
-                    target = item.split("-")[0]
+                    target = item.name.split("-")[0]
                     slugs = [g["slug"] for g in json.loads(groups)["groups"]]
                     scopes = slugs.append("system")
                     scope = (
-                        item.split(".")[0].split("-")[-1]
-                        if item.split(".")[0].split("-")[-1] in scopes
+                        item.name.split(".")[0].split("-")[-1]
+                        if item.name.split(".")[0].split("-")[-1] in scopes
                         else None
                     )
                     with open(item) as f:
@@ -45,13 +45,13 @@ def main(
                         p.click("#s-lg-admin-command-bar a:text('Admin')")
                         p.click("#s-lg-admin-command-bar a:text('Look & Feel')")
                         p.click("#s-lib-admin-tabs a:text('Page Layout')")
-                        if item.split("-")[1] == "guide":
+                        if item.name.split("-")[1] == "guide":
                             p.click("#s-lib-admin-tabs a:text('Guide')")
                             p.click("#s-lg-guide-templates_link")
                             p.click("#select2-chosen-2")
                             # NOTE template must already exist
                             # TODO account for template not found condition
-                            p.fill("#s2id_autogen2_search", item.split(".")[0])
+                            p.fill("#s2id_autogen2_search", item.name.split(".")[0])
                             p.press("#s2id_autogen2_search", "Enter")
                             # NOTE template takes time to load after select
                             p.wait_for_load_state("networkidle")
@@ -59,13 +59,13 @@ def main(
                             p.click("#btn-save-template")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#btn-save-template.btn-success")
-                        if item.split("-")[1] == "search":
+                        if item.name.split("-")[1] == "search":
                             p.click("#s-lib-admin-tabs a:text('Search')")
                             p.click("#s-lg-tpl_link")
                             p.click("#select2-chosen-3")
                             # NOTE template must already exist
                             # TODO account for template not found condition
-                            p.fill("#s2id_autogen3_search", item.split(".")[0])
+                            p.fill("#s2id_autogen3_search", item.name.split(".")[0])
                             p.press("#s2id_autogen3_search", "Enter")
                             # NOTE template takes time to load after select
                             p.wait_for_load_state("networkidle")
