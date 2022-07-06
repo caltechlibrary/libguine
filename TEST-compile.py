@@ -28,17 +28,9 @@ def main(
         print(os.listdir("artifacts"))
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
-        _ = [g["slug"] for g in json.loads(groups)["groups"]]
-        print(f"🐞 _: {_}")
-        print(f"🐞 _: {type(_)}")
-        slugs = list(_)
-        print(f"🐞 slugs: {slugs}")
-        print(f"🐞 slugs: {type(slugs)}")
+        slugs = [g["slug"] for g in json.loads(groups)["groups"]]
         slugs.append("system")
-        print(f"🐞 slugs: {slugs}")
-        print(f"🐞 slugs: {type(slugs)}")
         scopes = list(slugs)
-        print(f"🐞 scopes: {scopes}")
         scope = (
             file.split(".")[0].split("-")[-1]
             if file.split(".")[0].split("-")[-1] in scopes

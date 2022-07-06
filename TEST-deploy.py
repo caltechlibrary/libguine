@@ -132,6 +132,7 @@ def main(
                                     )
                 b.close()
         except PlaywrightTimeoutError as e:
+            b.close()
             print(str(e))
             return
 
