@@ -31,10 +31,7 @@ jobs:
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
         run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
           do
-            python TEST-compile.py \
-              "$f" \
-              '${{ secrets.GROUPS }}' \
-              --github-commit ${{ github.repository }}/commit/${{ github.sha }};
+            python TEST-compile.py "$f" '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }};
           done
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
