@@ -27,7 +27,7 @@ def main(
                     p.click("#s-lg-admin-command-bar a:text('Look & Feel')")
                     p.click("#s-lib-admin-tabs a:text('Custom JS/CSS')")
                     p.click("#s-lg-include-files_link")
-                    p.set_input_files("#include_file", item)
+                    p.set_input_files("#include_file", item.path)
                 elif item.name.endswith(".html"):
                     target = item.name.split("-")[0]
                     slugs = [g["slug"] for g in json.loads(groups)["groups"]]
