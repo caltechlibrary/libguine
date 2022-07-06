@@ -22,7 +22,7 @@ def main(
                 p.click("#s-libapps-login-button")
                 p.click("#s-lib-app-anchor")
                 p.click("#s-lib-app-menu a:text('LibGuides')")
-                if item.endswith(".css"):
+                if item.name.endswith(".css"):
                     with open(item) as f:
                         css = f.read()
                     p.click("#s-lg-admin-command-bar a:text('Admin')")
@@ -30,7 +30,7 @@ def main(
                     p.click("#s-lib-admin-tabs a:text('Custom JS/CSS')")
                     p.click("#s-lg-include-files_link")
                     p.set_input_files("#include_file", css)
-                elif item.endswith(".html"):
+                elif item.name.endswith(".html"):
                     target = item.split("-")[0]
                     slugs = [g["slug"] for g in json.loads(groups)["groups"]]
                     scopes = slugs.append("system")

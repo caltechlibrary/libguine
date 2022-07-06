@@ -24,6 +24,7 @@ def main(
                 "artifacts/TEST.css",  # TODO
             ]
         )
+        print(os.listdir("artifacts"))
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
         slugs = [g["slug"] for g in json.loads(groups)["groups"]]
@@ -47,12 +48,14 @@ def main(
                 html += f.read()
             with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
                 f.write(html)
+            print(os.listdir("artifacts"))
         elif target == "header" or target == "footer":
             fileobject = open(f"{target}-wrapper.shtm")
             html += parse_nested_includes(fileobject, html, scope)
             fileobject.close()
             with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
                 f.write(html)
+            print(os.listdir("artifacts"))
 
     def parse_nested_includes(fileobject, html, scope=None):
         if scope is None:
