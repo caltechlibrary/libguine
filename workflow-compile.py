@@ -11,8 +11,10 @@ def main(
     print(f"🐞 file: {file}")
     # TODO optimize
     def parse_nested_includes(fileobject, html, scope=None):
+        print(f"🐞 parse_nested_includes html:", html)
         if scope is None:
             for s in scopes:
+                print(f"🐞 {s} html:", html)
                 html += parse_nested_includes(fileobject, html, s)
         for line in fileobject:
             if line.strip().startswith("<!--#include"):
@@ -58,8 +60,8 @@ def main(
             else None
         )
         # avoid redundant artifact creation
-        if os.path.isfile(f"artifacts/{target}--{scope}.html"):
-            print(f"🐞 file exists: artifacts/{target}--{scope}.html")
+        if os.path.isfile(f'artifacts/{file.split("/")[-1]}') or os.path.isfile(f"artifacts/{target}--{scope}.html"):
+            print(f"🐞 artifacts exist:", os.listdir("artifacts"))
             return
         html = "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
         if github_commit:
@@ -71,14 +73,15 @@ def main(
                 html += f.read()
             with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
                 f.write(html)
-            print(os.listdir("artifacts"))
+            print(f"🐞 if template/head:", os.listdir("artifacts"))
         elif target == "header" or target == "footer":
+            print(f"🐞 elif header/footer html:", html)
             fileobject = open(f"{target}-wrapper.shtm")
             html += parse_nested_includes(fileobject, html, scope)
             fileobject.close()
-            with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
+            with open(f'artifacts/{target}--{scope}.html', "w") as f:
                 f.write(html)
-            print(os.listdir("artifacts"))
+            print(f"🐞 elif header/footer:", os.listdir("artifacts"))
 
 
 if __name__ == "__main__":
