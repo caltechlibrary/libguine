@@ -30,8 +30,8 @@ def main(
         target = file.split("-")[0]
         slugs = [g["slug"] for g in json.loads(groups)["groups"]]
         print(f"🐞 slugs: {slugs}")
-        scopes = slugs.append("system")
-        print(f"🐞 slugs: {scopes}")
+        scopes = list(slugs).append("system")
+        print(f"🐞 scopes: {scopes}")
         scope = (
             file.split(".")[0].split("-")[-1]
             if file.split(".")[0].split("-")[-1] in scopes
