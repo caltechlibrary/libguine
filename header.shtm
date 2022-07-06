@@ -1,8 +1,0 @@
-<!--BEGIN: header.shtm
-  Last Modified: 2022-06-01 16:33:12
-
-  INSTRUCTIONS:
-  Run '/bin/sh build.sh header GROUP' to create a complete header asset.
--->
-<!--#include file='header--GROUP.shtm' -->
-<!--END: header.shtm-->
