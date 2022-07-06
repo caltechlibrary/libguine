@@ -39,5 +39,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts-${{ github.workflow }}-${{ github.run_number }}
+          name: ${{ github.workflow }} Artifacts-${{ github.run_number }}
           path: artifacts

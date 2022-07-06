@@ -1,0 +1,46 @@
+<div class="c3-footer-wrapper">
+  <footer class="container c3-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="c3-breadcrumbs"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <section class="hours">
+          <header><h2>Hours</h2></header>
+          <script src="https://libcal.caltech.edu/js/hours_today.js"></script>
+          <div id="s_lc_tdh_3271_0"></div>
+          <footer>
+            <div><a href="/locations/hours">View All Hours</a></div>
+            <div>
+              <div>* Caltech ID Required</div>
+              <div>† Browsing Only</div>
+            </div>
+          </footer>
+        </section>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <section class="contact">
+          <h2>Contact Us</h2>
+          <!--#include file='footer--contact-GROUP.html' -->
+        </section>
+      </div>
+      <div class="col-md-3">
+        <section class="links">
+          <!--#include file='footer--links-GROUP.html' -->
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline pull-right">
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="https://www.caltech.edu/claimed-copyright-infringement">Copyright</a></li>
+          <li><a href="/accessibility">Accessibility</a></li>
+          <li id="c3-footer-login"></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div><!-- /.c3-footer-wrapper -->
