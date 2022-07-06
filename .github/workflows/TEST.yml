@@ -29,9 +29,13 @@ jobs:
         run: mkdir -p artifacts
       - name: Compile artifacts from changed files
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
-        run: python TEST-compile.py "$f" '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }}
-      - name: 🐞 artifacts
-        run: echo world > artifacts/hello.txt && ls artifacts
+        run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
+          do
+            python TEST-compile.py \
+              "$f" \
+              '${{ secrets.GROUPS }}' \
+              --github-commit ${{ github.repository }}/commit/${{ github.sha }};
+          done
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -39,4 +43,8 @@ jobs:
           path: artifacts
       - name: Deploy artifacts
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
-        run: python TEST-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}'
+        run: python TEST-deploy.py \
+          ${{ secrets.ADMIN_BASE_URL }} \
+          ${{ secrets.ADMIN_USERNAME }} \
+          ${{ secrets.ADMIN_PASSWORD }} \
+          '${{ secrets.GROUPS }}'
