@@ -130,7 +130,7 @@ def main(
                                     p.wait_for_selector(
                                         "#s-lg-btn-save-footer.btn-success"
                                     )
-            b.close()
+                b.close()
         except PlaywrightTimeoutError as e:
             print(str(e))
             return

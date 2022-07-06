@@ -8,6 +8,7 @@ def main(
     groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
     github_commit: ("optional github commit path", "option", "g"),  # type: ignore
 ):
+    print(f"🐞 file: {file}")
     # TODO optimize
     if file.endswith(".scss"):
         # avoid redundant artifact creation
