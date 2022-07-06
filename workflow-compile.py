@@ -65,7 +65,7 @@ def main(
         html = "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
         if github_commit:
             html += (
-                f"<!-- see github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
+                f"<!-- see https://github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
             )
         if target == "template" or target == "head":
             with open(file) as f:
