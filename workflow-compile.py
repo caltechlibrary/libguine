@@ -80,11 +80,13 @@ def main(
                 for scope in scopes:
                     print(f"🐞 {scope} html:", html)
                     html += parse_nested_includes(fileobject, scope)
+                    with open(f'artifacts/{target}--{scope}.html', "w") as f:
+                        f.write(html)
             else:
                 html += parse_nested_includes(fileobject, scope)
+                with open(f'artifacts/{target}--{scope}.html', "w") as f:
+                    f.write(html)
             fileobject.close()
-            with open(f'artifacts/{target}--{scope}.html', "w") as f:
-                f.write(html)
             print(f"🐞 elif header/footer:", os.listdir("artifacts"))
 
 
