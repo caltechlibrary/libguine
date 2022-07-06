@@ -29,9 +29,15 @@ def main(
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
         _ = [g["slug"] for g in json.loads(groups)["groups"]]
+        print(f"🐞 _: {_}")
+        print(f"🐞 _: {type(_)}")
         slugs = list(_)
         print(f"🐞 slugs: {slugs}")
-        scopes = slugs.append("system")
+        print(f"🐞 slugs: {type(slugs)}")
+        slugs.append("system")
+        print(f"🐞 slugs: {slugs}")
+        print(f"🐞 slugs: {type(slugs)}")
+        scopes = list(slugs)
         print(f"🐞 scopes: {scopes}")
         scope = (
             file.split(".")[0].split("-")[-1]
