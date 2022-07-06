@@ -31,7 +31,8 @@ def main(
                 elif item.name.endswith(".html"):
                     target = item.name.split("-")[0]
                     slugs = [g["slug"] for g in json.loads(groups)["groups"]]
-                    scopes = slugs.append("system")
+                    slugs.append("system")
+                    scopes = list(slugs)
                     scope = (
                         item.name.split(".")[0].split("-")[-1]
                         if item.name.split(".")[0].split("-")[-1] in scopes
