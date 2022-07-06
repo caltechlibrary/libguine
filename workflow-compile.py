@@ -18,15 +18,18 @@ def main(
                 html += parse_nested_includes(fileobject, html, s)
         for line in fileobject:
             if line.strip().startswith("<!--#include"):
+                print(f"🐞 line: {line.strip()}")
                 included_file = line.split("'")[1]
                 if included_file.split(".")[0].endswith("-GROUP"):
                     # open the GROUP/scope file and read its lines
                     fo = open(included_file.replace("GROUP", scope))
+                    print(f'🐞 open: {included_file.replace("GROUP", scope)}')
                     html += parse_nested_includes(fo, html, scope)
                     fo.close()
                 else:
                     # open the file and read its lines
                     fo = open(included_file)
+                    print(f"🐞 open: {included_file}")
                     html += parse_nested_includes(fo, html, scope)
                     fo.close()
             else:
