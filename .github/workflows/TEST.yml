@@ -31,7 +31,7 @@ jobs:
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
         run: python TEST-compile.py "$f" '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }}
       - name: 🐞 artifacts
-        run: ls artifacts
+        run: echo world > artifacts/hello.txt && /ls artifacts
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
