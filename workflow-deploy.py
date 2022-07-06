@@ -10,7 +10,6 @@ def main(
     admin_password: "password for admin access",  # type: ignore
     groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
 ):
-    # TODO optimize
     for item in os.scandir("artifacts"):
         try:
             with sync_playwright() as playwright:
