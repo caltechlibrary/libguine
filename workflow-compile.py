@@ -16,21 +16,24 @@ def main(
             for s in scopes:
                 print(f"🐞 {s} html:", html)
                 html += parse_nested_includes(fileobject, html, s)
+                with open(f'artifacts/{target}--{s}.html', "w") as f:
+                    f.write(html)
+            return
         for line in fileobject:
             if line.strip().startswith("<!--#include"):
                 print(f"🐞 line: {line.strip()}")
                 included_file = line.split("'")[1]
                 if included_file.split(".")[0].endswith("-GROUP"):
-                    # open the GROUP/scope file and read its lines
                     fo = open(included_file.replace("GROUP", scope))
                     print(f'🐞 open: {included_file.replace("GROUP", scope)}')
-                    html += parse_nested_includes(fo, html, scope)
+                    # pass empty string when compiling inner html
+                    html += parse_nested_includes(fo, "", scope)
                     fo.close()
                 else:
-                    # open the file and read its lines
                     fo = open(included_file)
                     print(f"🐞 open: {included_file}")
-                    html += parse_nested_includes(fo, html, scope)
+                    # pass empty string when compiling inner html
+                    html += parse_nested_includes(fo, "", scope)
                     fo.close()
             else:
                 html += line
@@ -82,8 +85,9 @@ def main(
             fileobject = open(f"{target}-wrapper.shtm")
             html += parse_nested_includes(fileobject, html, scope)
             fileobject.close()
-            with open(f'artifacts/{target}--{scope}.html', "w") as f:
-                f.write(html)
+            if scope:
+                with open(f'artifacts/{target}--{scope}.html', "w") as f:
+                    f.write(html)
             print(f"🐞 elif header/footer:", os.listdir("artifacts"))
 
 
