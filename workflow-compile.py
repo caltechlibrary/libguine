@@ -12,13 +12,6 @@ def main(
     # TODO optimize
     def parse_nested_includes(fileobject, html, scope=None):
         print(f"🐞 parse_nested_includes html:", html)
-        if scope is None:
-            for s in scopes:
-                print(f"🐞 {s} html:", html)
-                html += parse_nested_includes(fileobject, html, s)
-                with open(f'artifacts/{target}--{s}.html', "w") as f:
-                    f.write(html)
-            return
         for line in fileobject:
             if line.strip().startswith("<!--#include"):
                 print(f"🐞 line: {line.strip()}")
@@ -83,11 +76,15 @@ def main(
         elif target == "header" or target == "footer":
             print(f"🐞 elif header/footer html:", html)
             fileobject = open(f"{target}-wrapper.shtm")
-            html += parse_nested_includes(fileobject, html, scope)
+            if scope is None:
+                for scope in scopes:
+                    print(f"🐞 {scope} html:", html)
+                    html += parse_nested_includes(fileobject, html, scope)
+            else:
+                html += parse_nested_includes(fileobject, html, scope)
             fileobject.close()
-            if scope:
-                with open(f'artifacts/{target}--{scope}.html', "w") as f:
-                    f.write(html)
+            with open(f'artifacts/{target}--{scope}.html', "w") as f:
+                f.write(html)
             print(f"🐞 elif header/footer:", os.listdir("artifacts"))
 
 
