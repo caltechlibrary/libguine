@@ -10,6 +10,27 @@ def main(
 ):
     print(f"🐞 file: {file}")
     # TODO optimize
+    def parse_nested_includes(fileobject, html, scope=None):
+        if scope is None:
+            for s in scopes:
+                html += parse_nested_includes(fileobject, html, s)
+        for line in fileobject:
+            if line.strip().startswith("<!--#include"):
+                included_file = line.split("'")[1]
+                if included_file.split(".")[0].endswith("-GROUP"):
+                    # open the GROUP/scope file and read its lines
+                    fo = open(included_file.replace("GROUP", scope))
+                    html += parse_nested_includes(fo, html, scope)
+                    fo.close()
+                else:
+                    # open the file and read its lines
+                    fo = open(included_file)
+                    html += parse_nested_includes(fo, html, scope)
+                    fo.close()
+            else:
+                html += line
+        return html
+
     if file.endswith(".scss"):
         # avoid redundant artifact creation
         if os.path.isfile(f"artifacts/custom.css"):
@@ -58,27 +79,6 @@ def main(
             with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
                 f.write(html)
             print(os.listdir("artifacts"))
-
-    def parse_nested_includes(fileobject, html, scope=None):
-        if scope is None:
-            for s in scopes:
-                html += parse_nested_includes(fileobject, html, s)
-        for line in fileobject:
-            if line.strip().startswith("<!--#include"):
-                included_file = line.split("'")[1]
-                if included_file.split(".")[0].endswith("-GROUP"):
-                    # open the GROUP/scope file and read its lines
-                    fo = open(included_file.replace("GROUP", scope))
-                    html += parse_nested_includes(fo, html, scope)
-                    fo.close()
-                else:
-                    # open the file and read its lines
-                    fo = open(included_file)
-                    html += parse_nested_includes(fo, html, scope)
-                    fo.close()
-            else:
-                html += line
-        return html
 
 
 if __name__ == "__main__":
