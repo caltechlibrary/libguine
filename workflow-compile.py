@@ -21,8 +21,8 @@ def main(
                 "sass",
                 "--no-charset",
                 "--no-source-map",
-                "TEST.scss",  # TODO
-                "artifacts/TEST.css",  # TODO
+                "custom.scss",
+                "artifacts/custom.css",
             ]
         )
         print(os.listdir("artifacts"))
