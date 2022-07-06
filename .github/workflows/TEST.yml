@@ -1,6 +1,10 @@
 name: TEST
 on:
   push:
+    paths:
+      - "**.scss"
+      - "*.html"
+      - "*.shtm"
   workflow_dispatch:
 jobs:
   compile-and-deploy:
@@ -25,15 +29,10 @@ jobs:
         run: mkdir -p artifacts
       - name: Compile artifacts from changed files
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
-        run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
-          do
-            if [ "${f##*.}" = "scss" ] || [ "${f##*.}" = "html" ] || [ "${f##*.}" = "shtm" ]; then
-              python TEST-compile.py \
-                "$f" \
-                '${{ secrets.GROUPS }}' \
-                --github-commit ${{ github.repository }}/commit/${{ github.sha }};
-            fi
-          done
+        run: python TEST-compile.py \
+          "$f" \
+          '${{ secrets.GROUPS }}' \
+          --github-commit ${{ github.repository }}/commit/${{ github.sha }}
       - name: Save artifacts
         uses: actions/upload-artifact@v3
         with:
