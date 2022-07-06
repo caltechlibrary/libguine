@@ -10,8 +10,9 @@ def main(
 ):
     print(f"🐞 file: {file}")
     # TODO optimize
-    def parse_nested_includes(fileobject, html, scope=None):
-        print(f"🐞 parse_nested_includes html:", html)
+    def parse_nested_includes(fileobject, scope=None):
+        html = ""
+        print(f"🐞 parse_nested_includes html:", type(html))
         for line in fileobject:
             if line.strip().startswith("<!--#include"):
                 print(f"🐞 line: {line.strip()}")
@@ -19,14 +20,13 @@ def main(
                 if included_file.split(".")[0].endswith("-GROUP"):
                     fo = open(included_file.replace("GROUP", scope))
                     print(f'🐞 open: {included_file.replace("GROUP", scope)}')
-                    # pass empty string when compiling inner html
-                    html += parse_nested_includes(fo, "", scope)
+                    html += parse_nested_includes(fo, scope)
                     fo.close()
                 else:
                     fo = open(included_file)
                     print(f"🐞 open: {included_file}")
                     # pass empty string when compiling inner html
-                    html += parse_nested_includes(fo, "", scope)
+                    html += parse_nested_includes(fo, scope)
                     fo.close()
             else:
                 html += line
@@ -79,9 +79,9 @@ def main(
             if scope is None:
                 for scope in scopes:
                     print(f"🐞 {scope} html:", html)
-                    html += parse_nested_includes(fileobject, html, scope)
+                    html += parse_nested_includes(fileobject, scope)
             else:
-                html += parse_nested_includes(fileobject, html, scope)
+                html += parse_nested_includes(fileobject, scope)
             fileobject.close()
             with open(f'artifacts/{target}--{scope}.html', "w") as f:
                 f.write(html)
