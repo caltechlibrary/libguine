@@ -12,6 +12,7 @@ def main(
     if file.endswith(".scss"):
         # avoid redundant artifact creation
         if os.path.isfile(f"artifacts/custom.css"):
+            print("🐞 file exists: artifacts/custom.css")
             return
         # NOTE requires `sass` command
         subprocess.run(
@@ -34,6 +35,7 @@ def main(
         )
         # avoid redundant artifact creation
         if os.path.isfile(f"artifacts/{target}--{scope}.html"):
+            print(f"🐞 file exists: artifacts/{target}--{scope}.html")
             return
         html = "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
         if github_commit:
