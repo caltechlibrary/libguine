@@ -33,9 +33,9 @@ jobs:
           do
             python workflow-compile.py "$f" '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }};
           done
-      # - name: Deploy artifacts
-      #   # NOTE the GROUPS secret must be single-quoted because it contains JSON
-      #   run: python workflow-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}'
+      - name: Deploy artifacts
+        # NOTE the GROUPS secret must be single-quoted because it contains JSON
+        run: python workflow-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
