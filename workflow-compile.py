@@ -54,8 +54,9 @@ def main(
             if scope is None:
                 for scope in scopes:
                     print(f"🐞 scope: {scope}")
+                    print(f"🐞 html before parse: {html}")
                     html += parse_nested_includes(fileobject, scope)
-                    print(f"🐞 html: {html}")
+                    print(f"🐞 html after parse: {html}")
                     with open(f"artifacts/{target}--{scope}.html", "w") as f:
                         f.write(html)
             else:
