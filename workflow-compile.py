@@ -68,6 +68,7 @@ def main(
 
 
 def parse_nested_includes(fileobject, scope=None):
+    print(f"🐞 scope (parse): {scope}")
     html = ""
     for line in fileobject:
         if line.strip().startswith("<!--#include"):
