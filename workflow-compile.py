@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 import subprocess
 
 
@@ -12,7 +13,7 @@ def main(
 
     if file.endswith(".scss"):
         # avoid redundant artifact creation
-        if os.path.isfile(f"artifacts/custom.css"):
+        if os.path.isfile("artifacts/custom.css"):
             print("🐞 file exists: artifacts/custom.css")
             return
         # NOTE requires `sass` command
@@ -25,6 +26,12 @@ def main(
                 "artifacts/custom.css",
             ]
         )
+    elif file.endswith(".js"):
+        # avoid redundant artifact creation
+        if os.path.isfile("artifacts/custom.js"):
+            print("🐞 file exists: artifacts/custom.js")
+            return
+        shutil.copyfile("custom.js", "artifacts/custom.js")
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
         slugs = [g["slug"] for g in json.loads(groups)["groups"]]

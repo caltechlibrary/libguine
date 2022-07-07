@@ -47,15 +47,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else {
       document.title = `${page_name} - ${site_name}`;
     }
-    // site search form does not show facets without hidden parameter
-    // <input type="hidden" name="default_lg" value="1">
-    if (document.getElementById("s-lg-srch-form")) {
-      const default_lg = document.createElement("input");
-      default_lg.setAttribute("type", "hidden");
-      default_lg.setAttribute("name", "default_lg");
-      default_lg.setAttribute("value", "1");
-      document.getElementById("s-lg-srch-form").appendChild(default_lg);
-    }
   }
   if (document.getElementById("tpl-web")) {
     if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {

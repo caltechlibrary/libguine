@@ -21,7 +21,7 @@ def main(
                 p.click("#s-libapps-login-button")
                 p.click("#s-lib-app-anchor")
                 p.click("#s-lib-app-menu a:text('LibGuides')")
-                if item.name.endswith(".css"):
+                if item.name.endswith(".css") or item.name.endswith(".js"):
                     p.click("#s-lg-admin-command-bar a:text('Admin')")
                     p.click("#s-lg-admin-command-bar a:text('Look & Feel')")
                     p.click("#s-lib-admin-tabs a:text('Custom JS/CSS')")

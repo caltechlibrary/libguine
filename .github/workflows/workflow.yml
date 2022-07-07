@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**.scss"
+      - "*.js"
       - "*.html"
       - "*.shtm"
   workflow_dispatch:
