@@ -10,24 +10,6 @@ def main(
 ):
     print(f"🐞 file: {file}")
 
-    def parse_nested_includes(fileobject, scope=None):
-        html = ""
-        for line in fileobject:
-            if line.strip().startswith("<!--#include"):
-                included_file = line.split("'")[1]
-                if included_file.split(".")[0].endswith("-GROUP"):
-                    print(f"🐞 scope (endswith-GROUP): {scope}")
-                    fo = open(included_file.replace("GROUP", scope))
-                    html += parse_nested_includes(fo, scope)
-                    fo.close()
-                else:
-                    fo = open(included_file)
-                    html += parse_nested_includes(fo, scope)
-                    fo.close()
-            else:
-                html += line
-        return html
-
     if file.endswith(".scss"):
         # avoid redundant artifact creation
         if os.path.isfile(f"artifacts/custom.css"):
@@ -81,6 +63,25 @@ def main(
                     f.write(html)
             fileobject.close()
         print(f"🐞 artifacts:", os.listdir("artifacts"))
+
+
+def parse_nested_includes(fileobject, scope=None):
+    html = ""
+    for line in fileobject:
+        if line.strip().startswith("<!--#include"):
+            included_file = line.split("'")[1]
+            if included_file.split(".")[0].endswith("-GROUP"):
+                print(f"🐞 scope (endswith-GROUP): {scope}")
+                fo = open(included_file.replace("GROUP", scope))
+                html += parse_nested_includes(fo, scope)
+                fo.close()
+            else:
+                fo = open(included_file)
+                html += parse_nested_includes(fo, scope)
+                fo.close()
+        else:
+            html += line
+    return html
 
 
 if __name__ == "__main__":
