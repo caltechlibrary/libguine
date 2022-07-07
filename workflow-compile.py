@@ -16,6 +16,7 @@ def main(
             if line.strip().startswith("<!--#include"):
                 included_file = line.split("'")[1]
                 if included_file.split(".")[0].endswith("-GROUP"):
+                    print(f"🐞 scope (endswith-GROUP): {scope}")
                     fo = open(included_file.replace("GROUP", scope))
                     html += parse_nested_includes(fo, scope)
                     fo.close()
