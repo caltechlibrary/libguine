@@ -14,7 +14,9 @@
   background-color: #fff;
   border: $burnt solid thin;
   color: #333;
-  margin-block-end: 15px;
+  &.alert { // specificity needed to override #s-lib-public-main .alert
+    margin-block-end: 30px;
+  }
 }
 .s-srch-resultlist {
   & > strong {
