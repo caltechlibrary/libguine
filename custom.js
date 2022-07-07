@@ -262,7 +262,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * @param {node} node The `span` immediately following `.s-lg-blog-header`.
      */
     function removeCommentsLink(node) {
-      // console.log(node.nextSibling);
       if (node.nextSibling.nodeName === "BR") {
         if (node.lastChild.previousSibling.nodeName === "#text" && node.lastChild.previousSibling.nodeValue === " | ") {
           // console.log(node.lastChild.previousSibling);

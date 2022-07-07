@@ -130,8 +130,8 @@ def main(
                                     )
                 b.close()
         except PlaywrightTimeoutError as e:
-            print(str(e))
-            return
+            b.close()
+            raise e
 
 
 if __name__ == "__main__":
