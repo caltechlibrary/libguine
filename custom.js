@@ -264,7 +264,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function removeCommentsLink(node) {
       if (node.nextSibling.nodeName === "BR") {
         if (node.lastChild.previousSibling.nodeName === "#text" && node.lastChild.previousSibling.nodeValue === " | ") {
-          // console.log(node.lastChild.previousSibling);
           node.lastChild.previousSibling.remove();
         }
         else if (node.lastChild.nodeName === "A" && node.lastChild.href.endsWith("#comments")) {

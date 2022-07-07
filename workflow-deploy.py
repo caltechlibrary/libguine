@@ -11,8 +11,8 @@ def main(
     groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
 ):
     for item in os.scandir("artifacts"):
-        try:
-            with sync_playwright() as playwright:
+        with sync_playwright() as playwright:
+            try:
                 b = playwright.firefox.launch()
                 p = b.new_page(base_url=admin_base_url, record_video_dir="artifacts")
                 p.goto("/libapps/login.php")
@@ -129,9 +129,9 @@ def main(
                                         "#s-lg-btn-save-footer.btn-success"
                                     )
                 b.close()
-        except PlaywrightTimeoutError as e:
-            b.close()
-            raise e
+            except PlaywrightTimeoutError as e:
+                b.close()
+                raise e
 
 
 if __name__ == "__main__":
