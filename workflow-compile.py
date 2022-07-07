@@ -55,6 +55,7 @@ def main(
                 for scope in scopes:
                     print(f"🐞 scope: {scope}")
                     html += parse_nested_includes(fileobject, scope)
+                    print(f"🐞 html: {html}")
                     with open(f"artifacts/{target}--{scope}.html", "w") as f:
                         f.write(html)
             else:
@@ -70,6 +71,7 @@ def parse_nested_includes(fileobject, scope=None):
     for line in fileobject:
         if line.strip().startswith("<!--#include"):
             included_file = line.split("'")[1]
+            print(f"🐞 included_file: {included_file}")
             if included_file.split(".")[0].endswith("-GROUP"):
                 print(f"🐞 scope (endswith-GROUP): {scope}")
                 fo = open(included_file.replace("GROUP", scope))
