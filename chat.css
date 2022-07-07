@@ -1,0 +1,18 @@
+/* Chat Widget Styling (set in UI) */
+
+/* Width: 100% */
+/* Height: 500px */
+/* Custom CSS: */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+.s-la-widget { font-family: "Hind", sans-serif; font-size: 16px }
+.s-la-widget h2 { font-size: 30px }
+.s-la-widget h2.margin-bottom { margin-bottom: 0 !important}
+.s-la-widget label { font-size: 16px; font-weight: normal }
+.s-la-widget .form-control { height: 42px; padding: 8px 14px }
+.s-la-widget select.input-sm { font-size: 16px; height: 42px; }
+.s-la-widget .btn-xs, .s-la-widget .btn-sm { border-radius: 4px; font-size: 16px; padding: 8px 14px }
+#widget_base input, #widget_base textarea { font-size: 16px }
+/* Background Color: #fff */
+/* Border Color: transparent */
+/* Foreground Color: #062e47 */
+/* Button Text Color: #fff */
