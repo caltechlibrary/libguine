@@ -1,11 +1,4 @@
 @use "colors" as *;
-// TODO
-// add <input type="hidden" name="default_lg" value="1"> on search results form
-// color the bottom pager
-// style the search term highlight
-#template-search #s-lib-public-main .alert {
-  margin-block-end: 15px;
-}
 #s-lg-srch-form {
   .btn-default {
     background-color: $tarawera;
@@ -15,6 +8,12 @@
       background-color: mix(black, $tarawera, 40%);
     }
   }
+}
+#search-alert {
+  background-color: #fff;
+  border: $burnt solid thin;
+  color: #333;
+  margin-block-end: 15px;
 }
 .s-srch-resultlist {
   & > strong {

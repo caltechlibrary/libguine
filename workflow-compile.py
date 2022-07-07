@@ -26,12 +26,22 @@ def main(
                 "artifacts/custom.css",
             ]
         )
+        with open("artifacts/custom.css",'r') as f:
+            css = f.read()
+        with open("artifacts/custom.css",'w') as f:
+            f.write(f'/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n')
+            f.write(css)
     elif file.endswith(".js"):
         # avoid redundant artifact creation
         if os.path.isfile("artifacts/custom.js"):
             print("🐞 file exists: artifacts/custom.js")
             return
         shutil.copyfile("custom.js", "artifacts/custom.js")
+        with open("artifacts/custom.js",'r') as f:
+            js = f.read()
+        with open("artifacts/custom.js",'w') as f:
+            f.write(f'// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n')
+            f.write(js)
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
         slugs = [g["slug"] for g in json.loads(groups)["groups"]]

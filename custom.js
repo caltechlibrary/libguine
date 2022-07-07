@@ -47,6 +47,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else {
       document.title = `${page_name} - ${site_name}`;
     }
+    // site search alert
+    if (document.getElementById("s-lg-srch-cols")) {
+      const search_alert = document.createElement("div");
+      search_alert.id = "search-alert";
+      search_alert.classList.add("alert", "alert-warning", "alert-dismissable");
+      search_alert.setAttribute("role", "alert");
+      search_alert.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>Looking for a book, journal, database, or other resource? Try <a href="/libsearch">LibSearch</a> instead. You can also browse our <a href="/az.php">Databases List</a> or <a href="https://libanswers.caltech.edu/">FAQs</a>.';
+      let parent = document.getElementById("s-lg-srch-cols").parentNode;
+      let target = document.getElementById("s-lg-srch-cols");
+      parent.insertBefore(search_alert, target);
+    }
   }
   if (document.getElementById("tpl-web")) {
     if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
