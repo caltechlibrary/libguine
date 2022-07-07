@@ -267,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           node.lastChild.previousSibling.remove();
         }
         else if (node.lastChild.nodeName === "A" && node.lastChild.href.endsWith("#comments")) {
-          // console.log(node.lastChild);
           node.lastChild.remove();
         }
       }
