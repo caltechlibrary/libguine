@@ -23,23 +23,15 @@ $home-secondary-color: #1e988a;
 }
 // Alerts
 #s-lg-box-wrapper-33997298 {
-  .alert {
-    margin-block: 30px;
-  }
+  margin-block: 30px;
   @media (min-width: 768px) {
-    .alert {
-      margin-block: 45px;
-    }
+    margin-block: 45px;
   }
   @media (min-width: 992px) {
-    .alert {
-      margin-block: 60px;
-    }
+    margin-block: 60px;
   }
   @media (min-width: 1200px) {
-    .alert {
-      margin-block: 75px;
-    }
+    margin-block: 75px;
   }
 }
 
