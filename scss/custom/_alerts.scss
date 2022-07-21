@@ -25,3 +25,6 @@
 .alert-danger {
   @include alert-colors($monza);
 }
+.alert {
+  margin-block-end: 10px;
+}
