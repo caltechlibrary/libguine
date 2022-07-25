@@ -55,6 +55,14 @@ $branding-link-color: $text-color;
 @media (min-width: 400px) and (max-width: 529px) {
   .branding > div:first-of-type {
     width: 50vw;
+    .c3-asc {
+      & {
+        width: 70vw;
+      }
+      .branding > div:last-of-type {
+        float: right;
+      }
+    }
   }
 }
 @media (min-width: 530px) and (max-width: 767px) {
@@ -63,6 +71,11 @@ $branding-link-color: $text-color;
   }
   .branding > div:first-of-type {
     width: 40vw;
+    .c3-asc {
+      & {
+        width: 60vw;
+      }
+    }
   }
   .branding .input-group {
     width: calc(50vw - 15px); // TODO $grid-gutter-width

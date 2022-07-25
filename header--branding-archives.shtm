@@ -1,4 +1,4 @@
-      <div class="col-md-5">
+      <div class="col-xs-10 col-sm-6 col-md-5">
         <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700.98 71.76">
           <a href="https://www.caltech.edu/" aria-label="Caltech Home">
             <rect rx="4px" ry="4px" x="-1%" width="45%" height="100%"></rect>
@@ -17,7 +17,7 @@
           </a>
         </svg>
       </div>
-      <div class="col-md-7">
+      <div class="col-xs-2 col-sm-6 col-md-7">
         <div class="pull-right">
           <ul class="list-inline">
             <li>
