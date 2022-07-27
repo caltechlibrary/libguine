@@ -111,9 +111,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             first_img.removeAttribute("border");
             first_img.removeAttribute("height");
             first_img.removeAttribute("hspace");
+            first_img.removeAttribute("style");
             first_img.removeAttribute("vspace");
             first_img.removeAttribute("width");
-            first_img.setAttribute("id", `img${i}`);
+            first_img.classList.add("blogpost-img");
             items[i].innerHTML += first_img.outerHTML;
           }
           title_link.removeAttribute("target");
@@ -122,46 +123,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
           items[i].innerHTML += `<p>${first_p.innerHTML}</p>`;
         }
         // NOTE images are not loaded by the end of the mutation observation
-        // TODO refactor as DRY code
-        img0 = document.getElementById("img0");
-        if (img0) {
-          img0.addEventListener("load", function() {
-            console.log(img0.naturalWidth);
-            console.log(img0.naturalHeight);
-            if (img0.naturalWidth <= 240) {
-              img0.classList.add("pull-right");
-            }
-            else {
-              img0.classList.add("center-block");
-            }
-          });
-        }
-        img1 = document.getElementById("img1");
-        if (img1) {
-          img1.addEventListener("load", function() {
-            console.log(img1.naturalWidth);
-            console.log(img1.naturalHeight);
-            if (img1.naturalWidth <= 240) {
-              img1.classList.add("pull-left");
-            }
-            else {
-              img1.classList.add("center-block");
-            }
-          });
-        }
-        img2 = document.getElementById("img2");
-        if (img2) {
-          img2.addEventListener("load", function() {
-            console.log(img2.naturalWidth);
-            console.log(img2.naturalHeight);
-            if (img2.naturalWidth <= 240) {
-              img2.classList.add("pull-right");
-            }
-            else {
-              img2.classList.add("center-block");
-            }
-          });
-        }
+        // apply classes based on image size, orientation, and aspect ratio
+        [...document.getElementsByClassName("blogpost-img")].forEach(e => e.addEventListener("load", function () {
+          console.log(e.naturalWidth);
+          console.log(e.naturalHeight);
+          if (e.naturalWidth <= 240) {
+            e.classList.add("img-xs");
+          }
+          else if (e.naturalWidth <= 535) {
+            e.classList.add("img-sm");
+          }
+          if (e.naturalWidth / e.naturalHeight < 4/3) {
+            e.classList.add("img-narrow");
+          }
+        }));
       });
     });
     observer.observe(widget, config);
