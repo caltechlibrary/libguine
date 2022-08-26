@@ -1,8 +1,9 @@
 summary {
+  cursor: pointer;
   display: list-item;
+  margin-block: 0.5em;
   & > * {
-    display: inline-block;
-    margin-block: 0.5em;
+    display: inline;
     vertical-align: middle;
   }
 }
