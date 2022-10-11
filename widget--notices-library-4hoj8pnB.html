@@ -4,7 +4,7 @@
 async function fetchNotices() {
     try {
         let response = await fetch('https://caltechlibrary.github.io/libguine/notices/library.html');
-        document.getElementById('s-lg-content-68982994').insertAdjacentHTML('afterbegin', await response.text())
+        document.getElementById('s-lg-content-68982994').insertAdjacentHTML('afterbegin', await response.text());
     } catch (e) {
         console.log('fetchNotices error:' + e);
     }
