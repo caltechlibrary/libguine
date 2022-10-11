@@ -1,0 +1,13 @@
+<!-- notices-library-4hoj8pnB -->
+<!-- learned from https://stackoverflow.com/a/66625405 -->
+<script>
+async function fetchNotices() {
+    try {
+        let response = await fetch('https://caltechlibrary.github.io/libguine/notices/library.html');
+        document.getElementById('s-lg-content-68982994').insertAdjacentHTML('afterbegin', await response.text())
+    } catch (e) {
+        console.log('fetchNotices error:' + e);
+    }
+}
+fetchNotices();
+</script>
