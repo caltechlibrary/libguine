@@ -85,7 +85,7 @@ def main(
                             p.fill("#widget_name", item.name.split("-", maxsplit=2)[-1].split(".")[0])
                         p.fill("#embed_code", html)
                         p.click("#s-lib-alert-btn-first")
-                        p.wait_for_selector(f'td:text({item.name.split("-", maxsplit=2)[-1].split(".")[0]})')
+                        p.wait_for_selector("td:text('" + item.name.split("-", maxsplit=2)[-1].split(".")[0] + "')")
                     elif target == "head":
                         if scope == "system":
                             p.goto("/libguides/lookfeel.php?action=1")
