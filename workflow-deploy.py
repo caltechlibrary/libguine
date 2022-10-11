@@ -71,6 +71,20 @@ def main(
                             p.click("#btn-save-template")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#btn-save-template.btn-success")
+                    elif target == "widget":
+                        p.click("#s-lg-admin-command-bar a:text('Content')")
+                        p.click("#s-lg-admin-command-bar a:text('Assets')")
+                        p.fill("#name", item.name.split("-", maxsplit=2)[-1].split(".")[0])
+                        p.click("#lg-admin-asset-filter .datatable-filter__button--submit")
+                        try:
+                            p.wait_for_selector("#s-lg-admin-datatable-content_info:text('showing 1 to 1 of 1 entries')")
+                        except PlaywrightTimeoutError:
+                            p.click("#s-lg-page-content button:text('Add Content Item')")
+                            p.click("#s-lg-page-content a:text('Media / Widget')")
+                            p.fill("#widget_name", item.name.split("-", maxsplit=2)[-1].split(".")[0])
+                            p.fill("#embed_code", html)
+                            p.click("#s-lib-alert-btn-first")
+                            p.wait_for_selector(f'td:text({item.name.split("-", maxsplit=2)[-1].split(".")[0]})')
                     elif target == "head":
                         if scope == "system":
                             p.goto("/libguides/lookfeel.php?action=1")

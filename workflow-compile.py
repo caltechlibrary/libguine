@@ -42,6 +42,17 @@ def main(
         with open("artifacts/custom.js",'w') as f:
             f.write(f'// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n')
             f.write(js)
+    elif file.startswith("widget--"):
+        # avoid redundant artifact creation
+        if os.path.isfile(f'artifacts/{file}'):
+            print(f'🐞 file exists: artifacts/{file}')
+            return
+        shutil.copyfile(file, f'artifacts/{file}')
+        with open(f'artifacts/{file}','r') as f:
+            widget = f.read()
+        with open(f'artifacts/{file}','w') as f:
+            f.write(f'<!-- see https://github.com/{github_commit[:len(github_commit) - 33]} -->\n\n')
+            f.write(widget)
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
         slugs = [g["slug"] for g in json.loads(groups)["groups"]]
