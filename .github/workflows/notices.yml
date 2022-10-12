@@ -31,6 +31,9 @@ jobs:
       - name: Parse RSS with Python
         run: python .github/workflows/notices.py
 
+      - name: Generate fragments/notices/index.html with tree
+        run: tree -H '.' -L 1 --noreport --charset utf-8 -o fragments/notices/index.html fragments/notices
+
       - name: Configure Git identity
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
