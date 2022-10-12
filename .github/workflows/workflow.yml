@@ -1,4 +1,4 @@
-name: Compile & Deploy
+name: Compile & Deploy to CMS
 on:
   push:
     paths:
