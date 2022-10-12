@@ -1,0 +1,57 @@
+name: Construct Notices
+on:
+  schedule:
+    - cron: '1 1 * * *'
+  workflow_dispatch:
+jobs:
+  notices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # in order to determine changed files
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install arrow beautifulsoup4 bleach feedparser
+
+      - name: Create fragments directory
+        run: mkdir -p fragments/notices
+
+      - name: 🐞 python --version
+        run: python --version
+
+      - name: Parse RSS with Python
+        run: python .github/workflows/notices.py
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+      - name: Commit new files
+        run: if [ -n "$(git ls-files --others)" ];
+          then
+            git ls-files --others | xargs git add --all;
+            git commit -m "🟢 add files";
+          fi
+      - name: Commit deleted files
+        run: if [ -n "$(git ls-files --deleted)" ];
+          then
+            git ls-files --deleted | xargs git add --all;
+            git commit -m "🔴 remove files";
+          fi
+      - name: Commit modified files
+        run: if [ -n "$(git ls-files --modified)" ];
+          then
+            git ls-files --modified | xargs git add --all;
+            git commit -m "🟡 update files";
+          fi
+      - name: Push changes
+        run: git push
