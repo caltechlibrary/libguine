@@ -1,7 +1,7 @@
 name: Construct Notices
 on:
   schedule:
-    - cron: '1 1 * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 jobs:
   notices:
