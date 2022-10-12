@@ -44,7 +44,7 @@ The GitHub Action workflow scripts identify which header and/or footer files hav
 
 Code for widgets can be created and updated through this repository and GitHub Actions.
 
-Name the widget code file starting with `widget--` followed by a unique name and the `.html` extension. See [`widget--notices-library-4hoj8pnB.html`](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) as an example. Appending a randomly generated string to the end of the name will help ensure uniqueness.
+Name the widget code file starting with `widget--` followed by a unique name and the `.html` extension. See [`widget--notices-library-4hoj8pnB.html`](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) as an example. Appending a [randomly generated string](https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new) to the end of the name will help ensure uniqueness.
 
 See [`workflow-compile.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-compile.py) and [`workflow-deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-deploy.py) and the conditions related to widgets.
 
