@@ -1,10 +1,10 @@
-<!-- notices-library-4hoj8pnB -->
+<div id="notices-library-4hoj8pnB"></div>
 <!-- learned from https://stackoverflow.com/a/66625405 -->
 <script>
   async function fetchNotices() {
     try {
       let response = await fetch('https://caltechlibrary.github.io/libguine/notices/library.html');
-      document.getElementById('s-lg-content-68982994').insertAdjacentHTML('afterbegin', await response.text());
+      document.getElementById('notices-library-4hoj8pnB').innerHTML = await response.text();
     } catch (e) {
       console.log('fetchNotices error:' + e);
     }
