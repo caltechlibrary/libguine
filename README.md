@@ -80,4 +80,4 @@ Another GitHub Actions job in [`fragments.yml`](https://github.com/caltechlibrar
 
 We have created both a [Library notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) and an [Archives notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-archives-YwAWE98Z.html) that will insert the fragments where needed. (To add these widgets in a LibGuides box, select Media / Widget, then the Reuse Existing Widget tab, and finally search for the unique widget name.)
 
-The Widget Code deployment workflow can create and update this code in the site.
+The [Widget Code deployment workflow](#widget-code) can create and update this code in the site.
