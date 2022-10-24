@@ -74,9 +74,11 @@ $(function() {
 
 In order to display temporal alert notices on the homepage we use a LibCal calendar and transform its RSS feed into HTML fragments that are pulled onto the page via a custom JavaScript widget. We needed to use this workflow to both overcome LibGuides aggressive caching of RSS feeds and to avoid CORS issues when trying to manipulate the feed directly with JavaScript.
 
-A scheduled GitHub Actions job in [`notices.yml`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.yml) runs periodically that executes [`notices.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.py) which does the transformation from RSS to HTML fragments. These fragments are then pushed to this repository under [`fragments/notices`](https://github.com/caltechlibrary/libguine/tree/main/fragments/notices).
+A `LIBCAL_RSS_NOTICES_TODAY_URL` repository secret is required to store the URL for the calendar *day* feed. The URL is typically in the form of `https://libcal.caltech.edu/rss.php?cid=#️⃣&m=day` where the #️⃣ symbol stands for the numeric calendar ID.
 
-Another GitHub Actions job in [`fragments.yml`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/fragments.yml) runs in response to the fragments push which publishes the HTML fragments with GitHub Pages. The [HTML fragments are now publicly available](https://caltechlibrary.github.io/libguine/notices/) for our JavaScript widget without CORS restrictions.
+A scheduled GitHub Actions job in [`notices.yml`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.yml) runs periodically that executes [`notices.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.py) which does the transformation from RSS to HTML fragments. These fragments are then committed and pushed to this repository under [`fragments/notices`](https://github.com/caltechlibrary/libguine/tree/main/fragments/notices).
+
+The final steps in the job conditionally publish any updated HTML fragments with GitHub Pages. The [HTML fragments are now publicly available](https://caltechlibrary.github.io/libguine/notices/) for our JavaScript widget without CORS restrictions.
 
 We have created both a [Library notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) and an [Archives notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-archives-YwAWE98Z.html) that will insert the fragments where needed. (To add these widgets in a LibGuides box, select Media / Widget, then the Reuse Existing Widget tab, and finally search for the unique widget name.)
 

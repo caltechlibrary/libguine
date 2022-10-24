@@ -1,10 +1,15 @@
+import sys
+
 import arrow
 import bleach
 import feedparser
 
 from bs4 import BeautifulSoup
 
-notices = feedparser.parse("https://libcal.caltech.edu/rss.php?cid=17459&m=day")
+if len(sys.argv) == 1:
+    raise RuntimeError("❓ MISSING ARGUMENT: LIBCAL_RSS_NOTICES_TODAY_URL")
+
+notices = feedparser.parse(sys.argv[1])
 
 
 def construct_bootstrap_alert(entry):
