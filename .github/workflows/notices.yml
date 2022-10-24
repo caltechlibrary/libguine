@@ -13,11 +13,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 jobs:
-  notices:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.commit.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -52,26 +51,31 @@ jobs:
           git config --global user.name "github-actions[bot]"
       - name: Commit changes
         id: commit
-        run: echo "changes=false" >> $GITHUB_OUTPUT;
+        run: echo "changed=false" >> $GITHUB_OUTPUT;
           if [ -n "$(git ls-files --others --modified)" ];
           then
             git ls-files --others --modified | xargs git add --all;
             git commit -m "update notices fragments";
             git push;
-            echo "changes=true" >> $GITHUB_OUTPUT;
+            echo "changed=true" >> $GITHUB_OUTPUT;
           fi
+  deploy:
+    needs: build
+    if: needs.build.outputs.changes == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       # TODO move pages deployment to an independent workflow
       # if other workflows ever need to publish fragments
       - name: Setup Pages
-        if: steps.commit.outputs.changes == 'true'
         uses: actions/configure-pages@v2
       - name: Upload artifact
-        if: steps.commit.outputs.changes == 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload only a specific directory
           path: 'fragments'
       - name: Deploy to GitHub Pages
-        if: steps.commit.outputs.changes == 'true'
         id: deployment
         uses: actions/deploy-pages@v1
