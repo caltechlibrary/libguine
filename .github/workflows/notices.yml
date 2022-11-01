@@ -58,7 +58,8 @@ jobs:
             git commit -m "update notices fragments";
             git push;
             echo "changed=true" >> $GITHUB_OUTPUT;
-          fi
+          fi;
+          git log -1;
   deploy:
     needs: build
     if: needs.build.outputs.changes == 'true'
@@ -69,6 +70,12 @@ jobs:
     steps:
       # TODO move pages deployment to an independent workflow
       # if other workflows ever need to publish fragments
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: 🐞 git log -1
+        run: git log -1
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact

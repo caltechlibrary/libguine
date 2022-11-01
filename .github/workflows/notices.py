@@ -10,6 +10,8 @@ if len(sys.argv) == 1:
     raise RuntimeError("❓ MISSING ARGUMENT: LIBCAL_RSS_NOTICES_TODAY_URL")
 
 notices = feedparser.parse(sys.argv[1])
+import pprint
+pprint.pprint(notices.entries)
 
 
 def construct_bootstrap_alert(entry):
@@ -76,9 +78,15 @@ def evaluate_entry(entry):
 
 
 with open("fragments/notices/archives.html", "w") as fp:
-    for entry in archives_entries:
-        fp.write(evaluate_entry(entry))
+    if archives_entries:
+        for entry in archives_entries:
+            fp.write(evaluate_entry(entry))
+    else:
+        fp.write("<!-- NO NOTICES -->")
 
 with open("fragments/notices/library.html", "w") as fp:
-    for entry in library_entries:
-        fp.write(evaluate_entry(entry))
+    if library_entries:
+        for entry in library_entries:
+            fp.write(evaluate_entry(entry))
+    else:
+        fp.write("<!-- NO NOTICES -->")
