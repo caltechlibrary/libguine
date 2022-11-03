@@ -74,7 +74,7 @@ def evaluate_entry(entry):
         # proceed when the end time is still in the future
         return construct_bootstrap_alert(entry) + "\n"  # prettify
     else:
-        return
+        return ""
 
 
 with open("fragments/notices/archives.html", "w") as fp:
