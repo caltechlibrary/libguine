@@ -3,6 +3,24 @@
 $home-primary-color: #062e47;
 $home-secondary-color: #1e988a;
 
+%library-link-label {
+  background-color: $home-secondary-color;
+  color: #fff;
+  display: inline;
+  padding: .3em .6em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  text-decoration: none;
+  &:active,
+  &:focus,
+  &:hover {
+    outline: $home-secondary-color solid medium;
+  }
+}
+
 #home-bg.cl-bg {
   background: url(https://libapps.s3.amazonaws.com/customers/64/images/pool.jpg) no-repeat bottom left/cover $home-primary-color;
 }
@@ -189,14 +207,9 @@ $home-secondary-color: #1e988a;
 
 // Popular Searches
 #s-lg-box-28870775 {
-  a {
-    color: $home-secondary-color;
-    &:active,
-    &:focus,
-    &:hover {
-      outline: $home-secondary-color solid medium;
-      text-decoration: none;
-    }
+  .popular-searches a {
+    @extend %library-link-label;
+    font-size: medium;
   }
 }
 
