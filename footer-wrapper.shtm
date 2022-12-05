@@ -1,8 +1,8 @@
-<div class="c3-footer-wrapper">
-  <footer class="container c3-footer">
+<div id="footer-wrapper">
+  <footer class="container">
     <div class="row">
       <div class="col-md-12">
-        <div id="c3-breadcrumbs"></div>
+        <div id="footer-breadcrumbs"></div>
       </div>
     </div>
     <div class="row">

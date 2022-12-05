@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       document.getElementById("s-lib-scroll-top").remove();
     }
     // move the breadcrumbs where we want them
-    document.getElementById("c3-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
+    document.getElementById("footer-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
     // hours widget script cannot be included in footer code nor on admin pages
     var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
     // grab tokenized login link and rebuild elsewhere
