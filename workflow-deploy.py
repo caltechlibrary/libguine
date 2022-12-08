@@ -74,18 +74,33 @@ def main(
                     elif target == "widget":
                         p.click("#s-lg-admin-command-bar a:text('Content')")
                         p.click("#s-lg-admin-command-bar a:text('Assets')")
-                        p.fill("#name", item.name.split("-", maxsplit=2)[-1].split(".")[0])
-                        p.click("#lg-admin-asset-filter .datatable-filter__button--submit")
+                        p.fill(
+                            "#name", item.name.split("-", maxsplit=2)[-1].split(".")[0]
+                        )
+                        p.click(
+                            "#lg-admin-asset-filter .datatable-filter__button--submit"
+                        )
                         try:
-                            p.wait_for_selector("#s-lg-admin-datatable-content_info:text('showing 1 to 1 of 1 entries')")
+                            p.wait_for_selector(
+                                "#s-lg-admin-datatable-content_info:text('showing 1 to 1 of 1 entries')"
+                            )
                             p.click("#s-lg-admin-datatable-content a i.fa-edit")
                         except PlaywrightTimeoutError:
-                            p.click("#s-lg-page-content button:text('Add Content Item')")
+                            p.click(
+                                "#s-lg-page-content button:text('Add Content Item')"
+                            )
                             p.click("#s-lg-page-content a:text('Media / Widget')")
-                            p.fill("#widget_name", item.name.split("-", maxsplit=2)[-1].split(".")[0])
+                            p.fill(
+                                "#widget_name",
+                                item.name.split("-", maxsplit=2)[-1].split(".")[0],
+                            )
                         p.fill("#embed_code", html)
                         p.click("#s-lib-alert-btn-first")
-                        p.wait_for_selector("td:text('" + item.name.split("-", maxsplit=2)[-1].split(".")[0] + "')")
+                        p.wait_for_selector(
+                            "td:text('"
+                            + item.name.split("-", maxsplit=2)[-1].split(".")[0]
+                            + "')"
+                        )
                     elif target == "head":
                         if scope == "system":
                             p.goto("/libguides/lookfeel.php?action=1")
@@ -93,6 +108,17 @@ def main(
                             p.click("#s-lg-btn-save-jscss")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
+                        elif scope == "libanswers":
+                            # NOTE LibAnswers JS/CSS is uploaded in LibGuides
+                            p.click("#s-lib-app-anchor")
+                            p.click("#s-lib-app-menu a:text('LibAnswers')")
+                            p.click("#s-la-cmd-bar-collapse a:text('Admin')")
+                            p.click("#s-la-cmd-bar-collapse a:text('System Settings')")
+                            p.click(".nav-tabs a:text('Look & Feel')")
+                            p.fill("#jscssCodefield", html)
+                            p.click("#jscssCodebut")
+                            # NOTE must wait for success before moving on
+                            p.wait_for_selector("#s-ui-notification :text('Success')")
                         else:
                             for group in json.loads(groups)["groups"]:
                                 if scope == group["slug"]:
