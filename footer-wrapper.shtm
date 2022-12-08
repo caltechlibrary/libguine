@@ -12,7 +12,7 @@
           <script src="https://libcal.caltech.edu/js/hours_today.js"></script>
           <div id="s_lc_tdh_3271_0"></div>
           <footer>
-            <div><a href="/locations/hours">View All Hours</a></div>
+            <div><a href="https://library.caltech.edu/hours">View All Hours</a></div>
             <div>
               <div>* Caltech ID Required</div>
             </div>
@@ -34,12 +34,12 @@
     <div class="row">
       <div class="col-xs-12">
         <ul class="list-inline pull-right">
-          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="https://library.caltech.edu/privacy">Privacy</a></li>
           <li><a href="https://www.caltech.edu/claimed-copyright-infringement">Copyright</a></li>
-          <li><a href="/accessibility">Accessibility</a></li>
+          <li><a href="https://library.caltech.edu/accessibility">Accessibility</a></li>
           <li id="c3-footer-login"></li>
         </ul>
       </div>
     </div>
   </footer>
-</div><!-- /.c3-footer-wrapper -->
+</div><!-- /#footer-wrapper -->
