@@ -3,7 +3,7 @@
 /* libanswers/_footer.scss */
 
 #footer-wrapper {
-  // NOTE: LibAnswers CSS sets `a i` elements to `color:#000`
+  // NOTE: override LibAnswers CSS that sets `a i` elements to `color:#000`
   a {
     i {
       color: white;
