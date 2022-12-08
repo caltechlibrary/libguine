@@ -37,7 +37,7 @@
           <li><a href="https://library.caltech.edu/privacy">Privacy</a></li>
           <li><a href="https://www.caltech.edu/claimed-copyright-infringement">Copyright</a></li>
           <li><a href="https://library.caltech.edu/accessibility">Accessibility</a></li>
-          <li id="footer-login"></li>
+          <li id="footer-login" class="libanswers-js libguides-js"></li>
         </ul>
       </div>
     </div>
