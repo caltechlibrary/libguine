@@ -103,7 +103,8 @@ def compile_css(extent, github_commit):
             "--no-source-map",
             f"{extent}.scss",
             f"artifacts/{extent}.css",
-        ]
+        ],
+        check=True,
     )
     with open(f"artifacts/{extent}.css", "r") as f:
         css = f.read()
