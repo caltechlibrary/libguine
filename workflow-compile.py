@@ -15,27 +15,13 @@ def main(
 
     if file.endswith(".scss"):
         # NOTE primary scss files do not have named parent directories
-        # TODO add conditional to handle `common` scss files
         extent = Path(file).parent.name if Path(file).parent.name else Path(file).stem
-        # NOTE avoid redundant artifact creation
-        if Path(f"artifacts/{extent}.css").is_file():
-            print(f"🐞 file exists: artifacts/{extent}.css")
-            return
-        # NOTE requires `sass` command
-        subprocess.run(
-            [
-                "sass",
-                "--no-charset",
-                "--no-source-map",
-                f"{extent}.scss",
-                f"artifacts/{extent}.css",
-            ]
-        )
-        with open(f"artifacts/{extent}.css",'r') as f:
-            css = f.read()
-        with open(f"artifacts/{extent}.css",'w') as f:
-            f.write(f'/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n')
-            f.write(css)
+        if extent == "common":
+            # TODO extend list with additional extents as needed
+            for extent in ["libanswers"]:
+                compile_css(extent, github_commit)
+        else:
+            compile_css(extent, github_commit)
     elif file.endswith(".js"):
         extent = Path(file).stem
         # NOTE avoid redundant artifact creation
@@ -43,21 +29,25 @@ def main(
             print(f"🐞 file exists: artifacts/{extent}.js")
             return
         shutil.copyfile(f"{extent}.js", f"artifacts/{extent}.js")
-        with open(f"artifacts/{extent}.js",'r') as f:
+        with open(f"artifacts/{extent}.js", "r") as f:
             js = f.read()
-        with open(f"artifacts/{extent}.js",'w') as f:
-            f.write(f'// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n')
+        with open(f"artifacts/{extent}.js", "w") as f:
+            f.write(
+                f"// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n"
+            )
             f.write(js)
     elif file.startswith("widget--"):
         # avoid redundant artifact creation
-        if os.path.isfile(f'artifacts/{file}'):
-            print(f'🐞 file exists: artifacts/{file}')
+        if os.path.isfile(f"artifacts/{file}"):
+            print(f"🐞 file exists: artifacts/{file}")
             return
-        shutil.copyfile(file, f'artifacts/{file}')
-        with open(f'artifacts/{file}','r') as f:
+        shutil.copyfile(file, f"artifacts/{file}")
+        with open(f"artifacts/{file}", "r") as f:
             widget = f.read()
-        with open(f'artifacts/{file}','w') as f:
-            f.write(f'<!-- see https://github.com/{github_commit[:len(github_commit) - 33]} -->\n\n')
+        with open(f"artifacts/{file}", "w") as f:
+            f.write(
+                f"<!-- see https://github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
+            )
             f.write(widget)
     elif file.endswith(".html") or file.endswith(".shtm"):
         target = file.split("-")[0]
@@ -99,6 +89,30 @@ def main(
                     f.write(html)
             fileobject.close()
         print(f"🐞 artifacts:", os.listdir("artifacts"))
+
+
+def compile_css(extent, github_commit):
+    # NOTE avoid redundant artifact creation
+    if Path(f"artifacts/{extent}.css").is_file():
+        print(f"🐞 file exists: artifacts/{extent}.css")
+        return
+    # NOTE requires `sass` command
+    subprocess.run(
+        [
+            "sass",
+            "--no-charset",
+            "--no-source-map",
+            f"{extent}.scss",
+            f"artifacts/{extent}.css",
+        ]
+    )
+    with open(f"artifacts/{extent}.css", "r") as f:
+        css = f.read()
+    with open(f"artifacts/{extent}.css", "w") as f:
+        f.write(
+            f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
+        )
+        f.write(css)
 
 
 def parse_nested_includes(fileobject, scope=None):
