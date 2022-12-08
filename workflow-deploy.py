@@ -133,6 +133,9 @@ def main(
                             # NOTE LibAnswers uses the same system footer
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibAnswers')")
+                            p.click("#s-la-cmd-bar-collapse a:text('Admin')")
+                            p.click("#s-la-cmd-bar-collapse a:text('System Settings')")
+                            p.click(".nav-tabs a:text('Look & Feel')")
                             p.fill("#instfooterfield", html)
                             p.click("#instfooterbut")
                             # NOTE must wait for success before moving on
