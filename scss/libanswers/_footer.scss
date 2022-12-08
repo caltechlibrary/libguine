@@ -1,0 +1,20 @@
+@use "../common/footer" as *;
+
+/* libanswers/_footer.scss */
+
+#footer-wrapper {
+  // NOTE: LibAnswers CSS sets `a i` elements to `color:#000`
+  a {
+    i {
+      color: white;
+    }
+  }
+}
+#footer-breadcrumbs {
+  .s-la-breadcrumbs {
+    padding-inline-start: 0;
+    .list-inline {
+      margin-inline-start: 0;
+    }
+  }
+}

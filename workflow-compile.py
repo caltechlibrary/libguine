@@ -14,7 +14,9 @@ def main(
     print(f"🐞 file: {file}")
 
     if file.endswith(".scss"):
-        extent = Path(file).parent.name
+        # NOTE primary scss files do not have named parent directories
+        # TODO add conditional to handle `common` scss files
+        extent = Path(file).parent.name if Path(file).parent.name else Path(file).stem
         # NOTE avoid redundant artifact creation
         if Path(f"artifacts/{extent}.css").is_file():
             print(f"🐞 file exists: artifacts/{extent}.css")
