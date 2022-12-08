@@ -130,6 +130,13 @@ def main(
                             p.click("#s-lg-btn-save-footer")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-lg-btn-save-footer.btn-success")
+                            # NOTE LibAnswers uses the same system footer
+                            p.click("#s-lib-app-anchor")
+                            p.click("#s-lib-app-menu a:text('LibAnswers')")
+                            p.fill("#instfooterfield", html)
+                            p.click("#instfooterbut")
+                            # NOTE must wait for success before moving on
+                            p.wait_for_selector("#s-ui-notification :text('Success')")
                         else:
                             for group in json.loads(groups)["groups"]:
                                 if scope == group["slug"]:
