@@ -3,6 +3,8 @@ import os
 import shutil
 import subprocess
 
+from pathlib import Path
+
 
 def main(
     file: "modified file from which to build artifacts",  # type: ignore
@@ -12,9 +14,10 @@ def main(
     print(f"🐞 file: {file}")
 
     if file.endswith(".scss"):
-        # avoid redundant artifact creation
-        if os.path.isfile("artifacts/custom.css"):
-            print("🐞 file exists: artifacts/custom.css")
+        extent = Path(file).parent.name
+        # NOTE avoid redundant artifact creation
+        if Path(f"artifacts/{extent}.css").is_file():
+            print(f"🐞 file exists: artifacts/{extent}.css")
             return
         # NOTE requires `sass` command
         subprocess.run(
@@ -22,24 +25,25 @@ def main(
                 "sass",
                 "--no-charset",
                 "--no-source-map",
-                "custom.scss",
-                "artifacts/custom.css",
+                f"{extent}.scss",
+                f"artifacts/{extent}.css",
             ]
         )
-        with open("artifacts/custom.css",'r') as f:
+        with open(f"artifacts/{extent}.css",'r') as f:
             css = f.read()
-        with open("artifacts/custom.css",'w') as f:
+        with open(f"artifacts/{extent}.css",'w') as f:
             f.write(f'/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n')
             f.write(css)
     elif file.endswith(".js"):
-        # avoid redundant artifact creation
-        if os.path.isfile("artifacts/custom.js"):
-            print("🐞 file exists: artifacts/custom.js")
+        extent = Path(file).parent.name
+        # NOTE avoid redundant artifact creation
+        if Path(f"artifacts/{extent}.js").is_file():
+            print(f"🐞 file exists: artifacts/{extent}.js")
             return
-        shutil.copyfile("custom.js", "artifacts/custom.js")
-        with open("artifacts/custom.js",'r') as f:
+        shutil.copyfile(f"{extent}.js", f"artifacts/{extent}.js")
+        with open(f"artifacts/{extent}.js",'r') as f:
             js = f.read()
-        with open("artifacts/custom.js",'w') as f:
+        with open(f"artifacts/{extent}.js",'w') as f:
             f.write(f'// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n')
             f.write(js)
     elif file.startswith("widget--"):
