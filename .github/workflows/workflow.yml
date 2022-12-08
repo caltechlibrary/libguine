@@ -37,8 +37,11 @@ jobs:
       - name: Deploy artifacts
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
         run: python workflow-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}'
+        # TODO capture timeout errors but do not raise exception;
+        # return something indicating failure
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: ${{ github.workflow }} Artifacts-${{ github.run_number }}
           path: artifacts
+      # TODO use failure indicator to fail the job here after upload

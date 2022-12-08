@@ -1,0 +1,11 @@
+/* libguides/_resets.scss */
+
+#s-lg-guide-main {
+  padding: 0;
+}
+.s-lib-box {
+  margin: unset;
+  @media (max-width: 991px) { // TODO $screen-md-max
+    background: transparent;
+  }
+}

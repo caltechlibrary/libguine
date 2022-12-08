@@ -1,4 +1,4 @@
-@use "colors" as *;
+@use "../common/colors" as *;
 
 @mixin alert-colors($base-color) {
   background-color: mix(white, $base-color, 80%);

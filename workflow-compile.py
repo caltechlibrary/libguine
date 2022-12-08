@@ -17,8 +17,7 @@ def main(
         # NOTE primary scss files do not have named parent directories
         extent = Path(file).parent.name if Path(file).parent.name else Path(file).stem
         if extent == "common":
-            # TODO extend list with additional extents as needed
-            for extent in ["libanswers"]:
+            for extent in ["custom", "libanswers", "libguides"]:
                 compile_css(extent, github_commit)
         else:
             compile_css(extent, github_commit)
@@ -94,7 +93,7 @@ def main(
 def compile_css(extent, github_commit):
     # NOTE avoid redundant artifact creation
     if Path(f"artifacts/{extent}.css").is_file():
-        print(f"🐞 file exists: artifacts/{extent}.css")
+        print(f"⚠️ file exists: artifacts/{extent}.css")
         return
     # NOTE requires `sass` command
     subprocess.run(
@@ -109,9 +108,10 @@ def compile_css(extent, github_commit):
     with open(f"artifacts/{extent}.css", "r") as f:
         css = f.read()
     with open(f"artifacts/{extent}.css", "w") as f:
-        f.write(
-            f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
-        )
+        if github_commit:
+            f.write(
+                f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
+            )
         f.write(css)
 
 

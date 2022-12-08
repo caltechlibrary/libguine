@@ -1,0 +1,29 @@
+@use "../common/footer" as *;
+
+/* libguides/_footer.scss */
+
+#s-lib-bc-list.breadcrumb {
+  font-size: revert;
+  font-weight: normal;
+  margin-block: 15px; // TODO $grid-gutter-width
+  max-width: 80%; // keep within border-radius
+  @media (min-width: 1280px) {
+    max-width: 90%; // keep within border-radius
+  }
+  @media (min-width: 1600px) {
+    max-width: 100%; // keep within border-radius
+  }
+  & > .active {
+    color: #1e988a;
+  }
+  .c3-asc & > .active {
+    color: #c75000;
+  }
+}
+
+.c3-asc #footer-wrapper footer {
+  .s-lc-w-lid-3297,
+  .s-lc-w-lid-19226 {
+    color: #c75000;
+  }
+}
