@@ -22,16 +22,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lib-scroll-top")) {
       document.getElementById("s-lib-scroll-top").remove();
     }
-    // move the breadcrumbs where we want them
+    // move the breadcrumbs to the footer
     document.getElementById("footer-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
-    // hours widget script cannot be included in footer code nor on admin pages
+    // this javascript code for the hours widget cannot be added alongside the
+    // HTML, instead it must be entered in a CSS/JS-specific field
     var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
     // grab tokenized login link and rebuild elsewhere
     const login_link = document.createElement("a");
     login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
     login_link.setAttribute("aria-label", "Staff Login");
-    login_link.innerHTML = `<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>`;
-    document.getElementById("c3-footer-login").appendChild(login_link);
+    login_link.innerHTML = `<i class="fa fa-sign-in" aria-hidden="true"></i>`;
+    document.getElementById("footer-login").appendChild(login_link);
     // update page title
     const page_name = document.getElementById("s-lib-bc-page").textContent;
     const site_name = "Caltech Library";
