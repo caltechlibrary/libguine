@@ -35,7 +35,7 @@ def main(
             f.write(f'/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n')
             f.write(css)
     elif file.endswith(".js"):
-        extent = Path(file).parent.name
+        extent = Path(file).stem
         # NOTE avoid redundant artifact creation
         if Path(f"artifacts/{extent}.js").is_file():
             print(f"🐞 file exists: artifacts/{extent}.js")

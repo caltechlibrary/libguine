@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const login_link = document.createElement("a");
   login_link.setAttribute("href", "https://libanswers.caltech.edu/admin");
   login_link.setAttribute("aria-label", "Staff Login");
-  login_link.innerHTML = `<i class="fa fa-sign-in" aria-hidden="true"></i>`;
+  login_link.innerHTML = '<i class="fa fa-sign-in" aria-hidden="true"></i>';
   document.getElementById("footer-login").appendChild(login_link);
 
 });
