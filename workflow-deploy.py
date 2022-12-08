@@ -115,8 +115,8 @@ def main(
                             p.click("#s-la-cmd-bar-collapse a:text('Admin')")
                             p.click("#s-la-cmd-bar-collapse a:text('System Settings')")
                             p.click(".nav-tabs a:text('Look & Feel')")
-                            p.fill("#jscssCodefield", html)
-                            p.click("#jscssCodebut")
+                            p.fill("#instmetafield", html)
+                            p.click("#instmetabut")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-ui-notification :text('Success')")
                         else:
