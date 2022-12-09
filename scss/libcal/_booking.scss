@@ -1,0 +1,25 @@
+/* libcal/_booking.scss */
+
+.lc_rm_b {
+  /* non-bookable color */
+  background-color: #9a9a9a;
+}
+.lc_rm_u {
+  /* unavailable/booked color */
+  background-color: #6b6b6b;
+}
+
+// TODO understand where this is used
+/* change default Equipment Booking colors */
+.s-lc-eq-avail, .label-eq-avail {
+    background-color: #9a9a9a!important;
+    border-color: #9a9a9a!important;
+}
+
+.s-lc-eq-checkout {
+    background-color: #6b6b6b!important;
+    border-color: #6b6b6b!important;
+}
+
+/*hide the Rooms tab from Equipment Booking*/
+#s-lc-eq-rtab {display:none;}

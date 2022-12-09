@@ -35,13 +35,17 @@ jobs:
             python workflow-compile.py "$f" '${{ secrets.GROUPS }}' --github-commit ${{ github.repository }}/commit/${{ github.sha }};
           done
       - name: Deploy artifacts
+        id: deploy
         # NOTE the GROUPS secret must be single-quoted because it contains JSON
-        run: python workflow-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}'
-        # TODO capture timeout errors but do not raise exception;
-        # return something indicating failure
+        run: |
+          echo "STATUS=$(python workflow-deploy.py ${{ secrets.ADMIN_BASE_URL }} ${{ secrets.ADMIN_USERNAME }} ${{ secrets.ADMIN_PASSWORD }} '${{ secrets.GROUPS }}')" >> $GITHUB_OUTPUT
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: ${{ github.workflow }} Artifacts-${{ github.run_number }}
           path: artifacts
-      # TODO use failure indicator to fail the job here after upload
+      - name: Check deploy output
+        if: ${{ steps.deploy.outputs.STATUS }} != "OK"
+        run: |
+          echo ${{ steps.deploy.outputs.STATUS }}
+          exit 1

@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
@@ -109,7 +110,7 @@ def main(
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
                         elif scope == "libanswers":
-                            # NOTE LibAnswers JS/CSS is uploaded in LibGuides
+                            # NOTE JS/CSS files are uploaded in LibGuides
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibAnswers')")
                             p.click("#s-la-cmd-bar-collapse a:text('Admin')")
@@ -119,6 +120,18 @@ def main(
                             p.click("#instmetabut")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-ui-notification :text('Success')")
+                        elif scope == "libcal":
+                            # NOTE JS/CSS files are uploaded in LibGuides
+                            p.click("#s-lib-app-anchor")
+                            p.click("#s-lib-app-menu a:text('LibCal')")
+                            p.click("#s-lc-cmd-bar-collapse a:text('Admin')")
+                            p.click("#s-lc-cmd-bar-collapse a:text('Look & Feel')")
+                            p.fill("#instmeta", html)
+                            p.click("#instmeta ~ button")
+                            # NOTE must wait for success before moving on
+                            p.wait_for_selector(
+                                "#jquery-notification-message :text('Success')"
+                            )
                         else:
                             for group in json.loads(groups)["groups"]:
                                 if scope == group["slug"]:
@@ -166,6 +179,17 @@ def main(
                             p.click("#instfooterbut")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-ui-notification :text('Success')")
+                            # NOTE LibCal uses the same system footer
+                            p.click("#s-lib-app-anchor")
+                            p.click("#s-lib-app-menu a:text('LibCal')")
+                            p.click("#s-lc-cmd-bar-collapse a:text('Admin')")
+                            p.click("#s-lc-cmd-bar-collapse a:text('Look & Feel')")
+                            p.fill("#instfooter", html)
+                            p.click("#instfooter ~ button")
+                            # NOTE must wait for success before moving on
+                            p.wait_for_selector(
+                                "#jquery-notification-message :text('Success')"
+                            )
                         else:
                             for group in json.loads(groups)["groups"]:
                                 if scope == group["slug"]:
@@ -180,9 +204,11 @@ def main(
                                         "#s-lg-btn-save-footer.btn-success"
                                     )
                 b.close()
+                print("OK")
             except PlaywrightTimeoutError as e:
                 b.close()
-                raise e
+                print(f"PLAYWRIGHT_TIMEOUT: {item.name}")
+                sys.exit()
 
 
 if __name__ == "__main__":

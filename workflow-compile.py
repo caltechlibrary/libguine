@@ -31,9 +31,10 @@ def main(
         with open(f"artifacts/{extent}.js", "r") as f:
             js = f.read()
         with open(f"artifacts/{extent}.js", "w") as f:
-            f.write(
-                f"// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n"
-            )
+            if github_commit:
+                f.write(
+                    f"// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n"
+                )
             f.write(js)
     elif file.startswith("widget--"):
         # avoid redundant artifact creation
