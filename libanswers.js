@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
   // move the breadcrumbs to the footer
-  document.getElementById("footer-breadcrumbs").appendChild(document.querySelector("nav.s-la-breadcrumbs"));
+  // NOTE the Default Group has different markup for breadcrumbs
+  breadcrumbs = document.querySelector(".breadcrumb");
+  breadcrumbs.classList.remove("s-la-color-bars", "s-la-color-bars-border");
+  document.getElementById("footer-breadcrumbs").appendChild(breadcrumbs);
 
   // include the hours widget code in the JS/CSS field;
   // scripts cannot be added to the footer field alongside the HTML

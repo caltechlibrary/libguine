@@ -11,10 +11,8 @@
   }
 }
 #footer-breadcrumbs {
-  .s-la-breadcrumbs {
+  .breadcrumb {
+    background-color: transparent;
     padding-inline-start: 0;
-    .list-inline {
-      margin-inline-start: 0;
-    }
   }
 }
