@@ -204,10 +204,10 @@ def main(
                                         "#s-lg-btn-save-footer.btn-success"
                                     )
                 b.close()
-                print("OK")
+                print("OK", end="")
             except PlaywrightTimeoutError as e:
                 b.close()
-                print(f"PLAYWRIGHT_TIMEOUT: {item.name}")
+                print(f"PLAYWRIGHT_TIMEOUT: {item.name}", end="")
                 sys.exit()
 
 
