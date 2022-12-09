@@ -45,7 +45,7 @@ jobs:
           name: ${{ github.workflow }} Artifacts-${{ github.run_number }}
           path: artifacts
       - name: Check deploy output
-        if: ${{ steps.deploy.outputs.STATUS }} != "OK"
+        if: ${{ steps.deploy.outputs.STATUS }}
         run: |
           echo ${{ steps.deploy.outputs.STATUS }}
           exit 1
