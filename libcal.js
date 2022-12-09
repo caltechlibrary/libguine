@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
   // move the breadcrumbs to the footer
