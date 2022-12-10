@@ -175,10 +175,10 @@ def main(
                             # NOTE must wait for success before moving on
                             # p.wait_for_selector("#s-ui-notification-message :text('Success')")
                             # NOTE LibCal uses the same system footer
-                            p.click("#s-lib-app-anchor")
-                            p.click("#s-lib-app-menu a:text('LibCal')")
-                            p.click("#s-lc-cmd-bar-collapse a:text('Admin')")
-                            p.click("#s-lc-cmd-bar-collapse a:text('Look & Feel')")
+                            p.click("#s-la-app-anchor")
+                            p.click("#s-la-app-menu a:text('LibCal')")
+                            p.click("#s-lc-app-menu-adm a:text('Admin')")
+                            p.click("#s-lc-app-menu-adm a:text('Look & Feel')")
                             p.fill("#instfooter", html)
                             p.click("#instfooter ~ button")
                             # NOTE must wait for success before moving on
