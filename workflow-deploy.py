@@ -117,14 +117,10 @@ def main(
                             # NOTE JS/CSS files are uploaded in LibGuides
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibCal')")
-                            p.click("#s-lc-cmd-bar-collapse a:text('Admin')")
-                            p.click("#s-lc-cmd-bar-collapse a:text('Look & Feel')")
+                            p.click("#s-lc-app-menu-adm a")  # Admin
+                            p.click("#s-lc-app-menu-adm a:text('Look & Feel')")
                             p.fill("#instmeta", html)
                             p.click("#instmeta ~ button")
-                            # NOTE must wait for success before moving on
-                            p.wait_for_selector(
-                                "#jquery-notification-message :text('Success')"
-                            )
                         else:
                             for group in json.loads(libguides_groups)["groups"]:
                                 if variant == group["slug"]:
