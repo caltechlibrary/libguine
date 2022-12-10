@@ -8,7 +8,7 @@ from pathlib import Path
 
 def main(
     file: "modified file from which to build artifacts",  # type: ignore
-    groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
+    libguides_groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
     github_commit: ("optional github commit path", "option", "g"),  # type: ignore
 ):
     print(f"🐞 file: {file}")
@@ -50,44 +50,47 @@ def main(
             )
             f.write(widget)
     elif file.endswith(".html") or file.endswith(".shtm"):
-        target = file.split("-")[0]
-        slugs = [g["slug"] for g in json.loads(groups)["groups"]]
-        slugs.append("system")
-        scopes = list(slugs)
-        scope = (
-            file.split(".")[0].split("-")[-1]
-            if file.split(".")[0].split("-")[-1] in scopes
-            else None
-        )
-        # avoid redundant artifact creation
-        if os.path.isfile(f'artifacts/{file.split("/")[-1]}') or os.path.isfile(
-            f"artifacts/{target}--{scope}.html"
-        ):
-            print(f"🐞 artifacts exist:", os.listdir("artifacts"))
-            return
+        component = file.split("-")[0]
         html = "<!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->\n"
         if github_commit:
             html += f"<!-- see https://github.com/{github_commit[:len(github_commit) - 33]} -->\n\n"
-        if target == "template" or target == "head":
+        if component == "template" or component == "head":
+            # NOTE use the file as is with prepended comments
             with open(file) as f:
                 html += f.read()
             with open(f'artifacts/{file.split("/")[-1]}', "w") as f:
                 f.write(html)
-        elif target == "header" or target == "footer":
-            fileobject = open(f"{target}-wrapper.shtm")
-            if scope is None:
-                for scope in scopes:
-                    print(f"🐞 scope: {scope}")
+        elif component == "header" or component == "footer":
+            # NOTE libguides_groups is set in a GitHub Actions secret
+            slugs = [g["slug"] for g in json.loads(libguides_groups)["groups"]]
+            slugs.append("system")
+            variants = list(slugs)
+            variant = (
+                file.split(".")[0].split("-")[-1]
+                if file.split(".")[0].split("-")[-1] in variants
+                else None
+            )
+            # NOTE avoid redundant artifact creation
+            if os.path.isfile(f'artifacts/{file.split("/")[-1]}') or os.path.isfile(
+                f"artifacts/{component}--{variant}.html"
+            ):
+                print(f"🐞 artifacts exist:", os.listdir("artifacts"))
+                return
+            wrapper = open(f"{component}-wrapper.shtm")
+            if variant:
+                html += parse_nested_includes(wrapper, variant)
+                with open(f"artifacts/{component}--{variant}.html", "w") as f:
+                    f.write(html)
+            else:
+                # NOTE header-wrapper.shtm triggers this condition, for example
+                for variant in variants:
+                    print(f"🐞 variant: {variant}")
                     # reset output by copying html content into it
                     output = str(html)
-                    output += parse_nested_includes(fileobject, scope)
-                    with open(f"artifacts/{target}--{scope}.html", "w") as f:
+                    output += parse_nested_includes(wrapper, variant)
+                    with open(f"artifacts/{component}--{variant}.html", "w") as f:
                         f.write(output)
-            else:
-                html += parse_nested_includes(fileobject, scope)
-                with open(f"artifacts/{target}--{scope}.html", "w") as f:
-                    f.write(html)
-            fileobject.close()
+            wrapper.close()
         print(f"🐞 artifacts:", os.listdir("artifacts"))
 
 
@@ -117,19 +120,19 @@ def compile_css(extent, github_commit):
         f.write(css)
 
 
-def parse_nested_includes(fileobject, scope=None):
+def parse_nested_includes(wrapper, variant=None):
     html = ""
-    fileobject.seek(0)
-    for line in fileobject:
+    wrapper.seek(0)
+    for line in wrapper:
         if line.strip().startswith("<!--#include"):
             included_file = line.split("'")[1]
             if included_file.split(".")[0].endswith("-GROUP"):
-                fo = open(included_file.replace("GROUP", scope))
-                html += parse_nested_includes(fo, scope)
+                fo = open(included_file.replace("GROUP", variant))
+                html += parse_nested_includes(fo, variant)
                 fo.close()
             else:
                 fo = open(included_file)
-                html += parse_nested_includes(fo, scope)
+                html += parse_nested_includes(fo, variant)
                 fo.close()
         else:
             html += line

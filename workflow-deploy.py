@@ -9,7 +9,7 @@ def main(
     admin_base_url: "base url for admin access",  # type: ignore
     admin_username: "username for admin access",  # type: ignore
     admin_password: "password for admin access",  # type: ignore
-    groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
+    libguides_groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
 ):
     for item in os.scandir("artifacts"):
         with sync_playwright() as playwright:
@@ -30,14 +30,6 @@ def main(
                     p.set_input_files("#include_file", item.path)
                 elif item.name.endswith(".html"):
                     target = item.name.split("-")[0]
-                    slugs = [g["slug"] for g in json.loads(groups)["groups"]]
-                    slugs.append("system")
-                    scopes = list(slugs)
-                    scope = (
-                        item.name.split(".")[0].split("-")[-1]
-                        if item.name.split(".")[0].split("-")[-1] in scopes
-                        else None
-                    )
                     with open(item) as f:
                         html = f.read()
                     if target == "template":
@@ -103,13 +95,14 @@ def main(
                             + "')"
                         )
                     elif target == "head":
-                        if scope == "system":
+                        variant = item.name.split(".")[0].split("-")[-1]
+                        if variant == "system":
                             p.goto("/libguides/lookfeel.php?action=1")
                             p.fill("#jscss_code", html)
                             p.click("#s-lg-btn-save-jscss")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-lg-btn-save-jscss.btn-success")
-                        elif scope == "libanswers":
+                        elif variant == "libanswers":
                             # NOTE JS/CSS files are uploaded in LibGuides
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibAnswers')")
@@ -120,7 +113,7 @@ def main(
                             p.click("#instmetabut")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#s-ui-notification :text('Success')")
-                        elif scope == "libcal":
+                        elif variant == "libcal":
                             # NOTE JS/CSS files are uploaded in LibGuides
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibCal')")
@@ -133,8 +126,8 @@ def main(
                                 "#jquery-notification-message :text('Success')"
                             )
                         else:
-                            for group in json.loads(groups)["groups"]:
-                                if scope == group["slug"]:
+                            for group in json.loads(libguides_groups)["groups"]:
+                                if variant == group["slug"]:
                                     p.goto(
                                         f'/libguides/groups.php?action=3&group_id={group["id"]}'
                                     )
@@ -145,15 +138,16 @@ def main(
                                         "#s-lg-btn-save-jscss.btn-success"
                                     )
                     elif target == "header":
-                        if scope == "system":
+                        variant = item.name.split(".")[0].split("-")[-1]
+                        if variant == "system":
                             p.goto("/libguides/lookfeel.php?action=0")
                             p.fill("#banner_html", html)
                             p.click("#banner_html + .btn-primary")
                             # NOTE must wait for success before moving on
                             p.wait_for_selector("#banner_html + .btn-success")
                         else:
-                            for group in json.loads(groups)["groups"]:
-                                if scope == group["slug"]:
+                            for group in json.loads(libguides_groups)["groups"]:
+                                if variant == group["slug"]:
                                     p.goto(
                                         f'/libguides/groups.php?action=2&group_id={group["id"]}'
                                     )
@@ -162,7 +156,8 @@ def main(
                                     # NOTE must wait for success before moving on
                                     p.wait_for_selector("#banner_html + .btn-success")
                     elif target == "footer":
-                        if scope == "system":
+                        variant = item.name.split(".")[0].split("-")[-1]
+                        if variant == "system":
                             p.goto("/libguides/lookfeel.php?action=0")
                             p.click("#s-lg-footer_link")
                             p.fill("#footer_code", html)
@@ -191,8 +186,8 @@ def main(
                                 "#jquery-notification-message :text('Success')"
                             )
                         else:
-                            for group in json.loads(groups)["groups"]:
-                                if scope == group["slug"]:
+                            for group in json.loads(libguides_groups)["groups"]:
+                                if variant == group["slug"]:
                                     p.goto(
                                         f'/libguides/groups.php?action=2&group_id={group["id"]}'
                                     )
