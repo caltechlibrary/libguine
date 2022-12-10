@@ -173,7 +173,7 @@ def main(
                             p.fill("#instfooterfield", html)
                             p.click("#instfooterbut")
                             # NOTE must wait for success before moving on
-                            p.wait_for_selector("#s-ui-notification-message :text('Success')")
+                            # p.wait_for_selector("#s-ui-notification-message :text('Success')")
                             # NOTE LibCal uses the same system footer
                             p.click("#s-lib-app-anchor")
                             p.click("#s-lib-app-menu a:text('LibCal')")
