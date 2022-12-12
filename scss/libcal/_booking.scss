@@ -1,5 +1,9 @@
 /* libcal/_booking.scss */
 
+#s-lc-rm-cal-cont {
+  /* the calendar styling breaks at larger text sizes */
+  font-size: 12px;
+}
 .lc_rm_b {
   /* non-bookable color */
   background-color: #9a9a9a;
