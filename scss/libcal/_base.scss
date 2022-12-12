@@ -7,3 +7,8 @@
 html, body {
     font-size: revert;
 }
+
+#s-lc-public-skiplink {
+    // NOTE hidden skip link background color shows if block padding is 10px
+    padding-block: 5px;
+}
