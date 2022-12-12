@@ -1,0 +1,9 @@
+@use "../common/base" as *;
+
+/* libanswers/_base.scss */
+
+// We can’t bring our own Bootstrap to LibAnswers, so here are base overrides.
+
+html, body {
+    font-size: revert;
+}
