@@ -23,6 +23,8 @@
 }
 #c3-introduction-row {
   @media (min-width: 992px) { // TODO $screen-md-min
+    align-items: center;
+    display: flex;
     padding-block: 60px; // TODO $grid-gutter-width
   }
   .col-md-6 {
