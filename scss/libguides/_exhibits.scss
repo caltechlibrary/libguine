@@ -1,0 +1,43 @@
+@use "../common/colors" as *;
+
+/* libguides/_exhibits.scss */
+
+.digital-exhibits #c3-introduction-row {
+  padding-block: 15px;
+  @media screen and (min-width: 992px) {
+    padding-block: 60px;
+  }
+}
+
+.digital-exhibits .nav-pills > li {
+  & > a {
+    border-radius: unset;
+  }
+  &.active > a, &.active > a:hover, &.active > a:focus {
+    background-color: $burnt;
+  }
+  &:not(.active) > a:hover, &:not(.active) > a:focus {
+    background-color: transparent;
+    outline: $burnt solid medium;
+  }
+}
+
+.exhibit-thumbnails {
+  column-gap: 30px;
+  display: grid;
+  row-gap: 30px;
+  text-align: center;
+  @media screen and (min-width: 432px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding-block-start: 30px;
+  }
+  & > div {
+    background-color: white;
+  }
+}
