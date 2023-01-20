@@ -13,6 +13,9 @@
   & > a {
     border-radius: unset;
   }
+  & > a.dropdown-toggle {
+    display: none;
+  }
   &.active > a, &.active > a:hover, &.active > a:focus {
     background-color: $burnt;
   }
