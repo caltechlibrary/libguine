@@ -5,6 +5,7 @@
 .digital-exhibits #c3-introduction-row {
   padding-block: 15px;
   @media screen and (min-width: 992px) {
+    // mimicking the value in the _landing.scss file
     padding-block: 60px;
   }
 }
@@ -20,12 +21,14 @@
     background-color: $burnt;
   }
   &:not(.active) > a:hover, &:not(.active) > a:focus {
+    // using a similar style to the menu items in _navbar.scss
     background-color: transparent;
     outline: $burnt solid medium;
   }
 }
 
 .exhibit-thumbnails {
+  // 400px will be wide enough for thumbnails at their largest displayed size
   column-gap: 30px;
   display: grid;
   row-gap: 30px;
@@ -38,9 +41,12 @@
   }
   @media screen and (min-width: 992px) {
     grid-template-columns: repeat(4, 1fr);
+    // accounting for code in the _cards.scss file
     padding-block-start: 30px;
   }
   & > div {
+    // ensure background extends to the same height for all cards regardless of
+    // number of lines of text
     background-color: white;
   }
 }
