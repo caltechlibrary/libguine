@@ -2,12 +2,22 @@
 
 /* libguides/_exhibits.scss */
 
+.digital-exhibits.c3-asc.c3-content .c3-page-title {
+  // revert color that is set because of the .c3-content class added with js
+  color: white;
+}
+
 .digital-exhibits #c3-introduction-row {
   padding-block: 15px;
   @media screen and (min-width: 992px) {
     // mimicking the value in the _landing.scss file
     padding-block: 60px;
   }
+}
+
+.digital-exhibits .s-lg-tab-top-link span::before {
+  // change the page title when it is rendered in the menu
+  content: "All ";
 }
 
 .digital-exhibits .nav-pills > li {
