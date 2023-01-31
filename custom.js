@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log("‼️ ADMIN");
     // remove elements that conflict with the LibGuides admin UI
     document.getElementById("custom-css").remove();
+    document.getElementById("libguides-css").remove();
     document.getElementById("bootstrap-css").remove();
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
