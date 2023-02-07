@@ -59,4 +59,18 @@
     // number of lines of text
     background-color: white;
   }
+  & > figure {
+    // overlay caption on image;
+    // default is single column with one row for each child element
+    display: grid;
+    img {
+      grid-column: 1/2; // full one-column width
+      grid-row: 1/3; // full two-row height
+    }
+    figcaption {
+      grid-column: 1/2; // full one-column width
+      grid-row: 2/3; // second row only
+      background: rgba(255, 255, 255, 0.8); // white with 80% opacity
+    }
+  }
 }
