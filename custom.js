@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
+    // customize admin ui; remove hardcoded navigation elements, widen columns
+    let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits #c3-introduction-row");
+    if (digital_exhibits_introduction_row) {
+      digital_exhibits_introduction_row.firstElementChild.classList.add("col-md-12");
+      digital_exhibits_introduction_row.firstElementChild.classList.remove("col-md-6");
+      digital_exhibits_introduction_row.lastElementChild.remove();
+    }
   }
   else {
     var _public = true;
@@ -149,8 +156,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   else if (_public && landing) {
     // identify public-facing landing pages to CSS
     document.body.classList.add("c3-landing");
-    // TODO implement for all landing pages
+    // Digital Exhibits
     if (document.querySelector("#tpl-web.digital-exhibits")) {
+      if (document.getElementsByClassName("s-lg-tab-top-link")[0]) {
+        // prepend "All" to the menu link text for the Digital Exhibits item
+        document.getElementsByClassName("s-lg-tab-top-link")[0].getElementsByTagName("span")[0].prepend("All ");
+      }
+      // TODO implement for all landing pages
       // wrap link from figure around itself
       [...document.getElementsByTagName("figure")].forEach(e => {
         let link = document.createElement("a");
