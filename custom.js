@@ -149,6 +149,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   else if (_public && landing) {
     // identify public-facing landing pages to CSS
     document.body.classList.add("c3-landing");
+    // TODO implement for all landing pages
+    if (document.querySelector("#tpl-web.digital-exhibits")) {
+      // wrap link from figure around itself
+      [...document.getElementsByTagName("figure")].forEach(e => {
+        let link = document.createElement("a");
+        link.innerHTML = e.outerHTML;
+        link.setAttribute("href", e.getElementsByTagName("a")[0].href)
+        e.parentElement.insertBefore(link, e);
+        e.remove();
+      });
+    }
   }
   else if (_public && content) {
     document.body.classList.add("c3-content");
