@@ -38,6 +38,8 @@
 }
 
 .exhibit-thumbnails {
+  // coordinate with container inline spacing
+  padding-block-start: 15px;
   // 400px will be wide enough for thumbnails at their largest displayed size
   column-gap: 30px;
   display: grid;
@@ -48,10 +50,12 @@
   }
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+    // coordinate with row & column gaps
+    padding-block-start: 30px;
   }
   @media screen and (min-width: 992px) {
     grid-template-columns: repeat(4, 1fr);
-    // accounting for code in the _cards.scss file
+    // coordinate with row & column gaps
     padding-block-start: 30px;
   }
   & > div {
