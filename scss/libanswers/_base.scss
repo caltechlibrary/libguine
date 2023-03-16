@@ -7,3 +7,8 @@
 html, body {
     font-size: revert;
 }
+
+// LibAnswers started underlining all links, so we need to undo that.
+a:not(.btn, .collapsible-toggle, .accordion-toggle) {
+    text-decoration: none;
+}
