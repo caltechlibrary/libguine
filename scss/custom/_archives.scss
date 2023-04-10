@@ -138,13 +138,16 @@ $archives-secondary-color: #849895;
 }
 
 // LibCal Hours
-#s-lg-box-28843122 {
-  color: #fff;
-  margin: 0;
-}
 #s-lg-box-wrapper-33915545 {
   background-color: $archives-secondary-color;
   text-align: center;
+}
+#s-lg-box-28843122 {
+  color: #fff;
+  margin: 0;
+  a {
+    color: #fff;
+  }
 }
 #tpl-a-home .hours-today {
   &, * {
@@ -174,9 +177,6 @@ $archives-secondary-color: #849895;
 }
 // View All Hours Link
 #s-lg-content-67091738 {
-  a {
-    color: #fff;
-  }
   p {
     margin-block-end: 16px; // TODO $font-size-base
   }
