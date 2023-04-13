@@ -1,0 +1,33 @@
+<style>
+  #s-lg-rss-71118539 .s-lg-rss-list {
+    margin-block-end: 30px;
+    padding: 0
+  }
+  #s-lg-rss-71118539 .s-lg-rss-list-item { list-style-type: none }
+  #s-lg-rss-71118539 .s-lg-title {
+    background-color: #1e988a;
+    color: #fff;
+    padding: 0.3em 0.6em;
+    border-radius: 0.25em;
+  }
+  #s-lg-rss-71118539 .s-lg-title::before {
+    content: "\f1ea";
+    font-family: "FontAwesome";
+    padding: 0 10px 0 0;
+  }
+  #s-lg-rss-71118539 .s-lg-title a { color: #fff }
+  #s-lg-rss-71118539 .s-lg-rss-date { display: none }
+  #s-lg-rss-71118539 .s-lg-rss-links { display: none }
+</style>
+<script>
+  const targetNode = document.getElementById("s-lg-rss-71118539");
+  const observerOptions = { childList: true };
+  const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        observer.disconnect();
+        targetNode.querySelector(".s-lg-title a").removeAttribute("target");
+        targetNode.querySelector(".s-lg-title a").innerText = "Read the Latest Library Newsletter";
+      });
+    });
+  observer.observe(targetNode, observerOptions);
+</script>
