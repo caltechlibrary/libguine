@@ -18,6 +18,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
       digital_exhibits_introduction_row.lastElementChild.remove();
     }
   }
+  else if (!document.body.hasAttribute("id")) {
+    // ** pages in the Guides group are using default templates **
+
+    var _public = true;
+
+    // add customized Bootstrap JavaScript to public-facing pages
+    const bootstrap_js = document.createElement("script");
+    bootstrap_js.id = "bootstrap-js";
+    bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
+    document.head.appendChild(bootstrap_js);
+
+    // remove CSS for website-templated pages
+    document.getElementById("custom-css").remove();
+    document.getElementById("libguides-css").remove();
+
+  }
   else {
     var _public = true;
     console.log("‼️ PUBLIC");
