@@ -1,0 +1,85 @@
+// `header.s-lib-cmd-bar` only appears on admin pages
+header.s-lib-cmd-bar {
+  & ~ #s-lg-guide-main {
+    a {
+      &[href^="https://caltech.idm.oclc.org/login?url="] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://caltech.overdrive.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.ebscohost.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://link.gale.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+    }
+  }
+}
