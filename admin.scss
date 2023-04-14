@@ -26,12 +26,6 @@ header.s-lib-cmd-bar {
           content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
-      &[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"] {
-        background-color: yellow;
-        &::before {
-          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
-        }
-      }
       &[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"] {
         background-color: yellow;
         &::before {
@@ -42,6 +36,30 @@ header.s-lib-cmd-bar {
         background-color: yellow;
         &::before {
           content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"] {
@@ -62,12 +80,6 @@ header.s-lib-cmd-bar {
           content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
-      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"] {
-        background-color: yellow;
-        &::before {
-          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
-        }
-      }
       &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"] {
         background-color: yellow;
         &::before {
@@ -78,6 +90,30 @@ header.s-lib-cmd-bar {
         background-color: yellow;
         &::before {
           content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://www.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.proquest.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://proquest.umi.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
     }
