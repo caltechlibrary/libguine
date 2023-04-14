@@ -1,6 +1,6 @@
 // `header.s-lib-cmd-bar` only appears on admin pages
 header.s-lib-cmd-bar {
-  & ~ #s-lg-guide-main {
+  & ~ #s-lg-guide-main, & ~ #s-lg-side-nav-content {
     a {
       &[href^="https://caltech.idm.oclc.org/login?url="] {
         background-color: yellow;
