@@ -11,55 +11,55 @@ header.s-lib-cmd-bar {
       &[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"] {
         background-color: yellow;
         &::before {
-          content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
       }
       &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"] {
