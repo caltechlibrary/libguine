@@ -14,6 +14,12 @@ header.s-lib-cmd-bar {
           content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
         }
       }
+      &[href^="https://caltech.idm.oclc.org/login?url=https://learning.oreilly.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
       &[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"] {
         background-color: yellow;
         &::before {
@@ -63,6 +69,12 @@ header.s-lib-cmd-bar {
         }
       }
       &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"] {
+        background-color: yellow;
+        &::before {
+          content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+        }
+      }
+      &[href^="https://go.openathens.net/redirector/caltech.edu?url=https://learning.oreilly.com"] {
         background-color: yellow;
         &::before {
           content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
