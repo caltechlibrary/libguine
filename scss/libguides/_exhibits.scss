@@ -9,7 +9,7 @@
 
 .digital-exhibits #c3-introduction-row {
   padding-block: 15px;
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 641px) {
     // mimicking the value in the _landing.scss file
     padding-block: 60px;
   }
