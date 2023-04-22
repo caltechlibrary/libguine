@@ -8,10 +8,18 @@
 }
 
 .digital-exhibits #c3-introduction-row {
-  padding-block: 15px;
+  padding-block: 30px;
   @media screen and (min-width: 768px) {
     // mimicking the value in the _landing.scss file
+    align-items: center;
+    display: flex;
     padding-block: 60px;
+  }
+  div:first-child {
+    margin-block-end: 15px;
+    @media screen and (min-width: 768px) {
+      margin-block-end: 0;
+    }
   }
 }
 
