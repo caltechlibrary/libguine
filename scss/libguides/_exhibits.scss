@@ -9,18 +9,9 @@
 
 .digital-exhibits #c3-introduction-row {
   padding-block: 15px;
-  @media screen and (min-width: 641px) {
-    // equal width columns
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
+  @media screen and (min-width: 768px) {
+    // mimicking the value in the _landing.scss file
     padding-block: 60px;
-  }
-  &::after, &::before {
-    @media screen and (min-width: 641px) {
-      // pseudo elements with content annoyingly are grid items
-      content: unset;
-    }
   }
 }
 
