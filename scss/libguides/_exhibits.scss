@@ -10,8 +10,17 @@
 .digital-exhibits #c3-introduction-row {
   padding-block: 15px;
   @media screen and (min-width: 641px) {
-    // mimicking the value in the _landing.scss file
+    // equal width columns
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
     padding-block: 60px;
+  }
+  &::after, &::before {
+    @media screen and (min-width: 641px) {
+      // pseudo elements with content annoyingly are grid items
+      content: unset;
+    }
   }
 }
 
@@ -26,6 +35,9 @@
   }
   & > a.dropdown-toggle {
     display: none;
+  }
+  & > a.pull-left {
+    float: none !important;
   }
   &.active > a, &.active > a:hover, &.active > a:focus {
     background-color: $burnt;
