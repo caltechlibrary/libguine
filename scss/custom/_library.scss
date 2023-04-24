@@ -1,4 +1,5 @@
 @use "home";
+@use "../common/placeholders" as *;
 
 $home-primary-color: #062e47;
 $home-secondary-color: #1e988a;
@@ -122,7 +123,7 @@ $home-secondary-color: #1e988a;
 // .t-l-home class set in template
 .t-l-home {
   .c3-quicklinks {
-    @extend %quicklinks;
+    @extend %right-aligned-arrow-list;
     a {
       &:active,
       &:focus {

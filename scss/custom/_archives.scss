@@ -1,5 +1,5 @@
 @use "home";
-@use "quicklinks";
+@use "../common/placeholders" as *;
 
 $archives-primary-color: #c75000;
 $archives-secondary-color: #849895;
@@ -124,7 +124,7 @@ $archives-secondary-color: #849895;
 }
 // link to Archives tag /blog?tag_id=213658
 #s-lg-content-67209512 {
-  @extend %quicklinks;
+  @extend %right-aligned-arrow-list;
   text-align: right;
   a {
     &:active,
@@ -187,7 +187,7 @@ $archives-secondary-color: #849895;
   background-color: $archives-secondary-color;
 }
 #s-lg-box-28843130 {
-  @extend %quicklinks;
+  @extend %right-aligned-arrow-list;
   margin-block: 30px;
   a {
     &:active,

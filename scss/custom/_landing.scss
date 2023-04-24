@@ -1,4 +1,4 @@
-@use "quicklinks";
+@use "../common/placeholders" as *;
 
 .c3-landing {
   h1 {
@@ -17,7 +17,7 @@
     margin-block: 30px;
   }
   .c3-quicklinks {
-    @extend %quicklinks;
+    @extend %right-aligned-arrow-list;
     margin-block: 30px;
   }
 }
