@@ -26,8 +26,13 @@
 
 .digital-exhibits .categories {
   @extend %right-aligned-arrow-list;
-  a.active::after {
-    color: white;
+  a {
+    &::after {
+      color: $granny;
+    }
+    &.active::after {
+      color: white;
+    }
   }
 }
 
