@@ -17,21 +17,23 @@
     padding-block: 60px;
   }
   & > div:first-child {
+    // description
+    font-size: larger;
     margin-block-end: 15px;
     @media screen and (min-width: 768px) {
       margin-block-end: 0;
     }
   }
-}
-
-.digital-exhibits .categories {
-  @extend %right-aligned-arrow-list;
-  a {
-    &::after {
-      color: $granny;
-    }
-    &.active::after {
-      color: white;
+  & > div:last-child {
+    // categories
+    @extend %right-aligned-arrow-list;
+    a {
+      &::after {
+        color: $granny;
+      }
+      &.active::after {
+        color: white;
+      }
     }
   }
 }
