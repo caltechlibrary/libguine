@@ -179,13 +179,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementsByClassName("s-lg-tab-top-link")[0].getElementsByTagName("span")[0].prepend("All ");
       }
       // TODO implement for all landing pages
-      // wrap link from figure around itself
+      // wrap link from figcaption around figure
       [...document.getElementsByTagName("figure")].forEach(e => {
         let link = document.createElement("a");
         link.innerHTML = e.outerHTML;
         link.setAttribute("href", e.getElementsByTagName("a")[0].href)
         e.parentElement.insertBefore(link, e);
         e.remove();
+      });
+      // remove link from figcaption
+      [...document.getElementsByTagName("figcaption")].forEach(e => {
+        e.innerHTML = e.innerText;
       });
     }
   }
