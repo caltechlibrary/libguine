@@ -23,10 +23,9 @@
       text-decoration: none;
     }
     &::after {
-      content: "\e092";
-      display: inline-block;
+      // add non-breaking space to keep last word with arrow when wrapping
+      content: "\00a0\e092";
       font-family: "Glyphicons Halflings";
-      padding-inline-start: 0.5em;
     }
   }
 }
