@@ -1,4 +1,5 @@
 @use "../common/colors" as *;
+@use "../common/placeholders" as *;
 
 /* libguides/_exhibits.scss */
 
@@ -20,6 +21,13 @@
     @media screen and (min-width: 768px) {
       margin-block-end: 0;
     }
+  }
+}
+
+.digital-exhibits .categories {
+  @extend %right-aligned-arrow-list;
+  a.active::after {
+    color: white;
   }
 }
 
