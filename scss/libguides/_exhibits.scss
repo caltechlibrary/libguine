@@ -74,6 +74,10 @@
     // number of lines of text
     background-color: white;
   }
+  a:hover {
+    outline: thick solid $granny;
+    text-decoration: none;
+  }
   figure {
     // overlay caption on image;
     // default is single column with one row for each child element
