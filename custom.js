@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
-    // customize admin ui for digital exhibits thumbnails page;
+    // customize admin ui for Digital Exhibits Thumbnails page;
     // remove hardcoded navigation elements, widen columns
     let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits-thumbnails #c3-introduction-row");
     if (digital_exhibits_introduction_row) {
