@@ -24,6 +24,7 @@
     }
     &::after {
       // add non-breaking space to keep last word with arrow when wrapping
+      // see https://stackoverflow.com/a/53732900
       content: "\00a0\e092";
       font-family: "Glyphicons Halflings";
     }

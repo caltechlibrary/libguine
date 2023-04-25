@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   }
   else if (!document.body.hasAttribute("id")) {
-    // ** pages in the Guides group are using default templates **
+    // here we are on a default LibGuides template; the body has no id attribute
+
+    // content in the Guides group uses default templates;
+    // Guides content needs Bootstrap without Website content CSS
 
     var _public = true;
 
@@ -174,9 +177,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.body.classList.add("c3-landing");
     // Digital Exhibits
     if (document.querySelector("#tpl-web.digital-exhibits")) {
-      if (document.getElementsByClassName("s-lg-tab-top-link")[0]) {
-        // prepend "All" to the menu link text for the Digital Exhibits item
-        document.getElementsByClassName("s-lg-tab-top-link")[0].getElementsByTagName("span")[0].prepend("All ");
+      if (document.querySelector(".categories > ul > li > a > span")) {
+        // prepend "All" to the menu link text for the top Digital Exhibits item
+        document.querySelector(".categories > ul > li > a > span").prepend("All ");
       }
       // TODO implement for all landing pages
       // wrap link from figcaption around figure
