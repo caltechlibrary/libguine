@@ -38,7 +38,7 @@
   }
 }
 
-.digital-exhibits-thumbnails .categories > ul > li > a > span::before {
+.digital-exhibits-thumbnails .categories > ul > li:first-of-type > a > span::before {
   // change the link text when it is rendered in the menu
   content: "All ";
 }
