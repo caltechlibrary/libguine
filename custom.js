@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
-    // customize admin ui; remove hardcoded navigation elements, widen columns
-    let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits #c3-introduction-row");
+    // customize admin ui for digital exhibits thumbnails page;
+    // remove hardcoded navigation elements, widen columns
+    let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits-thumbnails #c3-introduction-row");
     if (digital_exhibits_introduction_row) {
       digital_exhibits_introduction_row.firstElementChild.classList.add("col-md-12");
       digital_exhibits_introduction_row.firstElementChild.classList.remove("col-md-6");
@@ -175,12 +176,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   else if (_public && landing) {
     // identify public-facing landing pages to CSS
     document.body.classList.add("c3-landing");
-    // Digital Exhibits
-    if (document.querySelector("#tpl-web.digital-exhibits")) {
-      if (document.querySelector(".categories > ul > li > a > span")) {
-        // prepend "All" to the menu link text for the top Digital Exhibits item
-        document.querySelector(".categories > ul > li > a > span").prepend("All ");
-      }
+    // Digital Exhibits Thumbnails
+    if (document.querySelector("#tpl-web.digital-exhibits-thumbnails")) {
       // TODO implement for all landing pages
       // wrap link from figcaption around figure
       [...document.getElementsByTagName("figure")].forEach(e => {
