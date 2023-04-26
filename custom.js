@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       digital_exhibits_introduction_row.lastElementChild.remove();
     }
   }
-  else if (!document.body.hasAttribute("id")) {
+  else if (!document.body.hasAttribute("id") && !document.getElementById("s-lg-blog-content")) {
     // here we are on a default LibGuides template; the body has no id attribute
 
     // content in the Guides group uses default templates;
