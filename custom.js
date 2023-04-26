@@ -249,37 +249,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * containing a horizontal bar character (` | `). The markup is different
      * depending on whether the post contains subject tags or not.
      *
-     * with subjects:
+     * Example without subjects:
      * ```html
      * <h2 class="s-lg-blog-header">Post Title</h2>
-     * <span>
-     * by Post Author on 
-     * <span>[Post Date]</span>
-     *  | 
-     * <a href="/example#comments">Comments</a>
-     * </span>
-     * <br>
+     * <span>by Post Author on <span>[Post Date]</span> | <a href="/example#comments">Comments</a></span><br>
      * ```
      *
-     * without subjects:
+     * Example with subjects:
      * ```html
      * <h2 class="s-lg-blog-header">Post Title</h2>
-     * <span>
-     * by Post Author on 
-     * <span>[Post Date]</span>
-     * in 
-     * <a>Subject 1</a>
-     * , 
-     * <a>Subject 2</a>
-     * , 
-     * <a>Subject 3</a>
-     * </span>
-     *  | 
-     * <a href="/example#comments">Comments</a>
-     * <br>
+     * <span>by Post Author on <span>[Post Date]</span> in <a>Subject 1</a>, <a>Subject 2</a>, <a>Subject 3</a></span> | <a href="/example#comments">Comments</a><br>
      * ```
-     * 
-     * @param {node} node The `span` immediately following `.s-lg-blog-header`.
+     *
+     * @param {node} node The span element immediately following the .s-lg-blog-header element.
      */
     function removeCommentsLink(node) {
       if (node.nextSibling.nodeName === "BR") {
