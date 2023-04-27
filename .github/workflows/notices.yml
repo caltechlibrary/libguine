@@ -1,7 +1,12 @@
 name: Build & Deploy Notices
 on:
   schedule:
-    - cron: '* * * * *'
+    # as often as possible during work hours Monday–Friday (UTC)
+    # (becomes complicated due to DST & the Los Angeles time zone)
+    - cron: '* 15-23 * * 1-5'
+    - cron: '* 0-2 * * 2-6'
+    # once a day otherwise
+    - cron: '8 8 * * *'
   workflow_dispatch:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:

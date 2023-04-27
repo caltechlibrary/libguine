@@ -139,8 +139,7 @@ def main(
                             p.goto("/libguides/lookfeel.php?action=0")
                             p.fill("#banner_html", html)
                             p.click("#banner_html + .btn-primary")
-                            # NOTE must wait for success before moving on
-                            p.wait_for_selector("#banner_html + .btn-success")
+                            # TODO LibAnswers & LibCal
                         else:
                             for group in json.loads(libguides_groups)["groups"]:
                                 if variant == group["slug"]:
