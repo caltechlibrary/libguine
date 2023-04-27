@@ -239,6 +239,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     observer.observe(sidenav, config);
   }
   else if (_public && blog) {
+    // NOTE Uncaught TypeError: a.fn.popover is undefined
+    // https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js
+    // remove script with error; may not be needed
+    document.querySelector("script[src*='bootstrap-editable.min.js']").remove();
     // NOTE unsure if this script will always run before main blog script;
     // #s-lg-blog-content is initially empty on the /blog page, but on blog
     // post pages it is populated with #s-lg-blog-posts and more
