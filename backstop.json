@@ -1,0 +1,151 @@
+{
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "onBeforeScript": "puppeteer/onBefore.js",
+  "onReadyScript": "puppeteer/onReady.js",
+  "scenarios": [
+    {
+      "label": "Blog Post",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/blog/Richard-Thai-New-Digital-Archivist",
+      "selectors": ["document"],
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Library Footer",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": ".s-lc-w-today",
+      "delay": 0,
+      "hideSelectors": [".s-lc-w-head span:last-of-type"],
+      "removeSelectors": ["#s-ui-cc-container", ".s-lc-w-time"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "scrollToSelector": "#footer-login",
+      "selectors": ["#footer-wrapper"],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Archives Footer",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/archives",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": ".s-lc-w-today",
+      "delay": 0,
+      "hideSelectors": [".s-lc-w-head span:last-of-type"],
+      "removeSelectors": ["#s-ui-cc-container", ".s-lc-w-time"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "scrollToSelector": "#footer-login",
+      "selectors": ["#footer-wrapper"],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "LibAnswers Footer",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://libanswers.caltech.edu/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": ".s-lc-w-today",
+      "delay": 0,
+      "hideSelectors": [".s-lc-w-head span:last-of-type"],
+      "removeSelectors": ["#s-ui-cc-container", ".s-lc-w-time"],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "scrollToSelector": "#footer-login",
+      "selectors": ["#footer-wrapper"],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "LibCal Home",
+      "url": "https://libcal.caltech.edu/",
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": false
+    },
+    {
+      "label": "LibCal Group Study Rooms",
+      "url": "https://libcal.caltech.edu/booking/gsr",
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": false
+    },
+    {
+      "label": "LibCal Classes",
+      "url": "https://libcal.caltech.edu/calendar/classes",
+      "readySelector": "#s-lc-c-list-cont > div",
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": false
+    },
+    {
+      "label": "LibCal Event",
+      "url": "https://libcal.caltech.edu/event/9626886",
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": false
+    },
+    {
+      "label": "cards: template-web",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/about",
+      "delay": 1000,
+      "selectors": [".c3-cards-wrapper"],
+      "requireSameDimensions": true
+    },
+    {
+      "label": "cards: template-web--archives-with-intro",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/archives/about",
+      "delay": 1000,
+      "selectors": [".c3-cards-wrapper"],
+      "requireSameDimensions": true
+    },
+    {
+      "label": "cards: template-guide--archives-digital-exhibits-thumbs",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/archives/exhibits/digital",
+      "delay": 1000,
+      "selectors": [".gradient-wrapper"],
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
