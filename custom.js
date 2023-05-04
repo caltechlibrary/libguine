@@ -10,6 +10,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
+    // add alert to guides using default templates in the Guides group
+    if (document.querySelector("#s-lib-bc-group a[href$='group_id=10729']")) {
+      if (!document.querySelector("body.js-guides-template")) {
+        const container = document.createElement("div");
+        container.style.marginBlockStart = "20px";
+        container.classList.add("container");
+        const alert = document.createElement("div");
+        alert.classList.add("alert", "alert-danger");
+        if (document.getElementById("s-lg-side-nav-content")) {
+          var template_type = 'Side-Nav';
+        }
+        else {
+          var template_type = 'Tab';
+        }
+        alert.innerHTML = `The template for this guide seems to be System Default - ${template_type} Layout. Please use the <b>Caltech Library - Guides - ${template_type} Layout</b> template in order to load the necessary styles. Select the Guide Navigation Layout item under the <i class="fa fa-picture-o fa-lg" style="color:#8a8a8a"></i> Guide Layout dropdown in the upper right toolbar.`;
+        container.appendChild(alert);
+        document.getElementById("s-lg-guide-tabs-title-bar").insertAdjacentElement("afterend", container);
+      }
+    }
     // customize admin ui for Digital Exhibits Thumbnails page;
     // remove hardcoded navigation elements, widen columns
     let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits-thumbnails #c3-introduction-row");
@@ -19,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       digital_exhibits_introduction_row.lastElementChild.remove();
     }
   }
-  else if (!document.body.hasAttribute("id") && !document.getElementById("s-lg-blog-content")) {
+  else if (document.querySelector("body.js-guides-template")) {
     // here we are on a default LibGuides template; the body has no id attribute
 
     // content in the Guides group uses default templates;
@@ -50,17 +69,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lib-scroll-top")) {
       document.getElementById("s-lib-scroll-top").remove();
     }
-    // move the breadcrumbs to the footer
-    document.getElementById("footer-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
-    // this javascript code for the hours widget cannot be added alongside the
-    // HTML, instead it must be entered in a CSS/JS-specific field
-    var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
-    // grab tokenized login link and rebuild elsewhere
-    const login_link = document.createElement("a");
-    login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
-    login_link.setAttribute("aria-label", "Staff Login");
-    login_link.innerHTML = `<i class="fa fa-sign-in" aria-hidden="true"></i>`;
-    document.getElementById("footer-login").appendChild(login_link);
+    if (document.getElementById("footer-wrapper")) {
+      // move the breadcrumbs to the footer
+      document.getElementById("footer-breadcrumbs").appendChild(document.getElementById("s-lib-bc"));
+      // this javascript code for the hours widget cannot be added alongside the
+      // HTML, instead it must be entered in a CSS/JS-specific field
+      var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
+      // grab tokenized login link and rebuild elsewhere
+      const login_link = document.createElement("a");
+      login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
+      login_link.setAttribute("aria-label", "Staff Login");
+      login_link.innerHTML = `<i class="fa fa-sign-in" aria-hidden="true"></i>`;
+      document.getElementById("footer-login").appendChild(login_link);
+    }
     // update page title
     const page_name = document.getElementById("s-lib-bc-page").textContent;
     const site_name = "Caltech Library";
