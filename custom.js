@@ -38,25 +38,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       digital_exhibits_introduction_row.lastElementChild.remove();
     }
   }
-  else if (document.querySelector("body.js-guides-template")) {
-    // here we are on a default LibGuides template; the body has no id attribute
-
-    // content in the Guides group uses default templates;
-    // Guides content needs Bootstrap without Website content CSS
-
-    var _public = true;
-
-    // add customized Bootstrap JavaScript to public-facing pages
-    const bootstrap_js = document.createElement("script");
-    bootstrap_js.id = "bootstrap-js";
-    bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
-    document.head.appendChild(bootstrap_js);
-
-    // remove CSS for website-templated pages
-    document.getElementById("custom-css").remove();
-    document.getElementById("libguides-css").remove();
-
-  }
   else {
     var _public = true;
     console.log("‼️ PUBLIC");
@@ -65,6 +46,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     bootstrap_js.id = "bootstrap-js";
     bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
     document.head.appendChild(bootstrap_js);
+    // Remove Website CSS from `Guides` Group content.
+    if (document.getElementById("s-lib-bc-group")) {
+      if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
+        document.getElementById("custom-css").remove();
+        document.getElementById("libguides-css").remove();
+      }
+    }
     // remove scroll-to-top javascript
     if (document.getElementById("s-lib-scroll-top")) {
       document.getElementById("s-lib-scroll-top").remove();
