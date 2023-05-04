@@ -10,25 +10,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
-    // add alert to guides using default templates in the Guides group
-    if (document.querySelector("#s-lib-bc-group a[href='https://library.caltech.edu/libguides']")) {
-      if (!document.querySelector("body.js-guides-template")) {
-        const container = document.createElement("div");
-        container.style.marginBlockStart = "20px";
-        container.classList.add("container");
-        const alert = document.createElement("div");
-        alert.classList.add("alert", "alert-danger");
-        if (document.getElementById("s-lg-side-nav-content")) {
-          var template_type = 'Side-Nav';
-        }
-        else {
-          var template_type = 'Tab';
-        }
-        alert.innerHTML = `The template for this guide seems to be System Default - ${template_type} Layout. Please use the <b>Caltech Library - Guides - ${template_type} Layout</b> template in order to load the necessary styles. Select the Guide Navigation Layout item under the <i class="fa fa-picture-o fa-lg" style="color:#8a8a8a"></i> Guide Layout dropdown in the upper right toolbar.`;
-        container.appendChild(alert);
-        document.getElementById("s-lg-guide-tabs-title-bar").insertAdjacentElement("afterend", container);
-      }
-    }
     // customize admin ui for Digital Exhibits Thumbnails page;
     // remove hardcoded navigation elements, widen columns
     let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits-thumbnails #c3-introduction-row");
