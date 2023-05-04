@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
     // add alert to guides using default templates in the Guides group
-    if (document.querySelector("#s-lib-bc-group a[href$='group_id=10729']")) {
+    if (document.querySelector("#s-lib-bc-group a[href='https://library.caltech.edu/libguides']")) {
       if (!document.querySelector("body.js-guides-template")) {
         const container = document.createElement("div");
         container.style.marginBlockStart = "20px";
