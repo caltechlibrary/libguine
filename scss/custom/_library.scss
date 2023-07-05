@@ -208,9 +208,15 @@ $home-secondary-color: #1e988a;
 
 // Popular Searches
 #s-lg-box-28870775 {
-  .popular-searches a {
-    @extend %library-link-label;
-    font-size: medium;
+  .popular-searches {
+    & > li {
+      // add vertical spacing because the list can wrap
+      margin-block-end: 1.5rem;
+    }
+    a {
+      @extend %library-link-label;
+      font-size: medium;
+    }
   }
 }
 
