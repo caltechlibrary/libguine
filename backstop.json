@@ -23,6 +23,14 @@
       "requireSameDimensions": true
     },
     {
+      "label": "Subjects",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "https://library.caltech.edu/sb.php",
+      "selectors": ["document"],
+      "removeSelectors": ["#s-ui-cc-container"],
+      "requireSameDimensions": true
+    },
+    {
       "label": "Library Footer",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "https://library.caltech.edu/",
