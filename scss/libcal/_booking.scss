@@ -4,20 +4,6 @@
   /* the calendar styling breaks at larger text sizes */
   font-size: 12px;
 }
-.lc_rm_b {
-  /* non-bookable color */
-  background-color: #9a9a9a;
-}
-.s-lc-eq-checkout,
-.s-lc-eq-r-unavailable,
-.s-lc-eq-r-padding,
-.label-eq-unavailable,
-.lc_rm_u,
-.s-lc-eq-period-booked {
-  /* unavailable/booked color */
-  background-color: #6b6b6b !important;
-  border-color: #6b6b6b !important;
-}
 
 /*hide the Rooms tab from Equipment Booking*/
 #s-lc-eq-rtab {display:none;}
