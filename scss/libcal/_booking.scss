@@ -5,5 +5,11 @@
   font-size: 12px;
 }
 
+#s-lc-eq-navform .form-group-sm .form-control {
+  /* allow Spaces form controls to be larger */
+  font-size: unset;
+  height: unset;
+}
+
 /*hide the Rooms tab from Equipment Booking*/
 #s-lc-eq-rtab {display:none;}
