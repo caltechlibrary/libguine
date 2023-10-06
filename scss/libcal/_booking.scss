@@ -8,14 +8,15 @@
   /* non-bookable color */
   background-color: #9a9a9a;
 }
-.lc_rm_u {
+.s-lc-eq-checkout,
+.s-lc-eq-r-unavailable,
+.s-lc-eq-r-padding,
+.label-eq-unavailable,
+.lc_rm_u,
+.s-lc-eq-period-booked {
   /* unavailable/booked color */
-  background-color: #6b6b6b;
-}
-
-.s-lc-eq-checkout {
-    background-color: #6b6b6b!important;
-    border-color: #6b6b6b!important;
+  background-color: #6b6b6b !important;
+  border-color: #6b6b6b !important;
 }
 
 /*hide the Rooms tab from Equipment Booking*/
