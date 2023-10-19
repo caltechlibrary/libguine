@@ -1,9 +1,11 @@
 @use "sass:color";
 
-@mixin caret-before {
-  &::before {
-    content: '\25BE';
-    margin-right: .33em;
+@mixin caret-after {
+  &::after {
+    content: "\e092";
+    font-family: "Glyphicons Halflings";
+    margin-left: .33em;
+    vertical-align: sub;
   }
 }
 
@@ -72,12 +74,12 @@
     font-weight: normal;
     text-transform: none;
     > a:not(.clg-tooltip) {
-      @include caret-before();
+      @include caret-after();
       padding-inline-start: 0;
     }
   }
   .divider + .dropdown-header {
-    @include caret-before();
+    @include caret-after();
     color: #333;
     font-weight: normal;
     margin-inline-start: 1rem;
