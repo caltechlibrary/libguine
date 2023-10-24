@@ -177,4 +177,4 @@ def test_deploy(page: Page):
                                 )
         except PlaywrightTimeoutError:
             page.close()
-            sys.exit(f"PLAYWRIGHT_TIMEOUT: {item.name}", end="")
+            sys.exit(f"PLAYWRIGHT_TIMEOUT: {item.name}")

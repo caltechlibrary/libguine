@@ -2,17 +2,61 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 
 from pathlib import Path
 
-import plac
+
+def compile_css(extent, github_commit):
+    # NOTE avoid redundant artifact creation
+    if Path(f"artifacts/{extent}.css").is_file():
+        print(f"⚠️ file exists: artifacts/{extent}.css")
+        return
+    # NOTE requires `sass` command
+    subprocess.run(
+        [
+            "sass",
+            "--no-charset",
+            "--no-source-map",
+            f"{extent}.scss",
+            f"artifacts/{extent}.css",
+        ],
+        check=True,
+    )
+    with open(f"artifacts/{extent}.css", "r") as f:
+        css = f.read()
+    with open(f"artifacts/{extent}.css", "w") as f:
+        if github_commit:
+            f.write(
+                f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
+            )
+        f.write(css)
 
 
-def main(
-    file: "modified file from which to build artifacts",  # type: ignore
-    github_commit: ("optional github commit path", "option", "g"),  # type: ignore
-):
+def parse_nested_includes(wrapper, variant=None):
+    html = ""
+    wrapper.seek(0)
+    for line in wrapper:
+        if line.strip().startswith("<!--#include"):
+            included_file = line.split("'")[1]
+            if included_file.split(".")[0].endswith("-GROUP"):
+                fo = open(included_file.replace("GROUP", variant))
+                html += parse_nested_includes(fo, variant)
+                fo.close()
+            else:
+                fo = open(included_file)
+                html += parse_nested_includes(fo, variant)
+                fo.close()
+        else:
+            html += line
+    return html
+
+
+def main(file):
     print(f"🐞 file: {file}")
+    github_commit = (
+        f'{os.environ.get("GITHUB_REPOSITORY")}/commit/{os.environ.get("GITHUB_SHA")}'
+    )
 
     if file.endswith(".scss"):
         # NOTE primary scss files do not have named parent directories
@@ -98,50 +142,5 @@ def main(
         print(f"🐞 artifacts:", os.listdir("artifacts"))
 
 
-def compile_css(extent, github_commit):
-    # NOTE avoid redundant artifact creation
-    if Path(f"artifacts/{extent}.css").is_file():
-        print(f"⚠️ file exists: artifacts/{extent}.css")
-        return
-    # NOTE requires `sass` command
-    subprocess.run(
-        [
-            "sass",
-            "--no-charset",
-            "--no-source-map",
-            f"{extent}.scss",
-            f"artifacts/{extent}.css",
-        ],
-        check=True,
-    )
-    with open(f"artifacts/{extent}.css", "r") as f:
-        css = f.read()
-    with open(f"artifacts/{extent}.css", "w") as f:
-        if github_commit:
-            f.write(
-                f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
-            )
-        f.write(css)
-
-
-def parse_nested_includes(wrapper, variant=None):
-    html = ""
-    wrapper.seek(0)
-    for line in wrapper:
-        if line.strip().startswith("<!--#include"):
-            included_file = line.split("'")[1]
-            if included_file.split(".")[0].endswith("-GROUP"):
-                fo = open(included_file.replace("GROUP", variant))
-                html += parse_nested_includes(fo, variant)
-                fo.close()
-            else:
-                fo = open(included_file)
-                html += parse_nested_includes(fo, variant)
-                fo.close()
-        else:
-            html += line
-    return html
-
-
 if __name__ == "__main__":
-    plac.call(main)
+    main(sys.argv[1])

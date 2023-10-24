@@ -7,10 +7,18 @@ on:
       - "*.js"
       - "*.html"
       - "*.shtm"
+  workflow_dispatch:
+    inputs:
+      recompile:
+        description: 'Source file to recompile'
+        required: false
+        type: string
 
 jobs:
   compile:
     uses: ./.github/workflows/compile.yml
+    with:
+      recompile: ${{ inputs.recompile }}
     secrets: inherit
   deploy:
     runs-on: ubuntu-latest
