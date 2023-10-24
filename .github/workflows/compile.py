@@ -5,10 +5,11 @@ import subprocess
 
 from pathlib import Path
 
+import plac
+
 
 def main(
     file: "modified file from which to build artifacts",  # type: ignore
-    libguides_groups: '{"groups":[{"slug":"foo","id":"999"},{…}]}',  # type: ignore
     github_commit: ("optional github commit path", "option", "g"),  # type: ignore
 ):
     print(f"🐞 file: {file}")
@@ -62,14 +63,16 @@ def main(
                 f.write(html)
         elif component == "header" or component == "footer":
             # NOTE libguides_groups is set in a GitHub Actions secret
-            slugs = [g["slug"] for g in json.loads(libguides_groups)["groups"]]
+            slugs = [g["slug"] for g in json.loads(os.environ.get("GROUPS"))["groups"]]
             slugs.append("system")
             variants = list(slugs)
+            print(f"🐞 variants: {variants}")
             variant = (
                 file.split(".")[0].split("-")[-1]
                 if file.split(".")[0].split("-")[-1] in variants
                 else None
             )
+            print(f"🐞 variant: {variant}")
             # NOTE avoid redundant artifact creation
             if os.path.isfile(f'artifacts/{file.split("/")[-1]}') or os.path.isfile(
                 f"artifacts/{component}--{variant}.html"
@@ -83,6 +86,7 @@ def main(
                     f.write(html)
             else:
                 # NOTE header-wrapper.shtm triggers this condition, for example
+                print(f"🐞 variants: {variants}")
                 for variant in variants:
                     print(f"🐞 variant: {variant}")
                     # reset output by copying html content into it
@@ -140,5 +144,4 @@ def parse_nested_includes(wrapper, variant=None):
 
 
 if __name__ == "__main__":
-    # fmt: off
-    import plac; plac.call(main)
+    plac.call(main)
