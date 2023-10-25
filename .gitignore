@@ -2,4 +2,5 @@
 .venv/
 assets/
 backstop_data/
+Pipfile.lock
 settings.ini
