@@ -11,7 +11,7 @@ on:
     inputs:
       recompile:
         description: 'Source file to recompile'
-        required: false
+        required: true
         type: string
 
 jobs:
@@ -41,15 +41,18 @@ jobs:
         with:
           name: compile-${{ github.sha }}
           path: artifacts
-      - name: Deploy components
+      - name: Deploy with pytest-playwright
         id: deploy
         env:
           USERNAME: ${{ secrets.ADMIN_USERNAME }}
           PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
-        run: pytest --slowmo 100 --video on --output playwright --base-url ${{ secrets.ADMIN_BASE_URL }} -sv .github/workflows/deploy.py
-      - name: Upload artifacts
+        run: pytest --slowmo 100 --video on --base-url ${{ secrets.ADMIN_BASE_URL }} -sv .github/workflows/deploy.py
+        continue-on-error: true
+      - name: Upload video
         uses: actions/upload-artifact@v3
         with:
           name: deploy-${{ github.sha }}
-          path: playwright
+          path: test-results/github-workflows-deploy-py-test-deploy-chromium
+      - if: steps.deploy.outcome != 'success'
+        run: exit 1
