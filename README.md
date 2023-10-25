@@ -18,7 +18,11 @@ While we cannot directly use the code from this repository with LibGuides, we st
 
 ## GitHub Actions
 
-The [`.github/workflows/workflow.yml`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/workflow.yml) file defines a [GitHub Actions](https://docs.github.com/en/actions/quickstart) workflow that handles the compilation of CSS, HTML, and JavaScript artifacts (using [`workflow-compile.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-compile.py)) and the deployment of them to LibGuides CMS (using [`workflow-deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-deploy.py)). The workflow is triggered when a relevant source file is committed and pushed to this repository. See [`ACTIONS.md`](https://github.com/caltechlibrary/libguine/blob/main/ACTIONS.md) for details.
+We are using [GitHub Actions](https://docs.github.com/en/actions) to automate the compilation of CSS, HTML, and JavaScript artifacts and their deployment to LibGuides CMS.
+
+Most commonly, the workflow is triggered when a relevant source file is committed and pushed to this repository. Additionally, an individual file may be recompiled and redeployed by manually running the [Deploy Components workflow](https://github.com/caltechlibrary/libguine/actions/workflows/deploy.yml) with the filename specified as an input parameter.
+
+See [`ACTIONS.md`](https://github.com/caltechlibrary/libguine/blob/main/ACTIONS.md) for details.
 
 ## CSS/SCSS
 
@@ -46,7 +50,7 @@ Code for widgets can be created and updated through this repository and GitHub A
 
 Name the widget code file starting with `widget--` followed by a unique name and the `.html` extension. See [`widget--notices-library-4hoj8pnB.html`](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) as an example. Appending a [randomly generated string](https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new) to the end of the name will help ensure uniqueness.
 
-See [`workflow-compile.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-compile.py) and [`workflow-deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/workflow-deploy.py) and the conditions related to widgets.
+See [`.github/workflows/compile.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.py) and [`.github/workflows/deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.py) and the conditions related to widgets.
 
 ## JavaScript
 
@@ -75,10 +79,6 @@ $(function() {
 In order to display temporal alert notices on the homepage we use a LibCal calendar and transform its RSS feed into HTML fragments that are pulled onto the page via a custom JavaScript widget. We needed to use this workflow to both overcome LibGuides aggressive caching of RSS feeds and to avoid CORS issues when trying to manipulate the feed directly with JavaScript.
 
 A `LIBCAL_RSS_NOTICES_TODAY_URL` repository secret is required to store the URL for the calendar *day* feed. The URL is typically in the form of `https://libcal.caltech.edu/rss.php?cid=#️⃣&m=day` where the #️⃣ symbol stands for the numeric calendar ID.
-
-A scheduled GitHub Actions job in [`notices.yml`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.yml) runs periodically that executes [`notices.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/notices.py) which does the transformation from RSS to HTML fragments. These fragments are then committed and pushed to this repository under [`fragments/notices`](https://github.com/caltechlibrary/libguine/tree/main/fragments/notices).
-
-The final steps in the job conditionally publish any updated HTML fragments with GitHub Pages. The [HTML fragments are now publicly available](https://caltechlibrary.github.io/libguine/notices/) for our JavaScript widget without CORS restrictions.
 
 We have created both a [Library notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-library-4hoj8pnB.html) and an [Archives notices widget](https://github.com/caltechlibrary/libguine/blob/main/widget--notices-archives-YwAWE98Z.html) that will insert the fragments where needed. (To add these widgets in a LibGuides box, select Media / Widget, then the Reuse Existing Widget tab, and finally search for the unique widget name.)
 
