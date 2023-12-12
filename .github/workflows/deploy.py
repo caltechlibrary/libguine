@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-from playwright.sync_api import Page, TimeoutError as PlaywrightTimeoutError
+from playwright.sync_api import expect, Page, TimeoutError as PlaywrightTimeoutError
 
 
 def test_deploy(page: Page):
