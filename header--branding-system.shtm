@@ -21,7 +21,7 @@
           <ul class="list-inline">
             <li><a href="/borrow/accounts"><span class="hidden-xs hidden-sm">My Library </span>Accounts</a></li>
             <li><a href="/contact">Contact<span class="hidden-xs hidden-sm"> Us</span></a></li>
-            <li><a href="/chat">Chat<span class="hidden-xs hidden-sm"> With Us</span></a></li>
+            <li><a href="/about/support">Support<span class="hidden-xs hidden-sm"> Us</span></a></li>
             <li>
               <!--#include file='header-search.html' -->
             </li>
