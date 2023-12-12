@@ -122,6 +122,8 @@ def test_deploy(page: Page):
                     page.goto("/libguides/lookfeel.php?action=0")
                     page.fill("#banner_html", html)
                     page.click("#banner_html + .btn-primary")
+                    # NOTE must wait for success before moving on
+                    expect(page.locator("#jquery-notification-message")).to_have_text("Success!")
                     # TODO LibAnswers & LibCal
                 else:
                     for group in json.loads(os.environ.get("GROUPS"))["groups"]:
