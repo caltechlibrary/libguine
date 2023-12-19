@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var admin = true;
     console.log("‼️ ADMIN");
     // remove elements that conflict with the LibGuides admin UI
-    document.getElementById("custom-css").remove();
     document.getElementById("libguides-css").remove();
     document.getElementById("bootstrap-css").remove();
     // display admin-only content (elements have style="display:none" set)
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Remove Website CSS from `Guides` Group content.
     if (document.getElementById("s-lib-bc-group")) {
       if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
-        document.getElementById("custom-css").remove();
         document.getElementById("libguides-css").remove();
       }
     }
