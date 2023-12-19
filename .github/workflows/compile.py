@@ -62,7 +62,7 @@ def main(file):
         # NOTE primary scss files do not have named parent directories
         extent = Path(file).parent.name if Path(file).parent.name else Path(file).stem
         if extent == "common":
-            for extent in ["custom", "libanswers", "libguides"]:
+            for extent in ["libanswers", "libguides"]:
                 compile_css(extent, github_commit)
         else:
             compile_css(extent, github_commit)

@@ -26,7 +26,7 @@ See [`ACTIONS.md`](https://github.com/caltechlibrary/libguine/blob/main/ACTIONS.
 
 ## CSS/SCSS
 
-The CSS for the site is written with the [SCSS syntax of Sass](https://sass-lang.com/documentation/syntax#scss). It cannot be directly pasted anywhere that CSS is expected. When an `scss` file is modified, committed, and pushed to this repositiory, the compiled `custom.css` file will be downloadable as part of the artifacts produced during the GitHub Actions workflow run. Additionally, the updated `custom.css` file will be uploaded to LibGuides automatically.
+The CSS for the site is written with the [SCSS syntax of Sass](https://sass-lang.com/documentation/syntax#scss). It cannot be directly pasted anywhere that CSS is expected. When an `scss` file is modified, committed, and pushed to this repositiory, the compiled `libguides.css` file will be downloadable as part of the artifacts produced during the GitHub Actions workflow run. Additionally, the updated `libguides.css` file will be uploaded to LibGuides automatically.
 
 ## HTML
 
@@ -54,7 +54,7 @@ See [`.github/workflows/compile.py`](https://github.com/caltechlibrary/libguine/
 
 ## JavaScript
 
-The [`custom.js`](https://github.com/caltechlibrary/libguine/blob/main/custom.js) file can be uploaded directly into LibGuides. The GitHub Actions workflow will automatically upload a modified custom JavaScript file to LibGuides.
+The [`libguides.js`](https://github.com/caltechlibrary/libguine/blob/main/libguides.js) file can be uploaded directly into LibGuides. The GitHub Actions workflow will automatically upload a modified custom JavaScript file to LibGuides.
 
 ## [bootstrap/config.json](https://github.com/caltechlibrary/libguine/blob/main/bootstrap/config.json)
 

@@ -1,5 +1,25 @@
 /* libguides/_resets.scss */
 
+html,
+body,
+.dropdown-menu,
+.dropdown-header,
+#s-lg-guide-header-info h1 {
+  font-size: revert;
+}
+body {
+  /* hide horizontal scroll after removing padding */
+  overflow-x: hidden;
+  padding: 0;
+}
+/* hide editing header elements while keeping the template intact */
+#s-lg-guide-header,
+#s-lg-tabs-container,
+#s-lg-guide-tabs-title-bar,
+#s-lib-footer-public {
+  display: none;
+}
+
 #s-lg-guide-main {
   padding: 0;
 }
