@@ -1,6 +1,9 @@
 // `header.s-lib-cmd-bar` only appears on admin pages
 header.s-lib-cmd-bar {
   & ~ #s-lg-guide-main, & ~ #s-lg-side-nav-content {
+    // highlight proxy links that should be updated; the highlighting is only
+    // visible in the editing interface due to the `#s-lg-guide-main` selector
+    // above
     a {
       &[href^="https://caltech.idm.oclc.org/login?url="] {
         background-color: yellow;
@@ -127,6 +130,14 @@ header.s-lib-cmd-bar {
         &::before {
           content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
         }
+      }
+    }
+    // ensure details/summary elements indicate that they are clickable
+    details > summary {
+      cursor: pointer;
+      display: list-item;
+      & > h3 {
+        display: inline-block;
       }
     }
   }

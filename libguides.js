@@ -10,6 +10,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
+    // ensure all details elements are open
+    [...document.querySelectorAll("details")].forEach(e => e.open = true);
+    // expand all details elements inside the WYSIWYG editor
+    const body = document.getElementsByTagName("body")[0];
+    const config = { childList: true, subtree: true };
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (document.getElementById("cke_s-lg-editor-content")) {
+          // jQuery
+          // add custom CSS to WYSIWYG editor inside iframe
+          var head = $(".cke_wysiwyg_frame").contents().find("head");
+          var css = '<style>.cke_editable details > summary { display: list-item; cursor: pointer; } .cke_editable summary > h3 { display: inline-block; }</style>';
+          $(head).append(css);
+          // /jQuery
+          const iframe = document.querySelector(".cke_wysiwyg_frame");
+          iframe.addEventListener("load", () => {
+            const childDoc = iframe.contentDocument;
+            [...childDoc.querySelectorAll("details")].forEach(e => e.open = true);
+          });
+        }
+      });
+    });
+    observer.observe(body, config);
     // customize admin ui for Digital Exhibits Thumbnails page;
     // remove hardcoded navigation elements, widen columns
     let digital_exhibits_introduction_row = document.querySelector(".digital-exhibits-thumbnails #c3-introduction-row");
