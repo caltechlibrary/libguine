@@ -11,12 +11,10 @@ jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      - name: Set up Python ${{ vars.PYTHON_VERSION }}
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ vars.PYTHON_VERSION }}
       - name: Check changed files for SCSS
@@ -54,7 +52,7 @@ jobs:
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
         run: python .github/workflows/compile.py ${{ inputs.recompile }};
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: compile-${{ github.sha }}
           path: artifacts

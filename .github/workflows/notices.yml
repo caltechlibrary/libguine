@@ -23,13 +23,12 @@ jobs:
     outputs:
       changes: ${{ steps.commit.outputs.changed }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2  # in order to determine changed files
 
       - name: Set up Python 3.x
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
@@ -75,19 +74,16 @@ jobs:
     steps:
       # TODO move pages deployment to an independent workflow
       # if other workflows ever need to publish fragments
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: main
       - name: 🐞 git log -1
         run: git log -1
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           # Upload only a specific directory
           path: 'fragments'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
