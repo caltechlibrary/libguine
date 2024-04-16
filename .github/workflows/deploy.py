@@ -155,8 +155,8 @@ def test_deploy(page: Page):
                     page.click("#s-la-app-menu a:text('LibCal')")
                     page.click("#s-lc-app-menu-adm a")  # Admin
                     page.click("#s-lc-app-menu-adm a:text('Look & Feel')")
-                    page.fill("#instfooter", html)
-                    page.click("#instfooter ~ button")
+                    page.fill("#footerCode", html)
+                    page.click("#s-lc-code-save")
                 else:
                     for group in json.loads(os.environ.get("GROUPS"))["groups"]:
                         if variant == group["slug"]:
