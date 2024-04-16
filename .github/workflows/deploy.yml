@@ -1,4 +1,5 @@
 name: Deploy Components
+run-name: deploy ${{ inputs.recompile }}
 
 on:
   push:
