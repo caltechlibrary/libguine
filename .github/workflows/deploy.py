@@ -12,7 +12,7 @@ def test_deploy(page: Page):
         page.fill("#s-libapps-password", os.environ.get("PASSWORD"))
         page.click("#s-libapps-login-button")
         page.click("#s-lib-app-anchor")
-        page.click("#s-lib-app-menu a:text('LibGuides')")
+        page.click("#s-lib-app-anchor + .s-lib-spring-to-menu a:text('LibGuides')")
         if item.name.endswith(".css") or item.name.endswith(".js"):
             page.click("#s-lg-admin-command-bar a:text('Admin')")
             page.click("#s-lg-admin-command-bar a:text('Look & Feel')")
