@@ -1,5 +1,5 @@
 name: Deploy Components
-run-name: deploy ${{ inputs.recompile }}
+run-name: deploy ${{ github.event.head_commit.message || inputs.recompile }}
 
 on:
   push:
