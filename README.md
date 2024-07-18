@@ -30,6 +30,8 @@ The CSS for the site is written with the [SCSS syntax of Sass](https://sass-lang
 
 ## HTML
 
+Note: Most HTML files have a comment header which includes a Last Modified date/time that can be updated automatically with the [Auto Time Stamp](https://github.com/lpubsppop01/vscode-auto-timestamp) extension for Visual Studio Code.
+
 ### Templates & `<head>` Code
 
 The contents of any of the template files in this repository can be pasted directly into LibGuides. The GitHub Actions workflow will automatically update any existing templates within LibGuides, provided they already exist. Automatic creation of new templates has not been implemented.
