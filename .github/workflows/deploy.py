@@ -6,11 +6,12 @@ from playwright.sync_api import expect, Page, TimeoutError as PlaywrightTimeoutE
 
 
 def test_deploy(page: Page):
+    page.goto("/libapps/login.php")
+    page.fill("#s-libapps-email", os.environ.get("USERNAME"))
+    page.fill("#s-libapps-password", os.environ.get("PASSWORD"))
+    page.click("#s-libapps-login-button")
     for item in os.scandir("artifacts"):
-        page.goto("/libapps/login.php")
-        page.fill("#s-libapps-email", os.environ.get("USERNAME"))
-        page.fill("#s-libapps-password", os.environ.get("PASSWORD"))
-        page.click("#s-libapps-login-button")
+        page.goto("/libapps/admin")
         page.click("#s-lib-app-anchor")
         page.click("#s-lib-app-anchor + .s-lib-spring-to-menu a:text('LibGuides')")
         if item.name.endswith(".css") or item.name.endswith(".js"):
