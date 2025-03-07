@@ -43,8 +43,8 @@ def construct_bootstrap_alert(entry):
     soup.button.span.append("×")
     soup.button.insert_after("\n  ")  # prettify
     # there will not always be links in the description
-    if soup.a:
-        soup.a["class"] = "alert-link"
+    for link in soup.find_all('a'):
+        link["class"] = "alert-link"
     # remove the helper div around description
     soup.div.div.unwrap()
     return str(soup)
