@@ -1,0 +1,26 @@
+// ============================================================================
+// Fix: Embedded LibWizard form styling
+// Context: When a LibWizard form is added to a LibGuides page via content
+// widget, the form does not inherit the site’s base font styles.
+// This override ensures font matches the rest of the site.
+// ============================================================================
+
+libwizard-question {
+    font-size: 1rem; // Aligns with site-wide base font size (16px)
+    font-family: "Hind", sans-serif; // Matches global body font
+    line-height: 1.5;
+  
+    // Reset form text elements to inherit proper styling
+    p,
+    label {
+      font-weight: normal;
+      font-size: inherit;
+      font-family: inherit;
+    }
+  
+    input,
+    textarea,
+    select {
+      font: inherit; // Applies inherited font settings to form controls
+    }
+  }
