@@ -5,23 +5,10 @@
 // This override ensures font matches the rest of the site.
 // ============================================================================
 
-libwizard-question {
+libwizard-question p, libwizard-question label {
     font-size: 1rem; // Aligns with site-wide base font size (16px)
     font-family: "Hind", sans-serif; // Matches global body font
     line-height: 1.5;
-    background-color: #f9f9f9 !important;
+    color:#000;
   
-    // Reset form text elements to inherit proper styling
-    p,
-    label {
-      font-weight: normal;
-      font-size: inherit;
-      font-family: inherit;
-    }
-  
-    input,
-    textarea,
-    select {
-      font: inherit; // Applies inherited font settings to form controls
-    }
   }
