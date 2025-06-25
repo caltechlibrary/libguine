@@ -176,7 +176,7 @@ $home-secondary-color: #1e988a;
   }
 }
 // image/caption overlay
-#s-lg-box-28870702 {
+#s-lg-box-28870702, s-lg-content-67166876 {
   position: relative;
   figcaption {
     position: absolute;
@@ -185,6 +185,9 @@ $home-secondary-color: #1e988a;
     padding: 0.5rem 1rem 0;
     width: 100%;
     text-align: right;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
   }
 }
 // headings
