@@ -43,6 +43,14 @@
   content: "All ";
 }
 
+div#c3-sidenav ul li:nth-child(2) {
+// adding styling for the 2nd child to help "Back to All Digital Exhibits" stand out
+  border-bottom: thin solid #fff;
+}
+
+
+
+
 .digital-exhibits-thumbnails .nav-pills > li {
   & > a {
     border-radius: unset;
