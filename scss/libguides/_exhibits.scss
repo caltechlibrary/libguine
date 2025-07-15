@@ -46,7 +46,7 @@
 
 /* adding styling for the 2nd child to help "Back to All Digital Exhibits" stand out */
 
-.exhibit-guides div#c3-sidenav ul li:nth-child(2) a::after {
+.exhibit-guides div#c3-sidenav ul li:nth-child(2) a::before {
   content: " ";
   font-family: "Glyphicons Halflings";
   vertical-align: sub;
