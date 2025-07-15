@@ -46,9 +46,12 @@
 
 /* adding styling for the 2nd child to help "Back to All Digital Exhibits" stand out */
 
-.exhibit-guides div#c3-sidenav ul li:nth-child(2) {
-  border-bottom: thin solid #fff;
-  padding-bottom: 5px;
+.exhibit-guides div#c3-sidenav ul li:nth-child(2) a::after {
+  content: " ";
+  font-family: "Glyphicons Halflings";
+  vertical-align: sub;
+  display: inline-block;
+  transform: scaleX(-1); /* flip the arrow to point left */
 }
 
 
