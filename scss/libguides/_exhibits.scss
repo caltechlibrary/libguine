@@ -51,9 +51,10 @@
   font-family: "Glyphicons Halflings";
   vertical-align: sub;
   display: inline-block;
-  transform: scaleX(-1); /* flip the arrow to point left */
+  transform: scaleX(-1);
+  color: inherit;
+  margin-left: 0.25em;
 }
-
 
 
 
