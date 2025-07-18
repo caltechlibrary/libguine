@@ -46,11 +46,19 @@ jobs:
         with:
           name: compile-${{ github.sha }}
           path: artifacts
+      - uses: step-security/wait-for-secrets@v1
+        id: wait-for-secrets
+        with:
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          secrets: |
+            LIBAPPS_MFA_TOKEN: 
+              name: 'LibApps MFA Token from email'
       - name: Deploy with pytest-playwright
         id: deploy
         env:
           USERNAME: ${{ secrets.ADMIN_USERNAME }}
           PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          LIBAPPS_MFA_TOKEN: ${{ steps.wait-for-secrets.outputs.LIBAPPS_MFA_TOKEN }}
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
         run: |
           if [ "${{ github.event.inputs.debug }}" = "true" ]; then

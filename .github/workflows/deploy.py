@@ -10,6 +10,8 @@ def test_deploy(page: Page):
     page.fill("#s-libapps-email", os.environ.get("USERNAME"))
     page.fill("#s-libapps-password", os.environ.get("PASSWORD"))
     page.click("#s-libapps-login-button")
+    page.fill("#s-libapps-code", os.environ.get("LIBAPPS_MFA_TOKEN"))
+    page.click("#s-libapps-mfa-button")
     libapps_menu = page.locator("#s-lib-app-anchor")
     libapps_menu.wait_for()
     for item in os.scandir("artifacts"):
