@@ -51,7 +51,8 @@ jobs:
         with:
           secrets: |
             LIBAPPS_MFA_TOKEN: 
-              name: 'LibApps MFA Token from email'
+              name: 'LibApps MFA Token'
+              description: 'Check email'
       - name: Deploy with pytest-playwright
         id: deploy
         env:
