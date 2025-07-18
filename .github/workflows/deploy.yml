@@ -60,6 +60,7 @@ jobs:
           fi
         continue-on-error: true
       - uses: actions/upload-artifact@v4
+        if: ${{ github.event.inputs.debug == 'true' }}
         with:
           name: deploy-${{ github.sha }}
           path: test-results/github-workflows-deploy-py-test-deploy-chromium
