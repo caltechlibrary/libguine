@@ -55,6 +55,7 @@ jobs:
       - uses: step-security/wait-for-secrets@v1
         id: wait-for-secrets
         with:
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           secrets: |
             LIBAPPS_MFA_TOKEN: 
               name: 'LibApps MFA Token from email'
