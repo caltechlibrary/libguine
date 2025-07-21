@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 cookies = json.load(f)
             context.add_cookies(cookies)
             page = context.new_page()
-            page.goto("/".join(os.environ.get("ADMIN_BASE_URL").rstrip("/"),"/libapps/mfa"))
+            page.goto("/".join([os.environ.get("ADMIN_BASE_URL").rstrip("/"), "/libapps/mfa"]))
             page.fill("#s-libapps-code", os.environ.get("LIBAPPS_MFA_TOKEN"))
             page.click("#s-libapps-mfa-button")
             libapps_menu = page.locator("#s-lib-app-anchor")
