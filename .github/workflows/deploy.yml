@@ -52,6 +52,15 @@ jobs:
         with:
           name: compile-${{ github.sha }}
           path: artifacts
+      - name: Login with Playwright
+        id: login
+        env:
+          ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
+          USERNAME: ${{ secrets.ADMIN_USERNAME }}
+          PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        run: |
+          python .github/workflows/deploy.py --login
+        continue-on-error: true
       - uses: step-security/wait-for-secrets@v1
         id: wait-for-secrets
         with:
@@ -59,19 +68,14 @@ jobs:
           secrets: |
             LIBAPPS_MFA_TOKEN: 
               name: 'LibApps MFA Token from email'
-      - name: Deploy with pytest-playwright
+      - name: Deploy with Playwright
         id: deploy
         env:
-          USERNAME: ${{ secrets.ADMIN_USERNAME }}
-          PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
           LIBAPPS_MFA_TOKEN: ${{ steps.wait-for-secrets.outputs.LIBAPPS_MFA_TOKEN }}
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
         run: |
-          if [ "${{ github.event.inputs.debug }}" = "true" ]; then
-            pytest --slowmo 100 --video on --base-url ${{ secrets.ADMIN_BASE_URL }} -sv .github/workflows/deploy.py
-          else
-            pytest --base-url ${{ secrets.ADMIN_BASE_URL }} -sv .github/workflows/deploy.py
-          fi
+          python .github/workflows/deploy.py
         continue-on-error: true
       - uses: actions/upload-artifact@v4
         if: ${{ github.event.inputs.debug == 'true' }}
