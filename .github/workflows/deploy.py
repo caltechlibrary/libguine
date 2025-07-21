@@ -6,7 +6,7 @@ from playwright.sync_api import expect, sync_playwright, TimeoutError as Playwri
 
 
 if __name__ == "__main__":
-    if sys.argv[1] == "--login":
+    if sys.argv.get(1) == "--login":
         with sync_playwright() as p:
             browser = p.chromium.launch()
             context = browser.new_context()
