@@ -10,12 +10,12 @@ if __name__ == "__main__":
         with sync_playwright() as p:
             browser = p.chromium.launch()
             if os.environ.get("DEBUG") == "true":
-                context = browser.new_context(record_video_dir="debug")
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), record_video_dir="debug")
             else:
-                context = browser.new_context()
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"))
             page = context.new_page()
             try:
-                page.goto(os.environ.get("ADMIN_BASE_URL"))  # redirects to login page
+                page.goto("/libapps/login.php")
                 page.fill("#s-libapps-email", os.environ.get("USERNAME"))
                 page.fill("#s-libapps-password", os.environ.get("PASSWORD"))
                 page.click("#s-libapps-login-button")
@@ -30,15 +30,15 @@ if __name__ == "__main__":
         with sync_playwright() as p:
             browser = p.chromium.launch()
             if os.environ.get("DEBUG") == "true":
-                context = browser.new_context(record_video_dir="debug")
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), record_video_dir="debug")
             else:
-                context = browser.new_context()
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"))
             with open("cookies.json", "r") as f:
                 cookies = json.load(f)
             context.add_cookies(cookies)
             page = context.new_page()
             try:
-                page.goto("/".join([os.environ.get("ADMIN_BASE_URL").rstrip("/"), "/libapps/mfa"]))
+                page.goto("/libapps/mfa"))
                 page.fill("#s-libapps-code", os.environ.get("LIBAPPS_MFA_TOKEN"))
                 page.click("#s-libapps-mfa-button")
                 libapps_menu = page.locator("#s-lib-app-anchor")
