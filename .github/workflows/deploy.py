@@ -47,6 +47,7 @@ if __name__ == "__main__":
                     # page.goto("/libapps/admin")
                     page.click("#s-lib-app-anchor")
                     page.click("#s-lib-app-anchor + .s-lib-spring-to-menu a:text('LibGuides')")
+                    page.wait_for_url("/libguides/admin")
                     if item.name.endswith(".css") or item.name.endswith(".js"):
                         page.click("#s-lg-admin-command-bar a:text('Admin')")
                         page.click("#s-lg-admin-command-bar a:text('Look & Feel')")
