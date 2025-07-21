@@ -52,6 +52,9 @@ jobs:
         with:
           name: compile-${{ github.sha }}
           path: artifacts
+      - name: Set debug environment variable
+        if: ${{ github.event.inputs.debug == 'true' }}
+        run: echo "DEBUG=${{ github.event.inputs.debug }}" >> $GITHUB_ENV
       - name: Login with Playwright
         id: login
         env:
@@ -81,6 +84,6 @@ jobs:
         if: ${{ github.event.inputs.debug == 'true' }}
         with:
           name: deploy-${{ github.sha }}
-          path: test-results/github-workflows-deploy-py-test-deploy-chromium
+          path: debug
       - if: steps.deploy.outcome != 'success'
         run: exit 1
