@@ -10,7 +10,7 @@ if __name__ == "__main__":
         with sync_playwright() as p:
             browser = p.chromium.launch()
             if os.environ.get("DEBUG") == "true":
-                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), record_video_dir="debug")
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), headless=True, slow_mo=100, record_video_dir="debug")
             else:
                 context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"))
             page = context.new_page()
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         with sync_playwright() as p:
             browser = p.chromium.launch()
             if os.environ.get("DEBUG") == "true":
-                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), record_video_dir="debug")
+                context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"), headless=True, slow_mo=100, record_video_dir="debug")
             else:
                 context = browser.new_context(base_url=os.environ.get("ADMIN_BASE_URL").rstrip("/"))
             with open("cookies.json", "r") as f:
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             context.add_cookies(cookies)
             page = context.new_page()
             try:
-                page.goto("/libapps/mfa"))
+                page.goto("/libapps/mfa")
                 page.fill("#s-libapps-code", os.environ.get("LIBAPPS_MFA_TOKEN"))
                 page.click("#s-libapps-mfa-button")
                 libapps_menu = page.locator("#s-lib-app-anchor")
