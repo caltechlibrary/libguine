@@ -32,6 +32,11 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-md-12">
+        <!--#include file='footer--idea-statement-GROUP.html' -->
+      </div>
+    </div>
+    <div class="row">
       <div class="col-xs-12">
         <ul class="list-inline pull-right">
           <li><a href="https://library.caltech.edu/privacy">Privacy</a></li>
