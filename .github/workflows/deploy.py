@@ -54,6 +54,10 @@ if __name__ == "__main__":
                         page.click("#s-lib-admin-tabs a:text('Custom JS/CSS')")
                         page.click("#s-lg-include-files_link")
                         page.set_input_files("#include_file", item.path)
+                        print(f"Uploading file from: {item.path}")
+                        page.wait_for_selector("#jquery-notification-message", timeout=5000)
+                        message = page.locator("#jquery-notification-message").inner_text()
+                        print(f"Upload message: {message}")
                     elif item.name.endswith(".html"):
                         target = item.name.split("-")[0]
                         with open(item) as f:
