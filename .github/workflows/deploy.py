@@ -196,6 +196,7 @@ if __name__ == "__main__":
                                 page.click("#s-lc-app-menu-adm a:text('Look & Feel')")
                                 page.fill("#footerCode", html)
                                 page.click("#s-lc-code-save")
+                                page.wait_for_selector("#jquery-notification div:text('Success.')")
                             else:
                                 for group in json.loads(os.environ.get("GROUPS"))["groups"]:
                                     if variant == group["slug"]:
