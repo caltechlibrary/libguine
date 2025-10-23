@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 libapps_menu = page.locator("#s-lib-app-anchor")
                 libapps_menu.wait_for()
                 for item in os.scandir("artifacts"):
-                    # page.goto("/libapps/admin")
+                    page.goto(f"{os.environ.get("ADMIN_BASE_URL").rstrip("/")}/libapps/admin")
                     page.click("#s-lib-app-anchor")
                     page.click("#s-lib-app-anchor + .s-lib-spring-to-menu a:text('LibGuides')")
                     page.wait_for_url("/libguides/admin")
