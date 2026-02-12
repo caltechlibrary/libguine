@@ -214,7 +214,71 @@
     line-height: 1.5;
 }
 
-/* BS5 Style updates */
+/* Blog sidebar styles */
+#sidebar h2,
+.blog-public-custom-sidebar h2 {
+  font-size: 20px;
+}
+
+.blog-public-custom-sidebar .sidebar-section-container {
+  margin-bottom: 30px !important;
+}
+
+/* Individual section icons */
+#sidebar .search-input h2::before {
+  content: "\f002";
+  font-family: "FontAwesome";
+  margin-right: 8px;
+  color: #333;
+}
+
+#sidebar #sidebar_recent_posts h2::before {
+  content: "\f10d";
+  font-family: "FontAwesome";
+  margin-right: 8px;
+  color: #333;
+}
+
+#sidebar .sidebar-archive h2::before {
+  content: "\f07b";
+  font-family: "FontAwesome";
+  margin-right: 8px;
+  color: #333;
+}
+
+#sidebar .sidebar-section-container:has(.subjects-link) h2::before {
+  content: "\f02c";
+  font-family: "FontAwesome";
+  margin-right: 8px;
+  color: #333;
+}
+
+#sidebar .search-icon-container {
+  display: none;
+}
+
+.blog-public-custom-sidebar .categories-container:not(:last-child) {
+  margin-bottom: 4px !important;
+}
+
+#sidebar #sidebar_single_archives > p {
+  display: none;
+}
+
+.blog-public-custom-sidebar .input-search {
+  padding-left: 1rem !important;
+}
+
+.blog-public-custom-divider {
+  background-image: none;
+  background-color: #e0e2e8;
+}
+
+.blog-post .post-title {
+  padding-top: 1rem;
+}
+
+/* Library Home Blog Widget */
 
 #s-lg-widget-1770820610259 {
   overflow: hidden;

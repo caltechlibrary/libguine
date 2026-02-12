@@ -319,6 +319,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
       observer.observe(blog_content, config);
     }
   }
+  // Transform new Springshare blog metadata (removes icons, reformats to "by Author on Date | Subjects")
+  if (document.querySelector(".posts-container .blog-post")) {
+    console.log("‼️ NEW BLOG FORMAT");
+    document.querySelectorAll(".blog-post").forEach(post => {
+      const metaContainer = post.querySelector(".d-flex.flex-wrap.align-items-center.gap-2");
+      if (!metaContainer) return;
+
+      // Extract date
+      const dateEl = metaContainer.querySelector(".blog-public-custom-calendar-icon")?.parentElement?.querySelector("span");
+      const date = dateEl?.textContent?.trim() || "";
+
+      // Extract author
+      const authorEl = metaContainer.querySelector(".blog-public-custom-user-profile-icon")?.parentElement?.querySelector("span");
+      const author = authorEl?.textContent?.trim() || "";
+
+      // Extract subjects (preserve links)
+      const subjectsContainer = metaContainer.querySelector(".subjects-container");
+      let subjectsHTML = "";
+      let hasSubjects = false;
+      if (subjectsContainer) {
+        const subjectLinks = subjectsContainer.querySelectorAll("a");
+        if (subjectLinks.length > 0) {
+          hasSubjects = true;
+          // Clean up commas from link text and rebuild with proper separators
+          const cleanedLinks = Array.from(subjectLinks).map(a => {
+            const clone = a.cloneNode(true);
+            clone.textContent = clone.textContent.trim().replace(/,$/, "");
+            return clone.outerHTML;
+          });
+          subjectsHTML = cleanedLinks.join(", ");
+        }
+      }
+
+      // Rebuild metadata
+      metaContainer.innerHTML = `<span class="blog-meta-text text-secondary">by ${author} on ${date}${hasSubjects ? " | " + subjectsHTML : ""}</span>`;
+      metaContainer.classList.remove("gap-2", "gap-sm-4");
+    });
+  }
 });
 // keep menu open upon non-link click within
 $(document).ready(function() {
