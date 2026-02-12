@@ -146,6 +146,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           }
           // create element
           items[i].innerHTML = "";
+          title_link.removeAttribute("target");
+          items[i].innerHTML += `<h3>${title_link.outerHTML}</h3>`;
+          items[i].innerHTML += `<div class="text-secondary">${post_date.textContent}</div>`;
           if (first_img) {
             first_img.removeAttribute("align");
             first_img.removeAttribute("border");
@@ -157,10 +160,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             first_img.classList.add("blogpost-img");
             items[i].innerHTML += first_img.outerHTML;
           }
-          title_link.removeAttribute("target");
-          items[i].innerHTML += `<h3>${title_link.outerHTML}</h3>`;
-          items[i].innerHTML += `<div class="text-secondary">${post_date.textContent}</div>`;
           items[i].innerHTML += `<p>${first_p.innerHTML}</p>`;
+          items[i].innerHTML += `<a href="${title_link.href}" class="read-more">Read More . . .</a>`;
         }
         // NOTE images are not loaded by the end of the mutation observation
         // apply classes based on image size, orientation, and aspect ratio
