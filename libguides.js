@@ -1,4 +1,4 @@
-// DEPLOY TEST 2026-02-12 - delete this comment if you see it on the server
+// DEPLOY TEST 2026-02-12 v2 - delete this comment if you see it on the server
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
   if (document.getElementById("s-lg-admin-command-bar")) {
