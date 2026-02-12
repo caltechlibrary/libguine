@@ -58,6 +58,7 @@ if __name__ == "__main__":
                         page.wait_for_selector("#jquery-notification-message", timeout=5000)
                         message = page.locator("#jquery-notification-message").inner_text()
                         print(f"Upload message: {message}")
+                        page.reload()
                     elif item.name.endswith(".html"):
                         target = item.name.split("-")[0]
                         with open(item) as f:

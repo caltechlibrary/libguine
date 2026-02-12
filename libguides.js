@@ -1,3 +1,4 @@
+// DEPLOY TEST 2026-02-12 - delete this comment if you see it on the server
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
   if (document.getElementById("s-lg-admin-command-bar")) {
@@ -365,6 +366,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
       metaContainer.innerHTML = `<span class="blog-meta-text text-secondary">by ${author} on ${date}${hasSubjects ? " | " + subjectsHTML : ""}</span>`;
       metaContainer.classList.remove("gap-2", "gap-sm-4");
     });
+  }
+  // Change "Show more" to "View Full Post" on blog listing
+  if (document.querySelector(".posts-container")) {
+    function updateShowMoreButtons() {
+      document.querySelectorAll(".button-toggle-post").forEach(el => {
+        if (el.textContent.trim() === "Show more") {
+          el.textContent = "View Full Post";
+        }
+      });
+    }
+    // Poll for dynamically loaded buttons
+    var showMoreCheckCount = 0;
+    var showMoreInterval = setInterval(function() {
+      showMoreCheckCount++;
+      updateShowMoreButtons();
+      if (showMoreCheckCount > 50) {
+        clearInterval(showMoreInterval);
+      }
+    }, 100);
   }
 });
 // keep menu open upon non-link click within
