@@ -49,6 +49,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     bootstrap_js.id = "bootstrap-js";
     bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
     document.head.appendChild(bootstrap_js);
+    // load BS5 overrides for blog pages (blog uses BS5, rest of site is BS3)
+    if (window.location.pathname.startsWith("/blogs/news")) {
+      console.log("‼️ BLOG BS5 OVERRIDES");
+      const bs5_overrides = document.createElement("link");
+      bs5_overrides.rel = "stylesheet";
+      bs5_overrides.id = "blog-bs5-css";
+      bs5_overrides.href = "https://d2jv02qf7xgjwx.cloudfront.net/sites/64/include/blog-bs5.css";
+      document.head.appendChild(bs5_overrides);
+    }
     // Remove Website CSS from `Guides` Group content.
     if (document.getElementById("s-lib-bc-group")) {
       if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
