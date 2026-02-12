@@ -55,10 +55,9 @@ if __name__ == "__main__":
                         page.click("#s-lg-include-files_link")
                         page.set_input_files("#include_file", item.path)
                         print(f"Uploading file from: {item.path}")
-                        page.wait_for_selector("#jquery-notification-message", timeout=5000)
+                        page.wait_for_selector("#jquery-notification-message:has-text('Success')", timeout=10000)
                         message = page.locator("#jquery-notification-message").inner_text()
                         print(f"Upload message: {message}")
-                        page.reload()
                     elif item.name.endswith(".html"):
                         target = item.name.split("-")[0]
                         with open(item) as f:
