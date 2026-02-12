@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             items[i].innerHTML += first_img.outerHTML;
           }
           items[i].innerHTML += `<p>${first_p.innerHTML}</p>`;
-          items[i].innerHTML += `<a href="${title_link.href}" class="read-more">Read More . . .</a>`;
+          items[i].innerHTML += `<a href="${title_link.href}" class="read-more">View Full Post</a>`;
         }
         // NOTE images are not loaded by the end of the mutation observation
         // apply classes based on image size, orientation, and aspect ratio
