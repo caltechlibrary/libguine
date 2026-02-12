@@ -336,3 +336,101 @@ $(document).ready(function() {
     } // save state
   });
 });
+
+/* ============================================================================
+   LIBRARY HOME BLOG WIDGET
+   Widget ID: s-lg-widget-1770820610259
+   Transforms blog widget on library homepage into card layout
+   ============================================================================ */
+(function() {
+  function transformLibraryBlogWidget() {
+    const widget = document.getElementById("s-lg-widget-1770820610259");
+    if (!widget) return;
+
+    // Check if widget has content (ul with li items)
+    const ul = widget.getElementsByTagName("ul")[0];
+    if (!ul) return;
+
+    const items = ul.getElementsByTagName("li");
+    if (!items.length) return;
+
+    console.log("‼️ LIBRARY HOME BLOG WIDGET - transforming");
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].setAttribute("id", `lib-blogpost${i}`);
+      let title_link = items[i].getElementsByTagName("a")[0];
+      let post_date = items[i].getElementsByTagName("span")[0];
+      let first_img = items[i].getElementsByTagName("img")[0];
+
+      // Find first paragraph with actual text content (not just an image)
+      let paragraphs = items[i].getElementsByTagName("p");
+      let text_p = null;
+      for (var j = 0; j < paragraphs.length; j++) {
+        // Check if paragraph has text content beyond just whitespace
+        let textContent = paragraphs[j].textContent.trim();
+        if (textContent.length > 0) {
+          text_p = paragraphs[j].cloneNode(true);
+          // Remove images from the cloned paragraph
+          let p_images = text_p.getElementsByTagName("img");
+          while(p_images.length > 0) {
+            p_images[0].parentNode.removeChild(p_images[0]);
+          }
+          break;
+        }
+      }
+
+      // Rebuild element
+      items[i].innerHTML = "";
+      title_link.removeAttribute("target");
+      items[i].innerHTML += `<h3>${title_link.outerHTML}</h3>`;
+      if (post_date) {
+        items[i].innerHTML += `<div class="post-date text-secondary">${post_date.textContent}</div>`;
+      }
+      if (first_img) {
+        first_img.removeAttribute("align");
+        first_img.removeAttribute("border");
+        first_img.removeAttribute("height");
+        first_img.removeAttribute("hspace");
+        first_img.removeAttribute("style");
+        first_img.removeAttribute("vspace");
+        first_img.removeAttribute("width");
+        first_img.classList.add("lib-blogpost-img");
+        items[i].innerHTML += first_img.outerHTML;
+      }
+      if (text_p) {
+        // Truncate to ~400 characters at word boundary
+        let text = text_p.textContent;
+        if (text.length > 400) {
+          text = text.substring(0, 400);
+          text = text.substring(0, text.lastIndexOf(' ')) + '...';
+        }
+        items[i].innerHTML += `<p>${text}</p>`;
+      }
+      items[i].innerHTML += `<a href="${title_link.href}" class="read-more">View Full Post</a>`;
+    }
+
+    // Change "View More Results" to "View More Posts"
+    const moreLink = widget.querySelector('.s-lg-widget-list-more-results a');
+    if (moreLink) {
+      moreLink.textContent = 'View More Posts';
+      moreLink.removeAttribute('target');
+    }
+  }
+
+  // Poll for widget to appear and have content
+  var checkCount = 0;
+  var checkInterval = setInterval(function() {
+    checkCount++;
+    const widget = document.getElementById("s-lg-widget-1770820610259");
+    if (widget && widget.getElementsByTagName("ul")[0]) {
+      clearInterval(checkInterval);
+      transformLibraryBlogWidget();
+    }
+    if (checkCount > 50) { // Stop after 5 seconds
+      clearInterval(checkInterval);
+    }
+  }, 100);
+})();
+/* ============================================================================
+   END LIBRARY HOME BLOG WIDGET
+   ============================================================================ */

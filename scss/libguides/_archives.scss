@@ -56,10 +56,11 @@ $archives-secondary-color: #849895;
     padding: 0;
     & > li {
       background-color: #fff;
-      border: 10px solid $archives-secondary-color;
+      border: 3px solid $archives-secondary-color;
       margin-block: 30px;
+      padding: 1rem;
       h3 {
-        margin: 0.5rem;
+        margin: 1rem 0.5rem 1.5rem 0.5rem;
       }
       img {
         margin: auto;
@@ -71,7 +72,7 @@ $archives-secondary-color: #849895;
       }
       .text-secondary {
         font-size: small;
-        margin: 0.5rem;
+        margin: 0.1rem 0.5rem 1.5rem 0.5rem;
       }
       // see libguides.js for class logic
       @media (min-width: 420px) {
