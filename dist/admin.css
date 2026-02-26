@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/d39bfa2 */
+/* see https://github.com/caltechlibrary/libguine/commit/7cb0b41 */
 
 header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url="], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url="] {
   background-color: yellow;
@@ -133,5 +133,3 @@ header.s-lib-cmd-bar ~ #s-lg-guide-main details > summary, header.s-lib-cmd-bar 
 header.s-lib-cmd-bar ~ #s-lg-guide-main details > summary > h3, header.s-lib-cmd-bar ~ #s-lg-side-nav-content details > summary > h3 {
   display: inline-block;
 }
-
-/* trigger deploy */

@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/d39bfa2 */
+/* see https://github.com/caltechlibrary/libguine/commit/7cb0b41 */
 
 /* common/_base.scss */
 h1, .h1 {
@@ -50,7 +50,6 @@ a:not(.btn, .collapsible-toggle, .accordion-toggle) {
   text-decoration: none;
 }
 
-/* trigger deploy */
 /* common/_footer.scss */
 #footer-wrapper {
   background-color: #062e47;
