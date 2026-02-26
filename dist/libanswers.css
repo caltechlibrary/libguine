@@ -1,0 +1,202 @@
+/* see https://github.com/caltechlibrary/libguine/commit/d39bfa2 */
+
+/* common/_base.scss */
+h1, .h1 {
+  font-size: 38px;
+}
+
+h2, .h2 {
+  font-size: 30px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+h5, .h5 {
+  font-size: 14px;
+}
+
+h6, .h6 {
+  font-size: 10px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-block-end: 16px;
+}
+
+a {
+  color: #c75000;
+}
+a:active, a:focus, a:hover {
+  color: #c75000;
+  text-decoration: underline 0.1em;
+}
+
+body {
+  font-family: "Hind", sans-serif;
+}
+
+/* libanswers/_base.scss */
+html, body {
+  font-size: revert;
+}
+
+a:not(.btn, .collapsible-toggle, .accordion-toggle) {
+  text-decoration: none;
+}
+
+/* trigger deploy */
+/* common/_footer.scss */
+#footer-wrapper {
+  background-color: #062e47;
+  border-radius: 0 30% 0 0/5%;
+  margin-block-start: 90px;
+}
+@media (min-width: 768px) {
+  #footer-wrapper {
+    border-radius: 0 30% 0 0/10%;
+  }
+}
+@media (min-width: 992px) {
+  #footer-wrapper {
+    border-radius: 0 30% 0 0/20%;
+  }
+}
+#footer-wrapper footer {
+  color: white;
+}
+#footer-wrapper footer a {
+  color: white;
+}
+#footer-wrapper footer a:focus, #footer-wrapper footer a:hover {
+  color: white;
+}
+#footer-wrapper footer a:active, #footer-wrapper footer a:focus {
+  outline: #1e988a solid medium;
+  text-decoration: none;
+}
+#footer-wrapper footer abbr[title] {
+  text-decoration: none;
+}
+#footer-wrapper footer .contact .social a {
+  display: inline-block;
+}
+#footer-wrapper footer .contact .social a:not(:last-child) {
+  margin-inline-end: 30px;
+}
+#footer-wrapper footer .contact .social a svg {
+  height: 32px;
+}
+#footer-wrapper footer .h-card .u-email,
+#footer-wrapper footer .h-card .p-tel {
+  line-height: 2;
+}
+#footer-wrapper footer .h-card .u-email,
+#footer-wrapper footer .h-card .p-tel,
+#footer-wrapper footer .h-card .p-name {
+  display: block;
+}
+#footer-wrapper footer .h-card .p-name {
+  margin-block-start: 24px;
+}
+#footer-wrapper footer .h-card .p-locality::after {
+  content: ",";
+}
+#footer-wrapper footer .logo {
+  fill: #fff;
+  margin-block: 24px;
+  height: 5em;
+}
+#footer-wrapper footer .links {
+  line-height: 2;
+}
+#footer-wrapper footer .s-lc-w-today, #footer-wrapper footer .s-lc-w-today * {
+  display: block;
+}
+#footer-wrapper footer .s-lc-w-today tbody {
+  padding-block: 16px;
+}
+#footer-wrapper footer .s-lc-w-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+#footer-wrapper footer .s-lc-w-head-pre {
+  display: none;
+}
+#footer-wrapper footer .s-lc-w-head {
+  display: flex;
+  font-size: large;
+  font-weight: normal;
+  justify-content: space-between;
+  text-align: unset;
+}
+#footer-wrapper footer .s-lc-w-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+#footer-wrapper footer .s-lc-w-next {
+  font-size: 0;
+  order: 1;
+}
+#footer-wrapper footer .s-lc-w-next::before {
+  content: "\f0a9";
+  font-family: "FontAwesome";
+  font-size: 32px;
+  line-height: 0.5;
+}
+#footer-wrapper footer .s-lc-w-previous {
+  font-size: 0;
+}
+#footer-wrapper footer .s-lc-w-previous::before {
+  content: "\f0a8";
+  font-family: "FontAwesome";
+  font-size: 32px;
+  line-height: 0.5;
+}
+#footer-wrapper footer .s-lc-w-location {
+  border-block-end: #fff dotted thin;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+  padding-block: 8px;
+}
+#footer-wrapper footer .s-lc-w-time {
+  text-align: right;
+}
+#footer-wrapper footer .s-lc-w-time > * {
+  display: inline-block;
+}
+#footer-wrapper footer .s-lc-w-today-view-all {
+  display: none;
+}
+#footer-wrapper footer .hours footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer-login .fa {
+  font-size: large;
+}
+
+/* libanswers/_footer.scss */
+#footer-wrapper a i {
+  /* NOTE: override LibAnswers CSS that sets `a i` elements to `color:#000` */
+  color: white;
+}
+
+#footer-breadcrumbs .breadcrumb {
+  background-color: transparent;
+  padding-inline-start: 0;
+}

@@ -1,0 +1,137 @@
+/* see https://github.com/caltechlibrary/libguine/commit/d39bfa2 */
+
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url="], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url="] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url="]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url="]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://go.oreilly.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://learning.oreilly.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://learning.oreilly.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://learning.oreilly.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://learning.oreilly.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://caltech.overdrive.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://search.ebscohost.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://go.gale.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://link.gale.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://ebookcentral.proquest.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://www.proquest.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://search.proquest.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://caltech.idm.oclc.org/login?url=https://proquest.umi.com"]::before {
+  content: "‼️ [** LINK CONTAINS AN OLD PROXY PREFIX & PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.oreilly.com"]::before {
+  content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://learning.oreilly.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://learning.oreilly.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://learning.oreilly.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://learning.oreilly.com"]::before {
+  content: "‼️ [** O’REILLY/SAFARI LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://caltech.overdrive.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://caltech.overdrive.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://caltech.overdrive.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://caltech.overdrive.com"]::before {
+  content: "‼️ [** OVERDRIVE LINKS SHOULD NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.ebscohost.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.ebscohost.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.ebscohost.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.ebscohost.com"]::before {
+  content: "‼️ [** EBSCO LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://go.gale.com"]::before {
+  content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://link.gale.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://link.gale.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://link.gale.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://link.gale.com"]::before {
+  content: "‼️ [** GALE/CENGAGE LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://ebookcentral.proquest.com"]::before {
+  content: "‼️ [** PROQUEST/EBRARY LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://www.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://www.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://www.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://www.proquest.com"]::before {
+  content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.proquest.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.proquest.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.proquest.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://search.proquest.com"]::before {
+  content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://proquest.umi.com"], header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://proquest.umi.com"] {
+  background-color: yellow;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://proquest.umi.com"]::before, header.s-lib-cmd-bar ~ #s-lg-side-nav-content a[href^="https://go.openathens.net/redirector/caltech.edu?url=https://proquest.umi.com"]::before {
+  content: "‼️ [** PROQUEST LINKS NEED NOT BE PROXIED **] ‼️ ";
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main details > summary, header.s-lib-cmd-bar ~ #s-lg-side-nav-content details > summary {
+  cursor: pointer;
+  display: list-item;
+}
+header.s-lib-cmd-bar ~ #s-lg-guide-main details > summary > h3, header.s-lib-cmd-bar ~ #s-lg-side-nav-content details > summary > h3 {
+  display: inline-block;
+}
+
+/* trigger deploy */
