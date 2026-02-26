@@ -81,6 +81,21 @@ def main(file):
                     f"// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n"
                 )
             f.write(js)
+    elif file.endswith(".css"):
+        extent = Path(file).stem
+        # NOTE avoid redundant artifact creation
+        if Path(f"artifacts/{extent}.css").is_file():
+            print(f"🐞 file exists: artifacts/{extent}.css")
+            return
+        shutil.copyfile(f"{extent}.css", f"artifacts/{extent}.css")
+        with open(f"artifacts/{extent}.css", "r") as f:
+            css = f.read()
+        with open(f"artifacts/{extent}.css", "w") as f:
+            if github_commit:
+                f.write(
+                    f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
+                )
+            f.write(css)
     elif file.startswith("widget--"):
         # avoid redundant artifact creation
         if os.path.isfile(f"artifacts/{file}"):

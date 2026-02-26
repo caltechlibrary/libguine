@@ -6,6 +6,7 @@ on:
     paths:
       - "**.scss"
       - "*.js"
+      - "*.css"
       - "*.html"
       - "*.shtm"
       - "!dist/**"
