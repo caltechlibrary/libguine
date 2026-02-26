@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/aa74a1d */
+/* see https://github.com/caltechlibrary/libguine/commit/fe94054 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1558,7 +1558,6 @@ summary > * {
     margin: 1rem 0;
   }
 }
-/* trigger deployment */
 #home-bg a,
 #home-bg header,
 #home-bg .navbar-default .navbar-nav > li > a,
