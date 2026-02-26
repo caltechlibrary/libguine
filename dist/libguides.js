@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/7cb0b41 //
+// see https://github.com/caltechlibrary/libguine/commit/244fd40 //
 
 // DEPLOY TEST 2026-02-12 v2 - delete this comment if you see it on the server
 // context hacks
@@ -505,4 +505,3 @@ $(document).ready(function() {
    END LIBRARY HOME BLOG WIDGET
    ============================================================================ */
 
-   // trigger deploy

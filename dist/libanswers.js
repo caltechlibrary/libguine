@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/7cb0b41 //
+// see https://github.com/caltechlibrary/libguine/commit/244fd40 //
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -20,4 +20,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById("footer-login").appendChild(login_link);
 
 });
-// trigger deploy
