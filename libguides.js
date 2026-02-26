@@ -503,4 +503,3 @@ $(document).ready(function() {
    END LIBRARY HOME BLOG WIDGET
    ============================================================================ */
 
-   // trigger deploy

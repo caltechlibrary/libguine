@@ -18,4 +18,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById("footer-login").appendChild(login_link);
 
 });
-// trigger deploy
