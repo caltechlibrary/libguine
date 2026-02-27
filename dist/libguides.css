@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/4e2b6c9 */
+/* see https://github.com/caltechlibrary/libguine/commit/c2d4648 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1667,11 +1667,10 @@ summary > * {
   color: #fff;
 }
 
-@media (min-width: 992px) {
-  #home-bg .navbar-nav .dropdown-menu a {
-    color: #333;
-  }
+#home-bg .navbar-nav .dropdown-menu a {
+  color: #333;
 }
+
 #home-bg header,
 #home-bg .btn-secondary,
 #home-bg .s-lib-box {
