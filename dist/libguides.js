@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/54b221d //
+// see https://github.com/caltechlibrary/libguine/commit/50bd8cb //
 
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -113,13 +113,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var content = true;
       console.log("‼️ CONTENT");
       // hide landing-only elements from content pages
-      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("hidden"));
+      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("d-none"));
     }
     else {
       var landing = true;
       console.log("‼️ LANDING");
       // hide content-only elements from landing pages
-      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("hidden"));
+      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
     }
   }
   if (document.getElementById("s-lg-blog-content")) {
@@ -227,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     [...document.getElementById("c3-sidenav").getElementsByClassName("float-start")].forEach(e => e.classList.remove("float-start"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
+    [...document.getElementById("c3-sidenav").getElementsByClassName("d-inline-flex")].forEach(e => e.classList.remove("d-inline-flex"));
     // save link for use if needed
     const link = document.querySelector(".c3-asc #c3-sidenav > ul > li:first-of-type a");
     // remove landing page links in Archives sidebar (jQuery)

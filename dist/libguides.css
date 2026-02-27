@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/2116639 */
+/* see https://github.com/caltechlibrary/libguine/commit/50bd8cb */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -79,6 +79,10 @@ body {
 
 .tooltip .tooltip-arrow {
   display: none;
+}
+
+#s-lg-guide-name {
+  font-weight: 500;
 }
 
 .alert-success {
