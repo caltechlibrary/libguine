@@ -13,7 +13,7 @@
       <div class="col-2 col-sm-6 col-md-7">
         <div class="float-end">
           <ul class="list-inline">
-            <li>
+            <li class="list-inline-item">
               <!--#include file='header-search.html' -->
             </li>
           </ul>
