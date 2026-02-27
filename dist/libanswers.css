@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7801d02 */
+/* see https://github.com/caltechlibrary/libguine/commit/c70447e */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -48,6 +48,20 @@ html, body {
 
 a:not(.btn, .collapsible-toggle, .accordion-toggle) {
   text-decoration: none;
+}
+
+/* Libanswer button styles for BS5 */
+button[name=emailuser] {
+  background-color: #1e988a;
+  border-color: #1e988a;
+}
+button[name=emailuser]:hover, button[name=emailuser]:focus {
+  background-color: #166d63;
+  border-color: #166d63;
+}
+button[name=emailuser]:active {
+  background-color: #115850;
+  border-color: #115850;
 }
 
 /* common/_footer.scss */
@@ -197,5 +211,18 @@ a:not(.btn, .collapsible-toggle, .accordion-toggle) {
 
 #footer-breadcrumbs .breadcrumb {
   background-color: transparent;
-  padding-inline-start: 0;
+  padding: 8px 15px 8px 0px;
+}
+
+button[name=emailuser] {
+  background-color: #1e988a;
+  border-color: #1e988a;
+}
+button[name=emailuser]:hover, button[name=emailuser]:focus {
+  background-color: #166d63;
+  border-color: #166d63;
+}
+button[name=emailuser]:active {
+  background-color: #115850;
+  border-color: #115850;
 }
