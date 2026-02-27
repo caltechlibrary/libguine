@@ -4,10 +4,11 @@
       <!--#include file='header--branding-GROUP.shtm' -->
     </div>
   </div>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-book"></i>Menu</button>
-    </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+      <span class="navbar-toggler-icon"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
     <div class="navbar-collapse collapse">
       <!--#include file='header--navbar-GROUP.html' -->
     </div>
