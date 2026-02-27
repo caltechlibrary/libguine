@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7801d02 */
+/* see https://github.com/caltechlibrary/libguine/commit/41dda2f */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -167,7 +167,7 @@ body {
   border: none;
 }
 
-.branding .glyphicon-search {
+.branding .fa-search {
   height: 32px;
   top: unset;
 }
@@ -332,8 +332,8 @@ body {
   padding-inline-start: 0;
 }
 .navbar-nav .dropdown-header > a:not(.clg-tooltip)::after {
-  content: "\e092";
-  font-family: "Glyphicons Halflings";
+  content: "\f054";
+  font-family: "FontAwesome";
   margin-left: 0.33em;
   vertical-align: sub;
 }
@@ -368,6 +368,11 @@ body {
 }
 .navbar-nav .show .dropdown-menu .dropdown-header {
   padding: 0;
+}
+
+.dropdown-menu.megamenu.show {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .megamenu {
@@ -1674,7 +1679,6 @@ summary > * {
   outline-style: dotted;
 }
 
-#home-bg .navbar-header,
 #home-bg .navbar-collapse {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -1684,7 +1688,7 @@ summary > * {
   border-color: #fff;
 }
 
-#home-bg .collections-search .glyphicon-search {
+#home-bg .collections-search .fa-search {
   vertical-align: sub;
 }
 
