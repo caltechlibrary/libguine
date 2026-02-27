@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/aad01c4 //
+// see https://github.com/caltechlibrary/libguine/commit/54b221d //
 
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -470,7 +470,8 @@ $(document).ready(function() {
   var checkInterval = setInterval(function() {
     checkCount++;
     const widget = document.getElementById("s-lg-widget-1770820610259");
-    if (widget && widget.getElementsByTagName("ul")[0]) {
+    const ul = widget && widget.getElementsByTagName("ul")[0];
+    if (ul && ul.getElementsByTagName("li").length > 0) {
       clearInterval(checkInterval);
       transformLibraryBlogWidget();
     }
