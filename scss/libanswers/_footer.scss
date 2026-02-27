@@ -1,4 +1,6 @@
 @use "../common/footer" as *;
+@use "../common/colors" as *;
+@use "sass:color";
 
 /* libanswers/_footer.scss */
 
@@ -13,6 +15,22 @@
 #footer-breadcrumbs {
   .breadcrumb {
     background-color: transparent;
-    padding-inline-start: 0;
+    padding: 8px 15px 8px 0px;
+  }
+}
+
+button[name="emailuser"] {
+  background-color: $jungle;
+  border-color: $jungle;
+
+  &:hover,
+  &:focus {
+    background-color: color.adjust($jungle, $lightness: -10%);
+    border-color: color.adjust($jungle, $lightness: -10%);
+  }
+
+  &:active {
+    background-color: color.adjust($jungle, $lightness: -15%);
+    border-color: color.adjust($jungle, $lightness: -15%);
   }
 }

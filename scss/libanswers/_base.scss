@@ -12,3 +12,21 @@ html, body {
 a:not(.btn, .collapsible-toggle, .accordion-toggle) {
     text-decoration: none;
 }
+
+/* Libanswer button styles for BS5 */
+
+  button[name="emailuser"] {                                                    
+    background-color: $jungle;                                                  
+    border-color: $jungle;                                                      
+                                                                                
+    &:hover,                                                                    
+    &:focus {                                                                   
+      background-color: darken($jungle, 10%);                                   
+      border-color: darken($jungle, 10%);                                       
+    }                                                                           
+                                                                                
+    &:active {                                                                  
+      background-color: darken($jungle, 15%);                                   
+      border-color: darken($jungle, 15%);                                       
+    }                                                                           
+  }     
