@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/f5b0b1e */
+/* see https://github.com/caltechlibrary/libguine/commit/3c4afeb */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -687,6 +687,7 @@ button.dropdown-toggle::after {
   background: transparent;
   border: none;
   padding: 0;
+  color: white;
 }
 #footer-wrapper footer .s-lc-w-next {
   font-size: 0;
@@ -968,6 +969,7 @@ summary > * {
 .digital-exhibits-thumbnails .categories a::after, #s-lg-content-67209512 a::after, #s-lg-box-28843130 a::after, .t-l-home .c3-quicklinks a::after, .c3-landing .c3-quicklinks a::after {
   content: " \f054";
   font-family: "FontAwesome";
+  vertical-align: sub;
 }
 
 .c3-landing h1 {
