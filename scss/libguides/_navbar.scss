@@ -13,6 +13,9 @@
   font-size: larger;
   margin: 0 15px; // TODO $grid-gutter-width
   color: #ffffff;
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
   .fa {
     padding-inline-end: 0.5em;
     color: #ffffff;
