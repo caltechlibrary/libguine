@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/3c4afeb */
+/* see https://github.com/caltechlibrary/libguine/commit/bc61dd3 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -265,6 +265,7 @@ body {
 }
 .navbar-toggler .fa {
   padding-inline-end: 0.5em;
+  color: #ffffff;
 }
 
 @media (min-width: 992px) {
