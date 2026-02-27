@@ -151,9 +151,6 @@
   @media (min-width: 1600px) {
     max-width: 100%; // keep within border-radius
   }
-  & > .active {
-    color: #1e988a;
-  }
   .c3-asc & > .active {
     color: $granny;
   }
@@ -174,3 +171,11 @@
     font-size: .9rem;
     line-height: 1.8rem;
   }
+
+// BS5 additions
+#footer-breadcrumbs .breadcrumb {
+  --bs-breadcrumb-divider-color: white;
+}
+#footer-breadcrumbs #s-lib-bc-page {
+  color: #1e988a !important;
+}

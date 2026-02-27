@@ -9,7 +9,7 @@
   }
 }
 
-.navbar-toggle {
+.navbar-toggler {
   float: none;
   font-size: larger;
   margin: 0 15px; // TODO $grid-gutter-width
@@ -21,9 +21,9 @@
 // center navbar
 @media (min-width: 992px) { // TODO $screen-md-min
   .navbar-nav {
-    float: none;
+    display: flex;
+    flex-direction: row;
     margin: 0 auto;
-    display: table;
   }
 }
 // center max-width megamenu
@@ -38,9 +38,9 @@
   ##{$name} {
     &:focus,
     &:hover,
-    .open > &,
-    .open > &:focus,
-    .open > &:hover {
+    .show > &,
+    .show > &:focus,
+    .show > &:hover {
       background-color: $primary-color;
     }
     & + .dropdown-menu a:focus,
@@ -78,8 +78,7 @@
       padding-inline-start: 0;
     }
   }
-  .divider + .dropdown-header {
-    @include caret-after();
+  .dropdown-divider + .dropdown-header {
     color: #333;
     font-weight: normal;
     margin-inline-start: 1rem;
@@ -111,7 +110,7 @@
       margin-inline-start: 0.75rem;
     }
   }
-  .open .dropdown-menu .dropdown-header {
+  .show .dropdown-menu .dropdown-header {
     padding: 0;
   }
 }
@@ -150,4 +149,43 @@
   .fa {
     padding-inline-end: 0.5em;
   }
+}
+
+// BS5 additions
+.navbar-nav .dropdown-toggle::after,
+button.dropdown-toggle::after {
+  display: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  text-decoration: none;
+}
+
+.navbar-expand-lg {
+  --bs-navbar-nav-link-padding-x: 15px;
+}
+
+.navbar-nav .dropdown-header:not(:has(a)) {
+  color: #333;
+  display: inline-block;
+  margin-inline-start: 1rem;
+  padding: 0.25rem;
+}
+
+// fix hover state on guide nav
+.s-lg-guide-body .navbar-nav {
+  --bs-nav-link-hover-color: #fff;
+  --bs-nav-link-color: #000;
+}
+
+.s-lg-guide-body .navbar-nav .show > .nav-link,
+.s-lg-guide-body .navbar-nav .nav-link[aria-expanded="true"] {
+  --bs-nav-link-color: #fff;
+  color: #fff;
+}
+
+// fixing archives dropdown menu
+.c3-landing .megamenu {
+  position: absolute;
 }

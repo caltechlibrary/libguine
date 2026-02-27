@@ -51,10 +51,17 @@
 /* Main container for each book entry */
 .book-item {
     padding: 20px !important;
-    margin-bottom: 25px !important;
-    border-bottom: 1px solid #e0e0e0 !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 5px !important;
     background-color: #ffffff !important;
-    clear: both !important; /* Ensures floated images don't cause layout issues */
+    clear: both !important;
+}
+
+.book-item:hover {
+    border-color: #ccc !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
 }
 
 /* Alternating background colors for better readability */
@@ -325,9 +332,7 @@
 }
 
 .link-section-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #0066cc;
+    color: #1f978a;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #e0e0e0;
@@ -343,7 +348,7 @@
 }
 
 .link-item:hover {
-    border-color: #0066cc;
+    border-color: #1f978a;
     box-shadow: 0 2px 6px rgba(0, 102, 204, 0.1);
 }
 
@@ -359,7 +364,7 @@
 }
 
 .link-title a {
-    color: #0066cc;
+    color: #1f978a;
     text-decoration: none;
 }
 

@@ -28,18 +28,14 @@ $branding-link-color: $text-color;
 }
 .branding .dropdown-toggle {
   border: none;
-  height: 32px;
 }
 .branding .glyphicon-search {
   height: 32px;
   top: unset;
 }
-.branding .dropdown-menu {
-  border: none;
-  padding: 0;
-  z-index: 1001;
-}
 .branding .input-group {
+  display: flex;
+  flex-wrap: nowrap;
   width: calc(100vw - 30px); // TODO $grid-gutter-width
 }
 @media (max-width: 768px) {
@@ -84,5 +80,45 @@ $branding-link-color: $text-color;
 @media (min-width: 768px) { // TODO $screen-sm-min
   .branding .input-group {
     width: calc(33vw);
+  }
+}
+
+// BS5 additions
+// style search button
+.s-lg-guide-body .branding .dropdown-toggle {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+}
+.s-lg-guide-body .branding .dropdown-toggle:hover,
+.s-lg-guide-body .branding .dropdown-toggle:focus {
+  background-color: #ccc;
+  border-color: transparent;
+  color: #000;
+}
+
+// search dropdown
+.branding .dropdown-menu {
+  background-color: #fff;
+  border: none;
+  min-width: 300px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.branding .input-group .form-control {
+  border: 1px solid #ced4da !important;
+  flex: 1;
+}
+.branding .input-group .btn-secondary {
+  background-color: #ccc !important;
+  border-color: #ced4da !important;
+  color: #333 !important;
+  border-radius: 0;
+  &:hover,
+  &:focus {
+    background-color: #d3d9df;
+    border-color: #ced4da;
+    color: #333;
   }
 }

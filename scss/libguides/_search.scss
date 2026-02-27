@@ -1,7 +1,7 @@
 @use "../common/colors" as *;
 
 #s-lg-srch-form {
-  .btn-default {
+  .btn-secondary {
     background-color: $tarawera;
     border-color: $tarawera;
     color: #fff;
@@ -70,4 +70,9 @@
 .pagination > .active > span:focus {
   background-color: $tarawera;
   border-color: $tarawera;
+}
+
+// hide Prev and Next buttons
+#s-lg-page-prevnext .pagination {
+  display: none !important;
 }
