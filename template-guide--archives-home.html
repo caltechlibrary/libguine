@@ -22,7 +22,7 @@
     <nav id="s-lib-bc" aria-label="breadcrumb">
       {{breadcrumbs}}
     </nav>
-    <div class="pull-right">
+    <div class="float-end">
       <div id="s-lg-guide-header-search">
         {{guide_search}} </div>
       {{ADMIN_MINI_CMD_BAR}}
@@ -53,25 +53,25 @@
       <!-- END: Page Header -->
       <div class="container">
         <div id="tpl-a-home-row-1" class="row s-lg-row">
-          <div id="s-lg-col-1" class="col-md-5 col-md-offset-1 ca-description">
+          <div id="s-lg-col-1" class="col-md-5 offset-md-1 ca-description">
             <div class="s-lg-col-boxes">
-              <div class="panel panel-primary c3-admin-show" style="display:none">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Description</h3>
+              <div class="card border-primary c3-admin-show" style="display:none">
+                <div class="card-header">
+                  <h3 class="card-title">Description</h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                   Add a box here in Column 1 with Rich Text / HTML content containing a short description for the home page.
                 </div>
               </div>
               {{content_col_1}}
             </div>
           </div>
-          <div id="s-lg-col-2" class="col-md-5 col-md-offset-1 collections-search">
+          <div id="s-lg-col-2" class="col-md-5 offset-md-1 collections-search">
             <div class="s-lg-col-boxes">
               {{content_col_2}}
             </div>
           </div>
-          <div id="s-lg-col-99" class="col-md-10 col-md-offset-1">
+          <div id="s-lg-col-99" class="col-md-10 offset-md-1">
             <div class="s-lg-col-boxes">
               {{content_col_99}}
             </div>
@@ -88,7 +88,7 @@
               {{content_col_3}}
             </div>
           </div>
-          <div id="s-lg-col-4" class="col-md-4 col-md-offset-1">
+          <div id="s-lg-col-4" class="col-md-4 offset-md-1">
             <div class="s-lg-col-boxes">
               {{content_col_4}}
             </div>
@@ -113,13 +113,13 @@
           {{print_url_display}}
         </li>
       </ul>
-      <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+      <div id="s-lib-footer-login-link" class="float-end pad-right-med">
         {{login_url_display}} </div>
     </div>
     <div class="pad-bottom-sm clearfix">
-      <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+      <div id="s-lib-footer-support-link" class="float-end pad-right-med">
         {{support_url_display}} </div>
-      <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+      <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med float-start">
         {{guide_subjects}}
       </div>
       <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
