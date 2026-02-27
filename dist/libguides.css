@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/1d8fe56 */
+/* see https://github.com/caltechlibrary/libguine/commit/fc2e065 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -263,6 +263,9 @@ body {
   font-size: larger;
   margin: 0 15px;
   color: #ffffff;
+}
+.navbar-toggler:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 .navbar-toggler .fa {
   padding-inline-end: 0.5em;
@@ -1692,6 +1695,7 @@ summary > * {
 
 #home-bg nav {
   background-color: rgba(255, 255, 255, 0.1);
+  padding-block: 0;
 }
 
 #home-bg .navbar-light .navbar-toggler:focus,
