@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/bc61dd3 */
+/* see https://github.com/caltechlibrary/libguine/commit/1d8fe56 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -262,6 +262,7 @@ body {
   float: none;
   font-size: larger;
   margin: 0 15px;
+  color: #ffffff;
 }
 .navbar-toggler .fa {
   padding-inline-end: 0.5em;
@@ -1689,7 +1690,7 @@ summary > * {
   outline-style: dotted;
 }
 
-#home-bg .navbar-collapse {
+#home-bg nav {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
