@@ -33,8 +33,3 @@ body {
 .tooltip .tooltip-arrow {
   display: none;
 }
-
-/* Bootstrap 5 removed .hidden; restore it for use in JS */
-.hidden {
-  display: none !important;
-}
