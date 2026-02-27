@@ -30,6 +30,11 @@
     margin: 0 auto;
   }
 }
+@media (max-width: 991px) { // TODO $screen-md-min - 1
+  .navbar-nav {
+    padding-inline-start: 15px; // TODO $grid-gutter-width; align with toggler margin
+  }
+}
 // center max-width megamenu
 .megamenu {
   max-width: 1200px; // TODO $screen-lg-min
