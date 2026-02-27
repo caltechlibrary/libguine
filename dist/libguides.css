@@ -335,7 +335,6 @@ body {
   content: "\f054";
   font-family: "FontAwesome";
   margin-left: 0.33em;
-  vertical-align: sub;
 }
 .navbar-nav .dropdown-divider + .dropdown-header {
   color: #333;
