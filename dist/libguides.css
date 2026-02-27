@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/764dd97 */
+/* see https://github.com/caltechlibrary/libguine/commit/2116639 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -79,11 +79,6 @@ body {
 
 .tooltip .tooltip-arrow {
   display: none;
-}
-
-/* Bootstrap 5 removed .hidden; restore it for use in JS */
-.hidden {
-  display: none !important;
 }
 
 .alert-success {
