@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/48cfb82 */
+/* see https://github.com/caltechlibrary/libguine/commit/c2239e8 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -689,8 +689,8 @@ button.dropdown-toggle::after {
   order: 1;
 }
 #footer-wrapper footer .s-lc-w-next::before {
-  content: "\e092";
-  font-family: "Glyphicons Halflings";
+  content: "\f054";
+  font-family: "FontAwesome";
   font-size: 24px;
   line-height: 0.5;
 }
@@ -698,8 +698,8 @@ button.dropdown-toggle::after {
   font-size: 0;
 }
 #footer-wrapper footer .s-lc-w-previous::before {
-  content: "\e091";
-  font-family: "Glyphicons Halflings";
+  content: "\f053";
+  font-family: "FontAwesome";
   font-size: 24px;
   line-height: 0.5;
 }
@@ -958,8 +958,8 @@ summary > * {
   text-decoration: none;
 }
 .digital-exhibits-thumbnails .categories a::after, #s-lg-content-67209512 a::after, #s-lg-box-28843130 a::after, .t-l-home .c3-quicklinks a::after, .c3-landing .c3-quicklinks a::after {
-  content: " \e092";
-  font-family: "Glyphicons Halflings";
+  content: " \f054";
+  font-family: "FontAwesome";
   vertical-align: sub;
 }
 
@@ -2210,8 +2210,8 @@ summary > * {
 
 /* adding styling for the 2nd child to help "Back to All Digital Exhibits" stand out */
 .exhibit-guides div#c3-sidenav ul li:nth-child(2) a::before {
-  content: " \e092";
-  font-family: "Glyphicons Halflings";
+  content: "\f054";
+  font-family: "FontAwesome";
   vertical-align: sub;
   display: inline-block;
   transform: scaleX(-1);
