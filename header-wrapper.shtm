@@ -5,10 +5,7 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-      <span class="navbar-toggler-icon"></span>
-      <span class="visually-hidden">Menu</span>
-    </button>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"><i class="fa fa-book" aria-hidden="true"></i>Menu</button>
     <div class="navbar-collapse collapse">
       <!--#include file='header--navbar-GROUP.html' -->
     </div>
