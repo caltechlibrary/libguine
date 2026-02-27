@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/54b221d */
+/* see https://github.com/caltechlibrary/libguine/commit/48cfb82 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -336,7 +336,6 @@ body {
   content: "\f054";
   font-family: "FontAwesome";
   margin-left: 0.33em;
-  vertical-align: sub;
 }
 .navbar-nav .dropdown-divider + .dropdown-header {
   color: #333;
