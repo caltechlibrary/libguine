@@ -1,6 +1,5 @@
-// see https://github.com/caltechlibrary/libguine/commit/244fd40 //
+// see https://github.com/caltechlibrary/libguine/commit/aad01c4 //
 
-// DEPLOY TEST 2026-02-12 v2 - delete this comment if you see it on the server
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
   if (document.getElementById("s-lg-admin-command-bar")) {
@@ -52,15 +51,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     bootstrap_js.id = "bootstrap-js";
     bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
     document.head.appendChild(bootstrap_js);
-    // load BS5 overrides for blog pages (blog uses BS5, rest of site is BS3)
-    if (window.location.pathname.startsWith("/blogs/news")) {
-      console.log("‼️ BLOG BS5 OVERRIDES");
-      const bs5_overrides = document.createElement("link");
-      bs5_overrides.rel = "stylesheet";
-      bs5_overrides.id = "blog-bs5-css";
-      bs5_overrides.href = "https://d2jv02qf7xgjwx.cloudfront.net/sites/64/include/blog-bs5.css";
-      document.head.appendChild(bs5_overrides);
-    }
+    // Initialize Bootstrap 5 tooltips after script loads
+    bootstrap_js.onload = function() {
+      var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    };
     // Remove Website CSS from `Guides` Group content.
     if (document.getElementById("s-lib-bc-group")) {
       if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
@@ -103,9 +100,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-srch-cols")) {
       const search_alert = document.createElement("div");
       search_alert.id = "search-alert";
-      search_alert.classList.add("alert", "alert-warning", "alert-dismissable");
+      search_alert.classList.add("alert", "alert-warning", "alert-dismissible");
       search_alert.setAttribute("role", "alert");
-      search_alert.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>Looking for a book, journal, database, or other resource? Try <a href="/libsearch">LibSearch</a> instead. You can also browse our <a href="/az.php">Databases List</a> or <a href="https://libanswers.caltech.edu/">FAQs</a>.';
+      search_alert.innerHTML = '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>Looking for a book, journal, database, or other resource? Try <a href="/libsearch">LibSearch</a> instead. You can also browse our <a href="/az.php">Databases List</a> or <a href="https://libanswers.caltech.edu/">FAQs</a>.';
       let parent = document.getElementById("s-lg-srch-cols").parentNode;
       let target = document.getElementById("s-lg-srch-cols");
       parent.insertBefore(search_alert, target);
@@ -173,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             items[i].innerHTML += first_img.outerHTML;
           }
           items[i].innerHTML += `<p>${first_p.innerHTML}</p>`;
-          items[i].innerHTML += `<a href="${title_link.href}" class="read-more">View Full Post</a>`;
+          items[i].innerHTML += `<a href="${title_link.href}" class="read-more">Read More . . .</a>`;
         }
         // NOTE images are not loaded by the end of the mutation observation
         // apply classes based on image size, orientation, and aspect ratio
@@ -227,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     // expand nested lists by removing dropdown classes
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown")].forEach(e => e.classList.remove("dropdown", "clearfix"));
-    [...document.getElementById("c3-sidenav").getElementsByClassName("pull-left")].forEach(e => e.classList.remove("pull-left"));
+    [...document.getElementById("c3-sidenav").getElementsByClassName("float-start")].forEach(e => e.classList.remove("float-start"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     // save link for use if needed
@@ -369,25 +366,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       metaContainer.classList.remove("gap-2", "gap-sm-4");
     });
   }
-  // Change "Show more" to "View Full Post" on blog listing
-  if (document.querySelector(".posts-container")) {
-    function updateShowMoreButtons() {
-      document.querySelectorAll(".button-toggle-post").forEach(el => {
-        if (el.textContent.trim() === "Show more") {
-          el.textContent = "View Full Post";
-        }
-      });
-    }
-    // Poll for dynamically loaded buttons
-    var showMoreCheckCount = 0;
-    var showMoreInterval = setInterval(function() {
-      showMoreCheckCount++;
-      updateShowMoreButtons();
-      if (showMoreCheckCount > 50) {
-        clearInterval(showMoreInterval);
-      }
-    }, 100);
-  }
 });
 // keep menu open upon non-link click within
 $(document).ready(function() {
@@ -504,4 +482,3 @@ $(document).ready(function() {
 /* ============================================================================
    END LIBRARY HOME BLOG WIDGET
    ============================================================================ */
-
