@@ -21,7 +21,7 @@ def construct_bootstrap_alert(entry):
         "html.parser",
     )
     level = entry["libcal_location"].split()[-1].lower()
-    # wrap with bootstrap 3 alert markup
+    # wrap with bootstrap 5 alert markup
     soup.div.wrap(
         soup.new_tag("div", attrs={"class": "alert alert-dismissible", "role": "alert"})
     )
@@ -31,16 +31,14 @@ def construct_bootstrap_alert(entry):
             "button",
             attrs={
                 "aria-label": "Close",
-                "class": "close",
-                "data-dismiss": "alert",
+                "class": "btn-close",
+                "data-bs-dismiss": "alert",
                 "type": "button",
             },
         )
     )
     soup.div.div.insert_after("\n")  # prettify
     soup.button.insert_before("\n  ")  # prettify
-    soup.button.append(soup.new_tag("span", attrs={"aria-hidden": "true"}))
-    soup.button.span.append("×")
     soup.button.insert_after("\n  ")  # prettify
     # there will not always be links in the description
     for link in soup.find_all('a'):
