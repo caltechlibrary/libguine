@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/fc2e065 */
+/* see https://github.com/caltechlibrary/libguine/commit/4e2b6c9 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -277,6 +277,11 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding-inline-start: 15px;
   }
 }
 .megamenu {
