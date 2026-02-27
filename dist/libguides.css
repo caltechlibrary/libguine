@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/8854ee9 */
+/* see https://github.com/caltechlibrary/libguine/commit/f5b0b1e */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -898,7 +898,7 @@ summary > * {
 }
 
 #c3-cards-row-1 {
-  margin-block-start: 30px;
+  padding-block-start: 30px;
 }
 
 .c3-cards-wrapper {
