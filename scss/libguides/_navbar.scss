@@ -58,6 +58,7 @@
 .navbar-nav {
   // archives navbar does not have a megamenu and needs small adjustments
   .c3-asc & .dropdown-menu {
+    min-width: 250px;
     overflow: visible;
     padding-inline: 15px;
     a {
