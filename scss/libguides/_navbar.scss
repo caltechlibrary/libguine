@@ -2,8 +2,8 @@
 
 @mixin caret-after {
   &::after {
-    content: "\e092";
-    font-family: "Glyphicons Halflings";
+    content: "\f054";
+    font-family: "FontAwesome";
     margin-left: .33em;
     vertical-align: sub;
   }
@@ -113,6 +113,10 @@
   .show .dropdown-menu .dropdown-header {
     padding: 0;
   }
+}
+.dropdown-menu.megamenu.show {
+  display: flex;
+  flex-wrap: wrap;
 }
 .megamenu {
   overflow: visible; // some tooltip text extends past the edge of the menu area
