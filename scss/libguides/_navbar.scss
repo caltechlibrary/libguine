@@ -101,6 +101,9 @@
       margin-inline-start: 1rem;
       padding: 0.25rem;
       text-decoration: none; // explicit: blog template doesn't strip BS5 reboot underline
+      &:visited {
+        color: #333;
+      }
       &:focus,
       &:hover {
         outline: solid medium;
@@ -171,6 +174,10 @@
 .navbar-nav .dropdown-toggle::after,
 button.dropdown-toggle::after {
   display: none;
+}
+
+.navbar-nav .nav-link:visited {
+  color: #000;
 }
 
 .navbar-nav .nav-link:hover,
