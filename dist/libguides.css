@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/efa69c4 */
+/* see https://github.com/caltechlibrary/libguine/commit/3cd8d78 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1600,6 +1600,10 @@ summary > * {
 
 .blog-post .post-title {
   padding-top: 1rem;
+}
+
+#s-lib-public-header ~ h1.mb-5 {
+  font-weight: 500;
 }
 
 a.post-title:visited:hover,
