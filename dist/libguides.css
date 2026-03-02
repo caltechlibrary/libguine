@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/1276ef3 */
+/* see https://github.com/caltechlibrary/libguine/commit/dcdc898 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -359,8 +359,10 @@ body {
 .navbar-nav .dropdown-menu a {
   color: #333;
   display: inline-block;
+  line-height: 1.5;
   margin-inline-start: 1rem;
   padding: 0.25rem;
+  text-decoration: none;
 }
 .navbar-nav .dropdown-menu a:focus, .navbar-nav .dropdown-menu a:hover {
   outline: solid medium;
