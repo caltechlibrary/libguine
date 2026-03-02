@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/3cd8d78 */
+/* see https://github.com/caltechlibrary/libguine/commit/2dd6cab */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1602,7 +1602,7 @@ summary > * {
   padding-top: 1rem;
 }
 
-#s-lib-public-header ~ h1.mb-5 {
+.posts-view-list h1.mb-5 {
   font-weight: 500;
 }
 
