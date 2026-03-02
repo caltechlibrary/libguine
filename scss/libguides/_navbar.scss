@@ -12,13 +12,13 @@
   float: none;
   font-size: larger;
   margin: 0 15px; // TODO $grid-gutter-width
-  color: #ffffff;
+  color: #000;
   &:focus:not(:focus-visible) {
     box-shadow: none;
   }
   .fa {
     padding-inline-end: 0.5em;
-    color: #ffffff;
+    color: #000;
   }
 }
 
@@ -187,14 +187,14 @@ button.dropdown-toggle::after {
   padding: 0.25rem;
 }
 
-// fix hover state on guide nav
-.s-lg-guide-body .navbar-nav {
+// fix nav link colors (BS5: override semi-transparent default; applies to all pages incl. blog)
+.navbar-nav {
   --bs-nav-link-hover-color: #fff;
   --bs-nav-link-color: #000;
 }
 
-.s-lg-guide-body .navbar-nav .show > .nav-link,
-.s-lg-guide-body .navbar-nav .nav-link[aria-expanded="true"] {
+.navbar-nav .show > .nav-link,
+.navbar-nav .nav-link[aria-expanded="true"] {
   --bs-nav-link-color: #fff;
   color: #fff;
 }

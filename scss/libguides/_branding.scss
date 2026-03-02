@@ -85,13 +85,13 @@ $branding-link-color: $text-color;
 
 // BS5 additions
 // style search button
-.s-lg-guide-body .branding .dropdown-toggle {
+.branding .dropdown-toggle {
   background-color: transparent;
   border-color: transparent;
   color: #000;
 }
-.s-lg-guide-body .branding .dropdown-toggle:hover,
-.s-lg-guide-body .branding .dropdown-toggle:focus {
+.branding .dropdown-toggle:hover,
+.branding .dropdown-toggle:focus {
   background-color: #ccc;
   border-color: transparent;
   color: #000;

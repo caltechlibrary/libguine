@@ -47,6 +47,11 @@
   }
 }
 
+#home-bg .navbar-toggler,
+#home-bg .navbar-toggler .fa {
+  color: #fff;
+}
+
 #home-bg .navbar-light .navbar-toggler:focus,
 #home-bg .navbar-light .navbar-toggler:hover {
   border-color: #fff;
