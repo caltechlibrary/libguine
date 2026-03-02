@@ -13,6 +13,9 @@ h1, .s-lib-header h1, .h1, h2, .h2, h3, .h3 { margin-block-end: 16px; }
 
 a {
   color: $burnt;
+  &:visited {
+    color: $burnt;
+  }
   &:active,
   &:focus,
   &:hover {
