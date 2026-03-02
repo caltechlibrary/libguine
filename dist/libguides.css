@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/d8a7bf8 */
+/* see https://github.com/caltechlibrary/libguine/commit/efa69c4 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1600,6 +1600,11 @@ summary > * {
 
 .blog-post .post-title {
   padding-top: 1rem;
+}
+
+a.post-title:visited:hover,
+#sidebar_recent_posts a:visited:hover {
+  color: #c75000;
 }
 
 /* Library Home Blog Widget */
