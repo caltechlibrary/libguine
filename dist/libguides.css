@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/8154544 */
+/* see https://github.com/caltechlibrary/libguine/commit/4c4f0a8 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -367,6 +367,9 @@ body {
   padding: 0.25rem;
   text-decoration: none;
 }
+.navbar-nav .dropdown-menu a:visited {
+  color: #333;
+}
 .navbar-nav .dropdown-menu a:focus, .navbar-nav .dropdown-menu a:hover {
   outline: solid medium;
   text-decoration: none;
@@ -436,6 +439,10 @@ body {
 .navbar-nav .dropdown-toggle::after,
 button.dropdown-toggle::after {
   display: none;
+}
+
+.navbar-nav .nav-link:visited {
+  color: #000;
 }
 
 .navbar-nav .nav-link:hover,
@@ -1710,6 +1717,10 @@ summary > * {
 
 #home-bg .navbar-toggler,
 #home-bg .navbar-toggler .fa {
+  color: #fff;
+}
+
+#home-bg .navbar-nav .nav-link:visited {
   color: #fff;
 }
 
