@@ -442,6 +442,11 @@
   padding-top: 1rem;
 }
 
+a.post-title:visited:hover,
+#sidebar_recent_posts a:visited:hover {
+  color: #c75000;
+}
+
 /* Library Home Blog Widget */
 
 #s-lg-widget-1770820610259 {
