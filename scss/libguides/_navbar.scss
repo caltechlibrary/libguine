@@ -97,8 +97,10 @@
     a {
       color: #333;
       display: inline-block; // NOTE: affects block spacing
+      line-height: 1.5; // explicit: blog template inherits a smaller value without this
       margin-inline-start: 1rem;
       padding: 0.25rem;
+      text-decoration: none; // explicit: blog template doesn't strip BS5 reboot underline
       &:focus,
       &:hover {
         outline: solid medium;
