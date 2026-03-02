@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/c2d4648 */
+/* see https://github.com/caltechlibrary/libguine/commit/1276ef3 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -220,14 +220,14 @@ body {
     width: 33vw;
   }
 }
-.s-lg-guide-body .branding .dropdown-toggle {
+.branding .dropdown-toggle {
   background-color: transparent;
   border-color: transparent;
   color: #000;
 }
 
-.s-lg-guide-body .branding .dropdown-toggle:hover,
-.s-lg-guide-body .branding .dropdown-toggle:focus {
+.branding .dropdown-toggle:hover,
+.branding .dropdown-toggle:focus {
   background-color: #ccc;
   border-color: transparent;
   color: #000;
@@ -262,14 +262,14 @@ body {
   float: none;
   font-size: larger;
   margin: 0 15px;
-  color: #ffffff;
+  color: #000;
 }
 .navbar-toggler:focus:not(:focus-visible) {
   box-shadow: none;
 }
 .navbar-toggler .fa {
   padding-inline-end: 0.5em;
-  color: #ffffff;
+  color: #000;
 }
 
 @media (min-width: 992px) {
@@ -449,13 +449,13 @@ button.dropdown-toggle::after {
   padding: 0.25rem;
 }
 
-.s-lg-guide-body .navbar-nav {
+.navbar-nav {
   --bs-nav-link-hover-color: #fff;
   --bs-nav-link-color: #000;
 }
 
-.s-lg-guide-body .navbar-nav .show > .nav-link,
-.s-lg-guide-body .navbar-nav .nav-link[aria-expanded=true] {
+.navbar-nav .show > .nav-link,
+.navbar-nav .nav-link[aria-expanded=true] {
   --bs-nav-link-color: #fff;
   color: #fff;
 }
@@ -1700,6 +1700,11 @@ summary > * {
 #home-bg nav {
   background-color: rgba(255, 255, 255, 0.1);
   padding-block: 0;
+}
+
+#home-bg .navbar-toggler,
+#home-bg .navbar-toggler .fa {
+  color: #fff;
 }
 
 #home-bg .navbar-light .navbar-toggler:focus,
