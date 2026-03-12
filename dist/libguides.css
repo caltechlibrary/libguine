@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/0123752 */
+/* see https://github.com/caltechlibrary/libguine/commit/965fbee */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1432,6 +1432,14 @@ a.post-title:visited:hover,
   font-size: 1rem;
 }
 
+/* Book description styling */
+.book-description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
 /* Book metadata section */
 .book-meta {
   display: flex;
@@ -1449,7 +1457,7 @@ a.post-title:visited:hover,
 /* View Book button */
 .book-view-btn {
   display: inline-block;
-  background-color: #3b7c0f;
+  background-color: #2a8a99;
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
@@ -1461,7 +1469,9 @@ a.post-title:visited:hover,
 }
 
 .book-view-btn:hover {
-  background-color: #2d6009;
+  background-color: #2a8a99;
+  color: white !important;
+  text-decoration: underline !important;
 }
 
 /* Book cover image styling with drop shadow (legacy SpringShare support) */
@@ -1611,7 +1621,7 @@ a.post-title:visited:hover,
 }
 
 .event-meta strong {
-  color: #0066cc;
+  color: #2a8a99;
   margin-right: 5px;
 }
 
@@ -1642,7 +1652,7 @@ a.post-title:visited:hover,
 .link-section-title {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #0066cc;
+  color: #333;
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 2px solid #e0e0e0;
@@ -1674,7 +1684,7 @@ a.post-title:visited:hover,
 }
 
 .link-title a {
-  color: #0066cc;
+  color: #2a8a99;
   text-decoration: none;
 }
 
@@ -1817,6 +1827,7 @@ a.post-title:visited:hover,
 
 #s-lg-box-28754029 {
   margin: 0;
+  padding: 28px 25px 12px 28px;
 }
 
 #s-lg-box-wrapper-33811847 {
@@ -2147,6 +2158,7 @@ a.post-title:visited:hover,
 #s-lg-box-28843122 {
   color: #fff;
   margin: 0;
+  padding: 28px 25px 12px 25px;
 }
 #s-lg-box-28843122 a {
   color: #fff;
@@ -2202,11 +2214,10 @@ a.post-title:visited:hover,
 #s-lg-box-28843134 {
   font-size: large;
   line-height: 2;
-  padding: 32px 30px;
 }
 @media (min-width: 768px) {
   #s-lg-box-28843134 {
-    padding: 48px 45px;
+    padding: 28px 25px;
   }
 }
 #s-lg-box-28843134 a {
