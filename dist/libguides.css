@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/965fbee */
+/* see https://github.com/caltechlibrary/libguine/commit/07bdcb4 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -45,6 +45,12 @@ a:active, a:focus, a:hover {
 
 body {
   font-family: "Hind", sans-serif;
+}
+
+/* overrides springshare's external link icon style */
+.fa-external-link {
+  font-size: 12px !important;
+  color: #fff;
 }
 
 /* libguides/_resets.scss */
