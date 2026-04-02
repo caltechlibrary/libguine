@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/07bdcb4 */
+/* see https://github.com/caltechlibrary/libguine/commit/91fb271 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -812,6 +812,10 @@ body:not(.c3-asc) #s-lib-bc-group {
 }
 body.c3-landing #s-lib-bc-guide {
   display: none;
+}
+
+li#s-lib-bc-blogs {
+  color: #ffffff !important;
 }
 
 summary {
