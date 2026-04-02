@@ -28,3 +28,9 @@ a {
 }
 
 body { font-family: "Hind", sans-serif }
+
+/* overrides springshare's external link icon style */
+
+.fa-external-link {
+    font-size: 12px !important;
+    color: #fff;
