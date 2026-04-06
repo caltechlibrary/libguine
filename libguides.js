@@ -14,6 +14,9 @@ const GUIDES_ACCESSIBILITY_CSS = `
   .s-lg-no-val, .s-lg-text-greyout, .s-lib-greyout {
     color: #555 !important;
   }
+  
+  .s-lg-content-more-info {
+    font-size: 1em !important;}
 `;
 
 // context hacks
