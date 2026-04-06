@@ -200,8 +200,13 @@ a.post-title:visited:hover,
     font-weight: 500 !important;
 }
 
-/* Blog Styles that Correspond with Blog Styler */
+/* ============================================
+   Content Styling for Caltech Library Blog
+   Includes: Books, Events, Links
+   ============================================ */
+
 /* ===== BOOK LIST STYLING ===== */
+
 /* Main container for each book entry */
 .book-item {
     padding: 20px !important;
@@ -285,7 +290,7 @@ a.post-title:visited:hover,
 
 /* Book details (ISBN, Call Number) */
 .book-details {
-    color: #666;
+    color: #555;
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -293,7 +298,7 @@ a.post-title:visited:hover,
 /* View Book button */
 .book-view-btn {
     display: inline-block;
-    background-color: #2a8a99;
+    background-color: #197D6F;
     color: white;
     padding: 10px 20px;
     border-radius: 4px;
@@ -305,7 +310,7 @@ a.post-title:visited:hover,
 }
 
 .book-view-btn:hover {
-    background-color: #2a8a99;
+    background-color: #187B6E;
     color: white !important;
     text-decoration: underline !important;
 }
@@ -371,32 +376,18 @@ a.post-title:visited:hover,
 }
 
 .book-grid-title a {
-    color: #0066cc;
+    color: #bd4a01;
     text-decoration: none;
-}
-
-.book-grid-title a:hover {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* Book author in grid */
 .book-grid-author {
     font-size: 0.85rem;
-    color: #666;
+    color: #555;
     margin-bottom: 8px;
 }
 
-/* Optional link below author */
-.book-grid-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.book-grid-link:hover {
-    text-decoration: underline;
-}
 
 /* ===== EVENT STYLING ===== */
 
@@ -414,7 +405,7 @@ a.post-title:visited:hover,
     flex-shrink: 0;
     width: 80px;
     height: 80px;
-    background-color: #0066cc;
+    background-color: #197d6f;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -448,7 +439,7 @@ a.post-title:visited:hover,
 }
 
 .event-meta {
-    color: #666;
+    color: #333;
     font-size: 0.95rem;
     margin-bottom: 12px;
     line-height: 1.6;
@@ -459,27 +450,24 @@ a.post-title:visited:hover,
 }
 
 .event-meta strong {
-    color: #2a8a99;
+    color: #555;
     margin-right: 5px;
 }
 
 .event-description {
     line-height: 1.6;
     margin-bottom: 15px;
-    color: #333;
+    color: #555;
 }
 
 .event-link {
-    color: #0066cc;
+    color: #bd4a01;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 2px solid #0066cc;
-    transition: border-color 0.3s;
 }
 
 .event-link:hover {
-    border-bottom-color: #0052a3;
-    color: #0052a3;
+    color: #bd4a01;
 }
 
 /* ===== LINK SECTION STYLING ===== */
@@ -507,8 +495,8 @@ a.post-title:visited:hover,
 }
 
 .link-item:hover {
-    border-color: #0066cc;
-    box-shadow: 0 2px 6px rgba(0, 102, 204, 0.1);
+    border-color: #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .link-title {
@@ -523,15 +511,15 @@ a.post-title:visited:hover,
 }
 
 .link-title a {
-    color: #2a8a99;
+    color: #bd4a01;
     text-decoration: none;
 }
 
 .link-title a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .link-description {
-    color: #333;
+    color: #555;
     line-height: 1.5;
 }
