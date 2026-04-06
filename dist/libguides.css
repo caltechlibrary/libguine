@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/5f25bc6 */
+/* see https://github.com/caltechlibrary/libguine/commit/6398eb5 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -95,6 +95,15 @@ body {
 
 #s-lg-guide-name {
   font-weight: 500;
+}
+
+/* LibGuide Footer */
+.s-lib-footer {
+  font-size: 1em !important;
+}
+
+.s-lg-no-val, .s-lg-text-greyout, .s-lib-greyout {
+  color: #555 !important;
 }
 
 .alert-success {
