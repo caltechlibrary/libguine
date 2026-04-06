@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/b2a9072 //
+// see https://github.com/caltechlibrary/libguine/commit/f3f3603 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -16,6 +16,9 @@ const GUIDES_ACCESSIBILITY_CSS = `
   .s-lg-no-val, .s-lg-text-greyout, .s-lib-greyout {
     color: #555 !important;
   }
+  
+  .s-lg-content-more-info {
+    font-size: 1em !important;}
 `;
 
 // context hacks
