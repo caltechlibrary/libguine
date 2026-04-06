@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/902d0e0 */
+/* see https://github.com/caltechlibrary/libguine/commit/5f25bc6 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1470,7 +1470,7 @@ a.post-title:visited:hover,
 /* View Book button */
 .book-view-btn {
   display: inline-block;
-  background-color: #197D6F;
+  background-color: #19747d;
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
@@ -1482,7 +1482,7 @@ a.post-title:visited:hover,
 }
 
 .book-view-btn:hover {
-  background-color: #187B6E;
+  background-color: #156068;
   color: white !important;
   text-decoration: underline !important;
 }
@@ -1574,7 +1574,7 @@ a.post-title:visited:hover,
   flex-shrink: 0;
   width: 80px;
   height: 80px;
-  background-color: #197d6f;
+  background-color: #19747d;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
