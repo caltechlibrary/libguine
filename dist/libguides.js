@@ -1,4 +1,22 @@
-// see https://github.com/caltechlibrary/libguine/commit/50bd8cb //
+// see https://github.com/caltechlibrary/libguine/commit/b2a9072 //
+
+// ============================================================================
+// GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
+// These styles are injected on Guides group pages, where the main libguides-css
+// stylesheet is intentionally stripped so the CMS default styles apply.
+// Edit ONLY this block when adding/changing accessibility overrides.
+// Injection logic is in the DOMContentLoaded handler below.
+// ============================================================================
+const GUIDES_ACCESSIBILITY_CSS = `
+  /* LibGuide Footer */
+  .s-lib-footer {
+    font-size: 1em !important;
+  }
+
+  .s-lg-no-val, .s-lg-text-greyout, .s-lib-greyout {
+    color: #555 !important;
+  }
+`;
 
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -62,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lib-bc-group")) {
       if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
         document.getElementById("libguides-css").remove();
+        const style = document.createElement("style");
+        style.id = "guides-accessibility-css";
+        style.textContent = GUIDES_ACCESSIBILITY_CSS;
+        document.head.appendChild(style);
       }
     }
     // remove scroll-to-top javascript
