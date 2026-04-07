@@ -76,6 +76,10 @@
         padding-block: 16px; // TODO $font-size-base
       }
     }
+
+    caption.s-lc-w-sr-only {
+    color: #ffffff !important;
+    }
     .s-lc-w-sr-only {
       position: absolute;
       width: 1px;
