@@ -277,7 +277,8 @@ $home-secondary-color: #1e988a;
       background-color: $home-secondary-color;
       color: #fff;
       font-size: small;
-      padding-block: 0;
+      padding: 5px;
+      border-radius: .25em;
       a {
         text-decoration: none;
       }
