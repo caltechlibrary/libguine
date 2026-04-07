@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/767596f */
+/* see https://github.com/caltechlibrary/libguine/commit/6de8b45 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -816,7 +816,7 @@ button.dropdown-toggle::after {
 }
 
 #footer-breadcrumbs #s-lib-bc-page {
-  color: #1e988a !important;
+  color: #2cc5b0 !important;
 }
 
 body:not(.c3-asc) #s-lib-bc-group {
