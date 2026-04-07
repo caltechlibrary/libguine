@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/9e1dae0 */
+/* see https://github.com/caltechlibrary/libguine/commit/3250692 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1056,17 +1056,17 @@ summary > * {
 }
 
 .c3-abt.c3-landing .c3-page-title {
-  background: linear-gradient(to right, #062e47 80%, #1e988a);
+  background: linear-gradient(to right, #062e47 80%, #19747d);
 }
 .c3-abt .c3-quicklinks a:active, .c3-abt .c3-quicklinks a:focus {
-  outline-color: #1e988a;
+  outline-color: #19747d;
 }
 .c3-abt .c3-quicklinks a::after {
-  color: #1e988a;
+  color: #19747d;
 }
 .c3-abt .c3-quicklinks h2 {
   color: #062e47;
-  border-block-end-color: #1e988a;
+  border-block-end-color: #19747d;
 }
 .c3-abt .gradient-wrapper {
   background: linear-gradient(#062e47 40%, #fff);
@@ -1076,17 +1076,17 @@ summary > * {
 }
 
 .c3-sbr.c3-landing .c3-page-title {
-  background: linear-gradient(to right, #005851 80%, #987776);
+  background: linear-gradient(to right, #005851 80%, #7b5f5d);
 }
 .c3-sbr .c3-quicklinks a:active, .c3-sbr .c3-quicklinks a:focus {
-  outline-color: #987776;
+  outline-color: #7b5f5d;
 }
 .c3-sbr .c3-quicklinks a::after {
-  color: #987776;
+  color: #7b5f5d;
 }
 .c3-sbr .c3-quicklinks h2 {
   color: #005851;
-  border-block-end-color: #987776;
+  border-block-end-color: #7b5f5d;
 }
 .c3-sbr .gradient-wrapper {
   background: linear-gradient(#005851 40%, #fff);
@@ -1096,17 +1096,17 @@ summary > * {
 }
 
 .c3-pwl.c3-landing .c3-page-title {
-  background: linear-gradient(to right, #644b78 80%, #73a950);
+  background: linear-gradient(to right, #644b78 80%, #4d7b2f);
 }
 .c3-pwl .c3-quicklinks a:active, .c3-pwl .c3-quicklinks a:focus {
-  outline-color: #73a950;
+  outline-color: #4d7b2f;
 }
 .c3-pwl .c3-quicklinks a::after {
-  color: #73a950;
+  color: #4d7b2f;
 }
 .c3-pwl .c3-quicklinks h2 {
   color: #644b78;
-  border-block-end-color: #73a950;
+  border-block-end-color: #4d7b2f;
 }
 .c3-pwl .gradient-wrapper {
   background: linear-gradient(#644b78 40%, #fff);
@@ -1116,17 +1116,17 @@ summary > * {
 }
 
 .c3-ptt.c3-landing .c3-page-title {
-  background: linear-gradient(to right, #a02276 80%, #76777b);
+  background: linear-gradient(to right, #a02276 80%, #727479);
 }
 .c3-ptt .c3-quicklinks a:active, .c3-ptt .c3-quicklinks a:focus {
-  outline-color: #76777b;
+  outline-color: #727479;
 }
 .c3-ptt .c3-quicklinks a::after {
-  color: #76777b;
+  color: #727479;
 }
 .c3-ptt .c3-quicklinks h2 {
   color: #a02276;
-  border-block-end-color: #76777b;
+  border-block-end-color: #727479;
 }
 .c3-ptt .gradient-wrapper {
   background: linear-gradient(#a02276 40%, #fff);
@@ -1136,17 +1136,17 @@ summary > * {
 }
 
 .c3-asc.c3-landing .c3-page-title {
-  background: linear-gradient(to right, #c75000 80%, #849895);
+  background: linear-gradient(to right, #c75000 80%, #617572);
 }
 .c3-asc .c3-quicklinks a:active, .c3-asc .c3-quicklinks a:focus {
-  outline-color: #849895;
+  outline-color: #617572;
 }
 .c3-asc .c3-quicklinks a::after {
-  color: #849895;
+  color: #617572;
 }
 .c3-asc .c3-quicklinks h2 {
   color: #c75000;
-  border-block-end-color: #849895;
+  border-block-end-color: #617572;
 }
 .c3-asc .gradient-wrapper {
   background: linear-gradient(#c75000 40%, #fff);
@@ -1766,7 +1766,7 @@ a.post-title:visited:hover,
 }
 
 #s-lg-box-28870775 .popular-searches a {
-  background-color: #1e988a;
+  background-color: #19747d;
   color: #fff;
   display: inline;
   padding: 0.3em 0.6em;
@@ -1778,7 +1778,7 @@ a.post-title:visited:hover,
   text-decoration: none;
 }
 #s-lg-box-28870775 .popular-searches a:active, #s-lg-box-28870775 .popular-searches a:focus, #s-lg-box-28870775 .popular-searches a:hover {
-  outline: #1e988a solid medium;
+  outline: #19747d solid medium;
 }
 
 #home-bg.cl-bg {
@@ -1883,18 +1883,18 @@ a.post-title:visited:hover,
 }
 
 .t-l-home .c3-quicklinks a:active, .t-l-home .c3-quicklinks a:focus {
-  outline-color: #1e988a;
+  outline-color: #19747d;
 }
 .t-l-home .c3-quicklinks a::after {
-  color: #1e988a;
+  color: #19747d;
 }
 .t-l-home .c3-quicklinks h2 {
   color: #062e47;
-  border-block-end-color: #1e988a;
+  border-block-end-color: #19747d;
 }
 
 #tpl-l-home .equalheights a {
-  color: #1e988a;
+  color: #19747d;
 }
 #tpl-l-home .equalheights figcaption {
   padding-inline: 15px;
@@ -2011,7 +2011,7 @@ a.post-title:visited:hover,
   text-align: right;
 }
 #s-la-widget-16585 .s-la-faq-listing-meta .label {
-  background-color: #1e988a;
+  background-color: #19747d;
   color: #fff;
   font-size: small;
   padding: 5px;
