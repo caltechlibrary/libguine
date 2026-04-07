@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/931a809 */
+/* see https://github.com/caltechlibrary/libguine/commit/8918905 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -917,7 +917,7 @@ summary > * {
   background-color: #a02276;
 }
 .c3-ptt #c3-sidenav li.active > a {
-  background-color: #75777b;
+  background-color: #727479;
 }
 
 .c3-asc.c3-content .c3-page-title {
