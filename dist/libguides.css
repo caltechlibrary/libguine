@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/6de8b45 */
+/* see https://github.com/caltechlibrary/libguine/commit/931a809 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -887,7 +887,7 @@ summary > * {
   background-color: #062e47;
 }
 .c3-abt #c3-sidenav li.active > a {
-  background-color: #1e988a;
+  background-color: #19747d;
 }
 
 .c3-sbr.c3-content .c3-page-title {
@@ -897,7 +897,7 @@ summary > * {
   background-color: #005851;
 }
 .c3-sbr #c3-sidenav li.active > a {
-  background-color: #987776;
+  background-color: #7b5f5d;
 }
 
 .c3-pwl.c3-content .c3-page-title {
@@ -907,7 +907,7 @@ summary > * {
   background-color: #644b78;
 }
 .c3-pwl #c3-sidenav li.active > a {
-  background-color: #73a950;
+  background-color: #4d7b2f;
 }
 
 .c3-ptt.c3-content .c3-page-title {
@@ -917,7 +917,7 @@ summary > * {
   background-color: #a02276;
 }
 .c3-ptt #c3-sidenav li.active > a {
-  background-color: #76777b;
+  background-color: #75777b;
 }
 
 .c3-asc.c3-content .c3-page-title {
@@ -927,7 +927,7 @@ summary > * {
   background-color: #c75000;
 }
 .c3-asc #c3-sidenav li.active > a {
-  background-color: #849895;
+  background-color: #617572;
 }
 
 @media (min-width: 992px) {
