@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/8918905 */
+/* see https://github.com/caltechlibrary/libguine/commit/9e1dae0 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -793,7 +793,7 @@ button.dropdown-toggle::after {
   }
 }
 .c3-asc #s-lib-bc-list.breadcrumb > .active {
-  color: #849895;
+  color: #617572;
 }
 
 /* IDEA statement */
@@ -2014,7 +2014,8 @@ a.post-title:visited:hover,
   background-color: #1e988a;
   color: #fff;
   font-size: small;
-  padding-block: 0;
+  padding: 5px;
+  border-radius: 0.25em;
 }
 #s-la-widget-16585 .s-la-faq-listing-meta .label a {
   text-decoration: none;
@@ -2272,7 +2273,7 @@ a.post-title:visited:hover,
 }
 
 .digital-exhibits-thumbnails .categories a::after {
-  color: #849895;
+  color: #617572;
 }
 .digital-exhibits-thumbnails .categories a.active::after {
   color: white;
@@ -2340,7 +2341,7 @@ a.post-title:visited:hover,
   background-color: white;
 }
 .exhibit-thumbnails a:hover {
-  outline: thick solid #849895;
+  outline: thick solid #617572;
   text-decoration: none;
 }
 .exhibit-thumbnails figure {
@@ -2385,7 +2386,7 @@ a.post-title:visited:hover,
 }
 
 #s-lg-srch-content mark, #s-lg-srch-content .mark {
-  background-color: #d2eae8;
+  background-color: #d1e3e5;
   padding-block: 0;
 }
 #s-lg-srch-content .s-srch-result {
