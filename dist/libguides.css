@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/752e813 */
+/* see https://github.com/caltechlibrary/libguine/commit/638ea56 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1893,9 +1893,6 @@ a.post-title:visited:hover,
   border-block-end-color: #19747d;
 }
 
-#tpl-l-home .equalheights a {
-  color: #19747d;
-}
 #tpl-l-home .equalheights figcaption {
   padding-inline: 15px;
 }
