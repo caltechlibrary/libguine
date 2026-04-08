@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/b142daa */
+/* see https://github.com/caltechlibrary/libguine/commit/752e813 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2080,7 +2080,7 @@ a.post-title:visited:hover,
 }
 #s-lg-widget-1653629897969 > ul > li {
   background-color: #fff;
-  border: 3px solid #849895;
+  border: 3px solid #657b77;
   margin-block: 30px;
   padding: 1rem;
 }
@@ -2152,14 +2152,14 @@ a.post-title:visited:hover,
   text-align: right;
 }
 #s-lg-content-67209512 a:active, #s-lg-content-67209512 a:focus {
-  outline-color: #849895;
+  outline-color: #657b77;
 }
 #s-lg-content-67209512 a::after {
-  color: #849895;
+  color: #657b77;
 }
 
 #s-lg-box-wrapper-33915545 {
-  background-color: #849895;
+  background-color: #657b77;
   text-align: center;
 }
 
@@ -2202,21 +2202,21 @@ a.post-title:visited:hover,
 }
 
 #s-lg-box-wrapper-33915559 {
-  background-color: #849895;
+  background-color: #657b77;
 }
 
 #s-lg-box-28843130 {
   margin-block: 30px;
 }
 #s-lg-box-28843130 a:active, #s-lg-box-28843130 a:focus {
-  outline-color: #849895;
+  outline-color: #657b77;
 }
 #s-lg-box-28843130 a::after {
-  color: #849895;
+  color: #657b77;
 }
 #s-lg-box-28843130 h2 {
   color: #c75000;
-  border-block-end-color: #849895;
+  border-block-end-color: #657b77;
 }
 
 #s-lg-box-28843134 {
