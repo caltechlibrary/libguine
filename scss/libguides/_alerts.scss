@@ -20,7 +20,7 @@
   @include alert-colors($tarawera);
 }
 .alert-warning {
-  @include alert-colors($burnt, darken($burnt, 15%));
+  @include alert-colors($burnt, $burnt-alert);
 }
 .alert-danger {
   @include alert-colors($monza);
