@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/2f518d1 */
+/* see https://github.com/caltechlibrary/libguine/commit/80a5eab */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -244,4 +244,8 @@ a.btn.btn-success.btn-sm.margin-top-med {
 }
 .breadcrumb > .active {
   color: #19747d;
+}
+
+caption.s-lc-w-sr-only {
+  color: #ffffff !important;
 }
