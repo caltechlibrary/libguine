@@ -144,9 +144,6 @@ $home-secondary-color: #19747d;
 
 #tpl-l-home {
   .equalheights {
-    a {
-      color: $home-secondary-color;
-    }
     figcaption {
       padding-inline: 15px;
       @media (min-width: 1200px) {
