@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/a1eaf96 */
+/* see https://github.com/caltechlibrary/libguine/commit/323fafe */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -30,15 +30,27 @@ h1, .s-lib-header h1, .h1, h2, .h2, h3, .h3 {
 }
 
 a {
-  color: #c75000;
+  --bs-link-color: #bd4b00;
+  --bs-link-hover-color: #bd4b00;
+  color: #bd4b00;
+  text-decoration: none;
+}
+a:visited {
+  color: #bd4b00;
 }
 a:active, a:focus, a:hover {
-  color: #c75000;
+  color: #bd4b00;
   text-decoration: underline 0.1em;
 }
 
 body {
   font-family: "Hind", sans-serif;
+}
+
+/* overrides springshare's external link icon style */
+.fa-external-link {
+  font-size: 12px !important;
+  color: #fff;
 }
 
 /* libcal/_base.scss */
@@ -55,7 +67,6 @@ html, body {
   margin-top: 5px;
 }
 
-/* approved for BS5 */
 /* libcal/_booking.scss */
 #s-lc-rm-cal-cont {
   /* the calendar styling breaks at larger text sizes */
@@ -218,5 +229,5 @@ html, body {
   padding-inline-start: 0;
 }
 .breadcrumb > .active {
-  color: #1e988a;
+  color: #19747d;
 }
