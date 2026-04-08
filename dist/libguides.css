@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/22d8da8 */
+/* see https://github.com/caltechlibrary/libguine/commit/10bd5ac */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2022,6 +2022,10 @@ a.post-title:visited:hover,
 #s-la-widget-16585 .s-la-faq-listing-updated,
 #s-la-widget-16585 .s-la-faq-listing-views {
   display: none;
+}
+
+.s-la-faq-listing-meta span.divider {
+  color: #000000 !important;
 }
 
 #home-bg.ca-bg {
