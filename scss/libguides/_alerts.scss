@@ -1,11 +1,11 @@
 @use "../common/colors" as *;
 
-@mixin alert-colors($base-color) {
+@mixin alert-colors($base-color, $text-color: $base-color) {
   background-color: mix(white, $base-color, 80%);
   border: none;
-  color: $base-color;
+  color: $text-color;
   .alert-link {
-    color: darken($base-color, 10%) !important;
+    color: darken($text-color, 10%) !important;
     text-decoration: underline;
     &:focus,
     &:hover {
@@ -20,7 +20,7 @@
   @include alert-colors($tarawera);
 }
 .alert-warning {
-  @include alert-colors($burnt);
+  @include alert-colors($burnt, darken($burnt, 15%));
 }
 .alert-danger {
   @include alert-colors($monza);
