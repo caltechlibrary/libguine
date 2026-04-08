@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/638ea56 */
+/* see https://github.com/caltechlibrary/libguine/commit/22d8da8 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -30,16 +30,16 @@ h1, .s-lib-header h1, .h1, h2, .h2, h3, .h3 {
 }
 
 a {
-  --bs-link-color: #c75000;
-  --bs-link-hover-color: #c75000;
-  color: #c75000;
+  --bs-link-color: #bd4b00;
+  --bs-link-hover-color: #bd4b00;
+  color: #bd4b00;
   text-decoration: none;
 }
 a:visited {
-  color: #c75000;
+  color: #bd4b00;
 }
 a:active, a:focus, a:hover {
-  color: #c75000;
+  color: #bd4b00;
   text-decoration: underline 0.1em;
 }
 
