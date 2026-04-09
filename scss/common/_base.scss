@@ -14,6 +14,8 @@ h1, .s-lib-header h1, .h1, h2, .h2, h3, .h3 { margin-block-end: 16px; }
 a {
   --bs-link-color: #bd4b00;
   --bs-link-hover-color: #bd4b00;
+}
+a:not(.btn) {
   color: #bd4b00;
   text-decoration: none;
   &:visited {
