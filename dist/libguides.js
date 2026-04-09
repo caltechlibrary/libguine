@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/f3f3603 //
+// see https://github.com/caltechlibrary/libguine/commit/8239a57 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -67,18 +67,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   else {
     var _public = true;
     console.log("‼️ PUBLIC");
-    // add customized Bootstrap JS to public-facing pages
-    const bootstrap_js = document.createElement("script");
-    bootstrap_js.id = "bootstrap-js";
-    bootstrap_js.src = "//libapps.s3.amazonaws.com/sites/64/include/bootstrap.min.js";
-    document.head.appendChild(bootstrap_js);
-    // Initialize Bootstrap 5 tooltips after script loads
-    bootstrap_js.onload = function() {
-      var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-      tooltipTriggerList.forEach(function(tooltipTriggerEl) {
-        new bootstrap.Tooltip(tooltipTriggerEl);
-      });
-    };
+    // Initialize Bootstrap 5 tooltips (Bootstrap provided by Springshare)
+    var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
     // Remove Website CSS from `Guides` Group content.
     if (document.getElementById("s-lib-bc-group")) {
       if (document.getElementById("s-lib-bc-group").textContent == "Guides") {
