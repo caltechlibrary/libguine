@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/10bd5ac */
+/* see https://github.com/caltechlibrary/libguine/commit/82b56a4 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -709,6 +709,9 @@ button.dropdown-toggle::after {
 }
 #footer-wrapper footer caption.s-lc-w-sr-only {
   color: #ffffff !important;
+}
+#footer-wrapper footer caption.sr-only {
+  color: #ffffff;
 }
 #footer-wrapper footer .s-lc-w-sr-only {
   position: absolute;
