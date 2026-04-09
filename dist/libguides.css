@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/4f3b1bf */
+/* see https://github.com/caltechlibrary/libguine/commit/6c98ca3 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -32,13 +32,16 @@ h1, .s-lib-header h1, .h1, h2, .h2, h3, .h3 {
 a {
   --bs-link-color: #bd4b00;
   --bs-link-hover-color: #bd4b00;
+}
+
+a:not(.btn) {
   color: #bd4b00;
   text-decoration: none;
 }
-a:visited {
+a:not(.btn):visited {
   color: #bd4b00;
 }
-a:active, a:focus, a:hover {
+a:not(.btn):active, a:not(.btn):focus, a:not(.btn):hover {
   color: #bd4b00;
   text-decoration: underline 0.1em;
 }
