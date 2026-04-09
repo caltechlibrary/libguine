@@ -80,6 +80,11 @@
     caption.s-lc-w-sr-only {
     color: #ffffff !important;
     }
+
+    caption.sr-only {
+    color:#ffffff;
+    }
+
     .s-lc-w-sr-only {
       position: absolute;
       width: 1px;
@@ -187,3 +192,4 @@
 #footer-breadcrumbs #s-lib-bc-page {
   color: #2cc5b0 !important;
 }
+
