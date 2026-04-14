@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/e22b81c */
+/* see https://github.com/caltechlibrary/libguine/commit/9fa908a */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -80,9 +80,9 @@ html, body {
 }
 
 a#s-lc-public-skiplink {
-  padding: 10px;
+  padding: 7px;
   position: absolute;
-  top: -100%;
+  top: 0;
   left: 0;
   border: 2px solid #000;
   border-radius: 4px;
