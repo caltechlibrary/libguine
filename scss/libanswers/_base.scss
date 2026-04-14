@@ -30,4 +30,8 @@ a:not(.btn, .collapsible-toggle, .accordion-toggle) {
       background-color: darken($jungle, 15%);                                   
       border-color: darken($jungle, 15%);                                       
     }                                                                           
-  }     
+  }   
+  
+  .s-srch-params {
+    background-color: #F5F5F5 !important;
+  }
