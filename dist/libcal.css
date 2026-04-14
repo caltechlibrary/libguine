@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/b409aeb */
+/* see https://github.com/caltechlibrary/libguine/commit/c06580a */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -77,6 +77,18 @@ html, body {
 .datepicker table tr td.disabled,
 .datepicker table tr td.new {
   color: #6B6B6B !important;
+}
+
+#s-lc-public-skiplink {
+  padding: 10px;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  border: 2px solid #000;
+  border-radius: 4px;
+  transition: top 1s ease-out, background 1s linear;
+  z-index: 100;
+  background-color: #fff;
 }
 
 span.label.label-info.s-lc-eventcard-pill {
