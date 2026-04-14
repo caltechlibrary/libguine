@@ -27,6 +27,18 @@ html, body {
     color: #6B6B6B !important;
 }
 
+#s-lc-public-skiplink {
+    padding: 10px;
+    position: absolute;
+    top: calc(-100%);
+    left: 0;
+    border: 2px solid #000;
+    border-radius: 4px;
+    transition: top 1s ease-out, background 1s linear;
+    z-index: 100;
+    background-color: #fff;
+}
+
 span.label.label-info.s-lc-eventcard-pill {
     font-size:78% !important;
 }
