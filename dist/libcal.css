@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/0724a0c */
+/* see https://github.com/caltechlibrary/libguine/commit/b409aeb */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -77,6 +77,10 @@ html, body {
 .datepicker table tr td.disabled,
 .datepicker table tr td.new {
   color: #6B6B6B !important;
+}
+
+span.label.label-info.s-lc-eventcard-pill {
+  font-size: 78% !important;
 }
 
 .btn-success {
