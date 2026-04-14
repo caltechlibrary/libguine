@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/caff7c3 */
+/* see https://github.com/caltechlibrary/libguine/commit/0724a0c */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -74,7 +74,8 @@ html, body {
   background-color: #F0F0F0 !important;
 }
 
-.datepicker table tr td.disabled {
+.datepicker table tr td.disabled,
+.datepicker table tr td.new {
   color: #6B6B6B !important;
 }
 
