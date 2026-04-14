@@ -8,10 +8,6 @@ html, body {
     font-size: revert;
 }
 
-#s-lc-public-skiplink {
-    // NOTE hidden skip link background color shows if block padding is 10px
-    padding-block: 5px;
-}
 
 .s-lc-c-evt-title {
     font-size: 16px;
@@ -30,13 +26,16 @@ html, body {
 a#s-lc-public-skiplink {
     padding: 7px;
     position: absolute;
-    top: 0;
+    top: calc(-100%);
     left: 0;
     border: 2px solid #000;
     border-radius: 4px;
     transition: top 1s ease-out, background 1s linear;
     z-index: 100;
     background-color: #fff;
+    &:focus {
+        top: 0;
+    }
 }
 
 span.label.label-info.s-lc-eventcard-pill {
