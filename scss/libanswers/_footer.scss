@@ -34,3 +34,7 @@ button[name="emailuser"] {
     border-color: color.adjust($jungle, $lightness: -15%);
   }
 }
+
+caption.s-lc-w-sr-only {
+    color: #ffffff !important;
+    }
