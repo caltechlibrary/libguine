@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/0676cbe */
+/* see https://github.com/caltechlibrary/libguine/commit/94d1e8e */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -249,4 +249,8 @@ button[name=emailuser]:hover, button[name=emailuser]:focus {
 button[name=emailuser]:active {
   background-color: #0c393d;
   border-color: #0c393d;
+}
+
+caption.s-lc-w-sr-only {
+  color: #ffffff !important;
 }
