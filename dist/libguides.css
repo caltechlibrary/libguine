@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/0f16c8a */
+/* see https://github.com/caltechlibrary/libguine/commit/8025d2d */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2439,6 +2439,10 @@ a.post-title:visited:hover,
 
 #s-lg-page-prevnext .pagination {
   display: none !important;
+}
+
+.form-control {
+  --bs-border-color: #767676;
 }
 
 libwizard-question p, libwizard-question label {
