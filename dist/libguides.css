@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/8025d2d */
+/* see https://github.com/caltechlibrary/libguine/commit/7b0e8dd */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -107,6 +107,11 @@ body {
 
 .s-lg-no-val, .s-lg-text-greyout, .s-lib-greyout {
   color: #555 !important;
+}
+
+/* Libanswer FAQ Widgets */
+.s-la-widget .s-la-faq-listing-meta .divider {
+  color: #999;
 }
 
 .alert-success {
