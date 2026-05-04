@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7c8aa05 */
+/* see https://github.com/caltechlibrary/libguine/commit/6739ada */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -151,10 +151,10 @@ body {
 .alert-danger {
   background-color: #f5ced5;
   border: none;
-  color: #cf0a2c;
+  color: #b20926;
 }
 .alert-danger .alert-link {
-  color: #9e0822 !important;
+  color: #81071c !important;
   text-decoration: underline;
 }
 .alert-danger .alert-link:focus, .alert-danger .alert-link:hover {
