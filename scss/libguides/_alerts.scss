@@ -23,7 +23,7 @@
   @include alert-colors($burnt, $burnt-alert);
 }
 .alert-danger {
-  @include alert-colors($monza);
+  @include alert-colors($monza, $monza-alert);
 }
 .alert {
   margin-block-end: 10px;
