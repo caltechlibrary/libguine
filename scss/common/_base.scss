@@ -37,3 +37,26 @@ body { font-family: "Hind", sans-serif }
     font-size: 12px !important;
     color: #fff;
 }
+
+/* overriding a-z badges */
+
+.s-lg-az-result-badge-popular {
+    background-color: #3f4254;
+    color: #ffffff;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.s-lg-az-result-badge-featured {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+s-lg-az-result-badge-new {
+  background-color: #286090;
+  color: #ffffff;
+    padding: 2px;
+    border-radius: 4px;
+}
