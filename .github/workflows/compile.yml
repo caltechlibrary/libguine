@@ -6,10 +6,16 @@ on:
       recompile:
         required: false
         type: string
+    outputs:
+      has_artifacts:
+        description: "Whether any artifacts were compiled"
+        value: ${{ jobs.compile.outputs.has_artifacts }}
 
 jobs:
   compile:
     runs-on: ubuntu-latest
+    outputs:
+      has_artifacts: ${{ steps.check_artifacts.outputs.has_artifacts }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -51,7 +57,16 @@ jobs:
         env:
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
         run: python .github/workflows/compile.py ${{ inputs.recompile }};
+      - name: Check for artifacts
+        id: check_artifacts
+        run: |
+          if [ -n "$(ls -A artifacts)" ]; then
+            echo "has_artifacts=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_artifacts=false" >> $GITHUB_OUTPUT
+          fi
       - name: Upload artifacts
+        if: steps.check_artifacts.outputs.has_artifacts == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: compile-${{ github.sha }}
