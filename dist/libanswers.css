@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7408059 */
+/* see https://github.com/caltechlibrary/libguine/commit/2daf159 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -71,7 +71,7 @@ body {
   border-radius: 4px;
 }
 
-s-lg-az-result-badge-new {
+.s-lg-az-result-badge-new {
   background-color: #286090;
   color: #ffffff;
   padding: 2px;
