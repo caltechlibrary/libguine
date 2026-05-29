@@ -17,7 +17,7 @@ a {
 }
 a:not(.btn) {
   color: #bd4b00;
-  text-decoration: none;
+  text-decoration: underline;
   &:visited {
     color: #bd4b00;
   }

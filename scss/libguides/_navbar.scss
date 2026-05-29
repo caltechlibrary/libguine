@@ -176,6 +176,11 @@ button.dropdown-toggle::after {
   display: none;
 }
 
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:visited {
+  text-decoration: none;
+}
+
 .navbar-nav .nav-link:visited {
   color: #000;
 }
