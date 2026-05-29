@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/442bef1 */
+/* see https://github.com/caltechlibrary/libguine/commit/17ea3b8 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1838,17 +1838,17 @@ a.post-title:visited:hover,
 }
 @media (min-width: 768px) {
   #s-lg-box-wrapper-33997298 {
-    margin-block: 45px;
+    margin-block: 35px;
   }
 }
 @media (min-width: 992px) {
   #s-lg-box-wrapper-33997298 {
-    margin-block: 60px;
+    margin-block: 40px;
   }
 }
 @media (min-width: 1200px) {
   #s-lg-box-wrapper-33997298 {
-    margin-block: 75px;
+    margin-block: 40px;
   }
 }
 #s-lg-box-wrapper-33997298 .alert:last-of-type {
