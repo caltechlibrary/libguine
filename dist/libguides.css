@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/bac7749 */
+/* see https://github.com/caltechlibrary/libguine/commit/442bef1 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2473,7 +2473,14 @@ a.post-title:visited:hover,
 }
 
 p.libsearch-disclaimer {
-  margin-top: 1rem;
+  margin-top: 22px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 90%;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.005em;
 }
 
 libwizard-question p, libwizard-question label {
