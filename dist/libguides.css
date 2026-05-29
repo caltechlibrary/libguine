@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/8d03756 */
+/* see https://github.com/caltechlibrary/libguine/commit/bac7749 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1792,6 +1792,11 @@ a.post-title:visited:hover,
 
 #api_hours_today_iid3271_lid0 caption.sr-only {
   color: #ffffff !important;
+}
+
+#home-bg h2 {
+  color: #fff !important;
+  font-family: "Hind", sans-serif !important;
 }
 
 #s-lg-box-28870775 .popular-searches a {
