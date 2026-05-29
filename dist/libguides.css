@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7ae935f */
+/* see https://github.com/caltechlibrary/libguine/commit/08c0e94 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -831,17 +831,19 @@ button.dropdown-toggle::after {
 
 /* IDEA statement */
 .idea-container {
-  margin: 2rem;
-  padding: 0.5em 5rem;
-  text-align: center;
-  border-top: 1px solid #135071;
-  border-bottom: 1px solid #135071;
+  text-align: left;
+  padding-top: 75px;
+  margin: auto;
 }
 
 .idea-statement {
-  font-style: italic;
-  font-size: 0.9rem;
-  line-height: 1.8rem;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: none;
 }
 
 #footer-breadcrumbs .breadcrumb {
