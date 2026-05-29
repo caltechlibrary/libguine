@@ -81,8 +81,15 @@
   --bs-border-color: #767676;
 }
 
-// libserach box on homepage
+// libserach box disclaimer on homepage
 
 p.libsearch-disclaimer {
-    margin-top: 1rem;
+    margin-top: 22px;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 90%;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    letter-spacing: 0.005em;
 }
