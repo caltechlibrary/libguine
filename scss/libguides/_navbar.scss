@@ -178,11 +178,8 @@ button.dropdown-toggle::after {
 
 .navbar-nav .nav-link,
 .navbar-nav .nav-link:visited {
+  color: #333;
   text-decoration: none;
-}
-
-.navbar-nav .nav-link:visited {
-  color: #000;
 }
 
 .navbar-nav .nav-link:hover,
@@ -205,7 +202,7 @@ button.dropdown-toggle::after {
 // fix nav link colors (BS5: override semi-transparent default; applies to all pages incl. blog)
 .navbar-nav {
   --bs-nav-link-hover-color: #fff;
-  --bs-nav-link-color: #000;
+  --bs-nav-link-color: #333;
 }
 
 .navbar-nav .show > .nav-link,
