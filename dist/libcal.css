@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/605688c */
+/* see https://github.com/caltechlibrary/libguine/commit/d236c61 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -83,6 +83,14 @@ body {
 
 .btn-primary {
   background-image: none;
+}
+
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #fff;
 }
 
 /* libcal/_base.scss */
