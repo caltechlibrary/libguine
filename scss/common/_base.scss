@@ -71,6 +71,9 @@ body { font-family: "Hind", sans-serif }
 .btn-primary:visited,
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:active {
+.btn-primary:active,
+.btn-primary:visited:hover,
+.btn-primary:visited:focus,
+.btn-primary:visited:active {
     color: #fff;
   }
