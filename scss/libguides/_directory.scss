@@ -36,3 +36,9 @@
     @extend %directory;
   }
 }
+
+// adjusting padding
+
+ .staff figcaption {
+    margin-block-start: 1rem;
+  }
