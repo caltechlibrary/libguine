@@ -20,7 +20,7 @@
         <div class="float-end">
           <ul class="list-inline">
             <li class="list-inline-item"><a href="/borrow/accounts"><span class="d-none d-md-inline">My Library </span>Accounts</a></li>
-            <li class="list-inline-item"><a href="/contact-us">Contact<span class="d-none d-md-inline"> Us</span></a></li>
+            <li class="list-inline-item"><a href="/about/contact-us">Contact<span class="d-none d-md-inline"> Us</span></a></li>
             <li class="list-inline-item"><a href="/about/support">Support<span class="d-none d-md-inline"> Us</span></a></li>
             <li class="list-inline-item">
               <!--#include file='header-search.html' -->
