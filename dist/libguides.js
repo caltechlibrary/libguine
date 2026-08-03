@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/010ede6 //
+// see https://github.com/caltechlibrary/libguine/commit/09e5f45 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -29,6 +29,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // remove elements that conflict with the LibGuides admin UI
     document.getElementById("libguides-css")?.remove();
     document.getElementById("bootstrap-css")?.remove();
+    // SpringShare's BS5 admin JS (springSpace.UI.alertBS5) expects this modal
+    // to exist at load; our custom page templates only supply the legacy
+    // #s-lib-alert block, so box edit panels (gear icons) silently fail
+    if (!document.getElementById("s-lib-alert-content-bs5")) {
+      const alertModal = document.createElement("div");
+      alertModal.id = "s-lib-alert-bs5";
+      alertModal.className = "modal fade";
+      alertModal.tabIndex = -1;
+      alertModal.setAttribute("aria-hidden", "true");
+      alertModal.innerHTML = `
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="s-lib-alert-title-bs5" class="modal-title"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="s-lib-alert-loading-bs5"></div>
+              <div id="s-lib-alert-content-bs5"></div>
+            </div>
+            <div id="s-lib-alert-buttons-bs5" class="modal-footer"></div>
+          </div>
+        </div>`;
+      document.body.appendChild(alertModal);
+    }
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
