@@ -1,2 +1,5 @@
-pillow==12.2.0
-wheel==0.46.2
+playwright==1.39.0
+arrow==1.4.0
+beautifulsoup4==4.15.0
+bleach==6.4.0
+feedparser==6.0.14
