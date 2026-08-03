@@ -21,12 +21,12 @@ const GUIDES_ACCESSIBILITY_CSS = `
 
 // context hacks
 document.addEventListener("DOMContentLoaded", function(event) {
-  if (document.getElementById("s-lg-admin-command-bar")) {
+  if (location.hostname.endsWith(".libapps.com")) {
     var admin = true;
     console.log("‼️ ADMIN");
     // remove elements that conflict with the LibGuides admin UI
-    document.getElementById("libguides-css").remove();
-    document.getElementById("bootstrap-css").remove();
+    document.getElementById("libguides-css")?.remove();
+    document.getElementById("bootstrap-css")?.remove();
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
