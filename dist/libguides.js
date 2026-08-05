@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/65268e7 //
+// see https://github.com/caltechlibrary/libguine/commit/98a2e6e //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -54,9 +54,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         </div>`;
       document.body.appendChild(alertModal);
     }
+    // SpringShare now ships this modal inside a box column, which can sit in a
+    // wrapper we mark d-none; move it to the body so it can render
+    const alertBS5 = document.getElementById("s-lib-alert-bs5");
+    if (alertBS5 && alertBS5.parentElement !== document.body) {
+      document.body.appendChild(alertBS5);
+    }
     // display admin-only content (elements have style="display:none" set)
     // see https://stackoverflow.com/a/54819633 regarding fancy syntax
     [...document.getElementsByClassName("c3-admin-show")].forEach(e => e.removeAttribute("style"));
+    // hide public-only content that duplicates the admin instruction cards
+    [...document.getElementsByClassName("c3-admin-hide")].forEach(e => e.classList.add("d-none"));
     // ensure all details elements are open
     [...document.querySelectorAll("details")].forEach(e => e.open = true);
     // expand all details elements inside the WYSIWYG editor
@@ -155,20 +163,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
       var content = true;
       console.log("‼️ CONTENT");
-      // hide landing-only elements from content pages; never in the admin
-      // editor, where hiding a wrapper also hides the boxes inside it
-      if (!admin) {
-        [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("d-none"));
-      }
+      // hide landing-only elements from content pages
+      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("d-none"));
     }
     else {
       var landing = true;
       console.log("‼️ LANDING");
-      // hide content-only elements from landing pages; never in the admin
-      // editor, where hiding a wrapper also hides the boxes inside it
-      if (!admin) {
-        [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
-      }
+      // hide content-only elements from landing pages
+      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
     }
   }
   if (document.getElementById("s-lg-blog-content")) {
