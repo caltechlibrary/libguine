@@ -153,14 +153,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (document.getElementById("s-lg-guide-tabs") && !document.getElementById("s-lg-guide-tabs").firstElementChild.firstElementChild.classList.contains("active")) {
       var content = true;
       console.log("‼️ CONTENT");
-      // hide landing-only elements from content pages
-      [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("d-none"));
+      // hide landing-only elements from content pages; never in the admin
+      // editor, where hiding a wrapper also hides the boxes inside it
+      if (!admin) {
+        [...document.getElementsByClassName("c3-content-hide")].forEach(e => e.classList.add("d-none"));
+      }
     }
     else {
       var landing = true;
       console.log("‼️ LANDING");
-      // hide content-only elements from landing pages
-      [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
+      // hide content-only elements from landing pages; never in the admin
+      // editor, where hiding a wrapper also hides the boxes inside it
+      if (!admin) {
+        [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
+      }
     }
   }
   if (document.getElementById("s-lg-blog-content")) {
