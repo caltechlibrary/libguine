@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/ed8c7de */
+/* see https://github.com/caltechlibrary/libguine/commit/5a35efd */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1276,15 +1276,6 @@ summary > * {
 }
 .blog-post #s-lg-blog-posts + div {
   margin-block-start: 90px;
-}
-
-#s-lg-blog-featured-post {
-  margin-block-start: 0 !important;
-}
-
-.s-lg-blog-recent-posts a {
-  line-height: 1;
-  padding-block: 0.25em;
 }
 
 /* Blog sidebar styles */
