@@ -65,6 +65,7 @@ jobs:
     needs: build
     if: needs.build.outputs.changes == 'true'
     permissions:
+      contents: read  # required by fragments.yml
       pages: write
       id-token: write
     uses: ./.github/workflows/fragments.yml
