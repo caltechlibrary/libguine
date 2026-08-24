@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 
 FEED_URL = "https://library.caltech.edu/blogs/rss.xml?blogConfigId=1449"
 BLOG_URL = "https://library.caltech.edu/blog"
-RECENT_COUNT = 3
-EXCERPT_LENGTH = 200
+POST_COUNT = 2
+EXCERPT_LENGTH = 400
 
 MONTHS = [
     "January", "February", "March", "April", "May", "June",
@@ -39,7 +39,7 @@ def make_excerpt(text):
     if len(text) <= EXCERPT_LENGTH:
         return text
     cut = text[:EXCERPT_LENGTH].rfind(" ")
-    return text[: cut if cut > 0 else EXCERPT_LENGTH] + "…"
+    return text[: cut if cut > 0 else EXCERPT_LENGTH] + "..."
 
 
 def first_image(raw):
@@ -86,7 +86,7 @@ def parse_featured(html):
     }
 
 
-def parse_recent(feed_xml, exclude_slug):
+def parse_recent(feed_xml, exclude_slug, limit):
     entries = []
     for entry in feedparser.parse(feed_xml).entries:
         link = entry.get("link", "").strip()
@@ -102,31 +102,31 @@ def parse_recent(feed_xml, exclude_slug):
                 "date_sort": entry.get("updated", ""),
                 "date": format_date(entry.get("updated", "")),
                 "excerpt": make_excerpt(strip_html(content)),
+                "image": first_image(content),
             }
         )
     # the feed hoists a featured post to the top out of date order
     entries.sort(key=lambda item: item["date_sort"], reverse=True)
-    return entries[:RECENT_COUNT]
+    return entries[:limit]
 
 
 def escape(value):
     return bleach.clean(value or "", tags=[], strip=True)
 
 
-def render_post(post, featured=False):
-    classes = "cl-blog-item cl-blog-item--featured" if featured else "cl-blog-item"
-    parts = [f'  <li class="{classes}">']
-    if featured:
-        parts.append('    <p class="cl-blog-badge">Featured</p>')
-        if post.get("image"):
-            parts.append(f'    <img class="cl-blog-image" src="{escape(post["image"])}" alt="">')
+def render_post(post, index):
+    # matches the markup libguides.js builds from the SpringShare blog widget
+    parts = [f'  <li id="lib-blogpost{index}">']
     parts.append(
-        f'    <h3 class="cl-blog-title"><a href="{escape(post["link"])}">{escape(post["title"])}</a></h3>'
+        f'    <h3><a href="{escape(post["link"])}">{escape(post["title"])}</a></h3>'
     )
     if post.get("date"):
-        parts.append(f'    <p class="cl-blog-meta text-secondary">{escape(post["date"])}</p>')
+        parts.append(f'    <div class="post-date text-secondary">{escape(post["date"])}</div>')
+    if post.get("image"):
+        parts.append(f'    <img class="lib-blogpost-img" src="{escape(post["image"])}" alt="">')
     if post.get("excerpt"):
-        parts.append(f'    <p class="cl-blog-excerpt">{escape(post["excerpt"])}</p>')
+        parts.append(f'    <p>{escape(post["excerpt"])}</p>')
+    parts.append(f'    <a href="{escape(post["link"])}" class="read-more">View Full Post</a>')
     parts.append("  </li>")
     return "\n".join(parts)
 
@@ -145,17 +145,18 @@ if featured_post:
             featured_post["date"] = format_date(entry.get("updated", "")) or featured_post["date"]
             break
 
-recent_posts = parse_recent(feed_xml, slug(featured_post["link"]) if featured_post else None)
+recent_posts = parse_recent(
+    feed_xml,
+    slug(featured_post["link"]) if featured_post else None,
+    POST_COUNT - 1 if featured_post else POST_COUNT,
+)
 
-rendered = []
-if featured_post:
-    rendered.append(render_post(featured_post, featured=True))
-for recent_post in recent_posts:
-    rendered.append(render_post(recent_post))
+posts = ([featured_post] if featured_post else []) + recent_posts
+rendered = [render_post(post, index) for index, post in enumerate(posts)]
 
 with open("fragments/blog/library.html", "w") as fp:
     if rendered:
-        fp.write('<ul class="cl-blog-list">\n')
+        fp.write('<ul class="cl-blog-widget">\n')
         fp.write("\n".join(rendered))
         fp.write("\n</ul>\n")
     else:
