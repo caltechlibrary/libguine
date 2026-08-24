@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/5a35efd */
+/* see https://github.com/caltechlibrary/libguine/commit/7275e4e */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2078,6 +2078,60 @@ a.post-title:visited:hover,
 
 .s-la-faq-listing-meta span.divider {
   color: #000000 !important;
+}
+
+.cl-blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cl-blog-item {
+  margin-block-end: 24px;
+}
+.cl-blog-item:last-of-type {
+  margin-block-end: 0;
+}
+
+.cl-blog-item--featured {
+  border-inline-start: 3px solid #19747d;
+  padding-inline-start: 16px;
+}
+
+.cl-blog-badge {
+  background-color: #19747d;
+  border-radius: 0.25em;
+  color: #fff;
+  display: inline-block;
+  font-size: small;
+  line-height: 1;
+  margin-block-end: 8px;
+  padding: 0.3em 0.6em;
+}
+
+.cl-blog-image {
+  margin-block-end: 8px;
+  max-width: 100%;
+}
+
+.cl-blog-title {
+  font-size: 18px;
+  margin-block: 0 4px;
+}
+.cl-blog-title a {
+  text-decoration: none;
+}
+.cl-blog-title a:hover, .cl-blog-title a:focus {
+  text-decoration: underline;
+}
+
+.cl-blog-meta {
+  font-size: small;
+  margin-block: 0 4px;
+}
+
+.cl-blog-excerpt {
+  margin-block-end: 0;
 }
 
 #home-bg.ca-bg {
