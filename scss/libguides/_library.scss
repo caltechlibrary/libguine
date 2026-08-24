@@ -292,3 +292,53 @@ $home-secondary-color: #19747d;
 .s-la-faq-listing-meta span.divider {
     color: #000000 !important;
 }
+
+// Blog Posts
+// fragment built by .github/workflows/blog.py
+.cl-blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cl-blog-item {
+  margin-block-end: 24px;
+  &:last-of-type {
+    margin-block-end: 0;
+  }
+}
+.cl-blog-item--featured {
+  border-inline-start: 3px solid $home-secondary-color;
+  padding-inline-start: 16px;
+}
+.cl-blog-badge {
+  background-color: $home-secondary-color;
+  border-radius: .25em;
+  color: #fff;
+  display: inline-block;
+  font-size: small;
+  line-height: 1;
+  margin-block-end: 8px;
+  padding: .3em .6em;
+}
+.cl-blog-image {
+  margin-block-end: 8px;
+  max-width: 100%;
+}
+.cl-blog-title {
+  font-size: 18px;
+  margin-block: 0 4px;
+  a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+.cl-blog-meta {
+  font-size: small;
+  margin-block: 0 4px;
+}
+.cl-blog-excerpt {
+  margin-block-end: 0;
+}

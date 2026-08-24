@@ -1,12 +1,8 @@
-name: Build & Deploy Notices
+name: Build & Deploy Blog Posts
 on:
   schedule:
-    # as often as possible during work hours Monday–Friday (UTC)
-    # (becomes complicated due to DST & the Los Angeles time zone)
-    - cron: '* 15-23 * * 1-5'
-    - cron: '* 0-2 * * 2-6'
-    # once a day otherwise
-    - cron: '8 8 * * *'
+    # blog posts go up once or twice a month, so once a day is plenty
+    - cron: '20 13 * * *'
   workflow_dispatch:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -21,8 +17,6 @@ jobs:
       changes: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2  # in order to determine changed files
 
       - name: Set up Python 3.x
         uses: actions/setup-python@v5
@@ -32,19 +26,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install arrow beautifulsoup4 bleach feedparser
+          pip install beautifulsoup4 bleach feedparser
 
       - name: Create fragments directory
-        run: mkdir -p fragments/notices
+        run: mkdir -p fragments/blog
 
       - name: 🐞 python --version
         run: python --version
 
-      - name: Build notices fragments from RSS feed
-        run: python .github/workflows/notices.py ${{ secrets.LIBCAL_RSS_NOTICES_TODAY_URL }}
-
-      - name: Generate fragments/notices/index.html with tree
-        run: tree -H '.' -L 1 --noreport --charset utf-8 -o fragments/notices/index.html fragments/notices
+      - name: Build blog fragment from feed and blog page
+        run: python .github/workflows/blog.py
 
       - name: Configure Git identity
         run: |
@@ -53,10 +44,10 @@ jobs:
       - name: Commit changes
         id: commit
         run: echo "changed=false" >> $GITHUB_OUTPUT;
-          if [ -n "$(git ls-files --others --modified)" ];
+          git add fragments/blog;
+          if ! git diff --staged --quiet;
           then
-            git ls-files --others --modified | xargs git add --all;
-            git commit -m "update notices fragments";
+            git commit -m "update blog fragment";
             git push;
             echo "changed=true" >> $GITHUB_OUTPUT;
           fi;
