@@ -1,8 +1,13 @@
 name: Build & Deploy Blog Posts
 on:
   schedule:
-    # blog posts go up once or twice a month, so once a day is plenty
-    - cron: '20 13 * * *'
+    # matches notices.yml so there is one schedule to remember
+    # as often as possible during work hours Monday–Friday (UTC)
+    # (becomes complicated due to DST & the Los Angeles time zone)
+    - cron: '* 15-23 * * 1-5'
+    - cron: '* 0-2 * * 2-6'
+    # once a day otherwise
+    - cron: '8 8 * * *'
   workflow_dispatch:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
