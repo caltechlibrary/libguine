@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/47e680a */
+/* see https://github.com/caltechlibrary/libguine/commit/c6bf248 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -1245,6 +1245,12 @@ summary > * {
 
 .staff figcaption {
   margin-block-start: 1rem;
+}
+
+figure.staff img {
+  aspect-ratio: 3/4;
+  width: 100%;
+  height: auto;
 }
 
 .s-lib-header h1 {
