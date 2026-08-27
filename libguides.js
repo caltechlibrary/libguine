@@ -416,12 +416,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       metaContainer.classList.remove("gap-2", "gap-sm-4");
     });
   }
-  // PAGE-SPECIFIC OVERRIDES
-  // hide the sidebar navigation on the DocuServe page
-  if (_public && location.pathname.replace(/\/$/, "") === "/borrow/docuserve") {
-    document.getElementById("s-lg-col-2")?.classList.add("d-none");
-  }
-});
+ 
 // keep menu open upon non-link click within
 $(document).ready(function() {
   $('.megatoggle').on({
