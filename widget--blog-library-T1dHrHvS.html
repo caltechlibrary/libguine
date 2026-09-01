@@ -3,7 +3,7 @@
 <script>
   async function fetchBlogPosts() {
     try {
-      let response = await fetch('https://caltechlibrary.github.io/libguine/blog/library.html');
+      let response = await fetch('https://software.library.caltech.edu/libguine/blog/library.html');
       document.getElementById('blog-library-T1dHrHvS').innerHTML = await response.text();
     } catch (e) {
       console.log('fetchBlogPosts error:' + e);
