@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/c6bf248 */
+/* see https://github.com/caltechlibrary/libguine/commit/ce76430 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -233,6 +233,14 @@ body {
 
 .branding .dropdown-toggle {
   border: none;
+}
+
+.branding nav a,
+.branding nav a:visited,
+.branding nav a:active,
+.branding nav a:focus,
+.branding nav a:hover {
+  text-decoration: none;
 }
 
 .branding .fa-search {
@@ -1847,7 +1855,7 @@ a.post-title:visited:hover,
   outline-style: dotted;
 }
 
-#home-bg nav {
+#home-bg .navbar {
   background-color: rgba(255, 255, 255, 0.1);
   padding-block: 0;
 }
