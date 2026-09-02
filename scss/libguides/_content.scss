@@ -60,3 +60,14 @@
 @include section-content("pwl", #644b78, #4d7b2f);
 @include section-content("ptt", #a02276, #727479);
 @include section-content("asc", #c75000, #617572);
+
+// link lists converted to nav landmarks inside CMS content boxes
+.s-lib-box-content nav a,
+.s-lib-box-content nav a:visited {
+  text-decoration: none;
+}
+.s-lib-box-content nav a:active,
+.s-lib-box-content nav a:focus-visible,
+.s-lib-box-content nav a:hover {
+  text-decoration: underline;
+}
