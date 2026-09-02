@@ -416,7 +416,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       metaContainer.classList.remove("gap-2", "gap-sm-4");
     });
   }
- 
+});
+
 // keep menu open upon non-link click within
 $(document).ready(function() {
   $('.megatoggle').on({
@@ -437,22 +438,24 @@ $(document).ready(function() {
 
 // move focus into the header search field when its dropdown opens,
 // and back to the toggle when it closes
-document.addEventListener("DOMContentLoaded", function() {
-  const toggle = document.querySelector('.branding .dropdown-toggle[aria-label="Toggle Search"]');
-  const dropdown = toggle?.closest(".dropdown");
-  const input = dropdown?.querySelector('input[type="search"]');
-  if (!toggle || !input) return;
-  dropdown.addEventListener("shown.bs.dropdown", function() {
-    input.focus();
-  });
-  dropdown.addEventListener("hidden.bs.dropdown", function() {
-    const active = document.activeElement;
-    if (dropdown.contains(active)) {
-      toggle.focus();
-    } else if (!active || active.contains(dropdown)) {
-      toggle.focus({ preventScroll: true });
-    }
-  });
+// NOTE registered on document at parse time; this file is injected
+// dynamically, so DOMContentLoaded may already have fired
+const SEARCH_TOGGLE = '.branding .dropdown-toggle[aria-label="Toggle Search"]';
+document.addEventListener("shown.bs.dropdown", function(event) {
+  const toggle = event.target.closest?.(SEARCH_TOGGLE);
+  if (!toggle) return;
+  toggle.closest(".dropdown").querySelector('input[type="search"]')?.focus();
+});
+document.addEventListener("hidden.bs.dropdown", function(event) {
+  const toggle = event.target.closest?.(SEARCH_TOGGLE);
+  if (!toggle) return;
+  const dropdown = toggle.closest(".dropdown");
+  const active = document.activeElement;
+  if (dropdown.contains(active)) {
+    toggle.focus();
+  } else if (!active || active.contains(dropdown)) {
+    toggle.focus({ preventScroll: true });
+  }
 });
 
 /* ============================================================================
