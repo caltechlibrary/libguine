@@ -29,6 +29,13 @@ $branding-link-color: $text-color;
 .branding .dropdown-toggle {
   border: none;
 }
+.branding nav a,
+.branding nav a:visited,
+.branding nav a:active,
+.branding nav a:focus,
+.branding nav a:hover {
+  text-decoration: none;
+}
 .branding .fa-search {
   height: 32px;
   top: unset;

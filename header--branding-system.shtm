@@ -17,7 +17,7 @@
         </svg>
       </div>
       <div class="col-sm-8">
-        <div class="float-end">
+        <nav class="float-end" aria-label="Accounts">
           <ul class="list-inline">
             <li class="list-inline-item"><a href="/borrow/accounts"><span class="d-none d-md-inline">My Library </span>Accounts</a></li>
             <li class="list-inline-item"><a href="/about/contact-us">Contact<span class="d-none d-md-inline"> Us</span></a></li>
@@ -26,5 +26,5 @@
               <!--#include file='header-search.html' -->
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
