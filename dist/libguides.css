@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/ce76430 */
+/* see https://github.com/caltechlibrary/libguine/commit/f3ae250 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -236,11 +236,14 @@ body {
 }
 
 .branding nav a,
-.branding nav a:visited,
-.branding nav a:active,
-.branding nav a:focus,
-.branding nav a:hover {
+.branding nav a:visited {
   text-decoration: none;
+}
+
+.branding nav a:active,
+.branding nav a:focus-visible,
+.branding nav a:hover {
+  text-decoration: underline;
 }
 
 .branding .fa-search {
