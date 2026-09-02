@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/f3ae250 */
+/* see https://github.com/caltechlibrary/libguine/commit/4c26f23 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -986,6 +986,17 @@ summary > * {
 }
 .c3-asc #c3-sidenav li.active > a {
   background-color: #617572;
+}
+
+.s-lib-box-content nav a,
+.s-lib-box-content nav a:visited {
+  text-decoration: none;
+}
+
+.s-lib-box-content nav a:active,
+.s-lib-box-content nav a:focus-visible,
+.s-lib-box-content nav a:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 992px) {
