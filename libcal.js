@@ -19,3 +19,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
+// move focus into the header search field when its dropdown opens,
+// and back to the toggle when it closes
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector('.branding .dropdown-toggle[aria-label="Toggle Search"]');
+  const dropdown = toggle?.closest(".dropdown");
+  const input = dropdown?.querySelector('input[type="search"]');
+  if (!toggle || !input) return;
+  dropdown.addEventListener("shown.bs.dropdown", function() {
+    input.focus();
+  });
+  dropdown.addEventListener("hidden.bs.dropdown", function() {
+    const active = document.activeElement;
+    if (dropdown.contains(active)) {
+      toggle.focus();
+    } else if (!active || active.contains(dropdown)) {
+      toggle.focus({ preventScroll: true });
+    }
+  });
+});
+
