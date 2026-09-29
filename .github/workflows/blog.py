@@ -12,6 +12,8 @@ FEED_URL = "https://library.caltech.edu/blogs/rss.xml?blogConfigId=1449"
 BLOG_URL = "https://library.caltech.edu/blog"
 POST_COUNT = 2
 EXCERPT_LENGTH = 400
+# only posts carrying this LibGuides subject reach the home page
+SUBJECT = "Library News"
 
 MONTHS = [
     "January", "February", "March", "April", "May", "June",
@@ -60,6 +62,38 @@ def format_date(value):
     return f"{MONTHS[int(month) - 1]} {int(day)}, {year}"
 
 
+def subjects_of(node):
+    # multiple subjects are comma-separated inside the link text, and the
+    # featured block repeats its subject links for the responsive layout
+    names = []
+    for link in node.select("a.post-subjects-link"):
+        name = link.get_text(strip=True).rstrip(",").strip()
+        if name and name not in names:
+            names.append(name)
+    return names
+
+
+def post_link(node):
+    for parent in [node] + list(node.parents):
+        link = parent.find("a", href=True)
+        if link and "/blog" in link["href"]:
+            return link["href"].strip()
+    return None
+
+
+def subject_slugs(html):
+    # subjects exist only in the blog page markup, never in the feed
+    soup = BeautifulSoup(html, "html.parser")
+    slugs = set()
+    for link in soup.select("a.post-subjects-link"):
+        if link.get_text(strip=True).rstrip(",").strip() != SUBJECT:
+            continue
+        href = post_link(link)
+        if href:
+            slugs.add(slug(href))
+    return slugs
+
+
 def parse_featured(html):
     # the featured post is only marked in the public blog page markup
     soup = BeautifulSoup(html, "html.parser")
@@ -69,6 +103,8 @@ def parse_featured(html):
     link = container.find("a", href=True)
     heading = container.find(["h1", "h2", "h3"])
     if link is None or heading is None:
+        return None
+    if SUBJECT not in subjects_of(container):
         return None
     body = container.select_one(".post-text-content")
     body_html = body.decode_contents() if body else ""
@@ -86,11 +122,13 @@ def parse_featured(html):
     }
 
 
-def parse_recent(feed_xml, exclude_slug, limit):
+def parse_recent(feed_xml, allowed, exclude_slug, limit):
     entries = []
     for entry in feedparser.parse(feed_xml).entries:
         link = entry.get("link", "").strip()
         if not link or slug(link) == exclude_slug:
+            continue
+        if slug(link) not in allowed:
             continue
         content = ""
         if entry.get("content"):
@@ -135,6 +173,7 @@ def render_post(post, index):
 feed_xml = fetch(FEED_URL) if len(sys.argv) < 3 else open(sys.argv[1]).read()
 blog_html = fetch(BLOG_URL) if len(sys.argv) < 3 else open(sys.argv[2]).read()
 
+allowed_slugs = subject_slugs(blog_html)
 featured_post = parse_featured(blog_html)
 
 if featured_post:
@@ -147,6 +186,7 @@ if featured_post:
 
 recent_posts = parse_recent(
     feed_xml,
+    allowed_slugs,
     slug(featured_post["link"]) if featured_post else None,
     POST_COUNT - 1 if featured_post else POST_COUNT,
 )
@@ -162,5 +202,6 @@ with open("fragments/blog/library.html", "w") as fp:
     else:
         fp.write("<!-- NO POSTS -->")
 
+print(f"subject: {SUBJECT} ({len(allowed_slugs)} tagged posts on the blog page)")
 print(f"featured: {featured_post['title'] if featured_post else 'none'}")
 print(f"recent: {len(recent_posts)}")
