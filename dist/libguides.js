@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/1c28493 //
+// see https://github.com/caltechlibrary/libguine/commit/b4e8768 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -196,14 +196,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log(post_date);
           let first_img = items[i].getElementsByTagName("img")[0];
           console.log(first_img);
-          // TODO account for no p
-          // TODO account for br inside p
-          let first_p = items[i].getElementsByTagName("p")[0];
-          console.log(first_p);
-          let p_images = first_p.getElementsByTagName("img");
-          while(p_images.length > 0) {
-            p_images[0].parentNode.removeChild(p_images[0]);
+          // accounting for no p
+          let paragraphs = items[i].getElementsByTagName("p");
+          let text_p = null;
+          for (var j = 0; j < paragraphs.length; j++) {
+            if (paragraphs[j].textContent.trim().length > 0) {
+              text_p = paragraphs[j].cloneNode(true);
+              let p_images = text_p.getElementsByTagName("img");
+              while(p_images.length > 0) {
+                p_images[0].parentNode.removeChild(p_images[0]);
+              }
+              break;
+            }
           }
+          console.log(text_p);
           // create element
           items[i].innerHTML = "";
           title_link.removeAttribute("target");
@@ -220,7 +226,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             first_img.classList.add("blogpost-img");
             items[i].innerHTML += first_img.outerHTML;
           }
-          items[i].innerHTML += `<p>${first_p.innerHTML}</p>`;
+          if (text_p) {
+            items[i].innerHTML += `<p>${text_p.innerHTML}</p>`;
+          }
           items[i].innerHTML += `<a href="${title_link.href}" class="read-more">Read More . . .</a>`;
         }
         // NOTE images are not loaded by the end of the mutation observation
