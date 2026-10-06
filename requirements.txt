@@ -1,3 +1,7 @@
+# Not updating playwright on purpose. The automated deploy that uses it
+# is turned off for now. Don't bump this until deploy is turned back on;
+# when that happens, update this file and the deploy settings together,
+# then test it by hand before turning automation back on.
 playwright==1.39.0
 arrow==1.4.0
 beautifulsoup4==4.15.0
