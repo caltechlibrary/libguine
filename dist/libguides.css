@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/a4f233c */
+/* see https://github.com/caltechlibrary/libguine/commit/2591fd5 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -948,6 +948,13 @@ summary > * {
 }
 #c3-sidenav .dropdown-menu a {
   color: #333;
+}
+
+nav#c3-sidenav a {
+  text-decoration: none;
+}
+nav#c3-sidenav a:hover {
+  text-decoration: underline 0.1em;
 }
 
 .c3-abt.c3-content .c3-page-title {
