@@ -20,6 +20,12 @@
   .c3-quicklinks {
     @extend %right-aligned-arrow-list;
     margin-block: 30px;
+    nav a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline 0.1em;
+      }
+    }
   }
 }
 #c3-introduction-row {
