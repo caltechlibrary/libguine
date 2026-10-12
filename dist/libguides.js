@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/a7caa63 //
+// see https://github.com/caltechlibrary/libguine/commit/7c65c60 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
     }
   }
-  else if (_public && content) {
+  else if (_public && content && document.getElementById("c3-sidenav")) {
     document.body.classList.add("c3-content");
     // remove the 'active' class from a dropdown parent if a child is active
     if (document.getElementById("c3-sidenav").getElementsByClassName("active dropdown")[0]) {
