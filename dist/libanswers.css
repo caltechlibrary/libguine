@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/7ad23c7 */
+/* see https://github.com/caltechlibrary/libguine/commit/4143f8c */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -196,6 +196,12 @@ button[name=emailuser]:active {
 }
 #footer-wrapper footer .links {
   line-height: 2;
+}
+#footer-wrapper footer .links nav a {
+  text-decoration: none;
+}
+#footer-wrapper footer .links nav a:hover {
+  text-decoration: underline 0.1em;
 }
 #footer-wrapper footer .s-lc-w-today, #footer-wrapper footer .s-lc-w-today * {
   display: block;
