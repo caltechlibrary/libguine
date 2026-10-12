@@ -77,8 +77,10 @@
     background-color: $burnt;
   }
   &:not(.active) > a:hover, &:not(.active) > a:focus {
-    // using a similar style to the menu items in _navbar.scss
     background-color: transparent;
+  }
+  &:not(.active) > a:focus-visible {
+    // using a similar style to the menu items in _navbar.scss
     outline: $burnt solid medium;
   }
 }
