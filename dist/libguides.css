@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/2591fd5 */
+/* see https://github.com/caltechlibrary/libguine/commit/a7caa63 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2434,6 +2434,12 @@ a.post-title:visited:hover,
   }
 }
 
+.digital-exhibits-thumbnails .categories a {
+  text-decoration: none;
+}
+.digital-exhibits-thumbnails .categories a:hover {
+  text-decoration: underline 0.1em;
+}
 .digital-exhibits-thumbnails .categories a::after {
   color: #617572;
 }

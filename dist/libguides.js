@@ -1,4 +1,4 @@
-// see https://github.com/caltechlibrary/libguine/commit/2591fd5 //
+// see https://github.com/caltechlibrary/libguine/commit/a7caa63 //
 
 // ============================================================================
 // GUIDES GROUP: ACCESSIBILITY CSS OVERRIDES
@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // hide content-only elements from landing pages
       [...document.getElementsByClassName("c3-landing-hide")].forEach(e => e.classList.add("d-none"));
     }
+    document.querySelectorAll("#c3-sidenav a.active, .digital-exhibits-thumbnails .categories a.active").forEach(e => e.setAttribute("aria-current", "page"));
   }
   if (document.getElementById("s-lg-blog-content")) {
     var blog = true;
@@ -287,7 +288,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     [...document.getElementById("c3-sidenav").getElementsByClassName("d-inline-flex")].forEach(e => e.classList.remove("d-inline-flex"));
-    document.querySelectorAll("#c3-sidenav a.active").forEach(e => e.setAttribute("aria-current", "page"));
     // save link for use if needed
     const link = document.querySelector(".c3-asc #c3-sidenav > ul > li:first-of-type a");
     // remove landing page links in Archives sidebar (jQuery)
