@@ -60,6 +60,12 @@
     }
     .links {
       line-height: 2;
+      nav a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline 0.1em;
+        }
+      }
     }
     // hours
     .s-lc-w-today {
