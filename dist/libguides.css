@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/a7caa63 */
+/* see https://github.com/caltechlibrary/libguine/commit/ce47ed7 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2478,6 +2478,8 @@ a.post-title:visited:hover,
 }
 .digital-exhibits-thumbnails .nav-pills > li:not(.active) > a:hover, .digital-exhibits-thumbnails .nav-pills > li:not(.active) > a:focus {
   background-color: transparent;
+}
+.digital-exhibits-thumbnails .nav-pills > li:not(.active) > a:focus-visible {
   outline: #c75000 solid medium;
 }
 
