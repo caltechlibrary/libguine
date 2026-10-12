@@ -285,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-menu")].forEach(e => e.classList.remove("dropdown-menu"));
     [...document.getElementById("c3-sidenav").getElementsByClassName("dropdown-toggle")].forEach(e => e.remove());
     [...document.getElementById("c3-sidenav").getElementsByClassName("d-inline-flex")].forEach(e => e.classList.remove("d-inline-flex"));
+    document.querySelectorAll("#c3-sidenav a.active").forEach(e => e.setAttribute("aria-current", "page"));
     // save link for use if needed
     const link = document.querySelector(".c3-asc #c3-sidenav > ul > li:first-of-type a");
     // remove landing page links in Archives sidebar (jQuery)

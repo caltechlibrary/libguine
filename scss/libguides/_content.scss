@@ -40,6 +40,12 @@
     color: #333;
   }
 }
+nav#c3-sidenav a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline 0.1em;
+  }
+}
 @mixin section-content($name, $primary-color, $secondary-color) {
   .c3-#{$name} {
     &.c3-content {
