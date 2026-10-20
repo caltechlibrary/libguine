@@ -1,8 +1,22 @@
 <!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->
-<!-- see https://github.com/caltechlibrary/libguine/commit/368719c -->
+<!-- see https://github.com/caltechlibrary/libguine/commit/8f1ef47 -->
 
 <script type="module" src="https://media.library.caltech.edu/cl-webcomponents/cl-web-components.js"></script>  
-<script id="libguides-js" src="//libapps.s3.amazonaws.com/sites/64/include/libguides.js"></script>
+<script>
+(function () {
+  var test = false;
+  try {
+    var flag = new URLSearchParams(location.search).get("test");
+    if (flag === "on") localStorage.setItem("c3-test", "on");
+    if (flag === "off") localStorage.removeItem("c3-test");
+    test = localStorage.getItem("c3-test") === "on";
+  } catch (e) {}
+  var suffix = test ? "-test" : "";
+  if (test) console.log("‼️ TEST MODE");
+  document.write('<link rel="stylesheet" id="libguides-css" href="//libapps.s3.amazonaws.com/sites/64/include/libguides' + suffix + '.css">');
+  document.write('<script id="libguides-js" src="//libapps.s3.amazonaws.com/sites/64/include/libguides' + suffix + '.js"><\/script>');
+})();
+</script>
 
 <!-- hides the sidebar menu on the DocuServe page; styles live in head--system-css.html -->
 <script>
