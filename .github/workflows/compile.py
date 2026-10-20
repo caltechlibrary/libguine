@@ -7,10 +7,10 @@ import sys
 from pathlib import Path
 
 
-def compile_css(extent, github_commit):
+def compile_css(extent, github_commit, suffix):
     # NOTE avoid redundant artifact creation
-    if Path(f"artifacts/{extent}.css").is_file():
-        print(f"⚠️ file exists: artifacts/{extent}.css")
+    if Path(f"artifacts/{extent}{suffix}.css").is_file():
+        print(f"⚠️ file exists: artifacts/{extent}{suffix}.css")
         return
     # NOTE requires `sass` command
     subprocess.run(
@@ -19,13 +19,13 @@ def compile_css(extent, github_commit):
             "--no-charset",
             "--no-source-map",
             f"{extent}.scss",
-            f"artifacts/{extent}.css",
+            f"artifacts/{extent}{suffix}.css",
         ],
         check=True,
     )
-    with open(f"artifacts/{extent}.css", "r") as f:
+    with open(f"artifacts/{extent}{suffix}.css", "r") as f:
         css = f.read()
-    with open(f"artifacts/{extent}.css", "w") as f:
+    with open(f"artifacts/{extent}{suffix}.css", "w") as f:
         if github_commit:
             f.write(
                 f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"
@@ -54,28 +54,33 @@ def parse_nested_includes(wrapper, variant=None):
 
 def main(file):
     print(f"🐞 file: {file}")
+    if not Path(file).is_file():
+        print(f"⚠️ file not found, skipping: {file}")
+        return
     github_commit = (
         f'{os.environ.get("GITHUB_REPOSITORY")}/commit/{os.environ.get("GITHUB_SHA")}'
     )
+    # NOTE pushes to any branch other than main produce `-test` css and js files
+    suffix = "" if os.environ.get("BRANCH", "main") == "main" else "-test"
 
     if file.endswith(".scss"):
         # NOTE primary scss files do not have named parent directories
         extent = Path(file).parent.name if Path(file).parent.name else Path(file).stem
         if extent == "common":
             for extent in ["libanswers", "libguides", "libcal"]:
-                compile_css(extent, github_commit)
+                compile_css(extent, github_commit, suffix)
         else:
-            compile_css(extent, github_commit)
+            compile_css(extent, github_commit, suffix)
     elif file.endswith(".js"):
         extent = Path(file).stem
         # NOTE avoid redundant artifact creation
-        if Path(f"artifacts/{extent}.js").is_file():
-            print(f"🐞 file exists: artifacts/{extent}.js")
+        if Path(f"artifacts/{extent}{suffix}.js").is_file():
+            print(f"🐞 file exists: artifacts/{extent}{suffix}.js")
             return
-        shutil.copyfile(f"{extent}.js", f"artifacts/{extent}.js")
-        with open(f"artifacts/{extent}.js", "r") as f:
+        shutil.copyfile(f"{extent}.js", f"artifacts/{extent}{suffix}.js")
+        with open(f"artifacts/{extent}{suffix}.js", "r") as f:
             js = f.read()
-        with open(f"artifacts/{extent}.js", "w") as f:
+        with open(f"artifacts/{extent}{suffix}.js", "w") as f:
             if github_commit:
                 f.write(
                     f"// see https://github.com/{github_commit[:len(github_commit) - 33]} //\n\n"
@@ -84,13 +89,13 @@ def main(file):
     elif file.endswith(".css"):
         extent = Path(file).stem
         # NOTE avoid redundant artifact creation
-        if Path(f"artifacts/{extent}.css").is_file():
-            print(f"🐞 file exists: artifacts/{extent}.css")
+        if Path(f"artifacts/{extent}{suffix}.css").is_file():
+            print(f"🐞 file exists: artifacts/{extent}{suffix}.css")
             return
-        shutil.copyfile(f"{extent}.css", f"artifacts/{extent}.css")
-        with open(f"artifacts/{extent}.css", "r") as f:
+        shutil.copyfile(f"{extent}.css", f"artifacts/{extent}{suffix}.css")
+        with open(f"artifacts/{extent}{suffix}.css", "r") as f:
             css = f.read()
-        with open(f"artifacts/{extent}.css", "w") as f:
+        with open(f"artifacts/{extent}{suffix}.css", "w") as f:
             if github_commit:
                 f.write(
                     f"/* see https://github.com/{github_commit[:len(github_commit) - 33]} */\n\n"

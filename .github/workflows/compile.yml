@@ -19,15 +19,25 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: ${{ vars.PYTHON_VERSION }}
+      - name: List changed files
+        if: ${{ ! inputs.recompile }}
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            BEFORE=$(git merge-base origin/main ${{ github.sha }})
+          fi
+          git diff --name-only --diff-filter=d "$BEFORE" ${{ github.sha }} -- . ':!dist' > "$RUNNER_TEMP/changed.txt"
+          cat "$RUNNER_TEMP/changed.txt"
       - name: Check changed files for SCSS
         id: compile_scss
         if: ${{ ! inputs.recompile }}
         run: |
-          for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }}); do
+          for f in $(cat "$RUNNER_TEMP/changed.txt"); do
             if [[ "$f" == *".scss" ]]; then
               echo "SCSS=true" >> "$GITHUB_OUTPUT"
               break
@@ -48,7 +58,8 @@ jobs:
         if: ${{ ! inputs.recompile }}
         env:
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
-        run: for f in $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }});
+          BRANCH: ${{ github.ref_name }}
+        run: for f in $(cat "$RUNNER_TEMP/changed.txt");
           do
             python .github/workflows/compile.py "$f";
           done
@@ -56,6 +67,7 @@ jobs:
         if: ${{ inputs.recompile }}
         env:
           GROUPS: ${{ secrets.LIBGUIDES_GROUPS }}
+          BRANCH: ${{ github.ref_name }}
         run: python .github/workflows/compile.py ${{ inputs.recompile }};
       - name: Check for artifacts
         id: check_artifacts
