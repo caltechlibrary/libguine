@@ -5,3 +5,4 @@ backstop_data/
 Pipfile.lock
 settings.ini
 *.md
+!docs/**/*.md

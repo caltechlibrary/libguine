@@ -9,15 +9,17 @@
 
 ## Compile Artifacts
 
-The [Compile Artifacts workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.yml) is set up as a resuable workflow that is triggered with the [Deploy Components workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.yml).
+The [Compile Artifacts workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.yml) is set up as a reusable workflow that is triggered with the [Deploy Components workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.yml).
 
 See [`.github/workflows/compile.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.py) for the logic that determines which files to compile and how to compile them.
 
 ## Deploy Components
 
-The [Deploy Components workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.yml) downloads the artifacts created in the [Compile Artifacts workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.yml) and deploys them to LibGuides.
+The [Deploy Components workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.yml) downloads the artifacts created in the [Compile Artifacts workflow](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/compile.yml) and commits them to the `dist/` folder on the branch that was pushed. A push to `main` builds files with their normal names; a push to any other branch builds CSS and JS files with `-test` names.
 
-See [`.github/workflows/deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.py) for the logic that determines which files to deploy and how to deploy them.
+Automated deployment to LibGuides is turned off (`if: false` on the `deploy` job). Every file in `dist/` is uploaded or pasted into LibGuides by hand. See [`docs/deploy-steps.md`](https://github.com/caltechlibrary/libguine/blob/main/docs/deploy-steps.md) for the steps.
+
+See [`.github/workflows/deploy.py`](https://github.com/caltechlibrary/libguine/blob/main/.github/workflows/deploy.py) for the logic that would determine which files to deploy and how, if automated deployment is turned back on.
 
 ## Build & Deploy Notices
 
