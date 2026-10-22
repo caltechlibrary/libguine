@@ -1,5 +1,5 @@
 <!-- WARNING: GENERATED CODE *EDITS WILL BE OVERWRITTEN* -->
-<!-- see https://github.com/caltechlibrary/libguine/commit/8e1cb2f -->
+<!-- see https://github.com/caltechlibrary/libguine/commit/c64f52b -->
 
 <script type="module" src="https://media.library.caltech.edu/cl-webcomponents/cl-web-components.js"></script>  
 <script>
@@ -12,7 +12,10 @@
     test = localStorage.getItem("c3-test") === "on";
   } catch (e) {}
   var suffix = test ? "-test" : "";
-  if (test) console.log("‼️ TEST MODE");
+  if (test) {
+    console.log("‼️ TEST MODE");
+    document.documentElement.classList.add("c3-test");
+  }
   document.write('<link rel="stylesheet" id="libguides-css" href="//libapps.s3.amazonaws.com/sites/64/include/libguides' + suffix + '.css">');
   document.write('<script id="libguides-js" src="//libapps.s3.amazonaws.com/sites/64/include/libguides' + suffix + '.js"><\/script>');
 })();
