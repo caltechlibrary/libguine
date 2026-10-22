@@ -1,4 +1,4 @@
-body::before {
+html.c3-test body::before {
   content: "TESTING";
   display: block;
   padding: 0.375rem 1rem;
