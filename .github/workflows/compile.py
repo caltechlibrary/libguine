@@ -130,6 +130,8 @@ def main(file):
             slugs = [g["slug"] for g in json.loads(os.environ.get("GROUPS"))["groups"]]
             slugs.append("system")
             variants = list(slugs)
+            if component == "footer":
+                variants = ["system"]
             print(f"🐞 variants: {variants}")
             variant = (
                 file.split(".")[0].split("-")[-1]
