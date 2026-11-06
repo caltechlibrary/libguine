@@ -125,7 +125,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var s_lc_tdh_3271_0 = new $.LibCalTodayHours( $("#s_lc_tdh_3271_0"), { iid: 3271, lid: 0 });
       // grab tokenized login link and rebuild elsewhere
       const login_link = document.createElement("a");
-      login_link.setAttribute("href", document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
+      const login_href = new URL(document.getElementById("s-lib-footer-login-link").getElementsByTagName("a")[0].getAttribute("href"));
+      const target = new URLSearchParams(atob(login_href.searchParams.get("target64") || "").split("?")[1]);
+      const guide_id = target.get("g");
+      const page_id = target.get("p");
+      if (guide_id) {
+        login_href.searchParams.set("target64", btoa(`/libguides/guides/edit/${guide_id}${page_id ? `/${page_id}` : ""}`));
+      }
+      login_link.setAttribute("href", login_href.toString());
       login_link.setAttribute("aria-label", "Staff Login");
       login_link.innerHTML = `<i class="fa fa-sign-in" aria-hidden="true"></i>`;
       document.getElementById("footer-login").appendChild(login_link);
