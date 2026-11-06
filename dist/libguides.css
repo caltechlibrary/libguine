@@ -1,4 +1,4 @@
-/* see https://github.com/caltechlibrary/libguine/commit/06ba862 */
+/* see https://github.com/caltechlibrary/libguine/commit/cef8b29 */
 
 /* common/_base.scss */
 h1, .s-lib-header h1, .h1 {
@@ -2026,7 +2026,8 @@ a.post-title:visited:hover,
 .tlw .hours-today .loc3107,
 .tlw .hours-today .loc3108,
 .tlw .hours-today .loc3297,
-.tlw .hours-today .loc24043 {
+.tlw .hours-today .loc24043,
+.tlw .hours-today .loc27004 {
   display: block;
 }
 .tlw .hours-today .s-lc-timetxt {
@@ -2352,7 +2353,8 @@ a.post-title:visited:hover,
   text-align: center;
 }
 #tpl-a-home .hours-today .loc3297,
-#tpl-a-home .hours-today .loc24043 {
+#tpl-a-home .hours-today .loc24043,
+#tpl-a-home .hours-today .loc27004 {
   display: block;
 }
 #tpl-a-home .hours-today .s-lc-timetxt {
